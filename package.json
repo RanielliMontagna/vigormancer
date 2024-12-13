@@ -1,6 +1,7 @@
 {
   "name": "vigormancer",
   "version": "1.0.0",
+  "private": true,
   "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
@@ -30,6 +31,5 @@
     "@types/react": "~18.3.12",
     "react-devtools": "^6.0.1",
     "typescript": "~5.3.3"
-  },
-  "private": true
+  }
 }
