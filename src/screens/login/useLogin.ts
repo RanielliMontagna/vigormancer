@@ -10,6 +10,7 @@ export function useLogin() {
     defaultValues: {
       email: '',
       password: '',
+      showPassword: false,
     },
   })
 
