@@ -1,11 +1,11 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import * as React from 'react'
-import { Pressable } from 'react-native'
-import { cn } from 'src/libs/utils'
+import { Pressable, View } from 'react-native'
+import { cn } from '@/utils'
 import { TextClassContext } from 'src/components/ui/text'
 
 const buttonVariants = cva(
-  'group flex items-center justify-center rounded-md web:ring-offset-background web:transition-colors web:focus-visible:outline-none web:focus-visible:ring-2 web:focus-visible:ring-ring web:focus-visible:ring-offset-2',
+  'group flex flex-row items-center justify-center rounded-lg web:ring-offset-background web:transition-colors web:focus-visible:outline-none web:focus-visible:ring-2 web:focus-visible:ring-ring web:focus-visible:ring-offset-2',
   {
     variants: {
       variant: {
@@ -46,7 +46,7 @@ const buttonTextVariants = cva(
       size: {
         default: '',
         sm: '',
-        lg: 'native:text-lg',
+        lg: '',
         icon: '',
       },
     },
@@ -58,10 +58,13 @@ const buttonTextVariants = cva(
 )
 
 type ButtonProps = React.ComponentPropsWithoutRef<typeof Pressable> &
-  VariantProps<typeof buttonVariants>
+  VariantProps<typeof buttonVariants> & {
+    children: React.ReactNode
+    startIcon?: React.ReactNode
+  }
 
 const Button = React.forwardRef<React.ElementRef<typeof Pressable>, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => {
+  ({ className, variant, size, startIcon, children, ...props }, ref) => {
     return (
       <TextClassContext.Provider
         value={buttonTextVariants({ variant, size, className: 'web:pointer-events-none' })}
@@ -74,7 +77,10 @@ const Button = React.forwardRef<React.ElementRef<typeof Pressable>, ButtonProps>
           ref={ref}
           role="button"
           {...props}
-        />
+        >
+          {startIcon && <View className="mr-2">{startIcon}</View>}
+          {children}
+        </Pressable>
       </TextClassContext.Provider>
     )
   },

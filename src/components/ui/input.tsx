@@ -1,20 +1,78 @@
 import * as React from 'react'
-import { TextInput, type TextInputProps } from 'react-native'
-import { cn } from 'src/libs/utils'
+import { TextInput, View, type TextInputProps } from 'react-native'
+import { cn } from '@/utils'
+import { cva } from 'class-variance-authority'
 
-const Input = React.forwardRef<React.ElementRef<typeof TextInput>, TextInputProps>(
-  ({ className, placeholderClassName, ...props }, ref) => {
+const inputVariants = cva(
+  'flex flex-row rounded-md border border-border bg-gray-100 items-center',
+  {
+    variants: {
+      size: {
+        md: 'h-12 px-2',
+        lg: 'h-14 px-3',
+      },
+    },
+    defaultVariants: {
+      size: 'md',
+    },
+  },
+)
+
+const adornmentVariants = cva('flex items-center justify-center rounded-md', {
+  variants: {
+    size: {
+      md: 'w-4 h-4',
+      lg: 'w-6 h-6',
+    },
+    startAdornment: { true: 'ml-2' },
+    endAdornment: { true: 'mr-2' },
+  },
+})
+
+export interface InputProps extends TextInputProps {
+  /**
+   * The start adornment of the input
+   * @default undefined
+   */
+  startAdornment?: React.ReactNode
+
+  /**
+   * The end adornment of the input
+   * @default undefined
+   */
+  endAdornment?: React.ReactNode
+
+  /**
+   * The size of the input
+   * @default 'md'
+   */
+  size?: 'md' | 'lg'
+}
+
+const Input = React.forwardRef<React.ElementRef<typeof TextInput>, InputProps>(
+  ({ className, placeholderClassName, startAdornment, endAdornment, size, ...props }, ref) => {
     return (
-      <TextInput
-        ref={ref}
-        className={cn(
-          'web:flex h-10 native:h-12 web:w-full rounded-md border border-input bg-background px-3 web:py-2 text-base lg:text-sm native:text-lg native:leading-[1.25] text-foreground web:ring-offset-background file:border-0 file:bg-transparent file:font-medium web:focus-visible:outline-none web:focus-visible:ring-2 web:focus-visible:ring-ring web:focus-visible:ring-offset-2',
-          props.editable === false && 'opacity-50 web:cursor-not-allowed',
-          className,
+      <View className={cn(inputVariants({ size }), className)}>
+        {startAdornment && (
+          <View className={cn(adornmentVariants({ size, startAdornment: true }))}>
+            {startAdornment}
+          </View>
         )}
-        placeholderClassName={cn('text-muted-foreground', placeholderClassName)}
-        {...props}
-      />
+        <TextInput
+          ref={ref}
+          className={cn(
+            'flex-1 h-full placeholder:color-slate-500 web:outline-none',
+            props.editable === false && 'opacity-50 web:cursor-not-allowed',
+            className,
+          )}
+          {...props}
+        />
+        {endAdornment && (
+          <View className={cn(adornmentVariants({ size, endAdornment: true }))}>
+            {endAdornment}
+          </View>
+        )}
+      </View>
     )
   },
 )
