@@ -7,7 +7,7 @@ export function SignUp() {
   const { handleLogin } = useSignup()
 
   return (
-    <View className="flex flex-1 justify-center align-center">
+    <View className="flex flex-1 justify-center align-center bg-background">
       <Text className="text-center text-4xl font-bold text-blue-500">Vigormancer</Text>
 
       <View className="absolute bottom-0 left-0 right-0 pb-8 justify-center items-center flex flex-row gap-1">
