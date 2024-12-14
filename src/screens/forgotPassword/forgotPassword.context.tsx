@@ -9,14 +9,17 @@ export enum StepForgotPassword {
 }
 
 interface ForgotPasswordContextProps {
+  email: string
   step: StepForgotPassword
   nextStep: () => void
   prevStep: () => void
+  handleSaveEmail: (email: string) => void
 }
 
 export const ForgotPasswordContext = createContext({} as ForgotPasswordContextProps)
 
 export function ForgotPasswordProvider({ children }) {
+  const [email, setEmail] = useState('')
   const [step, setStep] = useState<StepForgotPassword>(StepForgotPassword.SEND_CODE)
 
   function handleBack() {
@@ -42,8 +45,12 @@ export function ForgotPasswordProvider({ children }) {
     setStep((prevStep) => prevStep - 1)
   }
 
+  function handleSaveEmail(email: string) {
+    setEmail(email)
+  }
+
   return (
-    <ForgotPasswordContext.Provider value={{ step, nextStep, prevStep }}>
+    <ForgotPasswordContext.Provider value={{ email, step, nextStep, prevStep, handleSaveEmail }}>
       {children}
     </ForgotPasswordContext.Provider>
   )

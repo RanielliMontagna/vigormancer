@@ -4,13 +4,14 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { sendCodeSchema, SendCodeSchema } from './sendCode.schema'
 import { useForgotPasswordContext } from '../forgotPassword.context'
+import Toast from 'react-native-toast-message'
 
 export function useSendCode() {
-  const { nextStep } = useForgotPasswordContext()
+  const { email, nextStep, handleSaveEmail } = useForgotPasswordContext()
 
   const methods = useForm<SendCodeSchema>({
     resolver: zodResolver(sendCodeSchema),
-    defaultValues: { email: '' },
+    defaultValues: { email },
   })
 
   function handleBack() {
@@ -18,12 +19,24 @@ export function useSendCode() {
     router.back()
   }
 
-  function handleSendCode(data: SendCodeSchema) {
+  async function handleSendCode(data: SendCodeSchema) {
     console.log(data)
 
-    //TODO: Send code to email
+    try {
+      handleSaveEmail(data.email)
+      //TODO: Send code to email
+      //API call
 
-    nextStep()
+      Toast.show({
+        text1: 'Code sent',
+        text2: 'Please check your email',
+        type: 'success',
+      })
+
+      nextStep()
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return { methods, handleBack, handleSendCode }
