@@ -14,8 +14,12 @@ export function useLogin() {
     },
   })
 
-  function handleSignup() {
+  function handleGoToSignup() {
     router.push('/signup')
+  }
+
+  function handleGoToForgotPassword() {
+    router.push('/forgot-password')
   }
 
   async function handleLogin(values: LoginSchema) {
@@ -27,5 +31,5 @@ export function useLogin() {
     //TODO: handle google login logic here
   }
 
-  return { methods, handleSignup, handleLogin, handleGoogleLogin }
+  return { methods, handleLogin, handleGoogleLogin, handleGoToSignup, handleGoToForgotPassword }
 }

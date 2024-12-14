@@ -5,7 +5,8 @@ import { Button, Form, H2, P, Text, TextField } from '@/components'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 export function Login() {
-  const { methods, handleLogin, handleGoogleLogin, handleSignup } = useLogin()
+  const { methods, handleLogin, handleGoogleLogin, handleGoToForgotPassword, handleGoToSignup } =
+    useLogin()
 
   return (
     <Form {...methods}>
@@ -48,7 +49,7 @@ export function Login() {
             }
           />
           <View className="flex items-end">
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleGoToForgotPassword}>
               <Text>Forgot Password?</Text>
             </TouchableOpacity>
           </View>
@@ -71,10 +72,10 @@ export function Login() {
             <Text>Continue with Google</Text>
           </Button>
         </View>
-        <View className="absolute bottom-0 left-0 right-0 pb-8 justify-center items-center flex flex-row gap-1">
+        <View className="pb-8 justify-center items-center flex flex-row gap-1">
           <Text>Don’t have an account?</Text>
           <TouchableOpacity>
-            <Text className="font-bold" onPress={handleSignup}>
+            <Text className="font-bold" onPress={handleGoToSignup}>
               Register Now
             </Text>
           </TouchableOpacity>

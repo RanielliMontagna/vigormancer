@@ -1,15 +1,23 @@
 import { TouchableOpacity, View } from 'react-native'
-import { useSignup } from './useSignup'
-
-import { Button, Form, H2, P, Text, TextField } from '@/components'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
+import { useSignup } from './useSignup'
+import { Button, Form, H2, P, Text, TextField } from '@/components'
+
 export function SignUp() {
-  const { methods, handleLogin, handleGoogleSignup, handleSignup } = useSignup()
+  const { methods, handleBack, handleGoogleSignup, handleSignup } = useSignup()
 
   return (
     <Form {...methods}>
       <View className="flex flex-1 justify-center p-4 bg-background gap-6">
+        <View>
+          <TouchableOpacity
+            onPress={handleBack}
+            className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px]"
+          >
+            <FontAwesome6 name="angle-left" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
         <View className="flex flex-row gap-2 items-center mb-4">
           <FontAwesome6 name="dumbbell" size={24} color="black" />
           <View className="flex flex-row">
@@ -85,10 +93,10 @@ export function SignUp() {
             <Text>Signup with Google</Text>
           </Button>
         </View>
-        <View className="absolute bottom-0 left-0 right-0 pb-8 justify-center items-center flex flex-row gap-1">
+        <View className="pb-8 justify-center items-center flex flex-row gap-1">
           <Text>Already have an account?</Text>
           <TouchableOpacity>
-            <Text className="font-bold" onPress={handleLogin}>
+            <Text className="font-bold" onPress={handleBack}>
               Login
             </Text>
           </TouchableOpacity>

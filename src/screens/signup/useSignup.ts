@@ -17,8 +17,9 @@ export function useSignup() {
     },
   })
 
-  function handleLogin() {
-    router.push('/')
+  function handleBack() {
+    if (!router.canGoBack()) return router.push('/')
+    router.back()
   }
 
   async function handleSignup(values: SignUpSchema) {
@@ -30,5 +31,5 @@ export function useSignup() {
     //TODO: handle google signUp logic here
   }
 
-  return { methods, handleLogin, handleSignup, handleGoogleSignup }
+  return { methods, handleBack, handleSignup, handleGoogleSignup }
 }
