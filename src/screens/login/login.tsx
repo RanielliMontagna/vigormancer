@@ -1,5 +1,7 @@
-import { Text, TouchableOpacity, View } from 'react-native'
+import { TouchableOpacity, View } from 'react-native'
 import { useLogin } from './useLogin'
+
+import { Text } from '@/components'
 
 export function Login() {
   const { handleSignup } = useLogin()
