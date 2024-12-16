@@ -1,46 +1,38 @@
 import { TouchableOpacity, View } from 'react-native'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { useSignup } from './useSignup'
 import { Button, Form, H2, P, Text, TextField } from '@/components'
+import { useResetPassword } from './useResetPassword'
+import { useForgotPasswordContext } from '../forgotPassword.context'
 
-export function SignUp() {
-  const { methods, handleBack, handleGoogleSignup, handleSignup } = useSignup()
+export function ResetPassword() {
+  const { prevStep } = useForgotPasswordContext()
+  const { methods, handleResetPassword } = useResetPassword()
 
   return (
     <Form {...methods}>
       <View className="flex flex-1 justify-center p-4 bg-background gap-6">
         <View>
           <TouchableOpacity
-            onPress={handleBack}
+            onPress={prevStep}
             className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px]"
           >
             <FontAwesome6 name="angle-left" size={24} color="black" />
           </TouchableOpacity>
         </View>
-        <View className="flex flex-row gap-2 items-center mb-4">
-          <FontAwesome6 name="dumbbell" size={24} color="black" />
-          <View className="flex flex-row">
-            <Text className="font-bold text-3xl">Vigor</Text>
-            <Text className="text-3xl">mancer</Text>
-          </View>
-        </View>
         <View>
-          <H2>Signup</H2>
+          <H2>Create new password</H2>
           <P className="text-muted-foreground">
-            Enter your email and password to create an account
+            Your new password must be unique from those previously used.
           </P>
         </View>
         <View className="gap-4">
-          <TextField control={methods.control} name="username" placeholder="Username" size="lg" />
-          <TextField control={methods.control} name="email" placeholder="Email" size="lg" />
           <TextField
             control={methods.control}
             name="password"
-            placeholder="Password"
-            type="password"
-            secureTextEntry={!methods.watch('showPassword')}
+            placeholder="Enter your new password"
             size="lg"
+            secureTextEntry={!methods.watch('showPassword')}
             endAdornment={
               <TouchableOpacity
                 onPress={() => methods.setValue('showPassword', !methods.watch('showPassword'))}
@@ -56,10 +48,9 @@ export function SignUp() {
           <TextField
             control={methods.control}
             name="confirmPassword"
-            placeholder="Confirm password"
-            type="password"
-            secureTextEntry={!methods.watch('showConfirmPassword')}
+            placeholder="Confirm your new password"
             size="lg"
+            secureTextEntry={!methods.watch('showConfirmPassword')}
             endAdornment={
               <TouchableOpacity
                 onPress={() =>
@@ -75,31 +66,10 @@ export function SignUp() {
             }
           />
         </View>
-        <View className="gap-2">
-          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleSignup)}>
-            <Text>Register</Text>
+        <View className="gap-4">
+          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleResetPassword)}>
+            <Text>Reset Password</Text>
           </Button>
-          <View className="flex flex-row items-center gap-2">
-            <View className="flex-1 border-t border-border" />
-            <Text>Or</Text>
-            <View className="flex-1 border-t border-border" />
-          </View>
-          <Button
-            size="lg"
-            variant="outline"
-            startIcon={<FontAwesome6 name="google" size={16} />}
-            onPress={handleGoogleSignup}
-          >
-            <Text>Signup with Google</Text>
-          </Button>
-        </View>
-        <View className="pb-8 justify-center items-center flex flex-row gap-1">
-          <Text>Already have an account?</Text>
-          <TouchableOpacity>
-            <Text className="font-bold" onPress={handleBack}>
-              Login
-            </Text>
-          </TouchableOpacity>
         </View>
       </View>
     </Form>
