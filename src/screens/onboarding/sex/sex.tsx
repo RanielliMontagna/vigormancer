@@ -1,3 +1,4 @@
+import { router } from 'expo-router'
 import { TouchableOpacity, View } from 'react-native'
 import { useFormContext } from 'react-hook-form'
 import colors from 'tailwindcss/colors'
@@ -11,7 +12,7 @@ import { Button, H2, P, Text } from '@/components'
 import { cn } from '@/utils'
 
 export function Sex() {
-  const { prevStep, nextStep } = useOnboardingContext()
+  const { prevStep } = useOnboardingContext()
   const { watch, setValue } = useFormContext<OnboardingSchema>()
 
   const selectedSex = watch('sex')
@@ -80,7 +81,7 @@ export function Sex() {
         </View>
       </View>
       <View>
-        <Button size="lg" onPress={nextStep} disabled={!selectedSex}>
+        <Button size="lg" onPress={() => router.push('onboarding/age')} disabled={!selectedSex}>
           <Text>Next</Text>
         </Button>
       </View>

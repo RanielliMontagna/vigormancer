@@ -4,11 +4,9 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import WelcomeImage from '@/assets/images/onboarding-welcome.jpg'
 
 import { Button, H3, Text } from '@/components'
-import { useOnboardingContext } from '../onboarding.context'
+import { router } from 'expo-router'
 
 export function Welcome() {
-  const { nextStep } = useOnboardingContext()
-
   return (
     <View className="flex flex-col h-full bg-background">
       <View className="h-96">
@@ -29,7 +27,7 @@ export function Welcome() {
           Unleash the magic within. Transform your energy, master your strength, and create the best
           version of yourself.
         </Text>
-        <Button size="lg" className="mt-4" onPress={nextStep}>
+        <Button size="lg" className="mt-4" onPress={() => router.push('onboarding/sex')}>
           <Text>Begin your journey</Text>
         </Button>
       </View>

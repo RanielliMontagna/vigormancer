@@ -1,14 +1,14 @@
+import { router } from 'expo-router'
 import { TouchableOpacity, View } from 'react-native'
-import { useFormContext } from 'react-hook-form'
 import colors from 'tailwindcss/colors'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { GoalEnum, OnboardingSchema } from '../onboarding.schema'
-import { useOnboardingContext } from '../onboarding.context'
+import { GoalEnum } from '../onboarding.schema'
 
 import { Button, H2, P, Text } from '@/components'
 import { cn } from '@/utils'
+import { useGoal } from './useGoal'
 
 interface GoalCheckboxProps {
   goal: GoalEnum
@@ -42,22 +42,7 @@ function GoalCheckbox({ goal, selectedGoal, setGoal }: GoalCheckboxProps) {
 }
 
 export function Goal() {
-  const { prevStep, nextStep } = useOnboardingContext()
-  const { watch, setValue } = useFormContext<OnboardingSchema>()
-
-  const goals = [
-    { id: GoalEnum.LoseWeight, label: 'Lose Weight' },
-    { id: GoalEnum.BuildMuscle, label: 'Build Muscle' },
-    { id: GoalEnum.ImproveStamina, label: 'Improve Stamina' },
-    { id: GoalEnum.ImproveHealth, label: 'Improve Health' },
-    { id: GoalEnum.StayActive, label: 'Stay Active' },
-  ]
-
-  const selectedGoal = watch('goal')
-
-  function setGoal(goal: GoalEnum) {
-    setValue('goal', goal)
-  }
+  const { goals, selectedGoal, prevStep, setGoal, handleSubmitOnboarding } = useGoal()
 
   return (
     <View className="flex flex-col h-full p-8 gap-4 bg-background">
@@ -88,7 +73,7 @@ export function Goal() {
         </View>
       </View>
       <View>
-        <Button size="lg" onPress={nextStep} disabled={!selectedGoal}>
+        <Button size="lg" onPress={handleSubmitOnboarding} disabled={!selectedGoal}>
           <Text>Next</Text>
         </Button>
       </View>

@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from 'react-native'
+import { SafeAreaView, TouchableOpacity, View } from 'react-native'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 import { useSignup } from './useSignup'
@@ -9,7 +9,7 @@ export function SignUp() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 justify-center p-4 bg-background gap-6">
+      <SafeAreaView className="flex flex-1 p-4 bg-background gap-6">
         <View>
           <TouchableOpacity
             onPress={handleBack}
@@ -101,7 +101,7 @@ export function SignUp() {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </SafeAreaView>
     </Form>
   )
 }

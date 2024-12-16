@@ -1,18 +1,24 @@
+import { useState } from 'react'
+import { router } from 'expo-router'
 import { TouchableOpacity, View } from 'react-native'
 import { useFormContext } from 'react-hook-form'
+import { WheelPicker } from 'react-native-infinite-wheel-picker'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 import { OnboardingSchema } from '../onboarding.schema'
 import { useOnboardingContext } from '../onboarding.context'
 
-import { Button, H2, P, Text, TextField } from '@/components'
+import { Button, H2, P, Text } from '@/components'
 
 export function Height() {
-  const { prevStep, nextStep } = useOnboardingContext()
-  const { control, watch } = useFormContext<OnboardingSchema>()
+  const { prevStep } = useOnboardingContext()
+  const { watch, setValue } = useFormContext<OnboardingSchema>()
 
   const selectedHeight = watch('height')
+
+  const initialData = Array.from({ length: 101 }, (_, i) => `${i + 120} cm`)
+  const [heightWheelIndex, setHeightWheelIndex] = useState(selectedHeight - 120)
 
   return (
     <View className="flex flex-col h-full p-8 gap-4 bg-background">
@@ -31,20 +37,23 @@ export function Height() {
             Your height helps us tailor your transformation process.
           </P>
         </View>
-        <View>
-          <TextField
-            control={control}
-            name="height"
-            size="lg"
-            keyboardType="number-pad"
-            placeholder="Enter your height (cm)"
-            maxLength={2}
-            endAdornment={selectedHeight && <Text>kg</Text>}
+        <View className="flex-1">
+          <WheelPicker
+            initialSelectedIndex={heightWheelIndex}
+            data={initialData}
+            selectedIndex={heightWheelIndex}
+            onChangeValue={(value) => {
+              setHeightWheelIndex(value)
+              setValue('height', value + 120)
+            }}
+            infiniteScroll={false}
+            restElements={4}
+            elementHeight={50}
           />
         </View>
       </View>
       <View>
-        <Button size="lg" onPress={nextStep} disabled={!selectedHeight}>
+        <Button size="lg" onPress={() => router.push('onboarding/goal')} disabled={!selectedHeight}>
           <Text>Next</Text>
         </Button>
       </View>

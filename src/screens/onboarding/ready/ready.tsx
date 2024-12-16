@@ -3,12 +3,11 @@ import { Image, View } from 'react-native'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import FinishImage from '@/assets/images/onboarding-finish.jpg'
 
-import { useOnboardingContext } from '../onboarding.context'
-import { Button, H2, H3, P, Text } from '@/components'
+import { Button, H2, P, Text } from '@/components'
+import { router } from 'expo-router'
+import Toast from 'react-native-toast-message'
 
 export function Ready() {
-  const { nextStep } = useOnboardingContext()
-
   return (
     <View className="flex flex-col h-full bg-background">
       <View className="h-96">
@@ -28,7 +27,19 @@ export function Ready() {
           brings you closer to mastering your strength and unlocking your full potential.
         </P>
         <View>
-          <Button size="lg" className="mt-4" onPress={nextStep}>
+          <Button
+            size="lg"
+            className="mt-4"
+            onPress={() => {
+              Toast.show({
+                type: 'success',
+                text1: 'Welcome to Vigormancer!',
+                text2: "Your journey has begun. Let's make magic happen!",
+              })
+
+              router.dismissAll()
+            }}
+          >
             <Text>Start Training</Text>
           </Button>
           <Text className="text-sm text-center text-muted-foreground mt-2">
