@@ -21,8 +21,8 @@ const inputVariants = cva(
 const adornmentVariants = cva('flex items-center justify-center rounded-md', {
   variants: {
     size: {
-      md: 'w-4 h-4',
-      lg: 'w-6 h-6',
+      md: 'h-4',
+      lg: 'h-6',
     },
     startAdornment: { true: 'ml-2' },
     endAdornment: { true: 'mr-2' },
