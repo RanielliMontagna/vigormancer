@@ -1,0 +1,131 @@
+{
+  "login": {
+    "title": "Login",
+    "subtitle": "Enter your email and password to login",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPassword": "Forgot password?",
+    "submit": "Login",
+    "or": "Or",
+    "googleLogin": "Continue with Google",
+    "dontHaveAccount": "Don't have an account?",
+    "signup": "Register Now",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Please enter a valid email",
+    "requiredPassword": "Please enter your password"
+  },
+  "signup": {
+    "title": "Register",
+    "subtitle": "Enter your details to create an account",
+    "usernamePlaceholder": "Enter your username",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "submit": "Register",
+    "or": "Or",
+    "googleSignup": "Register with Google",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login",
+    "usernameMinLength": "Username must be at least {{min}} characters",
+    "usernameMaxLength": "Username must be at most {{max}} characters",
+    "maxUsername": "Username must be at most {{max}} characters",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Please enter a valid email",
+    "passwordMinLength": "Password must be at least {{min}} characters",
+    "passwordMaxLength": "Password must be at most {{max}} characters",
+    "passwordNumber": "Password must contain at least one number",
+    "passwordLowercase": "Password must contain at least one lowercase letter",
+    "passwordUppercase": "Password must contain at least one uppercase letter",
+    "requiredConfirmPassword": "Please confirm your password",
+    "passwordMatch": "Passwords do not match"
+  },
+  "forgotPassword": {
+    "sendCode": {
+      "title": "Forgot Password?",
+      "subtitle": "Don't worry! It occurs. Please enter the email address linked with your account.",
+      "emailPlaceholder": "Enter your email",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email",
+      "submit": "Send Code",
+      "rememberPassword": "Remembered your password?",
+      "login": "Login"
+    },
+    "otpVerification": {
+      "title": "OTP Verification",
+      "subtitle": "Please enter the verification code sent to your email.",
+      "codePlaceholder": "Enter the code",
+      "submit": "Verify",
+      "didntReceivedCode": "Didn't received code?",
+      "resendCode": "Resend Code",
+      "requiredCode": "Please enter the {{length}}-digit code"
+    },
+    "resetPassword": {
+      "title": "Create new password",
+      "subtitle": "Your new password must be unique from those previously used.",
+      "passwordPlaceholder": "Enter your new password",
+      "confirmPasswordPlaceholder": "Confirm your new password",
+      "submit": "Reset Password"
+    },
+    "passwordChanged": {
+      "title": "Password Changed!",
+      "subtitle": "Your password has been changed successfully.",
+      "submit": "Back to login"
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Welcome to",
+      "text": "Unleash the magic within. Transform your energy, master your strength, and create the best version of yourself.",
+      "button": "Begin your journey"
+    },
+    "sex": {
+      "title": "Let's Get to Know You",
+      "subtitle": "Tell us about yourself to personalize your path to mastery.",
+      "male": "Male",
+      "female": "Female",
+      "next": "Next"
+    },
+    "age": {
+      "title": "How old are you?",
+      "subtitle": "Your age helps us to provide you with the best experience.",
+      "yearsOld": "years old",
+      "next": "Next"
+    },
+    "weight": {
+      "title": "What's Your Current Weight?",
+      "subtitle": "Every journey begins with a solid foundation. Let's record where you stand today.",
+      "next": "Next"
+    },
+    "height": {
+      "title": "What's Your Height?",
+      "subtitle": "Your height helps us tailor your transformation process.",
+      "next": "Next"
+    },
+    "goal": {
+      "title": "What's Your Fitness Goal?",
+      "subtitle": "Define your goal to help us personalize your journey. Let's make it happen.",
+      "next": "Next",
+      "loseweight": "Lose Weight",
+      "buildmuscle": "Build Muscle",
+      "improvestamina": "Improve Stamina",
+      "improvehealth": "Improve Health",
+      "stayactive": "Stay Active"
+    },
+    "ready": {
+      "title": "You're Ready to Begin!",
+      "subtitle": "Your path as a Vigormancer starts now. Every step, every rep, every moment of effort brings you closer to mastering your strength and unlocking your full potential.",
+      "button": "Start Training",
+      "remember": "Remember, progress is the real magic. Let's make it happen!"
+    }
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email",
+    "minLength": "Must be at least {{min}} characters",
+    "maxLength": "Must be at most {{max}} characters",
+    "number": "Must contain at least one number",
+    "lowercase": "Must contain at least one lowercase letter",
+    "uppercase": "Must contain at least one uppercase letter",
+    "passwordMatch": "Passwords do not match"
+  }
+}

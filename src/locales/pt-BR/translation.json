@@ -1,0 +1,131 @@
+{
+  "login": {
+    "title": "Login",
+    "subtitle": "Preencha seu email e senha para acessar",
+    "emailPlaceholder": "Digite seu email",
+    "passwordPlaceholder": "Digite sua senha",
+    "forgotPassword": "Esqueceu a senha?",
+    "submit": "Entrar",
+    "or": "Ou",
+    "googleLogin": "Continuar com Google",
+    "dontHaveAccount": "Não tem uma conta?",
+    "signup": "Registrar Agora",
+    "requiredEmail": "Email é obrigatório",
+    "invalidEmail": "Por favor, insira um email válido",
+    "requiredPassword": "Por favor, insira sua senha"
+  },
+  "signup": {
+    "title": "Registrar",
+    "subtitle": "Preencha seus dados para criar uma conta",
+    "usernamePlaceholder": "Digite seu nome de usuário",
+    "emailPlaceholder": "Digite seu email",
+    "passwordPlaceholder": "Digite sua senha",
+    "confirmPasswordPlaceholder": "Confirme sua senha",
+    "submit": "Registrar",
+    "or": "Ou",
+    "googleSignup": "Registrar com Google",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "login": "Entrar",
+    "usernameMinLength": "O nome de usuário deve ter pelo menos {{min}} caracteres",
+    "usernameMaxLength": "O nome de usuário deve ter no máximo {{max}} caracteres",
+    "requiredEmail": "Email é obrigatório",
+    "invalidEmail": "Por favor, insira um email válido",
+    "passwordMinLength": "A senha deve ter pelo menos {{min}} caracteres",
+    "passwordMaxLength": "A senha deve ter no máximo {{max}} caracteres",
+    "passwordNumber": "A senha deve conter pelo menos um número",
+    "passwordLowercase": "A senha deve conter pelo menos uma letra minúscula",
+    "passwordUppercase": "A senha deve conter pelo menos uma letra maiúscula",
+    "requiredConfirmPassword": "Por favor, confirme sua senha",
+    "passwordMatch": "As senhas não coincidem"
+  },
+  "forgotPassword": {
+    "sendCode": {
+      "title": "Esqueceu a Senha?",
+      "subtitle": "Não se preocupe! Isso acontece. Por favor, insira o endereço de e-mail vinculado à sua conta.",
+      "emailPlaceholder": "Digite seu email",
+      "emailRequired": "Email é obrigatório",
+      "emailInvalid": "Por favor, insira um email válido",
+      "submit": "Enviar Código",
+      "rememberPassword": "Lembrou sua senha?",
+      "login": "Entrar"
+    },
+    "otpVerification": {
+      "title": "Verificação de OTP",
+      "subtitle": "Por favor, insira o código de verificação enviado para o seu email.",
+      "codePlaceholder": "Digite o código",
+      "submit": "Verificar",
+      "didntReceivedCode": "Não recebeu o código?",
+      "resendCode": "Reenviar Código",
+      "requiredCode": "Por favor, insira o código de {{length}} dígitos"
+    },
+    "resetPassword": {
+      "title": "Criar Nova Senha",
+      "subtitle": "Por favor, insira sua nova senha.",
+      "passwordPlaceholder": "Digite sua nova senha",
+      "confirmPasswordPlaceholder": "Confirme sua nova senha",
+      "submit": "Redefinir Senha"
+    },
+    "passwordChanged": {
+      "title": "Senha Alterada!",
+      "subtitle": "Sua senha foi alterada com sucesso.",
+      "submit": "Voltar para o login"
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Bem-vindo ao",
+      "text": "Liberte a magia interior. Transforme sua energia, domine sua força e crie a melhor versão de si mesmo.",
+      "button": "Comece sua jornada"
+    },
+    "sex": {
+      "title": "Vamos te conhecer",
+      "subtitle": "Conte-nos sobre você para personalizar seu caminho para a maestria.",
+      "male": "Masculino",
+      "female": "Feminino",
+      "next": "Próximo"
+    },
+    "age": {
+      "title": "Qual é a sua idade?",
+      "subtitle": "Diga-nos sua idade para personalizar seu caminho para a maestria.",
+      "yearsOld": "anos",
+      "next": "Próximo"
+    },
+    "weight": {
+      "title": "Qual é o seu peso?",
+      "subtitle": "Toda jornada começa com uma base sólida. Vamos registrar onde você está hoje.",
+      "next": "Next"
+    },
+    "height": {
+      "title": "Qual é a sua altura?",
+      "subtitle": "Sua altura nos ajuda a personalizar seu processo de transformação.",
+      "next": "Next"
+    },
+    "goal": {
+      "title": "Qual é o seu objetivo de fitness?",
+      "subtitle": "Defina seu objetivo para nos ajudar a personalizar sua jornada. Vamos fazer isso acontecer.",
+      "next": "Próximo",
+      "loseweight": "Perder Peso",
+      "buildmuscle": "Construir Músculos",
+      "improvestamina": "Melhorar a Resistência",
+      "improvehealth": "Melhorar a Saúde",
+      "stayactive": "Manter-se Ativo"
+    },
+    "ready": {
+      "title": "Você está pronto!",
+      "subtitle": "Seu caminho como um Vigormancer começa agora. Cada passo, cada repetição, cada momento de esforço o aproxima de dominar sua força e desbloquear seu potencial total.",
+      "button": "Vamos lá!",
+      "remember": "Lembre-se, o progresso é a verdadeira magia. Vamos fazer isso acontecer!"
+    }
+  },
+  "validation": {
+    "required": "Campo obrigatório",
+    "invalidEmail": "Por favor, insira um email válido",
+    "minLength": "Deve ter pelo menos {{min}} caracteres",
+    "maxLength": "Deve ter no máximo {{max}} caracteres",
+    "number": "Deve conter pelo menos um número",
+    "lowercase": "Deve conter pelo menos uma letra minúscula",
+    "uppercase": "Deve conter pelo menos uma letra maiúscula",
+    "passwordMatch": "As senhas não coincidem",
+    "requiredCode": "Por favor, insira o código de {{length}} dígitos"
+  }
+}

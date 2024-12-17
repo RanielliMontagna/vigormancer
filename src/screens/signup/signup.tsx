@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { TouchableOpacity, View } from 'react-native'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
@@ -6,6 +7,8 @@ import { Button, Form, H2, P, Text, TextField } from '@/components'
 import { useColorScheme } from '@/hooks'
 
 export function SignUp() {
+  const { t } = useTranslation()
+
   const { methods, handleBack, handleGoogleSignup, handleSignup } = useSignup()
   const { isDarkColorScheme } = useColorScheme()
 
@@ -32,18 +35,26 @@ export function SignUp() {
           </View>
         </View>
         <View>
-          <H2>Signup</H2>
-          <P className="text-muted-foreground">
-            Enter your email and password to create an account
-          </P>
+          <H2>{t('signup.title')}</H2>
+          <P className="text-muted-foreground">{t('signup.subtitle')}</P>
         </View>
         <View className="gap-4">
-          <TextField control={methods.control} name="username" placeholder="Username" size="lg" />
-          <TextField control={methods.control} name="email" placeholder="Email" size="lg" />
+          <TextField
+            control={methods.control}
+            name="username"
+            placeholder={t('signup.usernamePlaceholder')}
+            size="lg"
+          />
+          <TextField
+            control={methods.control}
+            name="email"
+            placeholder={t('signup.emailPlaceholder')}
+            size="lg"
+          />
           <TextField
             control={methods.control}
             name="password"
-            placeholder="Password"
+            placeholder={t('signup.passwordPlaceholder')}
             type="password"
             secureTextEntry={!methods.watch('showPassword')}
             size="lg"
@@ -62,7 +73,7 @@ export function SignUp() {
           <TextField
             control={methods.control}
             name="confirmPassword"
-            placeholder="Confirm password"
+            placeholder={t('signup.confirmPasswordPlaceholder')}
             type="password"
             secureTextEntry={!methods.watch('showConfirmPassword')}
             size="lg"
@@ -83,11 +94,13 @@ export function SignUp() {
         </View>
         <View className="gap-2">
           <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleSignup)}>
-            <Text>Register</Text>
+            <Text>{t('signup.submit')}</Text>
           </Button>
           <View className="flex flex-row items-center gap-2">
             <View className="flex-1 border-t border-border" />
-            <Text>Or</Text>
+            <Text>
+              <P>{t('signup.or')}</P>
+            </Text>
             <View className="flex-1 border-t border-border" />
           </View>
           <Button
@@ -98,14 +111,14 @@ export function SignUp() {
             }
             onPress={handleGoogleSignup}
           >
-            <Text>Signup with Google</Text>
+            <Text>{t('signup.googleSignup')}</Text>
           </Button>
         </View>
         <View className="pb-8 justify-center items-center flex flex-row gap-1">
-          <Text>Already have an account?</Text>
+          <Text>{t('signup.alreadyHaveAccount')} </Text>
           <TouchableOpacity>
             <Text className="font-bold" onPress={handleBack}>
-              Login
+              {t('signup.login')}
             </Text>
           </TouchableOpacity>
         </View>

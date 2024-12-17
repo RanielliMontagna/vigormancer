@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { TouchableOpacity, View } from 'react-native'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
@@ -7,6 +8,8 @@ import { useResetPassword } from './useResetPassword'
 import { useForgotPasswordContext } from '../forgotPassword.context'
 
 export function ResetPassword() {
+  const { t } = useTranslation()
+
   const { prevStep } = useForgotPasswordContext()
   const { methods, handleResetPassword } = useResetPassword()
 
@@ -15,16 +18,14 @@ export function ResetPassword() {
       <View className="flex flex-1 justify-center p-4 bg-background gap-6">
         <BackButton onPress={prevStep} />
         <View>
-          <H2>Create new password</H2>
-          <P className="text-muted-foreground">
-            Your new password must be unique from those previously used.
-          </P>
+          <H2>{t('forgotPassword.resetPassword.title')}</H2>
+          <P className="text-muted-foreground">{t('forgotPassword.resetPassword.subtitle')}</P>
         </View>
         <View className="gap-4">
           <TextField
             control={methods.control}
             name="password"
-            placeholder="Enter your new password"
+            placeholder={t('forgotPassword.resetPassword.passwordPlaceholder')}
             size="lg"
             secureTextEntry={!methods.watch('showPassword')}
             endAdornment={
@@ -42,7 +43,7 @@ export function ResetPassword() {
           <TextField
             control={methods.control}
             name="confirmPassword"
-            placeholder="Confirm your new password"
+            placeholder={t('forgotPassword.resetPassword.confirmPasswordPlaceholder')}
             size="lg"
             secureTextEntry={!methods.watch('showConfirmPassword')}
             endAdornment={
@@ -62,7 +63,7 @@ export function ResetPassword() {
         </View>
         <View className="gap-4">
           <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleResetPassword)}>
-            <Text>Reset Password</Text>
+            <Text>{t('forgotPassword.resetPassword.submit')}</Text>
           </Button>
         </View>
       </View>

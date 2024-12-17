@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { Image, View } from 'react-native'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
@@ -10,6 +11,7 @@ import { router } from 'expo-router'
 import Toast from 'react-native-toast-message'
 
 export function Ready() {
+  const { t } = useTranslation()
   const { isDarkColorScheme } = useColorScheme()
 
   return (
@@ -25,11 +27,8 @@ export function Ready() {
             <Text className="text-2xl">mancer</Text>
           </View>
         </View>
-        <H2 className="text-center">You’re Ready to Begin!</H2>
-        <P className="text-center text-muted-foreground">
-          Your path as a Vigormancer starts now. Every step, every rep, every moment of effort
-          brings you closer to mastering your strength and unlocking your full potential.
-        </P>
+        <H2 className="text-center">{t('onboarding.ready.title')}</H2>
+        <P className="text-center text-muted-foreground">{t('onboarding.ready.subtitle')}</P>
         <View>
           <Button
             size="lg"
@@ -44,10 +43,10 @@ export function Ready() {
               router.dismissAll()
             }}
           >
-            <Text>Start Training</Text>
+            <Text>{t('onboarding.ready.button')}</Text>
           </Button>
           <Text className="text-sm text-center text-muted-foreground mt-2">
-            Remember, progress is the real magic. Let’s make it happen!
+            {t('onboarding.ready.remember')}
           </Text>
         </View>
       </View>

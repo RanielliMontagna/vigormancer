@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { View } from 'react-native'
 import { useForgotPasswordContext } from '../forgotPassword.context'
 import { Button, H2, P, Text } from '@/components'
@@ -7,6 +8,7 @@ import colors from 'tailwindcss/colors'
 import FontAwesome6 from '@expo/vector-icons/MaterialCommunityIcons'
 
 export function PasswordChanged() {
+  const { t } = useTranslation()
   const { nextStep } = useForgotPasswordContext()
 
   return (
@@ -15,14 +17,14 @@ export function PasswordChanged() {
         <FontAwesome6 name="check-decagram" size={100} color={colors.green[400]} />
       </View>
       <View className="gap-1">
-        <H2 className="text-center">Password Changed!</H2>
+        <H2 className="text-center">{t('forgotPassword.passwordChanged.title')}</H2>
         <P className="text-center text-muted-foreground">
-          Your password has been changed successfully.
+          {t('forgotPassword.passwordChanged.subtitle')}
         </P>
       </View>
       <View>
         <Button size="lg" onPress={nextStep}>
-          <Text>Back to login</Text>
+          <Text>{t('forgotPassword.passwordChanged.submit')}</Text>
         </Button>
       </View>
     </View>
