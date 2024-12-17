@@ -1,10 +1,21 @@
+import { z } from 'zod'
 import { router } from 'expo-router'
 import { useForm } from 'react-hook-form'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { loginSchema, LoginSchema } from './login.schema'
+import { useTranslation } from 'react-i18next'
 
 export function useLogin() {
+  const { t } = useTranslation()
+
+  const loginSchema = z.object({
+    email: z.string().min(1, t('login.requiredEmail')).email(t('login.invalidEmail')),
+    password: z.string().min(1, t('login.requiredPassword')),
+    showPassword: z.boolean().default(false),
+  })
+
+  type LoginSchema = z.infer<typeof loginSchema>
+
   const methods = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {

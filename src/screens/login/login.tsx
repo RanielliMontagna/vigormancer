@@ -7,10 +7,10 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { useColorScheme } from '@/hooks'
 
 export function Login() {
+  const { t } = useTranslation()
   const { methods, handleLogin, handleGoogleLogin, handleGoToForgotPassword, handleGoToSignup } =
     useLogin()
   const { isDarkColorScheme } = useColorScheme()
-  const { t } = useTranslation()
 
   return (
     <Form {...methods}>

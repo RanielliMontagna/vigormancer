@@ -9,6 +9,34 @@
     "or": "Or",
     "googleLogin": "Continue with Google",
     "dontHaveAccount": "Don't have an account?",
-    "signup": "Register Now"
+    "signup": "Register Now",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Please enter a valid email",
+    "requiredPassword": "Please enter your password"
+  },
+  "signup": {
+    "title": "Register",
+    "subtitle": "Enter your details to create an account",
+    "usernamePlaceholder": "Enter your username",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "submit": "Register",
+    "or": "Or",
+    "googleSignup": "Register with Google",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login",
+    "usernameMinLength": "Username must be at least {{min}} characters",
+    "usernameMaxLength": "Username must be at most {{max}} characters",
+    "maxUsername": "Username must be at most {{max}} characters",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Please enter a valid email",
+    "passwordMinLength": "Password must be at least {{min}} characters",
+    "passwordMaxLength": "Password must be at most {{max}} characters",
+    "passwordNumber": "Password must contain at least one number",
+    "passwordLowercase": "Password must contain at least one lowercase letter",
+    "passwordUppercase": "Password must contain at least one uppercase letter",
+    "requiredConfirmPassword": "Please confirm your password",
+    "passwordMatch": "Passwords do not match"
   }
 }
