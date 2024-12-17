@@ -47,8 +47,7 @@ export function useVerifyCode() {
           text2: t('signup.verifySuccessMessage'),
         })
 
-        router.dismissAll()
-        router.push('/')
+        router.replace('/')
       } else {
         // If the status is not complete, check why. User may need to
         // complete further steps.
