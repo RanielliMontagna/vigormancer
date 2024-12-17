@@ -1,7 +1,7 @@
 import { TouchableOpacity, View } from 'react-native'
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { Button, Form, H2, P, Text, TextField } from '@/components'
+import { BackButton, Button, Form, H2, P, Text, TextField } from '@/components'
+
 import { useSendCode } from './useSendCode'
 import { useForgotPasswordContext } from '../forgotPassword.context'
 
@@ -12,14 +12,7 @@ export function SendCode() {
   return (
     <Form {...methods}>
       <View className="flex flex-1 justify-center p-4 bg-background gap-6">
-        <View>
-          <TouchableOpacity
-            onPress={prevStep}
-            className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px]"
-          >
-            <FontAwesome6 name="angle-left" size={24} color="black" />
-          </TouchableOpacity>
-        </View>
+        <BackButton onPress={prevStep} />
         <View>
           <H2>Forgot Password?</H2>
           <P className="text-muted-foreground">
