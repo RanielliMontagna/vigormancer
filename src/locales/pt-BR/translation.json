@@ -71,6 +71,52 @@
       "submit": "Voltar para o login"
     }
   },
+  "onboarding": {
+    "welcome": {
+      "title": "Bem-vindo ao",
+      "text": "Liberte a magia interior. Transforme sua energia, domine sua força e crie a melhor versão de si mesmo.",
+      "button": "Comece sua jornada"
+    },
+    "sex": {
+      "title": "Vamos te conhecer",
+      "subtitle": "Conte-nos sobre você para personalizar seu caminho para a maestria.",
+      "male": "Masculino",
+      "female": "Feminino",
+      "next": "Próximo"
+    },
+    "age": {
+      "title": "Qual é a sua idade?",
+      "subtitle": "Diga-nos sua idade para personalizar seu caminho para a maestria.",
+      "yearsOld": "anos",
+      "next": "Próximo"
+    },
+    "weight": {
+      "title": "Qual é o seu peso?",
+      "subtitle": "Toda jornada começa com uma base sólida. Vamos registrar onde você está hoje.",
+      "next": "Next"
+    },
+    "height": {
+      "title": "Qual é a sua altura?",
+      "subtitle": "Sua altura nos ajuda a personalizar seu processo de transformação.",
+      "next": "Next"
+    },
+    "goal": {
+      "title": "Qual é o seu objetivo de fitness?",
+      "subtitle": "Defina seu objetivo para nos ajudar a personalizar sua jornada. Vamos fazer isso acontecer.",
+      "next": "Próximo",
+      "loseweight": "Perder Peso",
+      "buildmuscle": "Construir Músculos",
+      "improvestamina": "Melhorar a Resistência",
+      "improvehealth": "Melhorar a Saúde",
+      "stayactive": "Manter-se Ativo"
+    },
+    "ready": {
+      "title": "Você está pronto!",
+      "subtitle": "Seu caminho como um Vigormancer começa agora. Cada passo, cada repetição, cada momento de esforço o aproxima de dominar sua força e desbloquear seu potencial total.",
+      "button": "Vamos lá!",
+      "remember": "Lembre-se, o progresso é a verdadeira magia. Vamos fazer isso acontecer!"
+    }
+  },
   "validation": {
     "required": "Campo obrigatório",
     "invalidEmail": "Por favor, insira um email válido",

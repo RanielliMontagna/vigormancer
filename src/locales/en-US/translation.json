@@ -72,6 +72,52 @@
       "submit": "Back to login"
     }
   },
+  "onboarding": {
+    "welcome": {
+      "title": "Welcome to",
+      "text": "Unleash the magic within. Transform your energy, master your strength, and create the best version of yourself.",
+      "button": "Begin your journey"
+    },
+    "sex": {
+      "title": "Let's Get to Know You",
+      "subtitle": "Tell us about yourself to personalize your path to mastery.",
+      "male": "Male",
+      "female": "Female",
+      "next": "Next"
+    },
+    "age": {
+      "title": "How old are you?",
+      "subtitle": "Your age helps us to provide you with the best experience.",
+      "yearsOld": "years old",
+      "next": "Next"
+    },
+    "weight": {
+      "title": "What's Your Current Weight?",
+      "subtitle": "Every journey begins with a solid foundation. Let's record where you stand today.",
+      "next": "Next"
+    },
+    "height": {
+      "title": "What's Your Height?",
+      "subtitle": "Your height helps us tailor your transformation process.",
+      "next": "Next"
+    },
+    "goal": {
+      "title": "What's Your Fitness Goal?",
+      "subtitle": "Define your goal to help us personalize your journey. Let's make it happen.",
+      "next": "Next",
+      "loseweight": "Lose Weight",
+      "buildmuscle": "Build Muscle",
+      "improvestamina": "Improve Stamina",
+      "improvehealth": "Improve Health",
+      "stayactive": "Stay Active"
+    },
+    "ready": {
+      "title": "You're Ready to Begin!",
+      "subtitle": "Your path as a Vigormancer starts now. Every step, every rep, every moment of effort brings you closer to mastering your strength and unlocking your full potential.",
+      "button": "Start Training",
+      "remember": "Remember, progress is the real magic. Let's make it happen!"
+    }
+  },
   "validation": {
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email",

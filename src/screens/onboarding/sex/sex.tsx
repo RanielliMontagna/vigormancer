@@ -1,4 +1,5 @@
 import { router } from 'expo-router'
+import { useTranslation } from 'react-i18next'
 import { TouchableOpacity, View } from 'react-native'
 import { useFormContext } from 'react-hook-form'
 import colors from 'tailwindcss/colors'
@@ -12,6 +13,8 @@ import { cn } from '@/utils'
 import { useColorScheme } from '@/hooks'
 
 export function Sex() {
+  const { t } = useTranslation()
+
   const { watch, setValue } = useFormContext<OnboardingSchema>()
   const { isDarkColorScheme } = useColorScheme()
 
@@ -31,10 +34,8 @@ export function Sex() {
       <View className="flex flex-col flex-1 gap-4">
         <BackButton />
         <View>
-          <H2>Let’s Get to Know You</H2>
-          <P className="text-muted-foreground">
-            Tell us about yourself to personalize your path to mastery.
-          </P>
+          <H2>{t('onboarding.sex.title')}</H2>
+          <P className="text-muted-foreground">{t('onboarding.sex.subtitle')}</P>
         </View>
         <View className="gap-4">
           {genderOptions.map(({ enum: genderEnum, icon }) => (
@@ -48,7 +49,7 @@ export function Sex() {
               <View className="flex flex-row gap-4 h-8 items-center">
                 <FontAwesome6 name={icon} size={24} color={isDarkColorScheme ? 'white' : 'black'} />
                 <Text className={cn(selectedSex === genderEnum && 'font-bold')}>
-                  {SexEnum[genderEnum]}
+                  {t(`onboarding.sex.${SexEnum[genderEnum].toLowerCase()}`)}
                 </Text>
               </View>
 
@@ -65,7 +66,7 @@ export function Sex() {
       </View>
       <View>
         <Button size="lg" onPress={() => router.push('onboarding/age')} disabled={!selectedSex}>
-          <Text>Next</Text>
+          <Text>{t('onboarding.sex.next')}</Text>
         </Button>
       </View>
     </View>

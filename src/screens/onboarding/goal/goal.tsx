@@ -1,3 +1,4 @@
+import { TFunction } from 'i18next'
 import { TouchableOpacity, View } from 'react-native'
 import colors from 'tailwindcss/colors'
 
@@ -8,14 +9,16 @@ import { useGoal } from './useGoal'
 
 import { BackButton, Button, H2, P, Text } from '@/components'
 import { cn } from '@/utils'
+import { useTranslation } from 'react-i18next'
 
 interface GoalCheckboxProps {
   goal: GoalEnum
   selectedGoal: GoalEnum
   setGoal: (goal: GoalEnum) => void
+  t: TFunction
 }
 
-function GoalCheckbox({ goal, selectedGoal, setGoal }: GoalCheckboxProps) {
+function GoalCheckbox({ goal, selectedGoal, setGoal, t }: GoalCheckboxProps) {
   return (
     <TouchableOpacity
       className={cn(
@@ -26,7 +29,7 @@ function GoalCheckbox({ goal, selectedGoal, setGoal }: GoalCheckboxProps) {
     >
       <View className="flex-row items-center">
         <Text className={cn(selectedGoal === goal && 'font-bold')}>
-          {GoalEnum[goal].replace(/([A-Z])/g, ' $1').trim()}
+          {t(`onboarding.goal.${GoalEnum[goal].toLowerCase()}`)}
         </Text>
       </View>
       <View className={cn('w-6 h-6 rounded-xl justify-center items-center transition-all')}>
@@ -41,6 +44,7 @@ function GoalCheckbox({ goal, selectedGoal, setGoal }: GoalCheckboxProps) {
 }
 
 export function Goal() {
+  const { t } = useTranslation()
   const { goals, selectedGoal, setGoal, handleSubmitOnboarding } = useGoal()
 
   return (
@@ -48,10 +52,8 @@ export function Goal() {
       <View className="flex flex-col flex-1 gap-4">
         <BackButton />
         <View>
-          <H2>What's Your Fitness Goal?</H2>
-          <P className="text-muted-foreground">
-            Define your principal purpose. Let's make it happen.
-          </P>
+          <H2>{t('onboarding.goal.title')}</H2>
+          <P className="text-muted-foreground">{t('onboarding.goal.subtitle')}</P>
         </View>
         <View className="flex flex-col gap-4">
           {goals.map((goal) => (
@@ -60,13 +62,14 @@ export function Goal() {
               goal={goal.id}
               selectedGoal={selectedGoal}
               setGoal={setGoal}
+              t={t}
             />
           ))}
         </View>
       </View>
       <View>
         <Button size="lg" onPress={handleSubmitOnboarding} disabled={!selectedGoal}>
-          <Text>Next</Text>
+          <Text>{t('onboarding.goal.next')}</Text>
         </Button>
       </View>
     </View>

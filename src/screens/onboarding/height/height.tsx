@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { router } from 'expo-router'
 import { View } from 'react-native'
 import { useFormContext } from 'react-hook-form'
@@ -8,6 +9,7 @@ import { OnboardingSchema } from '../onboarding.schema'
 import { BackButton, Button, H2, P, Text, WheelPicker } from '@/components'
 
 export function Height() {
+  const { t } = useTranslation()
   const { watch, setValue } = useFormContext<OnboardingSchema>()
 
   const selectedHeight = watch('height')
@@ -20,10 +22,8 @@ export function Height() {
       <View className="flex flex-col flex-1 gap-4">
         <BackButton />
         <View>
-          <H2>What's Your Height?</H2>
-          <P className="text-muted-foreground">
-            Your height helps us tailor your transformation process.
-          </P>
+          <H2>{t('onboarding.height.title')}</H2>
+          <P className="text-muted-foreground">{t('onboarding.height.subtitle')}</P>
         </View>
         <View className="flex-1">
           <WheelPicker
@@ -42,7 +42,7 @@ export function Height() {
       </View>
       <View>
         <Button size="lg" onPress={() => router.push('onboarding/goal')} disabled={!selectedHeight}>
-          <Text>Next</Text>
+          <Text>{t('onboarding.height.next')}</Text>
         </Button>
       </View>
     </View>
