@@ -26,17 +26,11 @@
     "googleSignup": "Registrar com Google",
     "alreadyHaveAccount": "Já tem uma conta?",
     "login": "Entrar",
-    "usernameMinLength": "O nome de usuário deve ter pelo menos {{min}} caracteres",
-    "usernameMaxLength": "O nome de usuário deve ter no máximo {{max}} caracteres",
-    "requiredEmail": "Email é obrigatório",
-    "invalidEmail": "Por favor, insira um email válido",
-    "passwordMinLength": "A senha deve ter pelo menos {{min}} caracteres",
-    "passwordMaxLength": "A senha deve ter no máximo {{max}} caracteres",
-    "passwordNumber": "A senha deve conter pelo menos um número",
-    "passwordLowercase": "A senha deve conter pelo menos uma letra minúscula",
-    "passwordUppercase": "A senha deve conter pelo menos uma letra maiúscula",
-    "requiredConfirmPassword": "Por favor, confirme sua senha",
-    "passwordMatch": "As senhas não coincidem"
+    "verifySuccess": "Conta verificada com sucesso!",
+    "verifySuccessMessage": "Agora você pode acessar sua conta.",
+    "codeTitle": "Código de Verificação",
+    "codeSubtitle": "Por favor, insira o código enviado para o seu email.",
+    "codePlaceholder": "Digite o código"
   },
   "forgotPassword": {
     "sendCode": {

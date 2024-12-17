@@ -26,18 +26,11 @@
     "googleSignup": "Register with Google",
     "alreadyHaveAccount": "Already have an account?",
     "login": "Login",
-    "usernameMinLength": "Username must be at least {{min}} characters",
-    "usernameMaxLength": "Username must be at most {{max}} characters",
-    "maxUsername": "Username must be at most {{max}} characters",
-    "requiredEmail": "Email is required",
-    "invalidEmail": "Please enter a valid email",
-    "passwordMinLength": "Password must be at least {{min}} characters",
-    "passwordMaxLength": "Password must be at most {{max}} characters",
-    "passwordNumber": "Password must contain at least one number",
-    "passwordLowercase": "Password must contain at least one lowercase letter",
-    "passwordUppercase": "Password must contain at least one uppercase letter",
-    "requiredConfirmPassword": "Please confirm your password",
-    "passwordMatch": "Passwords do not match"
+    "verifySuccess": "Account verified successfully!",
+    "verifySuccessMessage": "Now you can login to your account.",
+    "codeTitle": "Verification Code",
+    "codeSubtitle": "Please enter the code sent to your email.",
+    "codePlaceholder": "Enter the code"
   },
   "forgotPassword": {
     "sendCode": {
