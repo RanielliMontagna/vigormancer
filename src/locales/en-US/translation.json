@@ -27,7 +27,7 @@
     "alreadyHaveAccount": "Already have an account?",
     "login": "Login",
     "verifySuccess": "Account verified successfully!",
-    "verifySuccessMessage": "Now you can login to your account.",
+    "verifySuccessMessage": "Welcome to Vigormancer.",
     "codeTitle": "Verification Code",
     "codeSubtitle": "Please enter the code sent to your email.",
     "codePlaceholder": "Enter the code"
