@@ -12,6 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@clerk/clerk-expo": "^2.6.2",
     "@hookform/resolvers": "^3.9.1",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@rn-primitives/avatar": "^1.1.0",
@@ -27,6 +28,7 @@
     "expo-localization": "~16.0.0",
     "expo-navigation-bar": "^4.0.6",
     "expo-router": "~4.0.13",
+    "expo-secure-store": "^14.0.0",
     "expo-splash-screen": "~0.29.13",
     "expo-status-bar": "~2.0.0",
     "i18next": "^24.1.2",
@@ -47,10 +49,12 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@clerk/types": "^4.39.4",
     "@types/react": "~18.3.12",
     "eslint": "^8.57.0",
     "eslint-config-expo": "~8.0.1",

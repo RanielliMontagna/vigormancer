@@ -9,7 +9,7 @@ import { useColorScheme } from '@/hooks'
 export function SignUp() {
   const { t } = useTranslation()
 
-  const { methods, handleBack, handleGoogleSignup, handleSignup } = useSignup()
+  const { methods, handleBack, onSignUpPress, handleGoogleSignup } = useSignup()
   const { isDarkColorScheme } = useColorScheme()
 
   return (
@@ -93,7 +93,7 @@ export function SignUp() {
           />
         </View>
         <View className="gap-2">
-          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleSignup)}>
+          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(onSignUpPress)}>
             <Text>{t('signup.submit')}</Text>
           </Button>
           <View className="flex flex-row items-center gap-2">

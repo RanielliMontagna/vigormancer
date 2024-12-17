@@ -8,7 +8,7 @@ import { useColorScheme } from '@/hooks'
 
 export function Login() {
   const { t } = useTranslation()
-  const { methods, handleLogin, handleGoogleLogin, handleGoToForgotPassword, handleGoToSignup } =
+  const { methods, onSignInPress, handleGoogleLogin, handleGoToForgotPassword, handleGoToSignup } =
     useLogin()
   const { isDarkColorScheme } = useColorScheme()
 
@@ -59,7 +59,7 @@ export function Login() {
           </View>
         </View>
         <View className="gap-2">
-          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleLogin)}>
+          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(onSignInPress)}>
             <Text>{t('login.submit')}</Text>
           </Button>
           <View className="flex flex-row items-center gap-2">
