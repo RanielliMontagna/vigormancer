@@ -1,4 +1,5 @@
 import { TouchableOpacity, View } from 'react-native'
+import { useTranslation } from 'react-i18next'
 import { useLogin } from './useLogin'
 
 import { Button, Form, H2, P, Text, TextField } from '@/components'
@@ -9,6 +10,7 @@ export function Login() {
   const { methods, handleLogin, handleGoogleLogin, handleGoToForgotPassword, handleGoToSignup } =
     useLogin()
   const { isDarkColorScheme } = useColorScheme()
+  const { t } = useTranslation()
 
   return (
     <Form {...methods}>
@@ -21,20 +23,20 @@ export function Login() {
           </View>
         </View>
         <View>
-          <H2>Login</H2>
-          <P className="text-muted-foreground">Enter your email and password to login</P>
+          <H2>{t('login.title')}</H2>
+          <P className="text-muted-foreground">{t('login.subtitle')}</P>
         </View>
         <View className="gap-4">
           <TextField
             control={methods.control}
             name="email"
-            placeholder="Enter your email"
+            placeholder={t('login.emailPlaceholder')}
             size="lg"
           />
           <TextField
             control={methods.control}
             name="password"
-            placeholder="Enter your password"
+            placeholder={t('login.passwordPlaceholder')}
             type="password"
             secureTextEntry={!methods.watch('showPassword')}
             size="lg"
@@ -52,17 +54,19 @@ export function Login() {
           />
           <View className="flex items-end">
             <TouchableOpacity onPress={handleGoToForgotPassword}>
-              <Text className="text-sm text-muted-foreground">Forgot Password?</Text>
+              <Text className="text-sm text-muted-foreground">{t('login.forgotPassword')}</Text>
             </TouchableOpacity>
           </View>
         </View>
         <View className="gap-2">
           <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleLogin)}>
-            <Text>Login</Text>
+            <Text>{t('login.submit')}</Text>
           </Button>
           <View className="flex flex-row items-center gap-2">
             <View className="flex-1 border-t border-border" />
-            <Text>Or</Text>
+            <Text>
+              <P>{t('login.or')}</P>
+            </Text>
             <View className="flex-1 border-t border-border" />
           </View>
           <Button
@@ -73,14 +77,14 @@ export function Login() {
             }
             onPress={handleGoogleLogin}
           >
-            <Text>Continue with Google</Text>
+            <Text>{t('login.googleLogin')}</Text>
           </Button>
         </View>
         <View className="pb-8 justify-center items-center flex flex-row gap-1">
-          <Text>Don’t have an account?</Text>
+          <Text>{t('login.dontHaveAccount')}</Text>
           <TouchableOpacity>
             <Text className="font-bold" onPress={handleGoToSignup}>
-              Register Now
+              {t('login.signup')}
             </Text>
           </TouchableOpacity>
         </View>

@@ -1,0 +1,14 @@
+{
+  "login": {
+    "title": "Login",
+    "subtitle": "Enter your email and password to login",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPassword": "Forgot password?",
+    "submit": "Login",
+    "or": "Or",
+    "googleLogin": "Continue with Google",
+    "dontHaveAccount": "Don't have an account?",
+    "signup": "Register Now"
+  }
+}

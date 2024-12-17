@@ -1,0 +1,14 @@
+{
+  "login": {
+    "title": "Login",
+    "subtitle": "Preencha seu email e senha para acessar",
+    "emailPlaceholder": "Digite seu email",
+    "passwordPlaceholder": "Digite sua senha",
+    "forgotPassword": "Esqueceu a senha?",
+    "submit": "Entrar",
+    "or": "Ou",
+    "googleLogin": "Continuar com Google",
+    "dontHaveAccount": "Não tem uma conta?",
+    "signup": "Registrar Agora"
+  }
+}
