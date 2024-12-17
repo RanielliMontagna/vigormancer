@@ -1,18 +1,13 @@
 import { useState } from 'react'
 import { router } from 'expo-router'
-import { TouchableOpacity, View } from 'react-native'
+import { View } from 'react-native'
 import { useFormContext } from 'react-hook-form'
-import { WheelPicker } from 'react-native-infinite-wheel-picker'
-
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 import { OnboardingSchema } from '../onboarding.schema'
-import { useOnboardingContext } from '../onboarding.context'
 
-import { Button, H2, P, Text } from '@/components'
+import { BackButton, Button, H2, P, Text, WheelPicker } from '@/components'
 
 export function Height() {
-  const { prevStep } = useOnboardingContext()
   const { watch, setValue } = useFormContext<OnboardingSchema>()
 
   const selectedHeight = watch('height')
@@ -23,14 +18,7 @@ export function Height() {
   return (
     <View className="flex flex-col h-full p-8 gap-4 bg-background">
       <View className="flex flex-col flex-1 gap-4">
-        <View>
-          <TouchableOpacity
-            onPress={prevStep}
-            className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px]"
-          >
-            <FontAwesome6 name="angle-left" size={24} color="black" />
-          </TouchableOpacity>
-        </View>
+        <BackButton />
         <View>
           <H2>What's Your Height?</H2>
           <P className="text-muted-foreground">

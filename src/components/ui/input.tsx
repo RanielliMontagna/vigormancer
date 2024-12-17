@@ -4,7 +4,7 @@ import { cn } from '@/utils'
 import { cva } from 'class-variance-authority'
 
 const inputVariants = cva(
-  'flex flex-row rounded-md border border-border bg-gray-100 items-center',
+  'flex flex-row rounded-md border border-border bg-gray-100 items-center bg-input',
   {
     variants: {
       size: {
@@ -61,7 +61,7 @@ const Input = React.forwardRef<React.ElementRef<typeof TextInput>, InputProps>(
         <TextInput
           ref={ref}
           className={cn(
-            'flex-1 h-full placeholder:color-slate-500 web:outline-none',
+            'flex-1 h-full default:color-primary placeholder:color-gray-500 web:outline-none',
             props.editable === false && 'opacity-50 web:cursor-not-allowed',
             className,
           )}

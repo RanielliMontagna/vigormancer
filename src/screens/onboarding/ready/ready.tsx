@@ -4,10 +4,14 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import FinishImage from '@/assets/images/onboarding-finish.jpg'
 
 import { Button, H2, P, Text } from '@/components'
+import { useColorScheme } from '@/hooks'
+
 import { router } from 'expo-router'
 import Toast from 'react-native-toast-message'
 
 export function Ready() {
+  const { isDarkColorScheme } = useColorScheme()
+
   return (
     <View className="flex flex-col h-full bg-background">
       <View className="h-96">
@@ -15,7 +19,7 @@ export function Ready() {
       </View>
       <View className="gap-2 flex-1 justify-center px-8">
         <View className="flex flex-row gap-2 items-center mb-4 justify-center">
-          <FontAwesome6 name="dumbbell" size={24} color="black" />
+          <FontAwesome6 name="dumbbell" size={24} color={isDarkColorScheme ? 'white' : 'black'} />
           <View className="flex flex-row">
             <Text className="font-bold text-2xl">Vigor</Text>
             <Text className="text-2xl">mancer</Text>

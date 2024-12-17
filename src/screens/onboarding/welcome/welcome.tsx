@@ -2,11 +2,14 @@ import { Image, View } from 'react-native'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import WelcomeImage from '@/assets/images/onboarding-welcome.jpg'
+import { useColorScheme } from '@/hooks'
 
 import { Button, H3, Text } from '@/components'
 import { router } from 'expo-router'
 
 export function Welcome() {
+  const { isDarkColorScheme } = useColorScheme()
+
   return (
     <View className="flex flex-col h-full bg-background">
       <View className="h-96">
@@ -16,7 +19,7 @@ export function Welcome() {
         <View className="gap-1">
           <H3 className="text-center">Welcome to</H3>
           <View className="flex flex-row gap-2 items-center mb-4 justify-center">
-            <FontAwesome6 name="dumbbell" size={32} color="black" />
+            <FontAwesome6 name="dumbbell" size={32} color={isDarkColorScheme ? 'white' : 'black'} />
             <View className="flex flex-row">
               <Text className="font-bold text-4xl">Vigor</Text>
               <Text className="text-4xl">mancer</Text>

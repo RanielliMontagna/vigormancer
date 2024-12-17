@@ -1,14 +1,13 @@
-import { router } from 'expo-router'
 import { TouchableOpacity, View } from 'react-native'
 import colors from 'tailwindcss/colors'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 import { GoalEnum } from '../onboarding.schema'
-
-import { Button, H2, P, Text } from '@/components'
-import { cn } from '@/utils'
 import { useGoal } from './useGoal'
+
+import { BackButton, Button, H2, P, Text } from '@/components'
+import { cn } from '@/utils'
 
 interface GoalCheckboxProps {
   goal: GoalEnum
@@ -21,7 +20,7 @@ function GoalCheckbox({ goal, selectedGoal, setGoal }: GoalCheckboxProps) {
     <TouchableOpacity
       className={cn(
         'border border-stone-400 rounded-xl p-4 flex-row justify-between transition-all',
-        selectedGoal === goal && 'border border-gray-800',
+        selectedGoal === goal && 'border border-green-500',
       )}
       onPress={() => setGoal(goal)}
     >
@@ -42,19 +41,12 @@ function GoalCheckbox({ goal, selectedGoal, setGoal }: GoalCheckboxProps) {
 }
 
 export function Goal() {
-  const { goals, selectedGoal, prevStep, setGoal, handleSubmitOnboarding } = useGoal()
+  const { goals, selectedGoal, setGoal, handleSubmitOnboarding } = useGoal()
 
   return (
     <View className="flex flex-col h-full p-8 gap-4 bg-background">
       <View className="flex flex-col flex-1 gap-4">
-        <View>
-          <TouchableOpacity
-            onPress={prevStep}
-            className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px]"
-          >
-            <FontAwesome6 name="angle-left" size={24} color="black" />
-          </TouchableOpacity>
-        </View>
+        <BackButton />
         <View>
           <H2>What's Your Fitness Goal?</H2>
           <P className="text-muted-foreground">

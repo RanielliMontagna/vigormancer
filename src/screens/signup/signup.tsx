@@ -1,21 +1,27 @@
-import { SafeAreaView, TouchableOpacity, View } from 'react-native'
+import { TouchableOpacity, View } from 'react-native'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 import { useSignup } from './useSignup'
 import { Button, Form, H2, P, Text, TextField } from '@/components'
+import { useColorScheme } from '@/hooks'
 
 export function SignUp() {
   const { methods, handleBack, handleGoogleSignup, handleSignup } = useSignup()
+  const { isDarkColorScheme } = useColorScheme()
 
   return (
     <Form {...methods}>
-      <SafeAreaView className="flex flex-1 p-4 bg-background gap-6">
+      <View className="flex flex-1 p-4 bg-background gap-6">
         <View>
           <TouchableOpacity
             onPress={handleBack}
             className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px]"
           >
-            <FontAwesome6 name="angle-left" size={24} color="black" />
+            <FontAwesome6
+              name="angle-left"
+              size={24}
+              color={isDarkColorScheme ? 'white' : 'black'}
+            />
           </TouchableOpacity>
         </View>
         <View className="flex flex-row gap-2 items-center mb-4">
@@ -87,7 +93,9 @@ export function SignUp() {
           <Button
             size="lg"
             variant="outline"
-            startIcon={<FontAwesome6 name="google" size={16} />}
+            startIcon={
+              <FontAwesome6 name="google" size={16} color={isDarkColorScheme ? 'white' : 'black'} />
+            }
             onPress={handleGoogleSignup}
           >
             <Text>Signup with Google</Text>
@@ -101,7 +109,7 @@ export function SignUp() {
             </Text>
           </TouchableOpacity>
         </View>
-      </SafeAreaView>
+      </View>
     </Form>
   )
 }

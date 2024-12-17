@@ -5,15 +5,15 @@ import colors from 'tailwindcss/colors'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { useOnboardingContext } from '../onboarding.context'
 import { OnboardingSchema, SexEnum } from '../onboarding.schema'
 
-import { Button, H2, P, Text } from '@/components'
+import { BackButton, Button, H2, P, Text } from '@/components'
 import { cn } from '@/utils'
+import { useColorScheme } from '@/hooks'
 
 export function Sex() {
-  const { prevStep } = useOnboardingContext()
   const { watch, setValue } = useFormContext<OnboardingSchema>()
+  const { isDarkColorScheme } = useColorScheme()
 
   const selectedSex = watch('sex')
 
@@ -21,17 +21,15 @@ export function Sex() {
     setValue('sex', sex)
   }
 
+  const genderOptions = [
+    { enum: SexEnum.Male, icon: 'mars' },
+    { enum: SexEnum.Female, icon: 'venus' },
+  ]
+
   return (
     <View className="flex flex-col h-full p-8 gap-4 bg-background">
       <View className="flex flex-col flex-1 gap-4">
-        <View>
-          <TouchableOpacity
-            onPress={prevStep}
-            className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px]"
-          >
-            <FontAwesome6 name="angle-left" size={24} color="black" />
-          </TouchableOpacity>
-        </View>
+        <BackButton />
         <View>
           <H2>Let’s Get to Know You</H2>
           <P className="text-muted-foreground">
@@ -39,45 +37,30 @@ export function Sex() {
           </P>
         </View>
         <View className="gap-4">
-          <TouchableOpacity
-            className={cn(
-              'border border-stone-400 rounded-xl p-4 flex-row justify-between transition-all',
-              selectedSex === SexEnum.Male && 'border-gray-800',
-            )}
-            onPress={() => handleSelectSex(SexEnum.Male)}
-          >
-            <View className="flex flex-row gap-4 h-8 items-center">
-              <FontAwesome6 name="mars" size={24} />
-              <Text className={cn(selectedSex === SexEnum.Male && 'font-bold')}>Male</Text>
-            </View>
+          {genderOptions.map(({ enum: genderEnum, icon }) => (
+            <TouchableOpacity
+              key={genderEnum}
+              className={cn(
+                'border border-stone-400 rounded-xl p-4 flex-row justify-between transition-all',
+              )}
+              onPress={() => handleSelectSex(genderEnum)}
+            >
+              <View className="flex flex-row gap-4 h-8 items-center">
+                <FontAwesome6 name={icon} size={24} color={isDarkColorScheme ? 'white' : 'black'} />
+                <Text className={cn(selectedSex === genderEnum && 'font-bold')}>
+                  {SexEnum[genderEnum]}
+                </Text>
+              </View>
 
-            <View className={cn('w-8 h-8 rounded-xl justify-center items-center transition-all')}>
-              {selectedSex === SexEnum.Male ? (
-                <FontAwesome6 name="check-circle" size={20} color={colors.green[500]} />
-              ) : (
-                <FontAwesome6 name="circle" size={20} color={colors.stone[400]} />
-              )}
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            className={cn(
-              'border border-stone-400 rounded-xl p-4 flex-row justify-between transition-all',
-              selectedSex === SexEnum.Female && 'border-gray-800',
-            )}
-            onPress={() => handleSelectSex(SexEnum.Female)}
-          >
-            <View className="flex flex-row gap-4 h-8 items-center">
-              <FontAwesome6 name="venus" size={24} />
-              <Text className={cn(selectedSex === SexEnum.Female && 'font-bold')}>Female</Text>
-            </View>
-            <View className={cn('w-8 h-8 rounded-xl justify-center items-center transition-all')}>
-              {selectedSex === SexEnum.Female ? (
-                <FontAwesome6 name="check-circle" size={20} color={colors.green[500]} />
-              ) : (
-                <FontAwesome6 name="circle" size={20} color={colors.stone[400]} />
-              )}
-            </View>
-          </TouchableOpacity>
+              <View className={cn('w-8 h-8 rounded-xl justify-center items-center transition-all')}>
+                {selectedSex === genderEnum ? (
+                  <FontAwesome6 name="check-circle" size={20} color={colors.green[500]} />
+                ) : (
+                  <FontAwesome6 name="circle" size={20} color={colors.stone[400]} />
+                )}
+              </View>
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
       <View>
