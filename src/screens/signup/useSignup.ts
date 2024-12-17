@@ -13,22 +13,22 @@ export function useSignup() {
     .object({
       username: z
         .string()
-        .min(3, t('signup.usernameMinLength', { min: 3 }))
-        .max(50, t('signup.usernameMaxLength', { max: 50 })),
-      email: z.string().min(1, t('signup.requiredEmail')).email(t('signup.invalidEmail')),
+        .min(3, t('validation.minLength', { min: 3 }))
+        .max(50, t('validation.maxLength', { max: 50 })),
+      email: z.string().min(1, t('validation.required')).email(t('validation.invalidEmail')),
       password: z
         .string()
-        .min(8, t('signup.passwordMinLength', { min: 8 }))
-        .max(50, t('signup.passwordMaxLength', { max: 50 }))
-        .regex(/[a-z]/, t('signup.passwordLowercase'))
-        .regex(/[A-Z]/, t('signup.passwordUppercase'))
-        .regex(/[0-9]/, t('signup.passwordNumber')),
-      confirmPassword: z.string().min(1, t('signup.requiredConfirmPassword')),
+        .min(8, t('validation.minLength', { min: 8 }))
+        .max(50, t('validation.maxLength', { max: 50 }))
+        .regex(/[a-z]/, t('validation.lowercase'))
+        .regex(/[A-Z]/, t('validation.uppercase'))
+        .regex(/[0-9]/, t('validation.number')),
+      confirmPassword: z.string().min(1, t('validation.required')),
       showPassword: z.boolean().optional(),
       showConfirmPassword: z.boolean().optional(),
     })
     .refine((data) => data.password === data.confirmPassword, {
-      message: t('signup.passwordMatch'),
+      message: t('validation.passwordMatch'),
       path: ['confirmPassword'],
     })
 

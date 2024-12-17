@@ -1,12 +1,23 @@
+import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import Toast from 'react-native-toast-message'
+import { useTranslation } from 'react-i18next'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { otpVerificationSchema, OtpVerificationSchema } from './otpVerification.schema'
 import { useForgotPasswordContext } from '../forgotPassword.context'
 
 export function useOtpVerification() {
+  const { t } = useTranslation()
   const { email, nextStep } = useForgotPasswordContext()
+
+  const otpVerificationSchema = z.object({
+    otp: z
+      .string()
+      .min(4, t('validation.requiredCode', { length: 4 }))
+      .max(4, t('validation.requiredCode', { length: 4 })),
+  })
+
+  type OtpVerificationSchema = z.infer<typeof otpVerificationSchema>
 
   const methods = useForm<OtpVerificationSchema>({
     resolver: zodResolver(otpVerificationSchema),

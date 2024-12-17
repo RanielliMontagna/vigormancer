@@ -1,4 +1,5 @@
 import { TouchableOpacity, View } from 'react-native'
+import { useTranslation } from 'react-i18next'
 
 import { BackButton, Button, Form, H2, P, Text, TextField } from '@/components'
 
@@ -6,6 +7,8 @@ import { useOtpVerification } from './useOtpVerification'
 import { useForgotPasswordContext } from '../forgotPassword.context'
 
 export function OtpVerification() {
+  const { t } = useTranslation()
+
   const { prevStep } = useForgotPasswordContext()
   const { methods, handleOtpVerification, handleResendCode } = useOtpVerification()
 
@@ -14,16 +17,14 @@ export function OtpVerification() {
       <View className="flex flex-1 justify-center p-4 bg-background gap-6">
         <BackButton onPress={prevStep} />
         <View>
-          <H2>OTP Verification</H2>
-          <P className="text-muted-foreground">
-            Enter the verification code we just sent on your email address.
-          </P>
+          <H2>{t('forgotPassword.otpVerification.title')}</H2>
+          <P className="text-muted-foreground">{t('forgotPassword.otpVerification.subtitle')}</P>
         </View>
         <View className="gap-4">
           <TextField
             control={methods.control}
             name="otp"
-            placeholder="Enter your OTP"
+            placeholder={t('forgotPassword.otpVerification.codePlaceholder')}
             size="lg"
             type="number"
             keyboardType="numeric"
@@ -33,13 +34,13 @@ export function OtpVerification() {
         </View>
         <View className="gap-4">
           <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleOtpVerification)}>
-            <Text>Verify</Text>
+            <Text>{t('forgotPassword.otpVerification.submit')}</Text>
           </Button>
           <View className="pb-8 justify-center items-center flex flex-row gap-1">
-            <Text>Didn’t received code?</Text>
+            <Text>{t('forgotPassword.otpVerification.didntReceivedCode')}</Text>
             <TouchableOpacity>
               <Text className="font-bold" onPress={handleResendCode}>
-                Resend code
+                {t('forgotPassword.otpVerification.resendCode')}
               </Text>
             </TouchableOpacity>
           </View>

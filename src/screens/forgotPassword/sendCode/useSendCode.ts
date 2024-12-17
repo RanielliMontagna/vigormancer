@@ -1,12 +1,21 @@
+import { z } from 'zod'
 import { router } from 'expo-router'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useTranslation } from 'react-i18next'
 
-import { sendCodeSchema, SendCodeSchema } from './sendCode.schema'
 import { useForgotPasswordContext } from '../forgotPassword.context'
 import Toast from 'react-native-toast-message'
 
 export function useSendCode() {
+  const { t } = useTranslation()
+
+  const sendCodeSchema = z.object({
+    email: z.string().min(1, t('validation.required')).email(t('validation.invalidEmail')),
+  })
+
+  type SendCodeSchema = z.infer<typeof sendCodeSchema>
+
   const { email, nextStep, handleSaveEmail } = useForgotPasswordContext()
 
   const methods = useForm<SendCodeSchema>({

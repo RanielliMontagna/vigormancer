@@ -9,8 +9,8 @@ export function useLogin() {
   const { t } = useTranslation()
 
   const loginSchema = z.object({
-    email: z.string().min(1, t('login.requiredEmail')).email(t('login.invalidEmail')),
-    password: z.string().min(1, t('login.requiredPassword')),
+    email: z.string().min(1, t('validation.required')).email(t('validation.invalidEmail')),
+    password: z.string().min(1, t('validation.required')),
     showPassword: z.boolean().default(false),
   })
 

@@ -37,5 +37,49 @@
     "passwordUppercase": "A senha deve conter pelo menos uma letra maiúscula",
     "requiredConfirmPassword": "Por favor, confirme sua senha",
     "passwordMatch": "As senhas não coincidem"
+  },
+  "forgotPassword": {
+    "sendCode": {
+      "title": "Esqueceu a Senha?",
+      "subtitle": "Não se preocupe! Isso acontece. Por favor, insira o endereço de e-mail vinculado à sua conta.",
+      "emailPlaceholder": "Digite seu email",
+      "emailRequired": "Email é obrigatório",
+      "emailInvalid": "Por favor, insira um email válido",
+      "submit": "Enviar Código",
+      "rememberPassword": "Lembrou sua senha?",
+      "login": "Entrar"
+    },
+    "otpVerification": {
+      "title": "Verificação de OTP",
+      "subtitle": "Por favor, insira o código de verificação enviado para o seu email.",
+      "codePlaceholder": "Digite o código",
+      "submit": "Verificar",
+      "didntReceivedCode": "Não recebeu o código?",
+      "resendCode": "Reenviar Código",
+      "requiredCode": "Por favor, insira o código de {{length}} dígitos"
+    },
+    "resetPassword": {
+      "title": "Criar Nova Senha",
+      "subtitle": "Por favor, insira sua nova senha.",
+      "passwordPlaceholder": "Digite sua nova senha",
+      "confirmPasswordPlaceholder": "Confirme sua nova senha",
+      "submit": "Redefinir Senha"
+    },
+    "passwordChanged": {
+      "title": "Senha Alterada!",
+      "subtitle": "Sua senha foi alterada com sucesso.",
+      "submit": "Voltar para o login"
+    }
+  },
+  "validation": {
+    "required": "Campo obrigatório",
+    "invalidEmail": "Por favor, insira um email válido",
+    "minLength": "Deve ter pelo menos {{min}} caracteres",
+    "maxLength": "Deve ter no máximo {{max}} caracteres",
+    "number": "Deve conter pelo menos um número",
+    "lowercase": "Deve conter pelo menos uma letra minúscula",
+    "uppercase": "Deve conter pelo menos uma letra maiúscula",
+    "passwordMatch": "As senhas não coincidem",
+    "requiredCode": "Por favor, insira o código de {{length}} dígitos"
   }
 }
