@@ -30,7 +30,9 @@ export function SignUp() {
         <View className="flex flex-row gap-2 items-center mb-4">
           <FontAwesome6 name="dumbbell" size={24} color="black" />
           <View className="flex flex-row">
-            <Text className="font-bold text-3xl">Vigor</Text>
+            <Text bold className="text-3xl">
+              Vigor
+            </Text>
             <Text className="text-3xl">mancer</Text>
           </View>
         </View>
@@ -114,10 +116,10 @@ export function SignUp() {
             <Text>{t('signup.googleSignup')}</Text>
           </Button>
         </View>
-        <View className="pb-8 justify-center items-center flex flex-row gap-1">
+        <View className="pb-8 justify-center items-center flex flex-row ">
           <Text>{t('signup.alreadyHaveAccount')} </Text>
           <TouchableOpacity>
-            <Text className="font-bold" onPress={handleBack}>
+            <Text bold onPress={handleBack}>
               {t('signup.login')}
             </Text>
           </TouchableOpacity>

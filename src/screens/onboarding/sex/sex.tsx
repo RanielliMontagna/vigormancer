@@ -48,7 +48,7 @@ export function Sex() {
             >
               <View className="flex flex-row gap-4 h-8 items-center">
                 <FontAwesome6 name={icon} size={24} color={isDarkColorScheme ? 'white' : 'black'} />
-                <Text className={cn(selectedSex === genderEnum && 'font-bold')}>
+                <Text bold={selectedSex === genderEnum}>
                   {t(`onboarding.sex.${SexEnum[genderEnum].toLowerCase()}`)}
                 </Text>
               </View>

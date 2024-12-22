@@ -28,7 +28,7 @@ function GoalCheckbox({ goal, selectedGoal, setGoal, t }: GoalCheckboxProps) {
       onPress={() => setGoal(goal)}
     >
       <View className="flex-row items-center">
-        <Text className={cn(selectedGoal === goal && 'font-bold')}>
+        <Text bold={selectedGoal === goal}>
           {t(`onboarding.goal.${GoalEnum[goal].toLowerCase()}`)}
         </Text>
       </View>
