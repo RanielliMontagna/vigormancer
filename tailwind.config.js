@@ -7,6 +7,12 @@ module.exports = {
   presets: [require('nativewind/preset')],
   theme: {
     extend: {
+      fontFamily: {
+        'lexend-thin': ['Lexend-Thin', 'sans-serif'],
+        'lexend-regular': ['Lexend-Regular', 'sans-serif'],
+        'lexend-medium': ['Lexend-Medium', 'sans-serif'],
+        'lexend-bold': ['Lexend-Bold', 'sans-serif'],
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

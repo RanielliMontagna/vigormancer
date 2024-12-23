@@ -11,7 +11,7 @@
       "output": "static",
       "bundler": "metro"
     },
-    "plugins": [["expo-router"], "expo-localization"],
+    "plugins": [["expo-router"], "expo-localization", "expo-font"],
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash-icon.png",

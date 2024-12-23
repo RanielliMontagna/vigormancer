@@ -152,7 +152,7 @@ const FormMessage = React.forwardRef<TextRef, SlottableTextProps>(
         ref={ref}
         id={formMessageId}
         className={cn(
-          'mt-1 text-[0.8rem] font-medium',
+          'mt-1 text-[0.8rem] font-lexend-medium',
           error ? 'text-destructive' : 'text-muted-foreground',
           className,
         )}

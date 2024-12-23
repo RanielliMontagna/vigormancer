@@ -35,7 +35,7 @@ export function SendCode() {
           <View className="pb-8 justify-center items-center flex flex-row gap-1">
             <Text>{t('forgotPassword.sendCode.rememberPassword')}</Text>
             <TouchableOpacity>
-              <Text className="font-bold" onPress={handleBack}>
+              <Text bold onPress={handleBack}>
                 {t('forgotPassword.sendCode.login')}
               </Text>
             </TouchableOpacity>

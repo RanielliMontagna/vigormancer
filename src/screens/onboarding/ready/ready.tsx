@@ -23,7 +23,9 @@ export function Ready() {
         <View className="flex flex-row gap-2 items-center mb-4 justify-center">
           <FontAwesome6 name="dumbbell" size={24} color={isDarkColorScheme ? 'white' : 'black'} />
           <View className="flex flex-row">
-            <Text className="font-bold text-2xl">Vigor</Text>
+            <Text bold className="text-2xl">
+              Vigor
+            </Text>
             <Text className="text-2xl">mancer</Text>
           </View>
         </View>

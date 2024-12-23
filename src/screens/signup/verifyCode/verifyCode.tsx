@@ -19,7 +19,9 @@ export function VerifyCode() {
         <View className="flex flex-row gap-2 items-center mb-4">
           <FontAwesome6 name="dumbbell" size={24} color={isDarkColorScheme ? 'white' : 'black'} />
           <View className="flex flex-row">
-            <Text className="font-bold text-3xl">Vigor</Text>
+            <Text bold className="text-3xl">
+              Vigor
+            </Text>
             <Text className="text-3xl">mancer</Text>
           </View>
         </View>

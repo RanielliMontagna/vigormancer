@@ -39,7 +39,7 @@ export function OtpVerification() {
           <View className="pb-8 justify-center items-center flex flex-row gap-1">
             <Text>{t('forgotPassword.otpVerification.didntReceivedCode')}</Text>
             <TouchableOpacity>
-              <Text className="font-bold" onPress={handleResendCode}>
+              <Text bold onPress={handleResendCode}>
                 {t('forgotPassword.otpVerification.resendCode')}
               </Text>
             </TouchableOpacity>
