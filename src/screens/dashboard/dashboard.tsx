@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { useUser } from '@clerk/clerk-expo'
 
-import { Button, H2, P } from '@/components'
-import { capitalize } from '@/utils'
+import { Avatar, AvatarFallback, AvatarImage, Button, H3, P, Text } from '@/components'
+import { capitalize, getInitials } from '@/utils'
 import { DashboardCards } from './cards/cards'
 
 export function Dashboard() {
@@ -15,9 +15,17 @@ export function Dashboard() {
   return (
     <View className="flex flex-col h-full p-8 gap-8">
       <View className="flex flex-row justify-between items-center">
-        <View>
-          <H2>{t('dashboard.title', { name: capitalize(user.username) })}</H2>
-          <P>{t('dashboard.subtitle')}</P>
+        <View className="flex flex-row gap-2 items-center">
+          <Avatar alt={`${user?.username}'s avatar`}>
+            <AvatarImage source={{ uri: user?.imageUrl }} />
+            <AvatarFallback>
+              <Text>{getInitials(user?.username)}</Text>
+            </AvatarFallback>
+          </Avatar>
+          <View>
+            <H3>{t('dashboard.title', { name: capitalize(user?.username || '') })}</H3>
+            <P className="text-muted-foreground mt-[-4px]">{t('dashboard.subtitle')}</P>
+          </View>
         </View>
         <View>
           <Button variant="ghost" size="icon">

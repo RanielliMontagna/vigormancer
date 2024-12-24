@@ -1,13 +1,34 @@
-import { z } from 'zod'
-import { router } from 'expo-router'
-import { useForm } from 'react-hook-form'
-import { useSignIn } from '@clerk/clerk-expo'
+import { useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { router } from 'expo-router'
+
+import { useOAuth, useSignIn } from '@clerk/clerk-expo'
+import * as WebBrowser from 'expo-web-browser'
+import * as Linking from 'expo-linking'
+
+import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useCallback } from 'react'
+import { z } from 'zod'
+
 import { useAppStore } from '@/store'
 
+export const useWarmUpBrowser = () => {
+  useEffect(() => {
+    // Warm up the android browser to improve UX
+    // https://docs.expo.dev/guides/authentication/#improving-user-experience
+    void WebBrowser.warmUpAsync()
+    return () => {
+      void WebBrowser.coolDownAsync()
+    }
+  }, [])
+}
+
+WebBrowser.maybeCompleteAuthSession()
+
 export function useLogin() {
+  useWarmUpBrowser()
+  const { startOAuthFlow } = useOAuth({ strategy: 'oauth_google' })
+
   const { signIn, setActive, isLoaded } = useSignIn()
   const { setIsLoading } = useAppStore()
   const { t } = useTranslation()
@@ -22,11 +43,7 @@ export function useLogin() {
 
   const methods = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-      showPassword: false,
-    },
+    defaultValues: { email: '', password: '', showPassword: false },
   })
 
   function handleGoToSignup() {
@@ -72,7 +89,31 @@ export function useLogin() {
   )
 
   async function handleGoogleLogin() {
-    //TODO: handle google login logic here
+    try {
+      setIsLoading(true)
+
+      const { createdSessionId, authSessionResult, setActive } = await startOAuthFlow({
+        redirectUrl: Linking.createURL('/', { scheme: 'vigormancer' }),
+      })
+
+      // If sign in was successful, set the active session
+      if (createdSessionId) {
+        setActive!({ session: createdSessionId })
+
+        console.log(authSessionResult)
+      } else {
+        console.log(authSessionResult, 'authSessionResult')
+        console.log(createdSessionId, 'createdSessionId')
+
+        //TODO: Handle sign up flow
+      }
+    } catch (err) {
+      // See https://clerk.com/docs/custom-flows/error-handling
+      // for more info on error handling
+      console.error(JSON.stringify(err, null, 2))
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return { methods, handleGoogleLogin, handleGoToSignup, handleGoToForgotPassword, onSignInPress }

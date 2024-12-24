@@ -4,7 +4,7 @@
     "name": "vigormancer",
     "slug": "vigormancer",
     "version": "1.0.0",
-    "scheme": "acme",
+    "scheme": "vigormancer",
     "userInterfaceStyle": "automatic",
     "orientation": "portrait",
     "web": {
