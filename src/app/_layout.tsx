@@ -1,33 +1,43 @@
 import React, { useEffect, useState } from 'react'
-import * as SplashScreen from 'expo-splash-screen'
-import Toast from 'react-native-toast-message'
+import { router, Slot, SplashScreen } from 'expo-router'
 import { useFonts } from 'expo-font'
-import { Stack } from 'expo-router'
+import Toast from 'react-native-toast-message'
+
+import { ClerkProvider, ClerkLoaded, useAuth } from '@clerk/clerk-expo'
 
 import '@/styles/global.css'
-import initI18n from '@/libs/i18n'
-import { ActivityIndicator, View } from 'react-native'
-import { ClerkLoaded, ClerkProvider } from '@clerk/clerk-expo'
+import { initI18n, i18n } from '@/libs/i18n'
+
 import { tokenCache } from '@/libs/cache/cache'
-import { useAppStore } from '@/store'
 import { LoadingOverlay } from '@/components'
+import { useAppStore } from '@/store'
+import { I18nextProvider } from 'react-i18next'
+
+SplashScreen.preventAutoHideAsync()
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!
 
 if (!publishableKey) {
-  throw new Error(
-    'Missing Publishable Key. Please set EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in your .env',
+  throw new Error('Add EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY to your .env file')
+}
+
+export default function RootLayout() {
+  return (
+    <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
+      <ClerkLoaded>
+        <App />
+      </ClerkLoaded>
+    </ClerkProvider>
   )
 }
 
-SplashScreen.preventAutoHideAsync()
-
-export default function Layout() {
+function App() {
   const { isLoading } = useAppStore()
+  const { isSignedIn, isLoaded } = useAuth()
 
   const [isI18nInitialized, setIsI18nInitialized] = useState(false)
 
-  const [loaded, error] = useFonts({
+  const [fontsLoaded] = useFonts({
     'Lexend-Thin': require('@/assets/fonts/Lexend-Thin.ttf'),
     'Lexend-Regular': require('@/assets/fonts/Lexend-Regular.ttf'),
     'Lexend-Medium': require('@/assets/fonts/Lexend-Medium.ttf'),
@@ -35,10 +45,12 @@ export default function Layout() {
   })
 
   useEffect(() => {
-    if (loaded || error) {
-      SplashScreen.hideAsync()
+    if (fontsLoaded && isI18nInitialized) {
+      setTimeout(() => {
+        SplashScreen.hideAsync()
+      }, 0)
     }
-  }, [loaded, error])
+  }, [fontsLoaded, isI18nInitialized])
 
   useEffect(() => {
     const initializeI18n = async () => {
@@ -49,21 +61,21 @@ export default function Layout() {
     initializeI18n()
   }, [])
 
-  if (!isI18nInitialized || (!loaded && !error)) {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <ActivityIndicator size="large" />
-      </View>
-    )
-  }
+  useEffect(() => {
+    if (!isLoaded) return
+
+    if (isSignedIn) {
+      router.replace('(private)') // Redirect to the authenticated routes
+    } else {
+      router.replace('(public)') // Redirect to the public routes
+    }
+  }, [isLoaded, isSignedIn])
 
   return (
-    <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
-      <ClerkLoaded>
-        <Stack screenOptions={{ headerShown: false }} />
-        <Toast position="bottom" />
-        {isLoading && <LoadingOverlay />}
-      </ClerkLoaded>
-    </ClerkProvider>
+    <I18nextProvider i18n={i18n}>
+      <Slot />
+      <Toast position="bottom" />
+      {isLoading && <LoadingOverlay />}
+    </I18nextProvider>
   )
 }
