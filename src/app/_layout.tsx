@@ -36,6 +36,7 @@ function App() {
   const { isSignedIn, isLoaded } = useAuth()
 
   const [isI18nInitialized, setIsI18nInitialized] = useState(false)
+  const [onboarding, _] = useState(true)
 
   const [fontsLoaded] = useFonts({
     'Lexend-Thin': require('@/assets/fonts/Lexend-Thin.ttf'),
@@ -65,7 +66,11 @@ function App() {
     if (!isLoaded) return
 
     if (isSignedIn) {
-      router.replace('(private)') // Redirect to the authenticated routes
+      if (onboarding) {
+        router.replace('(private)/onboarding')
+      } else {
+        router.replace('(private)')
+      }
     } else {
       router.replace('(public)') // Redirect to the public routes
     }

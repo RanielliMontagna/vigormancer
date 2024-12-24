@@ -6,3 +6,6 @@ export { ForgotPassword } from './forgotPassword/forgotPassword'
 
 // Private Screens
 export { Dashboard } from './dashboard/dashboard'
+export { Workout } from './workout/workout'
+export { Progression } from './progression/progression'
+export { Profile } from './profile/profile'

@@ -42,7 +42,7 @@ export function Ready() {
                 text2: "Your journey has begun. Let's make magic happen!",
               })
 
-              router.dismissAll()
+              router.replace('/')
             }}
           >
             <Text>{t('onboarding.ready.button')}</Text>
