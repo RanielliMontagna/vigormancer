@@ -5,7 +5,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import WelcomeImage from '@/assets/images/onboarding-welcome.jpg'
 import { useColorScheme } from '@/hooks'
 
-import { Button, H3, Text } from '@/components'
+import { Button, Text } from '@/components'
 import { router } from 'expo-router'
 
 export function Welcome() {
@@ -19,9 +19,7 @@ export function Welcome() {
       </View>
       <View className="gap-2 flex-1 justify-center px-8">
         <View className="gap-1">
-          <H3 className="text-center">
-            <Text>{t('onboarding.welcome.title')}</Text>
-          </H3>
+          <Text className="text-center">{t('onboarding.welcome.title')}</Text>
           <View className="flex flex-row gap-2 items-center mb-4 justify-center">
             <FontAwesome6 name="dumbbell" size={32} color={isDarkColorScheme ? 'white' : 'black'} />
             <View className="flex flex-row">

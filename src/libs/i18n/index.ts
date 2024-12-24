@@ -26,4 +26,4 @@ const initI18n = async () => {
   })
 }
 
-export default initI18n
+export { initI18n, i18n }
