@@ -36,7 +36,9 @@ function App() {
   const { isSignedIn, isLoaded } = useAuth()
 
   const [isI18nInitialized, setIsI18nInitialized] = useState(false)
-  const [onboarding, _] = useState(true)
+
+  // TODO: Implement onboarding logic
+  const [onboarding, _] = useState(false)
 
   const [fontsLoaded] = useFonts({
     'Lexend-Thin': require('@/assets/fonts/Lexend-Thin.ttf'),
@@ -74,7 +76,7 @@ function App() {
     } else {
       router.replace('(public)') // Redirect to the public routes
     }
-  }, [isLoaded, isSignedIn])
+  }, [isLoaded, isSignedIn, onboarding])
 
   return (
     <I18nextProvider i18n={i18n}>
