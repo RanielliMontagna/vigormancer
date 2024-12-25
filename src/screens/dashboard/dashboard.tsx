@@ -7,10 +7,15 @@ import { useUser } from '@clerk/clerk-expo'
 import { Avatar, AvatarFallback, AvatarImage, Button, H3, P, Text } from '@/components'
 import { capitalize, getInitials } from '@/utils'
 import { DashboardCards } from './cards/cards'
+import { router } from 'expo-router'
 
 export function Dashboard() {
   const { user } = useUser()
   const { t } = useTranslation()
+
+  function handleGoToNotifications() {
+    router.push('notifications')
+  }
 
   return (
     <View className="flex flex-col h-full p-8 gap-8">
@@ -28,7 +33,7 @@ export function Dashboard() {
           </View>
         </View>
         <View>
-          <Button variant="ghost" size="icon">
+          <Button variant="ghost" size="icon" onPress={handleGoToNotifications}>
             <FontAwesome6 name="bell" size={24} />
           </Button>
         </View>

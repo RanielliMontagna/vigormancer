@@ -128,5 +128,9 @@
     "streak_one": "day streak",
     "streak_other": "days streak",
     "since_last_week": "since last week"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Feel the energy: progress notifications at your fingertips."
   }
 }

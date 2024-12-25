@@ -129,5 +129,9 @@
     "streak_one": "dia de ofensiva",
     "streak_other": "dias de ofensiva",
     "since_last_week": "desde a semana passada"
+  },
+  "notifications": {
+    "title": "Notificações",
+    "subtitle": "Sinta a energia: notificações de progresso ao seu alcance."
   }
 }
