@@ -120,5 +120,17 @@
     "lowercase": "Must contain at least one lowercase letter",
     "uppercase": "Must contain at least one uppercase letter",
     "passwordMatch": "Passwords do not match"
+  },
+  "dashboard": {
+    "title": "Hi, {{name}}!",
+    "subtitle": "Every workout, a step toward power.",
+    "streak_zero": "No streak, but the fire waits to be lit!",
+    "streak_one": "day streak",
+    "streak_other": "days streak",
+    "since_last_week": "since last week"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Feel the energy: progress notifications at your fingertips."
   }
 }

@@ -121,5 +121,17 @@
     "uppercase": "Deve conter pelo menos uma letra maiúscula",
     "passwordMatch": "As senhas não coincidem",
     "requiredCode": "Por favor, insira o código de {{length}} dígitos"
+  },
+  "dashboard": {
+    "title": "Oi, {{name}}!",
+    "subtitle": "Cada treino, um passo em direção ao poder.",
+    "streak_zero": "Sem sequência, mas o fogo espera para ser aceso!",
+    "streak_one": "dia de ofensiva",
+    "streak_other": "dias de ofensiva",
+    "since_last_week": "desde a semana passada"
+  },
+  "notifications": {
+    "title": "Notificações",
+    "subtitle": "Sinta a energia: notificações de progresso ao seu alcance."
   }
 }

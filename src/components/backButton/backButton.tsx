@@ -31,7 +31,7 @@ export function BackButton({ onPress }: BackButtonProps) {
   return (
     <TouchableOpacity
       onPress={handlePress}
-      className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px]"
+      className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px] bg-background"
     >
       <FontAwesome6 name="angle-left" size={24} color={isDarkColorScheme ? 'white' : 'black'} />
     </TouchableOpacity>
