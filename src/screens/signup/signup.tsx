@@ -1,10 +1,13 @@
 import { useTranslation } from 'react-i18next'
 import { TouchableOpacity, View } from 'react-native'
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { useSignup } from './useSignup'
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
+import colors from 'tailwindcss/colors'
+
 import { Button, Form, H2, P, Text, TextField } from '@/components'
 import { useColorScheme } from '@/hooks'
+
+import { useSignup } from './useSignup'
 
 export function SignUp() {
   const { t } = useTranslation()
@@ -23,7 +26,7 @@ export function SignUp() {
             <FontAwesome6
               name="angle-left"
               size={24}
-              color={isDarkColorScheme ? 'white' : 'black'}
+              color={isDarkColorScheme ? colors.white : colors.black}
             />
           </TouchableOpacity>
         </View>
@@ -109,7 +112,11 @@ export function SignUp() {
             size="lg"
             variant="outline"
             startIcon={
-              <FontAwesome6 name="google" size={16} color={isDarkColorScheme ? 'white' : 'black'} />
+              <FontAwesome6
+                name="google"
+                size={16}
+                color={isDarkColorScheme ? colors.white : colors.black}
+              />
             }
             onPress={handleGoogleSignup}
           >

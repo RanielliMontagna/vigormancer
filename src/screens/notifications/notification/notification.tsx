@@ -59,12 +59,12 @@ export function Notification({ type, title, description, viewed }: NotificationP
           </View>
         )
     }
-  }, [])
+  }, [type])
 
   return (
     <View
       className={cn(
-        'flex flex-row bg-background p-3 rounded-full gap-2 elevation-sm',
+        'flex flex-row bg-card p-3 rounded-full gap-2 elevation-sm  items-center',
         viewed ? 'opacity-90' : 'opacity-100',
       )}
     >

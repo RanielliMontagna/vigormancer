@@ -1,10 +1,13 @@
 import { View } from 'react-native'
 import { useTranslation } from 'react-i18next'
+
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
+import colors from 'tailwindcss/colors'
 
 import { BackButton, Button, Form, H2, P, Text, TextField } from '@/components'
-import { useVerifyCode } from './useVerifyCode'
 import { useColorScheme } from '@/hooks'
+
+import { useVerifyCode } from './useVerifyCode'
 
 export function VerifyCode() {
   const { t } = useTranslation()
@@ -17,7 +20,11 @@ export function VerifyCode() {
       <View className="flex flex-1 p-4 bg-background gap-6">
         <BackButton />
         <View className="flex flex-row gap-2 items-center mb-4">
-          <FontAwesome6 name="dumbbell" size={24} color={isDarkColorScheme ? 'white' : 'black'} />
+          <FontAwesome6
+            name="dumbbell"
+            size={24}
+            color={isDarkColorScheme ? colors.white : colors.black}
+          />
           <View className="flex flex-row">
             <Text bold className="text-3xl">
               Vigor

@@ -1,10 +1,13 @@
 import { TouchableOpacity, View } from 'react-native'
 import { useTranslation } from 'react-i18next'
-import { useLogin } from './useLogin'
+
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
+import colors from 'tailwindcss/colors'
 
 import { Button, Form, H2, P, Text, TextField } from '@/components'
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { useColorScheme } from '@/hooks'
+
+import { useLogin } from './useLogin'
 
 export function Login() {
   const { t } = useTranslation()
@@ -16,7 +19,11 @@ export function Login() {
     <Form {...methods}>
       <View className="flex flex-1 justify-center p-4 bg-background gap-6">
         <View className="flex flex-row gap-2 items-center mb-4">
-          <FontAwesome6 name="dumbbell" size={24} color={isDarkColorScheme ? 'white' : 'black'} />
+          <FontAwesome6
+            name="dumbbell"
+            size={24}
+            color={isDarkColorScheme ? colors.white : colors.black}
+          />
           <View className="flex flex-row">
             <Text bold className="text-3xl">
               Vigor
@@ -75,7 +82,11 @@ export function Login() {
             size="lg"
             variant="outline"
             startIcon={
-              <FontAwesome6 name="google" size={16} color={isDarkColorScheme ? 'white' : 'black'} />
+              <FontAwesome6
+                name="google"
+                size={16}
+                color={isDarkColorScheme ? colors.white : colors.black}
+              />
             }
             onPress={handleGoogleLogin}
           >

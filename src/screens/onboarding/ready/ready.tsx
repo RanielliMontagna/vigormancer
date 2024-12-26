@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next'
+import Toast from 'react-native-toast-message'
 import { Image, View } from 'react-native'
+import { router } from 'expo-router'
+import colors from 'tailwindcss/colors'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import FinishImage from '@/assets/images/onboarding-finish.jpg'
 
 import { Button, H2, P, Text } from '@/components'
 import { useColorScheme } from '@/hooks'
-
-import { router } from 'expo-router'
-import Toast from 'react-native-toast-message'
 
 export function Ready() {
   const { t } = useTranslation()
@@ -21,7 +21,11 @@ export function Ready() {
       </View>
       <View className="gap-2 flex-1 justify-center px-8">
         <View className="flex flex-row gap-2 items-center mb-4 justify-center">
-          <FontAwesome6 name="dumbbell" size={24} color={isDarkColorScheme ? 'white' : 'black'} />
+          <FontAwesome6
+            name="dumbbell"
+            size={24}
+            color={isDarkColorScheme ? colors.white : colors.black}
+          />
           <View className="flex flex-row">
             <Text bold className="text-2xl">
               Vigor

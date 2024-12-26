@@ -13,7 +13,7 @@ export function WheelPicker({ data, ...rest }: WheelPickerProps) {
     <WheelPickerComponent
       data={data}
       elementTextStyle={{
-        color: isDarkColorScheme ? 'white' : 'black',
+        color: isDarkColorScheme ? colors.white : colors.black,
       }}
       selectedLayoutStyle={{
         backgroundColor: isDarkColorScheme ? colors.zinc[800] : colors.zinc[200],
