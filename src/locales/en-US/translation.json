@@ -132,5 +132,11 @@
   "notifications": {
     "title": "Notifications",
     "subtitle": "Feel the energy: progress notifications at your fingertips."
+  },
+  "profile": {
+    "title": "My Profile",
+    "subtitle": "Your journey, your power, your story.",
+    "weight": "Weight",
+    "height": "Height"
   }
 }

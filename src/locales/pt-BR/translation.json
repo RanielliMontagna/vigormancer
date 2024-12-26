@@ -133,5 +133,11 @@
   "notifications": {
     "title": "Notificações",
     "subtitle": "Sinta a energia: notificações de progresso ao seu alcance."
+  },
+  "profile": {
+    "title": "Perfil",
+    "subtitle": "Sua jornada, seu poder, sua história.",
+    "weight": "Peso",
+    "height": "Altura"
   }
 }
