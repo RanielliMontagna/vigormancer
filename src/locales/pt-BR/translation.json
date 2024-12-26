@@ -138,6 +138,21 @@
     "title": "Perfil",
     "subtitle": "Sua jornada, seu poder, sua história.",
     "weight": "Peso",
-    "height": "Altura"
+    "height": "Altura",
+    "general": {
+      "title": "Geral",
+      "profileInformations": "Informações do Perfil",
+      "update": "Atualizar",
+      "changePassword": "Alterar Senha",
+      "change": "Alterar"
+    },
+    "preferences": {
+      "title": "Preferências",
+      "language": "Idioma",
+      "theme": "Tema",
+      "logout": "Sair",
+      "dark": "Escuro",
+      "light": "Claro"
+    }
   }
 }

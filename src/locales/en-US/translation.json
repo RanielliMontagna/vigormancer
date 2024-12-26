@@ -137,6 +137,21 @@
     "title": "My Profile",
     "subtitle": "Your journey, your power, your story.",
     "weight": "Weight",
-    "height": "Height"
+    "height": "Height",
+    "general": {
+      "title": "General",
+      "profileInformations": "Profile Informations",
+      "update": "Update",
+      "changePassword": "Change Password",
+      "change": "Change"
+    },
+    "preferences": {
+      "title": "Preferences",
+      "language": "Language",
+      "theme": "Theme",
+      "logout": "Logout",
+      "dark": "Dark",
+      "light": "Light"
+    }
   }
 }
