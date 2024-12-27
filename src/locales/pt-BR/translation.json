@@ -153,5 +153,11 @@
       "logout": "Sair",
       "dark": "Modo Escuro"
     }
+  },
+  "language": {
+    "title": "Selecione seu idioma",
+    "subtitle": "Personalize sua jornada com seu idioma preferido",
+    "english": "Inglês",
+    "portuguese": "Português"
   }
 }

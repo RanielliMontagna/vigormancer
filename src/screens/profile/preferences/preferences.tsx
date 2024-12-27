@@ -13,13 +13,17 @@ export function Preferences() {
   const { isDarkColorScheme } = useColorScheme()
   const { t } = useTranslation()
 
-  const { colorScheme, languageText, handleLogout, toggleColorScheme } = usePreferences()
+  const { colorScheme, languageText, handleLogout, toggleColorScheme, handleGoToLanguageScreen } =
+    usePreferences()
 
   return (
     <View>
       <Text className="text-sm text-muted-foreground">{t('profile.preferences.title')}</Text>
       <View className="bg-card rounded-2xl p-4 mt-2 elevation-sm">
-        <TouchableOpacity className="flex-row justify-between item-center p-1">
+        <TouchableOpacity
+          className="flex-row justify-between item-center p-1"
+          onPress={handleGoToLanguageScreen}
+        >
           <View className="flex-row items-center gap-2">
             <FontAwesome6
               size={18}

@@ -152,5 +152,11 @@
       "logout": "Logout",
       "dark": "Dark Mode"
     }
+  },
+  "language": {
+    "title": "Select Your Language",
+    "subtitle": "Customize your journey with your preferred language",
+    "english": "English",
+    "portuguese": "Portuguese"
   }
 }

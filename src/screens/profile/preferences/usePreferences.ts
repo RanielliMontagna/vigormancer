@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useColorScheme } from '@/hooks'
 import { useAuth } from '@clerk/clerk-expo'
 import { useAppStore } from '@/store'
+import { router } from 'expo-router'
 
 export function usePreferences() {
   const { colorScheme, toggleColorScheme } = useColorScheme()
@@ -35,10 +36,15 @@ export function usePreferences() {
     }
   }
 
+  function handleGoToLanguageScreen() {
+    router.push('(private)/language')
+  }
+
   return {
     colorScheme,
     languageText,
     handleLogout,
     toggleColorScheme,
+    handleGoToLanguageScreen,
   }
 }
