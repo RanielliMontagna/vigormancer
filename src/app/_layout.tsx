@@ -1,3 +1,4 @@
+import { SafeAreaView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { router, Slot, SplashScreen } from 'expo-router'
 import { useFonts } from 'expo-font'
@@ -80,9 +81,11 @@ function App() {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <Slot />
-      <Toast position="bottom" />
-      {isLoading && <LoadingOverlay />}
+      <SafeAreaView className="flex-1">
+        <Slot />
+        <Toast position="bottom" />
+        {isLoading && <LoadingOverlay />}
+      </SafeAreaView>
     </I18nextProvider>
   )
 }
