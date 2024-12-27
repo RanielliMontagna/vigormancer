@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome5'
 
 import { useColorScheme } from '@/hooks'
-import { Text } from '@/components'
+import { Switch, Text } from '@/components'
 import colors from 'tailwindcss/colors'
 import { cn } from '@/utils'
 import { usePreferences } from './usePreferences'
@@ -13,7 +13,7 @@ export function Preferences() {
   const { isDarkColorScheme } = useColorScheme()
   const { t } = useTranslation()
 
-  const { languageText, themeText, handleLogout } = usePreferences()
+  const { colorScheme, languageText, handleLogout, toggleColorScheme } = usePreferences()
 
   return (
     <View>
@@ -47,9 +47,9 @@ export function Preferences() {
             />
             <Text>{t('profile.preferences.theme')}</Text>
           </View>
-          <View className="flex-row items-center gap-1">
-            <Text className="text-sm text-muted-foreground ">{themeText}</Text>
-            <FontAwesome6 size={10} name="chevron-right" color={colors.gray[500]} />
+          <View className="flex-row items-center gap-2">
+            <Text className="text-sm text-muted-foreground ">{t('profile.preferences.dark')}</Text>
+            <Switch checked={colorScheme === 'dark'} onCheckedChange={() => toggleColorScheme()} />
           </View>
         </TouchableOpacity>
         <View
@@ -64,7 +64,6 @@ export function Preferences() {
             <Text className="color-red-500">{t('profile.preferences.logout')}</Text>
           </View>
           <View className="flex-row items-center gap-1">
-            <Text className="text-sm color-red-500">{}</Text>
             <FontAwesome6 size={10} name="chevron-right" color={colors.red[500]} />
           </View>
         </TouchableOpacity>

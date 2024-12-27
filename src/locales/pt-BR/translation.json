@@ -151,8 +151,7 @@
       "language": "Idioma",
       "theme": "Tema",
       "logout": "Sair",
-      "dark": "Escuro",
-      "light": "Claro"
+      "dark": "Modo Escuro"
     }
   }
 }

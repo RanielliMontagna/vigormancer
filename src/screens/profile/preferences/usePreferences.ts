@@ -3,10 +3,13 @@ import { useTranslation } from 'react-i18next'
 
 import { useColorScheme } from '@/hooks'
 import { useAuth } from '@clerk/clerk-expo'
+import { useAppStore } from '@/store'
 
 export function usePreferences() {
-  const { colorScheme } = useColorScheme()
-  const { t, i18n } = useTranslation()
+  const { colorScheme, toggleColorScheme } = useColorScheme()
+  const { i18n } = useTranslation()
+
+  const { setIsLoading } = useAppStore()
   const { signOut } = useAuth()
 
   const languageText = useMemo(() => {
@@ -20,24 +23,22 @@ export function usePreferences() {
     }
   }, [i18n.language])
 
-  const themeText = useMemo(() => {
-    switch (colorScheme) {
-      case 'dark':
-        return t('profile.preferences.dark')
-      case 'light':
-        return t('profile.preferences.light')
-      default:
-        return colorScheme
-    }
-  }, [colorScheme, t])
+  async function handleLogout() {
+    try {
+      setIsLoading(true)
 
-  function handleLogout() {
-    signOut()
+      await signOut()
+    } catch {
+      //TODO: Handle error properly
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return {
+    colorScheme,
     languageText,
-    themeText,
     handleLogout,
+    toggleColorScheme,
   }
 }

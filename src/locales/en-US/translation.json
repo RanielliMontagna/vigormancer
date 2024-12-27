@@ -150,8 +150,7 @@
       "language": "Language",
       "theme": "Theme",
       "logout": "Logout",
-      "dark": "Dark",
-      "light": "Light"
+      "dark": "Dark Mode"
     }
   }
 }

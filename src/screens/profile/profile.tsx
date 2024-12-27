@@ -10,8 +10,8 @@ export function Profile() {
   const { t } = useTranslation()
 
   return (
-    <ScrollView className="h-screen p-8 bg-background">
-      <View className="gap-4">
+    <ScrollView className="h-screen bg-background">
+      <View className="gap-4 p-8">
         <View className="flex flex-col">
           <H2>{t('profile.title')}</H2>
           <P className="text-muted-foreground text-sm">{t('profile.subtitle')}</P>

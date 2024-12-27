@@ -8,6 +8,7 @@ export * from './ui/input'
 export * from './ui/label'
 export * from './ui/text'
 export * from './ui/typography'
+export * from './ui/switch'
 
 // Custom
 export * from './textField/textField'
