@@ -4,7 +4,7 @@ import { TouchableOpacity, View } from 'react-native'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import colors from 'tailwindcss/colors'
 
-import { Button, Form, H2, P, Text, TextField } from '@/components'
+import { Button, Form, H2, Logo, P, Text, TextField } from '@/components'
 import { useColorScheme } from '@/hooks'
 
 import { useSignup } from './useSignup'
@@ -31,13 +31,7 @@ export function SignUp() {
           </TouchableOpacity>
         </View>
         <View className="flex flex-row gap-2 items-center mb-4">
-          <FontAwesome6 name="dumbbell" size={24} color="black" />
-          <View className="flex flex-row">
-            <Text bold className="text-3xl">
-              Vigor
-            </Text>
-            <Text className="text-3xl">mancer</Text>
-          </View>
+          <Logo orientation="horizontal" />
         </View>
         <View>
           <H2>{t('signup.title')}</H2>

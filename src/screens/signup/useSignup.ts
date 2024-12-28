@@ -18,7 +18,7 @@ export function useSignup() {
     .object({
       username: z
         .string()
-        .min(3, t('validation.minLength', { min: 3 }))
+        .min(4, t('validation.minLength', { min: 4 }))
         .max(50, t('validation.maxLength', { max: 50 })),
       email: z.string().min(1, t('validation.required')).email(t('validation.invalidEmail')),
       password: z

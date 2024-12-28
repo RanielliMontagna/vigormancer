@@ -50,9 +50,7 @@ function App() {
 
   useEffect(() => {
     if (fontsLoaded && isI18nInitialized) {
-      setTimeout(() => {
-        SplashScreen.hideAsync()
-      }, 0)
+      SplashScreen.hideAsync()
     }
   }, [fontsLoaded, isI18nInitialized])
 
