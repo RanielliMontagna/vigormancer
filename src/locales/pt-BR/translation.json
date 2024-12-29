@@ -125,10 +125,13 @@
   "dashboard": {
     "title": "Oi, {{name}}!",
     "subtitle": "Cada treino, um passo em direção ao poder.",
-    "streak_zero": "Sem sequência, mas o fogo espera para ser aceso!",
+    "streak_zero": "dias de ofensiva",
     "streak_one": "dia de ofensiva",
     "streak_other": "dias de ofensiva",
-    "since_last_week": "desde a semana passada"
+    "since_last_week": "desde a semana passada",
+    "streakMessage_zero": "O fogo está para ser aceso! Continue!",
+    "streakMessage_one": "Você está no caminho certo! Continue!",
+    "streakMessage_other": "Você está pegando fogo! Continue!"
   },
   "notifications": {
     "title": "Notificações",

@@ -124,10 +124,13 @@
   "dashboard": {
     "title": "Hi, {{name}}!",
     "subtitle": "Every workout, a step toward power.",
-    "streak_zero": "No streak, but the fire waits to be lit!",
+    "streak_zero": "day streak",
     "streak_one": "day streak",
     "streak_other": "days streak",
-    "since_last_week": "since last week"
+    "since_last_week": "since last week",
+    "streakMessage_zero": "The fire wait for you. Let's go!",
+    "streakMessage_one": "The first step is the hardest. Keep going!",
+    "streakMessage_other": "You're on fire! Keep going!"
   },
   "notifications": {
     "title": "Notifications",

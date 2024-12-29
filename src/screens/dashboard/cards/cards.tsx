@@ -21,8 +21,13 @@ export function DashboardCards() {
               <FontAwesome6 name="fire" size={32} color={colors.red[500]} />
             </View>
             <View>
-              <H2 className="mb-[-4px]">0</H2>
-              <P className="text-sm text-muted-foreground">{t('dashboard.streak', { count: 0 })}</P>
+              <View className="flex-row items-end gap-1">
+                <H2 className="mb-[-4px]">0</H2>
+                <Text className="text-sm p-0 m-0">{t('dashboard.streak', { count: 0 })}</Text>
+              </View>
+              <P className="flex-1 text-sm text-muted-foreground">
+                {t('dashboard.streakMessage', { count: 0 })}
+              </P>
             </View>
           </View>
         </CardContent>
@@ -42,7 +47,9 @@ export function DashboardCards() {
                 <H2 className="mb-[-4px]">72,4</H2>
                 <Text className="text-sm p-0 m-0">kg</Text>
               </View>
-              <P className="text-sm text-green-500">-1,2 kg {t('dashboard.since_last_week')}</P>
+              <P className="flex-1 text-sm text-green-500">
+                -1,2 kg {t('dashboard.since_last_week')}
+              </P>
             </View>
           </View>
         </CardContent>
