@@ -43,8 +43,10 @@ function App() {
 
   const [fontsLoaded] = useFonts({
     'Lexend-Thin': require('@/assets/fonts/Lexend-Thin.ttf'),
+    'Lexend-Light': require('@/assets/fonts/Lexend-Light.ttf'),
     'Lexend-Regular': require('@/assets/fonts/Lexend-Regular.ttf'),
     'Lexend-Medium': require('@/assets/fonts/Lexend-Medium.ttf'),
+    'Lexend-SemiBold': require('@/assets/fonts/Lexend-SemiBold.ttf'),
     'Lexend-Bold': require('@/assets/fonts/Lexend-Bold.ttf'),
   })
 
