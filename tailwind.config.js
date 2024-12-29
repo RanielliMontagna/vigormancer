@@ -9,8 +9,10 @@ module.exports = {
     extend: {
       fontFamily: {
         'lexend-thin': ['Lexend-Thin', 'sans-serif'],
+        'lexend-light': ['Lexend-Light', 'sans-serif'],
         'lexend-regular': ['Lexend-Regular', 'sans-serif'],
         'lexend-medium': ['Lexend-Medium', 'sans-serif'],
+        'lexend-semibold': ['Lexend-SemiBold', 'sans-serif'],
         'lexend-bold': ['Lexend-Bold', 'sans-serif'],
       },
       colors: {

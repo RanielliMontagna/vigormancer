@@ -22,19 +22,21 @@ export function ChangePassword() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 p-4 bg-background gap-6">
+      <View className="flex flex-1 p-8 bg-background gap-6">
         <BackButton />
         <View>
           <H2>{t('changePassword.title')}</H2>
           <P className="text-sm text-muted-foreground">{t('changePassword.subtitle')}</P>
         </View>
-        <View className="gap-4">
+        <View className="gap-4 flex-1">
           <TextField
             control={methods.control}
             name="currentPassword"
+            label={t('changePassword.currentPassword')}
             placeholder={t('changePassword.currentPasswordPlaceholder')}
             type="password"
             size="lg"
+            required
             secureTextEntry={!methods.watch('showCurrentPassword')}
             endAdornment={
               <EyeButton
@@ -48,9 +50,11 @@ export function ChangePassword() {
           <TextField
             control={methods.control}
             name="newPassword"
+            label={t('changePassword.newPassword')}
             placeholder={t('changePassword.newPasswordPlaceholder')}
             type="password"
             size="lg"
+            required
             secureTextEntry={!methods.watch('showNewPassword')}
             endAdornment={
               <EyeButton
@@ -64,9 +68,11 @@ export function ChangePassword() {
           <TextField
             control={methods.control}
             name="confirmPassword"
+            label={t('changePassword.confirmPassword')}
             placeholder={t('changePassword.confirmPasswordPlaceholder')}
             type="password"
             size="lg"
+            required
             secureTextEntry={!methods.watch('showConfirmPassword')}
             endAdornment={
               <EyeButton

@@ -59,7 +59,7 @@ export function Language() {
   const { t, i18n } = useTranslation()
 
   return (
-    <View className="flex flex-1 p-4 bg-background gap-6">
+    <View className="flex flex-1 p-8 bg-background gap-6">
       <BackButton />
       <View>
         <H2>{t('language.title')}</H2>

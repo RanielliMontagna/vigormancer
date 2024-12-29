@@ -15,6 +15,7 @@ import { Label } from '@/components/ui/label'
 import { View } from 'react-native'
 import { P } from './typography'
 import { SlottableTextProps, TextRef } from '@rn-primitives/types'
+import { Text } from './text'
 
 const Form = FormProvider
 
@@ -88,17 +89,22 @@ const FormLabel = React.forwardRef<
     required?: boolean
   }
 >(({ className, required, ...props }, ref) => {
-  const { error, formItemId } = useFormField()
+  const { formItemId } = useFormField()
 
   return (
     <Label
       // @ts-expect-error - Ignore this error
       ref={ref}
-      className={cn(error && 'text-destructive', className)}
+      className={className}
       htmlFor={formItemId}
       {...props}
     >
-      {props.children} {required && <span aria-hidden="true">*</span>}
+      {props.children}{' '}
+      {required && (
+        <Text bold className="color-red-500">
+          *
+        </Text>
+      )}
     </Label>
   )
 })
