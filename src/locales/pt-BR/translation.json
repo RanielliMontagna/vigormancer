@@ -171,5 +171,24 @@
     "confirmPasswordPlaceholder": "Confirme sua nova senha",
     "submit": "Alterar Senha",
     "passwordChanged": "Senha alterada com sucesso"
+  },
+  "updateInformations": {
+    "title": "Atualizar Informações",
+    "subtitle": "Atualize suas informações de perfil.",
+    "username": "Nome de Usuário",
+    "usernamePlaceholder": "Digite seu nome de usuário",
+    "fullName": "Nome Completo",
+    "fullNamePlaceholder": "Digite seu nome completo",
+    "email": "Email",
+    "emailPlaceholder": "Digite seu email",
+    "emailHelperText": "Seu email é único e ainda não pode ser alterado.",
+    "weight": "Peso",
+    "weightPlaceholder": "Digite seu peso",
+    "height": "Altura",
+    "heightPlaceholder": "Digite sua altura",
+    "submit": "Atualizar Informações",
+    "informationsUpdated": "Informações atualizadas com sucesso",
+    "notChanged": "Nenhuma informação foi alterada",
+    "notChangedMessage": "Para atualizar suas informações, altere pelo menos um campo"
   }
 }

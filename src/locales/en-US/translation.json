@@ -170,5 +170,24 @@
     "confirmPasswordPlaceholder": "Confirm your new password",
     "submit": "Change Password",
     "passwordChanged": "Password changed successfully"
+  },
+  "updateInformations": {
+    "title": "Update Informations",
+    "subtitle": "Update your profile informations.",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "emailHelperText": "Your email is unique and can't be changed yet.",
+    "weight": "Weight",
+    "weightPlaceholder": "Enter your weight",
+    "height": "Height",
+    "heightPlaceholder": "Enter your height",
+    "submit": "Update Informations",
+    "informationsUpdated": "Informations updated successfully",
+    "notChanged": "No information has been changed",
+    "notChangedMessage": "To update your informations, please change at least one field"
   }
 }

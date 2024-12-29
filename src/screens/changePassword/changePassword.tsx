@@ -3,6 +3,8 @@ import { TouchableOpacity, View } from 'react-native'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 import { BackButton, Button, Form, H2, P, Text, TextField } from '@/components'
+import { useColorScheme } from '@/hooks'
+
 import { useChangePassword } from './useChangePassword'
 
 function EyeButton({ onPress, show }: { onPress: () => void; show: boolean }) {
@@ -18,6 +20,7 @@ function EyeButton({ onPress, show }: { onPress: () => void; show: boolean }) {
 }
 
 export function ChangePassword() {
+  const { isDarkColorScheme } = useColorScheme()
   const { methods, t, handleSubmit } = useChangePassword()
 
   return (
@@ -35,7 +38,6 @@ export function ChangePassword() {
             label={t('changePassword.currentPassword')}
             placeholder={t('changePassword.currentPasswordPlaceholder')}
             type="password"
-            size="lg"
             required
             secureTextEntry={!methods.watch('showCurrentPassword')}
             endAdornment={
@@ -53,7 +55,6 @@ export function ChangePassword() {
             label={t('changePassword.newPassword')}
             placeholder={t('changePassword.newPasswordPlaceholder')}
             type="password"
-            size="lg"
             required
             secureTextEntry={!methods.watch('showNewPassword')}
             endAdornment={
@@ -71,7 +72,6 @@ export function ChangePassword() {
             label={t('changePassword.confirmPassword')}
             placeholder={t('changePassword.confirmPasswordPlaceholder')}
             type="password"
-            size="lg"
             required
             secureTextEntry={!methods.watch('showConfirmPassword')}
             endAdornment={
@@ -86,7 +86,12 @@ export function ChangePassword() {
         </View>
         <View className="gap-2">
           <Button onPress={handleSubmit} size="lg" className="gap-2">
-            <FontAwesome6 name="circle-check" solid size={16} color="white" />
+            <FontAwesome6
+              name="circle-check"
+              solid
+              size={16}
+              color={isDarkColorScheme ? 'black' : 'white'}
+            />
             <Text>{t('changePassword.submit')}</Text>
           </Button>
         </View>

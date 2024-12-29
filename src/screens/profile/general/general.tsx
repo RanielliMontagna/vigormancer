@@ -13,6 +13,10 @@ export function General() {
   const { isDarkColorScheme } = useColorScheme()
   const { t } = useTranslation()
 
+  function handleGoToUpdateInformation() {
+    router.push('(private)/update-informations')
+  }
+
   function handleGoToChangePassword() {
     router.push('(private)/change-password')
   }
@@ -21,7 +25,10 @@ export function General() {
     <View>
       <Text className="text-sm text-muted-foreground">{t('profile.general.title')}</Text>
       <View className="bg-card rounded-2xl p-4 mt-2 elevation-sm">
-        <TouchableOpacity className="flex-row justify-between item-center p-1">
+        <TouchableOpacity
+          className="flex-row justify-between item-center p-1"
+          onPress={handleGoToUpdateInformation}
+        >
           <View className="flex-row items-center gap-2">
             <FontAwesome6
               size={18}

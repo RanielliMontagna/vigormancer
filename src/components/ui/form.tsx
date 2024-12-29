@@ -95,7 +95,7 @@ const FormLabel = React.forwardRef<
     <Label
       // @ts-expect-error - Ignore this error
       ref={ref}
-      className={className}
+      className={cn('mb-1', className)}
       htmlFor={formItemId}
       {...props}
     >
@@ -158,7 +158,7 @@ const FormMessage = React.forwardRef<TextRef, SlottableTextProps>(
         ref={ref}
         id={formMessageId}
         className={cn(
-          'mt-1 text-[0.8rem] font-lexend-medium',
+          'text-sm mt-1 text-[0.8rem] font-lexend-light',
           error ? 'text-destructive' : 'text-muted-foreground',
           className,
         )}
