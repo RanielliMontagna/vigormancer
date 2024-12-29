@@ -159,5 +159,17 @@
     "subtitle": "Personalize sua jornada com seu idioma preferido",
     "english": "Inglês",
     "portuguese": "Português"
+  },
+  "changePassword": {
+    "title": "Alterar Senha",
+    "subtitle": "Proteja sua conta com uma nova senha.",
+    "currentPassword": "Senha Atual",
+    "currentPasswordPlaceholder": "Digite sua senha atual",
+    "newPassword": "Nova Senha",
+    "newPasswordPlaceholder": "Digite sua nova senha",
+    "confirmPassword": "Confirmar Senha",
+    "confirmPasswordPlaceholder": "Confirme sua nova senha",
+    "submit": "Alterar Senha",
+    "passwordChanged": "Senha alterada com sucesso"
   }
 }

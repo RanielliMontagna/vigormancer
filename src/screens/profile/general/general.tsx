@@ -7,10 +7,15 @@ import { useColorScheme } from '@/hooks'
 import { Text } from '@/components'
 import colors from 'tailwindcss/colors'
 import { cn } from '@/utils'
+import { router } from 'expo-router'
 
 export function General() {
   const { isDarkColorScheme } = useColorScheme()
   const { t } = useTranslation()
+
+  function handleGoToChangePassword() {
+    router.push('(private)/change-password')
+  }
 
   return (
     <View>
@@ -34,7 +39,10 @@ export function General() {
         <View
           className={cn('flex-row h-px my-4', isDarkColorScheme ? 'bg-gray-700' : 'bg-gray-200')}
         />
-        <TouchableOpacity className="flex-row justify-between item-center p-1">
+        <TouchableOpacity
+          className="flex-row justify-between item-center p-1"
+          onPress={handleGoToChangePassword}
+        >
           <View className="flex-row items-center gap-2">
             <FontAwesome6
               size={18}
