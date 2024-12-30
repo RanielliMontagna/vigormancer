@@ -41,6 +41,7 @@ function App() {
   const [isI18nInitialized, setIsI18nInitialized] = useState(false)
 
   // TODO: Implement onboarding logic
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [onboarding, _] = useState(false)
 
   const [fontsLoaded] = useFonts({
