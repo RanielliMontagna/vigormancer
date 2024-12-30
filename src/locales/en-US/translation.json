@@ -201,5 +201,13 @@
   "errors": {
     "default: ": "Something went wrong",
     "default_message": "Please try again later"
+  },
+  "workout": {
+    "title": "Workouts",
+    "subtitle": "Channel your energy, master your form..."
+  },
+  "progression": {
+    "title": "Progression",
+    "subtitle": "Track your growth and unleash your potential."
   }
 }
