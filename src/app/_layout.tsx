@@ -1,10 +1,12 @@
 import { SafeAreaView } from 'react-native'
+import { I18nextProvider } from 'react-i18next'
 import React, { useEffect, useState } from 'react'
 import { router, Slot, SplashScreen } from 'expo-router'
 import { useFonts } from 'expo-font'
 import Toast from 'react-native-toast-message'
 
 import { ClerkProvider, ClerkLoaded, useAuth } from '@clerk/clerk-expo'
+import * as Sentry from '@sentry/react-native'
 
 import '@/styles/global.css'
 import { initI18n, i18n } from '@/libs/i18n'
@@ -12,24 +14,24 @@ import { initI18n, i18n } from '@/libs/i18n'
 import { tokenCache } from '@/libs/cache/cache'
 import { LoadingOverlay } from '@/components'
 import { useAppStore } from '@/store'
-import { I18nextProvider } from 'react-i18next'
 
 SplashScreen.preventAutoHideAsync()
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!
+const sentryDsn = process.env.EXPO_PUBLIC_SENTRY_DSN!
 
 if (!publishableKey) {
   throw new Error('Add EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY to your .env file')
 }
 
-export default function RootLayout() {
-  return (
-    <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
-      <ClerkLoaded>
-        <App />
-      </ClerkLoaded>
-    </ClerkProvider>
-  )
+if (!sentryDsn) {
+  throw new Error('Add EXPO_PUBLIC_SENTRY_DSN to your .env file')
+}
+
+if (!__DEV__) {
+  Sentry.init({
+    dsn: sentryDsn,
+  })
 }
 
 function App() {
@@ -89,3 +91,15 @@ function App() {
     </I18nextProvider>
   )
 }
+
+function RootLayout() {
+  return (
+    <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
+      <ClerkLoaded>
+        <App />
+      </ClerkLoaded>
+    </ClerkProvider>
+  )
+}
+
+export default Sentry.wrap(RootLayout)
