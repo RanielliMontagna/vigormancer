@@ -125,13 +125,82 @@
   "dashboard": {
     "title": "Oi, {{name}}!",
     "subtitle": "Cada treino, um passo em direção ao poder.",
-    "streak_zero": "Sem sequência, mas o fogo espera para ser aceso!",
+    "streak_zero": "dias de ofensiva",
     "streak_one": "dia de ofensiva",
     "streak_other": "dias de ofensiva",
-    "since_last_week": "desde a semana passada"
+    "since_last_week": "desde a semana passada",
+    "streakMessage_zero": "O fogo está para ser aceso! Continue!",
+    "streakMessage_one": "Você está no caminho certo! Continue!",
+    "streakMessage_other": "Você está pegando fogo! Continue!"
   },
   "notifications": {
     "title": "Notificações",
     "subtitle": "Sinta a energia: notificações de progresso ao seu alcance."
+  },
+  "profile": {
+    "title": "Perfil",
+    "subtitle": "Sua jornada, seu poder, sua história.",
+    "weight": "Peso",
+    "height": "Altura",
+    "general": {
+      "title": "Geral",
+      "profileInformations": "Informações do Perfil",
+      "update": "Atualizar",
+      "changePassword": "Alterar Senha",
+      "change": "Alterar"
+    },
+    "preferences": {
+      "title": "Preferências",
+      "language": "Idioma",
+      "theme": "Tema",
+      "logout": "Sair",
+      "dark": "Modo Escuro"
+    }
+  },
+  "language": {
+    "title": "Selecione seu idioma",
+    "subtitle": "Personalize sua jornada com seu idioma preferido",
+    "english": "Inglês",
+    "portuguese": "Português"
+  },
+  "changePassword": {
+    "title": "Alterar Senha",
+    "subtitle": "Proteja sua conta com uma nova senha.",
+    "currentPassword": "Senha Atual",
+    "currentPasswordPlaceholder": "Digite sua senha atual",
+    "newPassword": "Nova Senha",
+    "newPasswordPlaceholder": "Digite sua nova senha",
+    "confirmPassword": "Confirmar Senha",
+    "confirmPasswordPlaceholder": "Confirme sua nova senha",
+    "submit": "Alterar Senha",
+    "passwordChanged": "Senha alterada com sucesso"
+  },
+  "updateInformations": {
+    "title": "Atualizar Informações",
+    "subtitle": "Atualize suas informações de perfil.",
+    "username": "Nome de Usuário",
+    "usernamePlaceholder": "Digite seu nome de usuário",
+    "fullName": "Nome Completo",
+    "fullNamePlaceholder": "Digite seu nome completo",
+    "email": "Email",
+    "emailPlaceholder": "Digite seu email",
+    "emailHelperText": "Seu email é único e ainda não pode ser alterado.",
+    "weight": "Peso",
+    "weightPlaceholder": "Digite seu peso",
+    "height": "Altura",
+    "heightPlaceholder": "Digite sua altura",
+    "submit": "Atualizar Informações",
+    "informationsUpdated": "Informações atualizadas com sucesso",
+    "notChanged": "Nenhuma informação foi alterada",
+    "notChangedMessage": "Para atualizar suas informações, altere pelo menos um campo"
+  },
+  "clerkErrors": {
+    "form_password_incorrect": "Senha incorreta.",
+    "form_password_incorrect_message": "Por favor, verifique sua senha e tente novamente.",
+    "form_identifier_not_found": "Não foi possível encontrar sua conta."
+  },
+  "errors": {
+    "default": "Algo deu errado",
+    "default_message": "Por favor, tente novamente mais tarde."
   }
 }

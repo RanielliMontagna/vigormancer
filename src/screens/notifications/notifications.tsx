@@ -8,7 +8,7 @@ export function Notifications() {
   const { t } = useTranslation()
 
   return (
-    <View className="flex flex-col h-full p-8 gap-8">
+    <View className="flex flex-col h-full p-8 gap-8 bg-background">
       <BackButton />
       <View>
         <H2>{t('notifications.title')}</H2>

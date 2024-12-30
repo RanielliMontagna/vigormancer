@@ -1,18 +1,14 @@
 import { useTranslation } from 'react-i18next'
+import Toast from 'react-native-toast-message'
 import { Image, View } from 'react-native'
+import { router } from 'expo-router'
 
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import FinishImage from '@/assets/images/onboarding-finish.jpg'
 
-import { Button, H2, P, Text } from '@/components'
-import { useColorScheme } from '@/hooks'
-
-import { router } from 'expo-router'
-import Toast from 'react-native-toast-message'
+import { Button, H2, Logo, P, Text } from '@/components'
 
 export function Ready() {
   const { t } = useTranslation()
-  const { isDarkColorScheme } = useColorScheme()
 
   return (
     <View className="flex flex-col h-full bg-background">
@@ -21,13 +17,7 @@ export function Ready() {
       </View>
       <View className="gap-2 flex-1 justify-center px-8">
         <View className="flex flex-row gap-2 items-center mb-4 justify-center">
-          <FontAwesome6 name="dumbbell" size={24} color={isDarkColorScheme ? 'white' : 'black'} />
-          <View className="flex flex-row">
-            <Text bold className="text-2xl">
-              Vigor
-            </Text>
-            <Text className="text-2xl">mancer</Text>
-          </View>
+          <Logo orientation="horizontal" />
         </View>
         <H2 className="text-center">{t('onboarding.ready.title')}</H2>
         <P className="text-center text-muted-foreground">{t('onboarding.ready.subtitle')}</P>

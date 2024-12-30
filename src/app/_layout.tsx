@@ -1,3 +1,4 @@
+import { SafeAreaView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { router, Slot, SplashScreen } from 'expo-router'
 import { useFonts } from 'expo-font'
@@ -42,16 +43,16 @@ function App() {
 
   const [fontsLoaded] = useFonts({
     'Lexend-Thin': require('@/assets/fonts/Lexend-Thin.ttf'),
+    'Lexend-Light': require('@/assets/fonts/Lexend-Light.ttf'),
     'Lexend-Regular': require('@/assets/fonts/Lexend-Regular.ttf'),
     'Lexend-Medium': require('@/assets/fonts/Lexend-Medium.ttf'),
+    'Lexend-SemiBold': require('@/assets/fonts/Lexend-SemiBold.ttf'),
     'Lexend-Bold': require('@/assets/fonts/Lexend-Bold.ttf'),
   })
 
   useEffect(() => {
     if (fontsLoaded && isI18nInitialized) {
-      setTimeout(() => {
-        SplashScreen.hideAsync()
-      }, 0)
+      SplashScreen.hideAsync()
     }
   }, [fontsLoaded, isI18nInitialized])
 
@@ -80,9 +81,11 @@ function App() {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <Slot />
-      <Toast position="bottom" />
-      {isLoading && <LoadingOverlay />}
+      <SafeAreaView className="flex-1">
+        <Slot />
+        <Toast position="bottom" />
+        {isLoading && <LoadingOverlay />}
+      </SafeAreaView>
     </I18nextProvider>
   )
 }

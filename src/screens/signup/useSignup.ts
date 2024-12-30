@@ -10,7 +10,7 @@ import { useAppStore } from '@/store'
 
 export function useSignup() {
   const { isLoaded, signUp } = useSignUp()
-  const { setIsLoading } = useAppStore()
+  const { setIsLoading, handleErrors } = useAppStore()
 
   const { t } = useTranslation()
 
@@ -18,7 +18,7 @@ export function useSignup() {
     .object({
       username: z
         .string()
-        .min(3, t('validation.minLength', { min: 3 }))
+        .min(4, t('validation.minLength', { min: 4 }))
         .max(50, t('validation.maxLength', { max: 50 })),
       email: z.string().min(1, t('validation.required')).email(t('validation.invalidEmail')),
       password: z
@@ -75,10 +75,10 @@ export function useSignup() {
 
       // Redirect user to verification screen
       router.push('/signup/verify-code')
-    } catch (err) {
+    } catch (error) {
       // See https://clerk.com/docs/custom-flows/error-handling
       // for more info on error handling
-      console.error(JSON.stringify(err, null, 2))
+      handleErrors(error)
     } finally {
       setIsLoading(false)
     }

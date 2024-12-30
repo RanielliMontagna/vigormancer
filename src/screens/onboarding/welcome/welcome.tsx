@@ -1,16 +1,13 @@
 import { useTranslation } from 'react-i18next'
 import { Image, View } from 'react-native'
-
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
-import WelcomeImage from '@/assets/images/onboarding-welcome.jpg'
-import { useColorScheme } from '@/hooks'
-
-import { Button, Text } from '@/components'
 import { router } from 'expo-router'
+
+import WelcomeImage from '@/assets/images/onboarding-welcome.jpg'
+
+import { Button, Logo, Text } from '@/components'
 
 export function Welcome() {
   const { t } = useTranslation()
-  const { isDarkColorScheme } = useColorScheme()
 
   return (
     <View className="flex flex-col h-full bg-background">
@@ -21,13 +18,7 @@ export function Welcome() {
         <View className="gap-1">
           <Text className="text-center">{t('onboarding.welcome.title')}</Text>
           <View className="flex flex-row gap-2 items-center mb-4 justify-center">
-            <FontAwesome6 name="dumbbell" size={32} color={isDarkColorScheme ? 'white' : 'black'} />
-            <View className="flex flex-row">
-              <Text bold className="text-4xl">
-                Vigor
-              </Text>
-              <Text className="text-4xl">mancer</Text>
-            </View>
+            <Logo orientation="horizontal" />
           </View>
         </View>
         <Text className="text-center text-muted-foreground">{t('onboarding.welcome.text')}</Text>

@@ -11,7 +11,7 @@ import Toast from 'react-native-toast-message'
 
 export function useVerifyCode() {
   const { isLoaded, signUp, setActive } = useSignUp()
-  const { setIsLoading } = useAppStore()
+  const { setIsLoading, handleErrors } = useAppStore()
 
   const { t } = useTranslation()
 
@@ -53,10 +53,10 @@ export function useVerifyCode() {
         // complete further steps.
         console.error(JSON.stringify(signUpAttempt, null, 2))
       }
-    } catch (err) {
+    } catch (error) {
       // See https://clerk.com/docs/custom-flows/error-handling
       // for more info on error handling
-      console.error(JSON.stringify(err, null, 2))
+      handleErrors(error)
     } finally {
       setIsLoading(false)
     }

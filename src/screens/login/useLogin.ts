@@ -30,7 +30,7 @@ export function useLogin() {
   const { startOAuthFlow } = useOAuth({ strategy: 'oauth_google' })
 
   const { signIn, setActive, isLoaded } = useSignIn()
-  const { setIsLoading } = useAppStore()
+  const { setIsLoading, handleErrors } = useAppStore()
   const { t } = useTranslation()
 
   const loginSchema = z.object({
@@ -73,19 +73,15 @@ export function useLogin() {
           await setActive({ session: signInAttempt.createdSessionId })
           router.replace('/')
         } else {
-          // If the status isn't complete, check why. User might need to
-          // complete further steps.
-          console.error(JSON.stringify(signInAttempt, null, 2))
+          handleErrors(signInAttempt)
         }
-      } catch (err) {
-        // See https://clerk.com/docs/custom-flows/error-handling
-        // for more info on error handling
-        console.error(JSON.stringify(err, null, 2))
+      } catch (error) {
+        handleErrors(error)
       } finally {
         setIsLoading(false)
       }
     },
-    [isLoaded, setActive, setIsLoading, signIn],
+    [handleErrors, isLoaded, setActive, setIsLoading, signIn],
   )
 
   async function handleGoogleLogin() {
@@ -107,10 +103,8 @@ export function useLogin() {
 
         //TODO: Handle sign up flow
       }
-    } catch (err) {
-      // See https://clerk.com/docs/custom-flows/error-handling
-      // for more info on error handling
-      console.error(JSON.stringify(err, null, 2))
+    } catch (error) {
+      handleErrors(error)
     } finally {
       setIsLoading(false)
     }

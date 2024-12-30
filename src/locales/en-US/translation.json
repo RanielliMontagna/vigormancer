@@ -124,13 +124,82 @@
   "dashboard": {
     "title": "Hi, {{name}}!",
     "subtitle": "Every workout, a step toward power.",
-    "streak_zero": "No streak, but the fire waits to be lit!",
+    "streak_zero": "day streak",
     "streak_one": "day streak",
     "streak_other": "days streak",
-    "since_last_week": "since last week"
+    "since_last_week": "since last week",
+    "streakMessage_zero": "The fire wait for you. Let's go!",
+    "streakMessage_one": "The first step is the hardest. Keep going!",
+    "streakMessage_other": "You're on fire! Keep going!"
   },
   "notifications": {
     "title": "Notifications",
     "subtitle": "Feel the energy: progress notifications at your fingertips."
+  },
+  "profile": {
+    "title": "My Profile",
+    "subtitle": "Your journey, your power, your story.",
+    "weight": "Weight",
+    "height": "Height",
+    "general": {
+      "title": "General",
+      "profileInformations": "Profile Informations",
+      "update": "Update",
+      "changePassword": "Change Password",
+      "change": "Change"
+    },
+    "preferences": {
+      "title": "Preferences",
+      "language": "Language",
+      "theme": "Theme",
+      "logout": "Logout",
+      "dark": "Dark Mode"
+    }
+  },
+  "language": {
+    "title": "Select Your Language",
+    "subtitle": "Customize your journey with your preferred language",
+    "english": "English",
+    "portuguese": "Portuguese"
+  },
+  "changePassword": {
+    "title": "Change Password",
+    "subtitle": "Secure your account with a new password.",
+    "currentPassword": "Current Password",
+    "currentPasswordPlaceholder": "Enter your current password",
+    "newPassword": "New Password",
+    "newPasswordPlaceholder": "Enter your new password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your new password",
+    "submit": "Change Password",
+    "passwordChanged": "Password changed successfully"
+  },
+  "updateInformations": {
+    "title": "Update Informations",
+    "subtitle": "Update your profile informations.",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "emailHelperText": "Your email is unique and can't be changed yet.",
+    "weight": "Weight",
+    "weightPlaceholder": "Enter your weight",
+    "height": "Height",
+    "heightPlaceholder": "Enter your height",
+    "submit": "Update Informations",
+    "informationsUpdated": "Informations updated successfully",
+    "notChanged": "No information has been changed",
+    "notChangedMessage": "To update your informations, please change at least one field"
+  },
+  "clerkErrors": {
+    "form_password_incorrect": "Password is incorrect.",
+    "form_password_incorrect_message": "Try again, or use another method.",
+    "form_identifier_not_found": "Couldn't find your account."
+  },
+  "errors": {
+    "default: ": "Something went wrong",
+    "default_message": "Please try again later"
   }
 }

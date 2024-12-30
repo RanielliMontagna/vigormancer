@@ -5,8 +5,11 @@ export { VerifyCode } from './signup/verifyCode/verifyCode'
 export { ForgotPassword } from './forgotPassword/forgotPassword'
 
 // Private Screens
+export { ChangePassword } from './changePassword/changePassword'
 export { Dashboard } from './dashboard/dashboard'
-export { Workout } from './workout/workout'
+export { Language } from './language/language'
+export { Notifications } from './notifications/notifications'
 export { Progression } from './progression/progression'
 export { Profile } from './profile/profile'
-export { Notifications } from './notifications/notifications'
+export { UpdateInformations } from './updateInformations/updateInformations'
+export { Workout } from './workout/workout'
