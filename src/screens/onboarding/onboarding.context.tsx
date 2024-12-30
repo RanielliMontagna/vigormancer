@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { OnboardingSchema, onboardingSchema } from './onboarding.schema'
 import { router } from 'expo-router'
-import Toast from 'react-native-toast-message'
+import { useAppStore } from '@/store'
 
 export enum OnboardingSteps {
   WELCOME,
@@ -25,6 +25,8 @@ interface OnboardingContextProps {
 export const OnboardingContext = createContext({} as OnboardingContextProps)
 
 export function OnboardingProvider({ children }) {
+  const { setIsLoading, handleErrors } = useAppStore()
+
   const methods = useForm<OnboardingSchema>({
     resolver: zodResolver(onboardingSchema),
     defaultValues: { age: 30, weight: 70, height: 170 },
@@ -37,17 +39,17 @@ export function OnboardingProvider({ children }) {
 
   async function handleSubmitOnboarding() {
     try {
+      setIsLoading(true)
+
       //TODO: Handle onboarding submission
       await Promise.resolve()
 
       methods.reset()
       router.replace('onboarding/ready')
-    } catch {
-      Toast.show({
-        text1: 'A problem occurred',
-        text2: 'Please try again later or contact support',
-        type: 'success',
-      })
+    } catch (error) {
+      handleErrors(error)
+    } finally {
+      setIsLoading(false)
     }
   }
 

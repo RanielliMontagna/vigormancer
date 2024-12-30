@@ -3,13 +3,14 @@ import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useUser } from '@clerk/clerk-expo'
-import { useAppStore } from '@/store'
 import Toast from 'react-native-toast-message'
 import { router } from 'expo-router'
 
+import { useAppStore } from '@/store'
+
 export function useChangePassword() {
   const { t } = useTranslation()
-  const { setIsLoading } = useAppStore()
+  const { setIsLoading, handleErrors } = useAppStore()
   const { user } = useUser()
 
   const changePasswordSchema = z
@@ -63,7 +64,7 @@ export function useChangePassword() {
 
       router.back()
     } catch (error) {
-      console.error(error)
+      handleErrors(error)
     } finally {
       setIsLoading(false)
     }

@@ -10,7 +10,7 @@ export function usePreferences() {
   const { colorScheme, toggleColorScheme } = useColorScheme()
   const { i18n } = useTranslation()
 
-  const { setIsLoading } = useAppStore()
+  const { setIsLoading, handleErrors } = useAppStore()
   const { signOut } = useAuth()
 
   const languageText = useMemo(() => {
@@ -29,8 +29,9 @@ export function usePreferences() {
       setIsLoading(true)
 
       await signOut()
-    } catch {
+    } catch (error) {
       //TODO: Handle error properly
+      handleErrors(error)
     } finally {
       setIsLoading(false)
     }

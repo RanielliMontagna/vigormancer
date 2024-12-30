@@ -10,7 +10,7 @@ import { useUser } from '@clerk/clerk-expo'
 export function useUpdateInformations() {
   const { t } = useTranslation()
   const { user } = useUser()
-  const { setIsLoading } = useAppStore()
+  const { setIsLoading, handleErrors } = useAppStore()
 
   const updateInformationsSchema = z.object({
     username: z.string().min(4, t('validation.minLength', { min: 4 })),
@@ -68,7 +68,7 @@ export function useUpdateInformations() {
 
       router.back()
     } catch (error) {
-      console.error(error)
+      handleErrors(error)
     } finally {
       setIsLoading(false)
     }

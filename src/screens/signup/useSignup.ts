@@ -10,7 +10,7 @@ import { useAppStore } from '@/store'
 
 export function useSignup() {
   const { isLoaded, signUp } = useSignUp()
-  const { setIsLoading } = useAppStore()
+  const { setIsLoading, handleErrors } = useAppStore()
 
   const { t } = useTranslation()
 
@@ -75,10 +75,10 @@ export function useSignup() {
 
       // Redirect user to verification screen
       router.push('/signup/verify-code')
-    } catch (err) {
+    } catch (error) {
       // See https://clerk.com/docs/custom-flows/error-handling
       // for more info on error handling
-      console.error(JSON.stringify(err, null, 2))
+      handleErrors(error)
     } finally {
       setIsLoading(false)
     }

@@ -193,5 +193,14 @@
     "informationsUpdated": "Informações atualizadas com sucesso",
     "notChanged": "Nenhuma informação foi alterada",
     "notChangedMessage": "Para atualizar suas informações, altere pelo menos um campo"
+  },
+  "clerkErrors": {
+    "form_password_incorrect": "Senha incorreta.",
+    "form_password_incorrect_message": "Por favor, verifique sua senha e tente novamente.",
+    "form_identifier_not_found": "Não foi possível encontrar sua conta."
+  },
+  "errors": {
+    "default": "Algo deu errado",
+    "default_message": "Por favor, tente novamente mais tarde."
   }
 }

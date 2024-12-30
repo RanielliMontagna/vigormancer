@@ -5,10 +5,12 @@ import { useTranslation } from 'react-i18next'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useForgotPasswordContext } from '../forgotPassword.context'
+import { useAppStore } from '@/store'
 
 export function useOtpVerification() {
   const { t } = useTranslation()
   const { email, nextStep } = useForgotPasswordContext()
+  const { handleErrors } = useAppStore()
 
   const otpVerificationSchema = z.object({
     otp: z
@@ -43,7 +45,7 @@ export function useOtpVerification() {
         type: 'success',
       })
     } catch (error) {
-      console.error(error)
+      handleErrors(error)
     }
   }
 
