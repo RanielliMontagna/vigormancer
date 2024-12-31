@@ -15,6 +15,10 @@ const config: Config = {
     '!src/**/*.mock.ts',
     '!src/app/**/*.{ts,tsx}',
   ],
+  coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
+  moduleNameMapper: {
+    '\\.(png|jpg|jpeg|svg)$': '<rootDir>/__mocks__/fileMock.js',
+  },
 }
 
 export default config

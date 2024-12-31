@@ -15,7 +15,7 @@ function ForgotPassword() {
   const { step } = useForgotPasswordContext()
 
   return (
-    <View className="flex flex-1 justify-center p-4 bg-background gap-6">
+    <View className="flex flex-1 justify-center p-4 bg-background gap-6" testID="forgot-password">
       {step === StepForgotPassword.SEND_CODE && <SendCode />}
       {step === StepForgotPassword.OTP_VERIFICATION && <OtpVerification />}
       {step === StepForgotPassword.RESET_PASSWORD && <ResetPassword />}

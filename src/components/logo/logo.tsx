@@ -21,6 +21,7 @@ export function Logo({ orientation = 'vertical' }: LogoProps) {
   return (
     <View
       className={cn('flex flex-column items-center', orientation === 'horizontal' && 'flex-row')}
+      testID="logo-view"
     >
       <Image
         source={isDarkColorScheme ? LogoWhite : LogoBlack}

@@ -5,7 +5,7 @@ import { Button, H2, P, Text } from '@/components'
 
 import colors from 'tailwindcss/colors'
 
-import FontAwesome6 from '@expo/vector-icons/MaterialCommunityIcons'
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 
 export function PasswordChanged() {
   const { t } = useTranslation()
@@ -14,7 +14,7 @@ export function PasswordChanged() {
   return (
     <View className="flex flex-1 justify-center p-4 bg-background gap-10">
       <View className="flex justify-center items-center text-center">
-        <FontAwesome6 name="check-decagram" size={100} color={colors.green[400]} />
+        <MaterialCommunityIcons name="check-decagram" size={100} color={colors.green[400]} />
       </View>
       <View className="gap-1">
         <H2 className="text-center">{t('forgotPassword.passwordChanged.title')}</H2>

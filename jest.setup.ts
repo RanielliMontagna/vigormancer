@@ -10,7 +10,9 @@ jest.mock('expo-modules-core', () => ({
 jest.mock('react-native-reanimated', () => require('react-native-reanimated/mock'))
 
 // Mock for vector-icons library
+jest.mock('@expo/vector-icons/FontAwesome5', () => 'FontAwesome5')
 jest.mock('@expo/vector-icons/FontAwesome6', () => 'FontAwesome6')
+jest.mock('@expo/vector-icons/MaterialCommunityIcons', () => 'MaterialCommunityIcons')
 
 // Mock for routes
 jest.mock('expo-router', () => ({
@@ -33,3 +35,70 @@ const mockUseColorScheme = useColorScheme as jest.Mock
 beforeEach(() => {
   mockUseColorScheme.mockReturnValue({ isDarkColorScheme: false })
 })
+
+// Mock clerk library
+jest.mock('@clerk/clerk-expo', () => ({
+  useUser: jest.fn(() => ({
+    isSignedIn: true,
+    user: {
+      id: 'user_id',
+      fullName: 'John Doe',
+      primaryEmailAddress: {
+        emailAddress: 'john.doe@example.com',
+      },
+    },
+  })),
+  useAuth: jest.fn(() => ({
+    signOut: jest.fn(),
+  })),
+  useSignUp: jest.fn(() => ({
+    signUp: jest.fn(),
+    isLoaded: true,
+  })),
+  useSignIn: jest.fn(() => ({
+    signIn: jest.fn(),
+    setActive: jest.fn(),
+    isLoaded: true,
+  })),
+  useOAuth: jest.fn(() => ({
+    startOAuthFlow: jest.fn(),
+  })),
+}))
+
+// Mock for react-i18next
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+    i18n: {
+      changeLanguage: jest.fn(),
+      language: 'en',
+    },
+  }),
+  initReactI18next: { init: jest.fn() },
+}))
+
+// Mock for expo-localization
+jest.mock('expo-localization', () =>
+  jest.fn(() => ({
+    getLocales: jest.fn(() => [{ languageTag: 'en-US' }]),
+  })),
+)
+
+// Mock for AsyncStorage
+jest.mock('@react-native-async-storage/async-storage', () => ({
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+}))
+
+// Mock for expo-linking
+jest.mock('expo-linking', () => ({
+  useLinking: jest.fn(),
+}))
+
+// Mock WebBrowser
+jest.mock('expo-web-browser', () => ({
+  maybeCompleteAuthSession: jest.fn(),
+  openBrowserAsync: jest.fn(),
+  warmUpAsync: jest.fn(),
+  coolDownAsync: jest.fn(),
+}))

@@ -17,7 +17,7 @@ export function Login() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 justify-center p-4 bg-background gap-6">
+      <View className="flex flex-1 justify-center p-4 bg-background gap-6" testID="login">
         <View className="flex gap-0 items-center mb-4">
           <Logo />
         </View>

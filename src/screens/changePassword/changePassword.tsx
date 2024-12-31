@@ -25,7 +25,7 @@ export function ChangePassword() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 p-8 bg-background gap-6">
+      <View className="flex flex-1 p-8 bg-background gap-6" testID="change-password">
         <BackButton />
         <View>
           <H2>{t('changePassword.title')}</H2>

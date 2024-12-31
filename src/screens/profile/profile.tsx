@@ -10,7 +10,7 @@ export function Profile() {
   const { t } = useTranslation()
 
   return (
-    <ScrollView className="h-screen bg-background">
+    <ScrollView className="h-screen bg-background" testID="profile">
       <View className="gap-4 p-8">
         <View className="flex flex-col">
           <H2>{t('profile.title')}</H2>

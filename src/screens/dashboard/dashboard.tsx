@@ -21,7 +21,7 @@ export function Dashboard() {
   }
 
   return (
-    <View className="flex flex-col h-full p-8 gap-8 bg-background">
+    <View className="flex flex-col h-full p-8 gap-8 bg-background" testID="dashboard">
       <View className="flex flex-row justify-between items-center">
         <View className="flex flex-row gap-2 items-center">
           <Avatar alt={`${user?.username}'s avatar`}>
