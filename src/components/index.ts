@@ -2,7 +2,6 @@
 export * from './ui/avatar/avatar'
 export * from './ui/button/button'
 export * from './ui/card/card'
-export * from './ui/dialog/dialog'
 export * from './ui/form/form'
 export * from './ui/input/input'
 export * from './ui/label/label'
