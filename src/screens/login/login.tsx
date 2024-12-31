@@ -1,4 +1,4 @@
-import { Image, TouchableOpacity, View } from 'react-native'
+import { TouchableOpacity, View } from 'react-native'
 import { useTranslation } from 'react-i18next'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
