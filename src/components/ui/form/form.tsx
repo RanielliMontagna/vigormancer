@@ -1,3 +1,4 @@
+import { View } from 'react-native'
 import * as React from 'react'
 import * as LabelPrimitive from '@radix-ui/react-label'
 import { Slot } from '@radix-ui/react-slot'
@@ -9,13 +10,13 @@ import {
   FormProvider,
   useFormContext,
 } from 'react-hook-form'
+import { SlottableTextProps, TextRef } from '@rn-primitives/types'
 
 import { cn } from '@/utils'
-import { Label } from '@/components/ui/label'
-import { View } from 'react-native'
-import { P } from './typography'
-import { SlottableTextProps, TextRef } from '@rn-primitives/types'
-import { Text } from './text'
+import { Label } from '@/components/ui/label/label'
+
+import { Text } from '../text/text'
+import { P } from '../typography/typography'
 
 const Form = FormProvider
 
