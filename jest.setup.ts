@@ -1,3 +1,5 @@
+import { useColorScheme } from '@/hooks'
+
 // Mock for expo-modules-core library
 jest.mock('expo-modules-core', () => ({
   NativeModulesProxy: jest.fn(),
@@ -20,3 +22,14 @@ jest.mock('expo-router', () => ({
     back: jest.fn(),
   },
 }))
+
+// Mock for hooks module
+jest.mock('@/hooks', () => ({
+  useColorScheme: jest.fn(),
+}))
+
+const mockUseColorScheme = useColorScheme as jest.Mock
+
+beforeEach(() => {
+  mockUseColorScheme.mockReturnValue({ isDarkColorScheme: false })
+})
