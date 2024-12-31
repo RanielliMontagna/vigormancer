@@ -12,7 +12,7 @@ export function VerifyCode() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 p-4 bg-background gap-6">
+      <View className="flex flex-1 p-4 bg-background gap-6" testID="verify-code">
         <BackButton />
         <View className="flex flex-row gap-2 items-center mb-4">
           <Logo orientation="horizontal" />

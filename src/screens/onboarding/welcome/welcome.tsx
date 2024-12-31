@@ -10,7 +10,7 @@ export function Welcome() {
   const { t } = useTranslation()
 
   return (
-    <View className="flex flex-col h-full bg-background">
+    <View className="flex flex-col h-full bg-background" testID="welcome">
       <View className="h-96">
         <Image source={WelcomeImage} className="h-96 w-full object-cover rounded-b-[32px]" />
       </View>

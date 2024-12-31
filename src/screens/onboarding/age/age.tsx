@@ -21,7 +21,7 @@ export function Age() {
   const [ageWheelIndex, setAgeWheelIndex] = useState(selectedAge - 14)
 
   return (
-    <View className="flex flex-col h-full p-8 gap-4 bg-background">
+    <View className="flex flex-col h-full p-8 gap-4 bg-background" testID="age">
       <View className="flex flex-col flex-1 gap-4">
         <BackButton />
         <View>

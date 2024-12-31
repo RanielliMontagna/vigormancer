@@ -11,7 +11,7 @@ export function Ready() {
   const { t } = useTranslation()
 
   return (
-    <View className="flex flex-col h-full bg-background">
+    <View className="flex flex-col h-full bg-background" testID="ready">
       <View className="h-96">
         <Image source={FinishImage} className="h-96 w-full object-cover rounded-b-[32px]" />
       </View>

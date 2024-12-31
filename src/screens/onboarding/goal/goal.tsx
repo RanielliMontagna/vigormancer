@@ -48,7 +48,7 @@ export function Goal() {
   const { goals, selectedGoal, setGoal, handleSubmitOnboarding } = useGoal()
 
   return (
-    <View className="flex flex-col h-full p-8 gap-4 bg-background">
+    <View className="flex flex-col h-full p-8 gap-4 bg-background" testID="goal">
       <View className="flex flex-col flex-1 gap-4">
         <BackButton />
         <View>

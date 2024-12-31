@@ -14,10 +14,11 @@ const config: Config = {
     '!src/**/*.spec.tsx',
     '!src/**/*.mock.ts',
     '!src/app/**/*.{ts,tsx}',
+    '!src/libs/**/*.{ts,tsx}',
   ],
   coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
   moduleNameMapper: {
-    '\\.(png|jpg|jpeg|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(png|jpg|jpeg|svg)$': '<rootDir>/src/__mocks__/fileMock.js',
   },
 }
 

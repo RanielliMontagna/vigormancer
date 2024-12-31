@@ -18,7 +18,7 @@ export function Height() {
   const [heightWheelIndex, setHeightWheelIndex] = useState(selectedHeight - 120)
 
   return (
-    <View className="flex flex-col h-full p-8 gap-4 bg-background">
+    <View className="flex flex-col h-full p-8 gap-4 bg-background" testID="height">
       <View className="flex flex-col flex-1 gap-4">
         <BackButton />
         <View>
