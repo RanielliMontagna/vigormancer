@@ -12,7 +12,7 @@ export function PasswordChanged() {
   const { nextStep } = useForgotPasswordContext()
 
   return (
-    <View className="flex flex-1 justify-center p-4 bg-background gap-10">
+    <View className="flex flex-1 justify-center p-4 bg-background gap-10" testID="password-changed">
       <View className="flex justify-center items-center text-center">
         <MaterialCommunityIcons name="check-decagram" size={100} color={colors.green[400]} />
       </View>
@@ -23,7 +23,7 @@ export function PasswordChanged() {
         </P>
       </View>
       <View>
-        <Button size="lg" onPress={nextStep}>
+        <Button testID="password-changed-submit" size="lg" onPress={nextStep}>
           <Text>{t('forgotPassword.passwordChanged.submit')}</Text>
         </Button>
       </View>

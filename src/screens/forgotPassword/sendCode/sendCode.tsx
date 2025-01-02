@@ -14,7 +14,7 @@ export function SendCode() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 justify-center p-4 bg-background gap-6">
+      <View className="flex flex-1 justify-center p-4 bg-background gap-6" testID="send-code">
         <BackButton onPress={prevStep} />
         <View>
           <H2>{t('forgotPassword.sendCode.title')}</H2>
@@ -29,7 +29,12 @@ export function SendCode() {
           />
         </View>
         <View className="gap-4">
-          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleSendCode)}>
+          <Button
+            testID="send-code-submit"
+            size="lg"
+            className="mt-4"
+            onPress={methods.handleSubmit(handleSendCode)}
+          >
             <Text>{t('forgotPassword.sendCode.submit')}</Text>
           </Button>
           <View className="pb-8 justify-center items-center flex flex-row gap-1">

@@ -14,7 +14,10 @@ export function OtpVerification() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 justify-center p-4 bg-background gap-6">
+      <View
+        className="flex flex-1 justify-center p-4 bg-background gap-6"
+        testID="otp-verification"
+      >
         <BackButton onPress={prevStep} />
         <View>
           <H2>{t('forgotPassword.otpVerification.title')}</H2>
@@ -33,7 +36,12 @@ export function OtpVerification() {
           />
         </View>
         <View className="gap-4">
-          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleOtpVerification)}>
+          <Button
+            testID="otp-verification-submit"
+            size="lg"
+            className="mt-4"
+            onPress={methods.handleSubmit(handleOtpVerification)}
+          >
             <Text>{t('forgotPassword.otpVerification.submit')}</Text>
           </Button>
           <View className="pb-8 justify-center items-center flex flex-row gap-1">

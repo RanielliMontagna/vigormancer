@@ -15,7 +15,7 @@ export function ResetPassword() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 justify-center p-4 bg-background gap-6">
+      <View className="flex flex-1 justify-center p-4 bg-background gap-6" testID="reset-password">
         <BackButton onPress={prevStep} />
         <View>
           <H2>{t('forgotPassword.resetPassword.title')}</H2>
@@ -62,7 +62,12 @@ export function ResetPassword() {
           />
         </View>
         <View className="gap-4">
-          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(handleResetPassword)}>
+          <Button
+            testID="reset-password-submit"
+            size="lg"
+            className="mt-4"
+            onPress={methods.handleSubmit(handleResetPassword)}
+          >
             <Text>{t('forgotPassword.resetPassword.submit')}</Text>
           </Button>
         </View>

@@ -63,6 +63,7 @@ jest.mock('@clerk/clerk-expo', () => ({
   useOAuth: jest.fn(() => ({
     startOAuthFlow: jest.fn(),
   })),
+  isClerkAPIResponseError: jest.fn(() => false),
 }))
 
 // Mock for react-i18next
