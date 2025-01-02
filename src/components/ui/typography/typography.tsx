@@ -9,6 +9,7 @@ const H1 = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="h1"
         role="heading"
         aria-level="1"
         className={cn(
@@ -29,6 +30,7 @@ const H2 = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="h2"
         role="heading"
         aria-level="2"
         className={cn(
@@ -49,6 +51,7 @@ const H3 = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="h3"
         role="heading"
         aria-level="3"
         className={cn(
@@ -69,6 +72,7 @@ const H4 = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="h4"
         role="heading"
         aria-level="4"
         className={cn(
@@ -89,6 +93,7 @@ const P = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="p"
         className={cn('font-lexend-regular text-base text-foreground web:select-text', className)}
         ref={ref}
         {...props}
@@ -103,6 +108,7 @@ const BlockQuote = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="blockquote"
         // @ts-ignore - role of blockquote renders blockquote element on the web
         role={Platform.OS === 'web' ? 'blockquote' : undefined}
         className={cn(
@@ -123,6 +129,7 @@ const Code = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="code"
         // @ts-ignore - role of code renders code element on the web
         role={Platform.OS === 'web' ? 'code' : undefined}
         className={cn(
@@ -143,6 +150,7 @@ const Lead = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="lead"
         className={cn('text-xl text-muted-foreground web:select-text', className)}
         ref={ref}
         {...props}
@@ -158,6 +166,7 @@ const Large = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="large"
         className={cn('text-xl text-foreground web:select-text', className)}
         ref={ref}
         {...props}
@@ -173,6 +182,7 @@ const Small = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="small"
         className={cn(
           'text-sm text-foreground font-lexend-medium leading-none web:select-text',
           className,
@@ -191,6 +201,7 @@ const Muted = React.forwardRef<TextRef, SlottableTextProps>(
     const Component = asChild ? Slot.Text : RNText
     return (
       <Component
+        testID="muted"
         className={cn('text-sm text-muted-foreground web:select-text', className)}
         ref={ref}
         {...props}

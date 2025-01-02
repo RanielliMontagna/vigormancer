@@ -13,12 +13,12 @@ export const useAppStore = create<AppStore>((set) => ({
   isLoading: false,
   setIsLoading: (isLoading) => set({ isLoading }),
   handleErrors: (error) => {
+    set({ isLoading: false })
+
     if (isClerkAPIResponseError(error)) {
       const errorCode = error.errors[0].code
       const title = t(`clerkErrors.${errorCode}`)
       const message = t(`clerkErrors.${errorCode}_message`)
-
-      console.log('aaaaaaaa', title, message)
 
       Toast.show({
         type: 'error',
@@ -27,13 +27,14 @@ export const useAppStore = create<AppStore>((set) => ({
       })
 
       return
-    } else {
-      Toast.show({
-        type: 'error',
-        text1: t('errors.default'),
-        text2: t('errors.default_message'),
-      })
     }
+
+    // Default error message for all other errors
+    Toast.show({
+      type: 'error',
+      text1: t('errors.default'),
+      text2: t('errors.default_message'),
+    })
 
     console.error(error)
   },
