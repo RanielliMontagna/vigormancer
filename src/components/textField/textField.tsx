@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { Control } from 'react-hook-form'
 
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
-import { Input, InputProps } from '../ui/input'
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form/form'
+import { Input, InputProps } from '../ui/input/input'
 
 interface TextFieldProps extends InputProps {
   control: Control<any>

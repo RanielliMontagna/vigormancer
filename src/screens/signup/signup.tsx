@@ -17,7 +17,7 @@ export function SignUp() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 p-4 bg-background gap-6">
+      <View className="flex flex-1 p-4 bg-background gap-6" testID="sign-up">
         <View>
           <TouchableOpacity
             onPress={handleBack}

@@ -3,7 +3,7 @@ import { Image, View } from 'react-native'
 import LogoBlack from '@/assets/images/logo/black.png'
 import LogoWhite from '@/assets/images/logo/white.png'
 
-import { Text } from '../ui/text'
+import { Text } from '../ui/text/text'
 import { useColorScheme } from '@/hooks'
 import { cn } from '@/utils'
 
@@ -21,6 +21,7 @@ export function Logo({ orientation = 'vertical' }: LogoProps) {
   return (
     <View
       className={cn('flex flex-column items-center', orientation === 'horizontal' && 'flex-row')}
+      testID="logo-view"
     >
       <Image
         source={isDarkColorScheme ? LogoWhite : LogoBlack}

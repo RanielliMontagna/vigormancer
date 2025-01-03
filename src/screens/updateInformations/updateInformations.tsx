@@ -13,7 +13,7 @@ export function UpdateInformations() {
 
   return (
     <Form {...methods}>
-      <View className="flex flex-1 p-8 bg-background gap-6">
+      <View className="flex flex-1 p-8 bg-background gap-6" testID="update-informations">
         <BackButton />
         <View>
           <H2>{t('updateInformations.title')}</H2>
