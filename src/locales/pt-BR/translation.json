@@ -209,6 +209,21 @@
   },
   "progression": {
     "title": "Progressão",
-    "subtitle": "Acompanhe seu crescimento e libere seu potencial."
+    "subtitle": "Acompanhe seu crescimento e libere seu potencial.",
+    "cards": {
+      "workouts": "Treinos",
+      "streak": "Ofensiva"
+    },
+    "history": {
+      "title": "Histórico"
+    },
+    "weight": {
+      "title": "Peso",
+      "action": "Adicionar log"
+    },
+    "bmi": {
+      "title": "IMC",
+      "action": "Editar"
+    }
   }
 }

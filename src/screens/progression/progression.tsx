@@ -1,6 +1,10 @@
 import { H2, P } from '@/components'
 import { useTranslation } from 'react-i18next'
 import { ScrollView, View } from 'react-native'
+import { Cards } from './cards/cards'
+import { History } from './history/history'
+import { Weight } from './weight/weight'
+import { Bmi } from './bmi/bmi'
 
 export function Progression() {
   const { t } = useTranslation()
@@ -12,6 +16,10 @@ export function Progression() {
           <H2>{t('progression.title')}</H2>
           <P className="text-muted-foreground text-sm">{t('progression.subtitle')}</P>
         </View>
+        <Cards />
+        <History />
+        <Weight />
+        <Bmi />
       </View>
     </ScrollView>
   )

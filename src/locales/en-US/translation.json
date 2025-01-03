@@ -208,6 +208,21 @@
   },
   "progression": {
     "title": "Progression",
-    "subtitle": "Track your growth and unleash your potential."
+    "subtitle": "Track your growth and unleash your potential.",
+    "cards": {
+      "workouts": "Workouts",
+      "streak": "Streak"
+    },
+    "history": {
+      "title": "History"
+    },
+    "weight": {
+      "title": "Weight",
+      "action": "Add log"
+    },
+    "bmi": {
+      "title": "BMI",
+      "action": "Edit"
+    }
   }
 }
