@@ -222,7 +222,35 @@
     },
     "bmi": {
       "title": "BMI",
-      "action": "Edit"
+      "action": "Edit",
+      "weight": "Weight",
+      "height": "Height",
+      "levels": {
+        "underweight": {
+          "title": "Attention to Weight",
+          "description": "Your BMI indicates that you are below the ideal weight for your height. Consider consulting a nutritionist to evaluate your diet and overall health."
+        },
+        "normal": {
+          "title": "Healthy Weight",
+          "description": "Congratulations! Your BMI is within the ideal range. Keep maintaining healthy habits to ensure balance in your body."
+        },
+        "overweight": {
+          "title": "Attention to Weight",
+          "description": "Your BMI is slightly above the ideal range. Small changes in your diet and exercise routine can make a big difference."
+        },
+        "obesityI": {
+          "title": "Weight Alert",
+          "description": "Your BMI indicates mild obesity. A plan for balanced eating and regular exercise can help you reach a healthier range."
+        },
+        "obesityII": {
+          "title": "Health Warning",
+          "description": "Your BMI is in the moderate obesity range. Seeking professional guidance is important to protect your health and well-being."
+        },
+        "obesityIII": {
+          "title": "Maximum Alert",
+          "description": "Your BMI indicates severe obesity, which can increase the risk of health conditions. Seek medical help for a personalized action plan."
+        }
+      }
     }
   }
 }

@@ -223,7 +223,35 @@
     },
     "bmi": {
       "title": "IMC",
-      "action": "Editar"
+      "action": "Editar",
+      "weight": "Peso",
+      "height": "Altura",
+      "levels": {
+        "underweight": {
+          "title": "Atenção ao Peso",
+          "description": "Seu BMI indica que você está abaixo do peso ideal para sua altura. Considere consultar um nutricionista para avaliar sua alimentação e saúde geral."
+        },
+        "normal": {
+          "title": "Peso Saudável",
+          "description": "Parabéns! Seu BMI está dentro da faixa ideal. Continue mantendo hábitos saudáveis para garantir o equilíbrio do corpo."
+        },
+        "overweight": {
+          "title": "Atenção ao Peso",
+          "description": "Seu BMI está um pouco acima da faixa ideal. Pequenas mudanças na dieta e na rotina de exercícios podem fazer uma grande diferença."
+        },
+        "obesityI": {
+          "title": "Peso em Alerta",
+          "description": "Seu BMI indica obesidade leve. Um plano de alimentação equilibrada e exercícios regulares pode ajudar a alcançar uma faixa mais saudável."
+        },
+        "obesityII": {
+          "title": "Cuidado com a Saúde",
+          "description": "Seu BMI está na faixa de obesidade moderada. É importante buscar orientação profissional para proteger sua saúde e bem-estar."
+        },
+        "obesityIII": {
+          "title": "Alerta Máximo",
+          "description": "Seu BMI indica obesidade severa, o que pode aumentar o risco de condições de saúde. Procure ajuda médica para um plano de ação personalizado."
+        }
+      }
     }
   }
 }
