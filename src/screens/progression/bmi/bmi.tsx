@@ -16,7 +16,7 @@ export function Bmi() {
 
   const bmiLevelValues = useMemo(() => {
     //TODO: Replace with actual BMI value
-    const bmiLevel = BmiLevels.Normal as BmiLevels
+    const bmiLevel = BmiLevels.Underweight as BmiLevels
 
     var bmiColor = {
       color: colors.blue[400] as string,

@@ -1,6 +1,7 @@
 // UI
 export * from './ui/avatar/avatar'
 export * from './ui/button/button'
+export * from './ui/calendar/calendar'
 export * from './ui/card/card'
 export * from './ui/form/form'
 export * from './ui/input/input'

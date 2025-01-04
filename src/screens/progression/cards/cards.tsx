@@ -11,15 +11,15 @@ export function Cards() {
   const { t } = useTranslation()
 
   return (
-    <View className="flex-row bg-primary-foreground rounded-xl justify-center gap-16 py-4 elevation-sm">
-      <View className="flex-col">
+    <View className="flex-row gap-4 justify-center">
+      <View className="flex-col flex-1 bg-card rounded-xl items-center justify-center py-4">
         <View className="flex-row gap-2 items-center">
           <FontAwesome6 name="dumbbell" size={18} color={isDarkColorScheme ? 'white' : 'black'} />
           <H2>24</H2>
         </View>
         <P className="text-muted-foreground text-center">{t('progression.cards.workouts')}</P>
       </View>
-      <View className="flex-col">
+      <View className="flex-col flex-1 bg-card rounded-xl items-center justify-center">
         <View className="flex-row gap-2 items-center">
           <FontAwesome6 name="fire" size={18} color={isDarkColorScheme ? 'white' : 'black'} />
           <H2>24</H2>
