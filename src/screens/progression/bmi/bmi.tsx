@@ -4,7 +4,7 @@ import { PieChart } from 'react-native-gifted-charts'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { Button, H1, H2, H3, H4, P, Text } from '@/components'
+import { Button, H1, H3, H4, P, Text } from '@/components'
 import { useColorScheme } from '@/hooks'
 import colors from 'tailwindcss/colors'
 import { useMemo } from 'react'
@@ -90,12 +90,13 @@ export function Bmi() {
           <Text>{t('progression.bmi.action')}</Text>
         </Button>
       </View>
-      <View className="flex-column bg-primary-foreground rounded-xl items-center justify-center gap-4 p-8">
+      <View className="flex-column bg-card rounded-xl items-center justify-center gap-4 p-8">
         <PieChart
           data={pieData}
           donut
           showGradient
           sectionAutoFocus
+          innerCircleColor={isDarkColorScheme ? colors.gray[900] : colors.gray[50]}
           radius={Dimensions.get('window').width / 5}
           innerRadius={Dimensions.get('window').width / 5 - 15}
           centerLabelComponent={() => {

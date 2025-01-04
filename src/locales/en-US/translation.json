@@ -218,7 +218,10 @@
     },
     "weight": {
       "title": "Weight",
-      "action": "Add log"
+      "action": "Add log",
+      "current": "Current",
+      "heaviest": "Heaviest",
+      "lightest": "Lightest"
     },
     "bmi": {
       "title": "BMI",

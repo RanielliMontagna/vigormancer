@@ -219,7 +219,10 @@
     },
     "weight": {
       "title": "Peso",
-      "action": "Adicionar log"
+      "action": "Adicionar log",
+      "current": "Atual",
+      "heaviest": "Maior peso",
+      "lightest": "Menor peso"
     },
     "bmi": {
       "title": "IMC",
