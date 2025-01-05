@@ -160,7 +160,8 @@
     "title": "Select Your Language",
     "subtitle": "Customize your journey with your preferred language",
     "english": "English",
-    "portuguese": "Portuguese"
+    "portuguese": "Portuguese",
+    "info": "Changing the language will restart the app."
   },
   "changePassword": {
     "title": "Change Password",

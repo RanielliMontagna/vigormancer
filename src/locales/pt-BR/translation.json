@@ -161,7 +161,8 @@
     "title": "Selecione seu idioma",
     "subtitle": "Personalize sua jornada com seu idioma preferido",
     "english": "Inglês",
-    "portuguese": "Português"
+    "portuguese": "Português",
+    "info": "Mudar o idioma reiniciará o aplicativo."
   },
   "changePassword": {
     "title": "Alterar Senha",
