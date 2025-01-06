@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@clerk/clerk-expo": "^2.6.2",
+    "@gorhom/bottom-sheet": "^5.0.6",
     "@hookform/resolvers": "^3.9.1",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@rn-primitives/avatar": "^1.1.0",
@@ -47,6 +48,7 @@
     "react-i18next": "^15.2.0",
     "react-native": "0.76.5",
     "react-native-calendars": "^1.1307.0",
+    "react-native-gesture-handler": "~2.20.2",
     "react-native-gifted-charts": "^1.4.51",
     "react-native-infinite-wheel-picker": "^1.0.0",
     "react-native-reanimated": "~3.16.5",

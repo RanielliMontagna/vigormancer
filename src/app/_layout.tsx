@@ -1,9 +1,10 @@
-import { SafeAreaView } from 'react-native'
-import { I18nextProvider } from 'react-i18next'
-import React, { useEffect, useState } from 'react'
-import { router, Slot, SplashScreen } from 'expo-router'
 import { useFonts } from 'expo-font'
+import { useEffect, useState } from 'react'
+import { SafeAreaView } from 'react-native'
 import Toast from 'react-native-toast-message'
+import { I18nextProvider } from 'react-i18next'
+import { router, Slot, SplashScreen } from 'expo-router'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 import { ClerkProvider, ClerkLoaded, useAuth } from '@clerk/clerk-expo'
 import * as Sentry from '@sentry/react-native'
@@ -29,9 +30,7 @@ if (!sentryDsn) {
 }
 
 if (!__DEV__) {
-  Sentry.init({
-    dsn: sentryDsn,
-  })
+  Sentry.init({ dsn: sentryDsn })
 }
 
 function App() {
@@ -83,13 +82,15 @@ function App() {
   }, [isLoaded, isSignedIn, onboarding])
 
   return (
-    <I18nextProvider i18n={i18n}>
-      <SafeAreaView className="flex-1">
-        <Slot />
-        <Toast position="bottom" />
-        {isLoading && <LoadingOverlay />}
-      </SafeAreaView>
-    </I18nextProvider>
+    <GestureHandlerRootView>
+      <I18nextProvider i18n={i18n}>
+        <SafeAreaView className="flex-1">
+          <Slot />
+          <Toast position="bottom" />
+          {isLoading && <LoadingOverlay />}
+        </SafeAreaView>
+      </I18nextProvider>
+    </GestureHandlerRootView>
   )
 }
 
