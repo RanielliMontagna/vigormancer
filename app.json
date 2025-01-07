@@ -17,6 +17,9 @@
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "package": "com.ranimontagna.vigormancer"
     }
   }
 }

@@ -15,6 +15,7 @@ import { initI18n, i18n } from '@/libs/i18n'
 import { tokenCache } from '@/libs/cache/cache'
 import { LoadingOverlay } from '@/components'
 import { useAppStore } from '@/store'
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -85,9 +86,11 @@ function App() {
     <GestureHandlerRootView>
       <I18nextProvider i18n={i18n}>
         <SafeAreaView className="flex-1">
-          <Slot />
-          <Toast position="bottom" />
-          {isLoading && <LoadingOverlay />}
+          <BottomSheetModalProvider>
+            <Slot />
+            <Toast position="bottom" />
+            {isLoading && <LoadingOverlay />}
+          </BottomSheetModalProvider>
         </SafeAreaView>
       </I18nextProvider>
     </GestureHandlerRootView>
