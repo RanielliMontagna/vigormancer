@@ -17,8 +17,13 @@ const BottomSheetComponent = React.forwardRef<
   )
 
   return (
-    <BottomSheetModal ref={ref} backdropComponent={renderBackdrop} {...rest}>
-      <BottomSheetView>{children as React.ReactElement}</BottomSheetView>
+    <BottomSheetModal
+      ref={ref}
+      backdropComponent={renderBackdrop}
+      enableContentPanningGesture={false}
+      {...rest}
+    >
+      <BottomSheetView className="p-6">{children as React.ReactElement}</BottomSheetView>
     </BottomSheetModal>
   )
 })

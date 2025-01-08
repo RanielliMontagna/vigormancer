@@ -222,13 +222,27 @@
       "action": "Add log",
       "current": "Current",
       "heaviest": "Heaviest",
-      "lightest": "Lightest"
+      "lightest": "Lightest",
+      "edit": {
+        "title": "Weight",
+        "weight": "Weight",
+        "action": "Save",
+        "cancel": "Cancel"
+      }
     },
     "bmi": {
       "title": "BMI",
       "action": "Edit",
       "weight": "Weight",
       "height": "Height",
+      "edit": {
+        "title": "BMI",
+        "info": "Body Mass Index (BMI) is a measure of body fat based on height and weight. It helps to identify if you are underweight, normal weight, overweight, or obese.",
+        "weight": "Weight",
+        "height": "Height",
+        "action": "Save",
+        "cancel": "Cancel"
+      },
       "levels": {
         "underweight": {
           "title": "Attention to Weight",

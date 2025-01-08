@@ -1,16 +1,18 @@
 import { LineChart, lineDataItem } from 'react-native-gifted-charts'
 import { useTranslation } from 'react-i18next'
 import { Dimensions, View } from 'react-native'
+import colors from 'tailwindcss/colors'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { Button, H2, H4, P, Text } from '@/components'
+import { Button, H2, P, Text } from '@/components'
 import { useColorScheme } from '@/hooks'
-import colors from 'tailwindcss/colors'
+import { useProgressionContext } from '../progression.context'
 
 export function Weight() {
   const { t } = useTranslation()
   const { isDarkColorScheme } = useColorScheme()
+  const { handleOpenWeightBottomSheet } = useProgressionContext()
 
   const data = [
     { value: 75, label: '01/05' },
@@ -32,7 +34,7 @@ export function Weight() {
     <View className="gap-4">
       <View className="flex-row justify-between items-center">
         <Text className="flex-1">{t('progression.weight.title')}</Text>
-        <Button className="gap-2" size="sm">
+        <Button className="gap-2" size="sm" onPress={handleOpenWeightBottomSheet}>
           <FontAwesome6 name="add" solid size={16} color={isDarkColorScheme ? 'black' : 'white'} />
           <Text>{t('progression.weight.action')}</Text>
         </Button>

@@ -223,13 +223,27 @@
       "action": "Adicionar log",
       "current": "Atual",
       "heaviest": "Maior peso",
-      "lightest": "Menor peso"
+      "lightest": "Menor peso",
+      "edit": {
+        "title": "Peso",
+        "weight": "Peso",
+        "action": "Salvar",
+        "cancel": "Cancelar"
+      }
     },
     "bmi": {
       "title": "IMC",
       "action": "Editar",
       "weight": "Peso",
       "height": "Altura",
+      "edit": {
+        "title": "IMC",
+        "info": "Seu Índice de Massa Corporal (IMC) é uma medida de saúde com base em seu peso e altura. Ele fornece uma estimativa do seu percentual de gordura corporal e ajuda a identificar riscos à saúde.",
+        "weight": "Peso",
+        "height": "Altura",
+        "action": "Salvar",
+        "cancel": "Cancelar"
+      },
       "levels": {
         "underweight": {
           "title": "Atenção ao Peso",

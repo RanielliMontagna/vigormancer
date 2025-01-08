@@ -7,85 +7,23 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { Button, H1, H3, H4, P, Text } from '@/components'
 import { useColorScheme } from '@/hooks'
 import colors from 'tailwindcss/colors'
-import { useMemo } from 'react'
-import { BmiLevels } from './bmi.types'
+
+import { useBmi } from './useBmi'
+import { useProgressionContext } from '../progression.context'
+import React from 'react'
 
 export function Bmi() {
   const { t } = useTranslation()
   const { isDarkColorScheme } = useColorScheme()
 
-  const bmiLevelValues = useMemo(() => {
-    //TODO: Replace with actual BMI value
-    const bmiLevel = BmiLevels.Underweight as BmiLevels
-
-    var bmiColor = {
-      color: colors.blue[400] as string,
-      gradientCenterColor: colors.blue[500] as string,
-      backgroundColor: colors.blue[100] as string,
-    }
-
-    switch (bmiLevel) {
-      case BmiLevels.Underweight:
-        bmiColor = {
-          color: colors.orange[400],
-          gradientCenterColor: colors.orange[500],
-          backgroundColor: colors.orange[100],
-        }
-        break
-      case BmiLevels.Overweight:
-        bmiColor = {
-          color: colors.orange[400],
-          gradientCenterColor: colors.orange[500],
-          backgroundColor: colors.orange[100],
-        }
-        break
-      case BmiLevels.ObesityI:
-        bmiColor = {
-          color: colors.red[400],
-          gradientCenterColor: colors.red[500],
-          backgroundColor: colors.red[100],
-        }
-        break
-      case BmiLevels.ObesityII:
-        bmiColor = {
-          color: colors.red[500],
-          gradientCenterColor: colors.red[600],
-          backgroundColor: colors.red[100],
-        }
-        break
-      case BmiLevels.ObesityIII:
-        bmiColor = {
-          color: colors.red[600],
-          gradientCenterColor: colors.red[700],
-          backgroundColor: colors.red[100],
-        }
-        break
-      default:
-        break
-    }
-
-    return {
-      title: t(`progression.bmi.levels.${bmiLevel}.title`),
-      description: t(`progression.bmi.levels.${bmiLevel}.description`),
-      color: bmiColor,
-    }
-  }, [t])
-
-  const pieData = [
-    { value: 20, color: bmiLevelValues.color.backgroundColor },
-    {
-      value: 80,
-      color: bmiLevelValues.color.color,
-      gradientCenterColor: bmiLevelValues.color.gradientCenterColor,
-      focused: true,
-    },
-  ]
+  const { pieData, bmiLevelValues } = useBmi()
+  const { handleOpenBmiBottomSheet } = useProgressionContext()
 
   return (
     <View className="gap-4">
       <View className="flex-row justify-between items-center">
         <Text className="flex-1">{t('progression.bmi.title')}</Text>
-        <Button className="gap-2" size="sm">
+        <Button className="gap-2" size="sm" onPress={handleOpenBmiBottomSheet}>
           <FontAwesome6 name="edit" size={16} color={isDarkColorScheme ? 'black' : 'white'} />
           <Text>{t('progression.bmi.action')}</Text>
         </Button>
