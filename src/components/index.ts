@@ -8,6 +8,7 @@ export * from './ui/form/form'
 export * from './ui/input/input'
 export * from './ui/label/label'
 export * from './ui/text/text'
+export * from './ui/tooltip/tooltip'
 export * from './ui/typography/typography'
 export * from './ui/switch/switch'
 

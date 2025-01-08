@@ -5,6 +5,7 @@ import Toast from 'react-native-toast-message'
 import { I18nextProvider } from 'react-i18next'
 import { router, Slot, SplashScreen } from 'expo-router'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import { PortalHost } from '@rn-primitives/portal'
 
 import { ClerkProvider, ClerkLoaded, useAuth } from '@clerk/clerk-expo'
 import * as Sentry from '@sentry/react-native'
@@ -92,6 +93,7 @@ function App() {
             {isLoading && <LoadingOverlay />}
           </BottomSheetModalProvider>
         </SafeAreaView>
+        <PortalHost />
       </I18nextProvider>
     </GestureHandlerRootView>
   )
