@@ -103,3 +103,21 @@ jest.mock('expo-web-browser', () => ({
   warmUpAsync: jest.fn(),
   coolDownAsync: jest.fn(),
 }))
+
+//Mock expo-updates
+jest.mock('expo-updates', () => ({
+  reloadAsync: jest.fn(),
+}))
+
+//Mock expo-linear-gradient
+jest.mock('expo-linear-gradient', () => 'ExpoLinearGradient')
+
+//Mock react-native-gifted-charts
+jest.mock('react-native-gifted-charts', () => ({
+  LineChart: 'LineChart',
+  BarChart: 'BarChart',
+  PieChart: 'PieChart',
+  ProgressChart: 'ProgressChart',
+  ContributionGraph: 'ContributionGraph',
+  StackedBarChart: 'StackedBarChart',
+}))

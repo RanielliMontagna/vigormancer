@@ -2,6 +2,7 @@ import { BackButton, H2, P } from '@/components'
 import { useTranslation } from 'react-i18next'
 import { TFunction } from 'i18next'
 import { TouchableOpacity, View } from 'react-native'
+import * as Updates from 'expo-updates'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
@@ -11,6 +12,7 @@ import { cn } from '@/utils'
 import colors from 'tailwindcss/colors'
 import { i18n } from '@/libs/i18n'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { LocaleConfig } from 'react-native-calendars'
 
 enum LanguageEnum {
   Portuguese = 'pt-BR',
@@ -27,10 +29,14 @@ function CardLanguage({ language, t, isCurrent }: CardLanguageProps) {
   async function handleChangeLanguage() {
     const newLanguage = language.toString()
 
-    console.log('newLanguage', newLanguage)
-
     await i18n.changeLanguage(newLanguage)
     AsyncStorage.setItem('language', newLanguage)
+
+    LocaleConfig.defaultLocale = newLanguage.includes('pt') ? 'pt' : 'en'
+    i18n.reloadResources()
+
+    // Reload the app to apply the language change
+    await Updates.reloadAsync()
   }
 
   return (
@@ -76,6 +82,9 @@ export function Language() {
           t={t}
           isCurrent={i18n.language.includes('en')}
         />
+      </View>
+      <View className="flex-1">
+        <P className="text-sm text-muted-foreground">{t('language.info')}</P>
       </View>
     </View>
   )

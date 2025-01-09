@@ -160,7 +160,8 @@
     "title": "Select Your Language",
     "subtitle": "Customize your journey with your preferred language",
     "english": "English",
-    "portuguese": "Portuguese"
+    "portuguese": "Portuguese",
+    "info": "Changing the language will restart the app."
   },
   "changePassword": {
     "title": "Change Password",
@@ -208,6 +209,66 @@
   },
   "progression": {
     "title": "Progression",
-    "subtitle": "Track your growth and unleash your potential."
+    "subtitle": "Track your growth and unleash your potential.",
+    "cards": {
+      "workouts": "Workouts",
+      "streak": "Streak"
+    },
+    "history": {
+      "title": "History"
+    },
+    "weight": {
+      "title": "Weight",
+      "action": "Add log",
+      "current": "Current",
+      "heaviest": "Heaviest",
+      "lightest": "Lightest",
+      "edit": {
+        "title": "Weight",
+        "weight": "Weight",
+        "action": "Save",
+        "cancel": "Cancel"
+      }
+    },
+    "bmi": {
+      "title": "BMI",
+      "action": "Edit",
+      "weight": "Weight",
+      "height": "Height",
+      "edit": {
+        "title": "BMI",
+        "info": "Body Mass Index (BMI) is a measure of body fat based on height and weight. It helps to identify if you are underweight, normal weight, overweight, or obese.",
+        "weight": "Weight",
+        "height": "Height",
+        "action": "Save",
+        "cancel": "Cancel"
+      },
+      "levels": {
+        "underweight": {
+          "title": "Attention to Weight",
+          "description": "Your BMI indicates that you are below the ideal weight for your height. Consider consulting a nutritionist to evaluate your diet and overall health."
+        },
+        "normal": {
+          "title": "Healthy Weight",
+          "description": "Congratulations! Your BMI is within the ideal range. Keep maintaining healthy habits to ensure balance in your body."
+        },
+        "overweight": {
+          "title": "Attention to Weight",
+          "description": "Your BMI is slightly above the ideal range. Small changes in your diet and exercise routine can make a big difference."
+        },
+        "obesityI": {
+          "title": "Weight Alert",
+          "description": "Your BMI indicates mild obesity. A plan for balanced eating and regular exercise can help you reach a healthier range."
+        },
+        "obesityII": {
+          "title": "Health Warning",
+          "description": "Your BMI is in the moderate obesity range. Seeking professional guidance is important to protect your health and well-being."
+        },
+        "obesityIII": {
+          "title": "Maximum Alert",
+          "description": "Your BMI indicates severe obesity, which can increase the risk of health conditions. Seek medical help for a personalized action plan."
+        }
+      }
+    }
   }
 }

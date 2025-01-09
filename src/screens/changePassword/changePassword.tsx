@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from 'react-native'
+import { TouchableOpacity, TouchableOpacityProps, View } from 'react-native'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
@@ -6,10 +6,13 @@ import { BackButton, Button, Form, H2, P, Text, TextField } from '@/components'
 import { useColorScheme } from '@/hooks'
 
 import { useChangePassword } from './useChangePassword'
+interface EyeButtonProps extends TouchableOpacityProps {
+  show: boolean
+}
 
-function EyeButton({ onPress, show }: { onPress: () => void; show: boolean }) {
+function EyeButton({ show, ...rest }: EyeButtonProps) {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity {...rest}>
       {show ? (
         <FontAwesome6 name="eye-slash" size={16} color="gray" />
       ) : (
@@ -42,6 +45,7 @@ export function ChangePassword() {
             secureTextEntry={!methods.watch('showCurrentPassword')}
             endAdornment={
               <EyeButton
+                testID="eye-button-current-password"
                 onPress={() =>
                   methods.setValue('showCurrentPassword', !methods.watch('showCurrentPassword'))
                 }
@@ -59,6 +63,7 @@ export function ChangePassword() {
             secureTextEntry={!methods.watch('showNewPassword')}
             endAdornment={
               <EyeButton
+                testID="eye-button-new-password"
                 onPress={() =>
                   methods.setValue('showNewPassword', !methods.watch('showNewPassword'))
                 }
@@ -76,6 +81,7 @@ export function ChangePassword() {
             secureTextEntry={!methods.watch('showConfirmPassword')}
             endAdornment={
               <EyeButton
+                testID="eye-button-confirm-password"
                 onPress={() =>
                   methods.setValue('showConfirmPassword', !methods.watch('showConfirmPassword'))
                 }

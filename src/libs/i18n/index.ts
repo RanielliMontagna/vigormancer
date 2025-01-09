@@ -1,9 +1,12 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
+import { LocaleConfig } from 'react-native-calendars'
 import * as Localization from 'expo-localization'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+
 import translationEn from '@/locales/en-US/translation.json'
 import translationPt from '@/locales/pt-BR/translation.json'
+import { localesEn, localesPt } from '@/constants/locales'
 
 const resources = {
   'pt-BR': { translation: translationPt },
@@ -24,6 +27,16 @@ const initI18n = async () => {
     fallbackLng: 'pt-BR',
     interpolation: { escapeValue: false },
   })
+
+  LocaleConfig.locales.en = localesEn()
+  LocaleConfig.locales.pt = localesPt()
+
+  if (i18n.language?.includes('pt')) {
+    LocaleConfig.defaultLocale = 'pt'
+    return
+  }
+
+  LocaleConfig.defaultLocale = 'en'
 }
 
 export { initI18n, i18n }

@@ -59,9 +59,5 @@ export function ForgotPasswordProvider({ children }) {
 export function useForgotPasswordContext() {
   const context = useContext(ForgotPasswordContext)
 
-  if (!context) {
-    throw new Error('useForgotPassword must be used within a ForgotPasswordProvider')
-  }
-
   return context
 }
