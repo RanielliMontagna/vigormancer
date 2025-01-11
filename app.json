@@ -11,15 +11,30 @@
       "output": "static",
       "bundler": "metro"
     },
-    "plugins": [["expo-router"], "expo-localization", "expo-font", "expo-secure-store"],
+    "plugins": [
+      [
+        "expo-router"
+      ],
+      "expo-localization",
+      "expo-font",
+      "expo-secure-store"
+    ],
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#212e44"
     },
     "android": {
       "package": "com.ranimontagna.vigormancer"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "b619b0e4-eb66-413e-8269-c93d0eec0b41"
+      }
     }
   }
 }

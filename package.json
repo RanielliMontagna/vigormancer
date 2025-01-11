@@ -5,13 +5,16 @@
   "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "format": "prettier --write .",
     "lint": "eslint .",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "build": "eas build --platform all",
+    "build:android": "eas build --platform android",
+    "build:local": "eas build --platform android --local"
   },
   "dependencies": {
     "@clerk/clerk-expo": "^2.6.2",
@@ -40,6 +43,7 @@
     "expo-secure-store": "^14.0.1",
     "expo-splash-screen": "~0.29.20",
     "expo-status-bar": "~2.0.1",
+    "expo-system-ui": "~4.0.7",
     "expo-updates": "~0.26.12",
     "i18next": "^24.1.2",
     "nativewind": "^4.0.1",
