@@ -16,9 +16,8 @@ export function Welcome() {
       </View>
       <View className="gap-2 flex-1 justify-center px-8">
         <View className="gap-1">
-          <Text className="text-center">{t('onboarding.welcome.title')}</Text>
           <View className="flex flex-row gap-2 items-center mb-4 justify-center">
-            <Logo orientation="horizontal" />
+            <Logo />
           </View>
         </View>
         <Text className="text-center text-muted-foreground">{t('onboarding.welcome.text')}</Text>
