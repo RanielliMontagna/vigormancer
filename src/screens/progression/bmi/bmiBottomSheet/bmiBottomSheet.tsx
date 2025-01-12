@@ -16,8 +16,11 @@ import {
   WheelPicker,
 } from '@/components'
 import { useBmiBottomSheet } from './useBmiBottomSheet'
+import { useColorScheme } from '@/hooks'
+import colors from 'tailwindcss/colors'
 
 export function BmiBottomSheet() {
+  const { isDarkColorScheme } = useColorScheme()
   const { t } = useTranslation()
 
   const {
@@ -41,7 +44,11 @@ export function BmiBottomSheet() {
           <Tooltip delayDuration={50}>
             <TooltipTrigger asChild>
               <Button size="icon" variant="ghost">
-                <FontAwesome6 name="circle-info" size={18} />
+                <FontAwesome6
+                  name="circle-info"
+                  size={18}
+                  color={isDarkColorScheme ? colors.white : colors.black}
+                />
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom" insets={{ left: 16, right: 16 }}>
