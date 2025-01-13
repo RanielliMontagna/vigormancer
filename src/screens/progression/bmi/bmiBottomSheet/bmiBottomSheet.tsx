@@ -9,29 +9,23 @@ import {
   Form,
   H3,
   Label,
+  RulerPicker,
   Text,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  WheelPicker,
 } from '@/components'
 import { useBmiBottomSheet } from './useBmiBottomSheet'
+import { useColorScheme } from '@/hooks'
+import colors from 'tailwindcss/colors'
+import { maxHeight, maxWeight, minHeight, minWeight } from '@/constants/constants'
 
 export function BmiBottomSheet() {
+  const { isDarkColorScheme } = useColorScheme()
   const { t } = useTranslation()
 
-  const {
-    methods,
-    heightWheelIndex,
-    weightWheelIndex,
-    weightInitialData,
-    heightInitialData,
-    bmiBottomSheetRef,
-    handleCancel,
-    handleSubmit,
-    setWeightWheelIndex,
-    setHeightWheelIndex,
-  } = useBmiBottomSheet()
+  const { methods, selectedHeight, selectedWeight, bmiBottomSheetRef, handleCancel, handleSubmit } =
+    useBmiBottomSheet()
 
   return (
     <Form {...methods}>
@@ -41,7 +35,11 @@ export function BmiBottomSheet() {
           <Tooltip delayDuration={50}>
             <TooltipTrigger asChild>
               <Button size="icon" variant="ghost">
-                <FontAwesome6 name="circle-info" size={18} />
+                <FontAwesome6
+                  name="circle-info"
+                  size={18}
+                  color={isDarkColorScheme ? colors.white : colors.black}
+                />
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom" insets={{ left: 16, right: 16 }}>
@@ -52,32 +50,28 @@ export function BmiBottomSheet() {
         <View>
           <View>
             <Label>{t('progression.bmi.edit.weight')}</Label>
-            <WheelPicker
-              initialSelectedIndex={weightWheelIndex}
-              data={weightInitialData}
-              selectedIndex={weightWheelIndex}
-              onChangeValue={(value) => {
-                setWeightWheelIndex(value)
-                methods.setValue('weight', value + 30)
-              }}
-              infiniteScroll={false}
-              restElements={2}
-              elementHeight={30}
+            <RulerPicker
+              max={maxWeight}
+              min={minWeight}
+              step={0.1}
+              fractionDigits={1}
+              initialValue={selectedWeight}
+              unit="kg"
+              onValueChangeEnd={(number) => methods.setValue('weight', Number(number))}
+              height={200}
             />
           </View>
           <View>
             <Label>{t('progression.bmi.edit.height')}</Label>
-            <WheelPicker
-              initialSelectedIndex={heightWheelIndex}
-              data={heightInitialData}
-              selectedIndex={heightWheelIndex}
-              onChangeValue={(value) => {
-                setHeightWheelIndex(value)
-                methods.setValue('height', value + 120)
-              }}
-              infiniteScroll={false}
-              restElements={2}
-              elementHeight={30}
+            <RulerPicker
+              max={maxHeight}
+              min={minHeight}
+              step={0.1}
+              fractionDigits={1}
+              initialValue={selectedHeight}
+              unit="cm"
+              onValueChangeEnd={(number) => methods.setValue('height', Number(number))}
+              height={200}
             />
           </View>
 

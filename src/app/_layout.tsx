@@ -1,11 +1,12 @@
 import { useFonts } from 'expo-font'
 import { useEffect, useState } from 'react'
-import { SafeAreaView } from 'react-native'
+import { StatusBar } from 'expo-status-bar'
+import { SafeAreaView, View } from 'react-native'
 import Toast from 'react-native-toast-message'
 import { I18nextProvider } from 'react-i18next'
+import { PortalHost } from '@rn-primitives/portal'
 import { router, Slot, SplashScreen } from 'expo-router'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { PortalHost } from '@rn-primitives/portal'
 
 import { ClerkProvider, ClerkLoaded, useAuth } from '@clerk/clerk-expo'
 import * as Sentry from '@sentry/react-native'
@@ -17,6 +18,7 @@ import { tokenCache } from '@/libs/cache/cache'
 import { LoadingOverlay } from '@/components'
 import { useAppStore } from '@/store'
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
+import { useColorScheme } from '@/hooks'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -38,6 +40,7 @@ if (!__DEV__) {
 function App() {
   const { isLoading } = useAppStore()
   const { isSignedIn, isLoaded } = useAuth()
+  const { isDarkColorScheme } = useColorScheme()
 
   const [isI18nInitialized, setIsI18nInitialized] = useState(false)
 
@@ -86,6 +89,9 @@ function App() {
   return (
     <GestureHandlerRootView>
       <I18nextProvider i18n={i18n}>
+        <View className="bg-background pb-4">
+          <StatusBar animated style={isDarkColorScheme ? 'light' : 'dark'} />
+        </View>
         <SafeAreaView className="flex-1">
           <BottomSheetModalProvider>
             <Slot />

@@ -1,5 +1,4 @@
 import { z } from 'zod'
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -21,8 +20,6 @@ export function useWeightBottomSheet() {
   })
 
   const selectedWeight = methods.watch('weight')
-  const weightInitialData = Array.from({ length: 121 }, (_, i) => `${i + 30} kg`)
-  const [weightWheelIndex, setWeightWheelIndex] = useState(selectedWeight - 30)
 
   function handleSubmit(values: WeightBottomSheetValues) {
     //TODO: Implement weight route to backend
@@ -36,11 +33,9 @@ export function useWeightBottomSheet() {
 
   return {
     methods,
-    weightWheelIndex,
-    weightInitialData,
+    selectedWeight,
     weightBottomSheetRef,
     handleCancel,
     handleSubmit,
-    setWeightWheelIndex,
   }
 }

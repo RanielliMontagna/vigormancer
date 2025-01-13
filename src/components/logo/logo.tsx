@@ -1,16 +1,17 @@
-import { Image, View } from 'react-native'
+import { Image } from 'react-native'
 
-import LogoBlack from '@/assets/images/logo/black.png'
-import LogoWhite from '@/assets/images/logo/white.png'
+import WithNameBlack from '@/assets/images/logo/with-name-black.png'
+import WithNameWhite from '@/assets/images/logo/with-name-white.png'
+import WithNameBlackHorizontal from '@/assets/images/logo/with-name-black-horizontal.png'
+import WithNameWhiteHorizontal from '@/assets/images/logo/with-name-white-horizontal.png'
 
-import { Text } from '../ui/text/text'
 import { useColorScheme } from '@/hooks'
 import { cn } from '@/utils'
 
 interface LogoProps {
   /**
    * The orientation of the logo.
-   * @default 'vertical'
+   * @default 'horizontal'
    */
   orientation?: 'horizontal' | 'vertical'
 }
@@ -18,21 +19,19 @@ interface LogoProps {
 export function Logo({ orientation = 'vertical' }: LogoProps) {
   const { isDarkColorScheme } = useColorScheme()
 
-  return (
-    <View
-      className={cn('flex flex-column items-center', orientation === 'horizontal' && 'flex-row')}
-      testID="logo-view"
-    >
+  if (orientation === 'vertical') {
+    return (
       <Image
-        source={isDarkColorScheme ? LogoWhite : LogoBlack}
-        className={cn('h-12 w-14', orientation === 'vertical' && 'h-20 w-20')}
+        source={isDarkColorScheme ? WithNameWhite : WithNameBlack}
+        className={cn('w-48 h-28')}
       />
-      <View className="flex flex-row justify-center items-center">
-        <Text bold className="text-3xl">
-          Vigor
-        </Text>
-        <Text className="text-3xl">mancer</Text>
-      </View>
-    </View>
+    )
+  }
+
+  return (
+    <Image
+      source={isDarkColorScheme ? WithNameWhiteHorizontal : WithNameBlackHorizontal}
+      className={cn('w-56 h-20')}
+    />
   )
 }
