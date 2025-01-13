@@ -1,21 +1,15 @@
 import { View } from 'react-native'
 import { useTranslation } from 'react-i18next'
 
-import { BottomSheet, Button, Form, H3, Text, WheelPicker } from '@/components'
+import { BottomSheet, Button, Form, H3, RulerPicker, Text } from '@/components'
 import { useWeightBottomSheet } from './useWeightBottomSheet'
+import { maxWeight, minWeight } from '@/constants/constants'
 
 export function WeightBottomSheet() {
   const { t } = useTranslation()
 
-  const {
-    methods,
-    weightWheelIndex,
-    weightInitialData,
-    weightBottomSheetRef,
-    handleCancel,
-    handleSubmit,
-    setWeightWheelIndex,
-  } = useWeightBottomSheet()
+  const { methods, selectedWeight, weightBottomSheetRef, handleCancel, handleSubmit } =
+    useWeightBottomSheet()
 
   return (
     <Form {...methods}>
@@ -24,17 +18,15 @@ export function WeightBottomSheet() {
           <H3>{t('progression.weight.edit.title')}</H3>
         </View>
         <View>
-          <WheelPicker
-            initialSelectedIndex={weightWheelIndex}
-            data={weightInitialData}
-            selectedIndex={weightWheelIndex}
-            onChangeValue={(value) => {
-              setWeightWheelIndex(value)
-              methods.setValue('weight', value + 30)
-            }}
-            infiniteScroll={false}
-            restElements={2}
-            elementHeight={30}
+          <RulerPicker
+            max={maxWeight}
+            min={minWeight}
+            step={0.1}
+            fractionDigits={1}
+            initialValue={selectedWeight}
+            unit="kg"
+            onValueChangeEnd={(number) => methods.setValue('weight', Number(number))}
+            height={200}
           />
 
           <View className="flex-row gap-4 mt-4">

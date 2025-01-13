@@ -1,5 +1,4 @@
 import { z } from 'zod'
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -22,12 +21,7 @@ export function useBmiBottomSheet() {
   })
 
   const selectedHeight = methods.watch('height')
-  const heightInitialData = Array.from({ length: 101 }, (_, i) => `${i + 120} cm`)
-  const [heightWheelIndex, setHeightWheelIndex] = useState(selectedHeight - 120)
-
   const selectedWeight = methods.watch('weight')
-  const weightInitialData = Array.from({ length: 121 }, (_, i) => `${i + 30} kg`)
-  const [weightWheelIndex, setWeightWheelIndex] = useState(selectedWeight - 30)
 
   function handleSubmit(values: BmiBottomSheetValues) {
     //TODO: Implement BMI route to backend
@@ -41,14 +35,10 @@ export function useBmiBottomSheet() {
 
   return {
     methods,
-    heightWheelIndex,
-    weightWheelIndex,
-    heightInitialData,
-    weightInitialData,
+    selectedHeight,
+    selectedWeight,
     bmiBottomSheetRef,
     handleCancel,
     handleSubmit,
-    setWeightWheelIndex,
-    setHeightWheelIndex,
   }
 }
