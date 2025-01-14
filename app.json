@@ -17,7 +17,8 @@
       ],
       "expo-localization",
       "expo-font",
-      "expo-secure-store"
+      "expo-secure-store",
+      "expo-sqlite"
     ],
     "icon": "./assets/icon.png",
     "splash": {
