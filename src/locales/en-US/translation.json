@@ -153,6 +153,10 @@
       "theme": "Theme",
       "logout": "Logout",
       "dark": "Dark Mode"
+    },
+    "footer": {
+      "appVersion": "App Version",
+      "dbVersion": "Database Version"
     }
   },
   "language": {

@@ -1,5 +1,6 @@
 import { SQLiteDatabase } from 'expo-sqlite'
 
+export const DATABASE_NAME = 'vigormancerdb'
 const DATABASE_VERSION = 1
 
 async function migrateDbIfNeeded(db: SQLiteDatabase) {
@@ -16,16 +17,18 @@ async function migrateDbIfNeeded(db: SQLiteDatabase) {
       
       -- Create workout table
       CREATE TABLE IF NOT EXISTS workouts (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          id TEXT PRIMARY KEY,
           name TEXT NOT NULL,
           description TEXT,
           date DATE DEFAULT (DATE('now')),
           image_path TEXT
+          created_at TIMESTAMP DEFAULT (DATETIME('now')),
+          updated_at TIMESTAMP DEFAULT (DATETIME('now'))
       );
 
       -- Create exercise table
       CREATE TABLE IF NOT EXISTS exercises (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          id TEXT PRIMARY KEY,
           workout_id INTEGER NOT NULL,
           name TEXT NOT NULL,
           type TEXT NOT NULL,
@@ -34,6 +37,8 @@ async function migrateDbIfNeeded(db: SQLiteDatabase) {
           distance REAL,
           duration INTEGER,
           rest_time INTEGER,
+          created_at TIMESTAMP DEFAULT (DATETIME('now')),
+          updated_at TIMESTAMP DEFAULT (DATETIME('now')),
           FOREIGN KEY (workout_id) REFERENCES workouts (id) ON DELETE CASCADE
       );
     `)

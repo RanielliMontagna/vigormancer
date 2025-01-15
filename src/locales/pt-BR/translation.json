@@ -154,6 +154,10 @@
       "theme": "Tema",
       "logout": "Sair",
       "dark": "Modo Escuro"
+    },
+    "footer": {
+      "appVersion": "Versão do App",
+      "dbVersion": "Versão do Banco de Dados"
     }
   },
   "language": {
