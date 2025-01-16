@@ -209,7 +209,12 @@
   },
   "workout": {
     "title": "Treinos",
-    "subtitle": "Canalize sua energia, domine sua forma..."
+    "subtitle": "Canalize sua energia, domine sua forma...",
+    "add": "Adicionar Treino",
+    "emptyState": {
+      "title": "Nenhum treino encontrado",
+      "subtitle": "Comece adicionando um novo treino."
+    }
   },
   "progression": {
     "title": "Progressão",

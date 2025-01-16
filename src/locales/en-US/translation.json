@@ -208,7 +208,12 @@
   },
   "workout": {
     "title": "Workouts",
-    "subtitle": "Channel your energy, master your form..."
+    "subtitle": "Channel your energy, master your form...",
+    "add": "Add Workout",
+    "emptyState": {
+      "title": "No workouts yet",
+      "subtitle": "Start your journey by adding a new workout."
+    }
   },
   "progression": {
     "title": "Progression",
