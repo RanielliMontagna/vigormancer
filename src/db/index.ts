@@ -1,3 +1,7 @@
+// Connection to the database
+export * from './connection'
+
+// Migration
 export * from './migrate'
 
 // Controllers
