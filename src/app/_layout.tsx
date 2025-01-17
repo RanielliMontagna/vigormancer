@@ -1,3 +1,5 @@
+import 'react-native-get-random-values'
+
 import { useFonts } from 'expo-font'
 import { useEffect, useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
