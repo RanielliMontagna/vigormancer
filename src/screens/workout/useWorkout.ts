@@ -1,8 +1,9 @@
-import { fetchWorkouts } from '@/db'
-import { Workout } from '@/db/repositories/workouts'
-
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { router } from 'expo-router'
+
+import { fetchWorkouts } from '@/db'
+import { Workout } from '@/db/repositories/workouts'
 
 export function useWorkout() {
   const { t } = useTranslation()
@@ -10,7 +11,7 @@ export function useWorkout() {
   const [workouts, setWorkouts] = useState<Workout[]>([])
 
   async function handleAddWorkout() {
-    // Fetch workouts
+    router.push('(private)/create-workout')
   }
 
   async function handleFetchWorkouts() {

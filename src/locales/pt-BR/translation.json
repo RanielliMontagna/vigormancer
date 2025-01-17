@@ -49,8 +49,7 @@
       "codePlaceholder": "Digite o código",
       "submit": "Verificar",
       "didntReceivedCode": "Não recebeu o código?",
-      "resendCode": "Reenviar Código",
-      "requiredCode": "Por favor, insira o código de {{length}} dígitos"
+      "resendCode": "Reenviar Código"
     },
     "resetPassword": {
       "title": "Criar Nova Senha",
@@ -119,7 +118,8 @@
     "lowercase": "Deve conter pelo menos uma letra minúscula",
     "uppercase": "Deve conter pelo menos uma letra maiúscula",
     "passwordMatch": "As senhas não coincidem",
-    "requiredCode": "Por favor, insira o código de {{length}} dígitos"
+    "requiredCode": "Por favor, insira o código de {{length}} dígitos",
+    "url": "Por favor, insira uma URL válida"
   },
   "dashboard": {
     "title": "Oi, {{name}}!",
@@ -214,6 +214,21 @@
     "emptyState": {
       "title": "Nenhum treino encontrado",
       "subtitle": "Comece adicionando um novo treino."
+    },
+    "createWorkout": {
+      "title": "Criar novo treino",
+      "subtitle": "Defina seu próximo desafio e ultrapasse seus limites.",
+      "name": "Nome",
+      "namePlaceholder": "Digite o nome do treino",
+      "description": "Descrição",
+      "descriptionPlaceholder": "Digite a descrição do treino",
+      "image": "Imagem",
+      "imagePlaceholder": "Digite a URL da imagem",
+      "submit": "Criar Treino",
+      "cancel": "Cancelar",
+      "created": "Treino criado com sucesso!",
+      "createdMessage": "{{name}} foi adicionado à sua lista de treinos.",
+      "error": "Ocorreu um erro ao criar o treino. Por favor, tente novamente."
     }
   },
   "progression": {

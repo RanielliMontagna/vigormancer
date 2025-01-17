@@ -20,15 +20,8 @@ export class SqliteWorkoutsRepository implements WorkoutsRepository {
     const id = uuidv4()
 
     await db.runAsync(
-      'INSERT INTO workouts (id, name, description, imagePath, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?)',
-      [
-        id,
-        workout.name,
-        workout.description,
-        workout.imagePath,
-        new Date().toISOString(),
-        new Date().toISOString(),
-      ],
+      'INSERT INTO workouts (id, name, description, image_path) VALUES (?, ?, ?, ?)',
+      [id, workout.name, workout.description, workout.imagePath],
     )
 
     return { id }

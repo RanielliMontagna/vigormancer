@@ -20,7 +20,6 @@ async function migrateDbIfNeeded(db: SQLiteDatabase) {
           id TEXT PRIMARY KEY,
           name TEXT NOT NULL,
           description TEXT,
-          date DATE DEFAULT (DATE('now')),
           image_path TEXT
           created_at TIMESTAMP DEFAULT (DATETIME('now')),
           updated_at TIMESTAMP DEFAULT (DATETIME('now'))

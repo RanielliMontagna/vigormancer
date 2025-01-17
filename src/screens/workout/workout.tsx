@@ -34,6 +34,7 @@ export function Workout() {
         <Button
           startIcon={<FontAwesome6 name="plus" size={16} color="white" />}
           onPress={handleAddWorkout}
+          size="lg"
         >
           <Text>{t('workout.add')}</Text>
         </Button>
