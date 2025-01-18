@@ -2,7 +2,7 @@ import { ScrollView, View } from 'react-native'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { BackButton, Button, Form, H2, P, Text, TextField } from '@/components'
+import { BackButton, Button, Form, H2, ImagePicker, P, Text, TextField } from '@/components'
 import { useColorScheme } from '@/hooks'
 
 import { useCreateWorkout } from './useCreateWorkout'
@@ -36,11 +36,10 @@ export function CreateWorkout() {
               multiline
               numberOfLines={2}
             />
-            <TextField
+            <ImagePicker
               control={methods.control}
-              name="image"
               label={t('workout.createWorkout.image')}
-              placeholder={t('workout.createWorkout.imagePlaceholder')}
+              name="image"
             />
           </View>
           <View className="gap-2">

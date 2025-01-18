@@ -207,6 +207,10 @@
     "default": "Algo deu errado",
     "default_message": "Por favor, tente novamente mais tarde."
   },
+  "others": {
+    "chooseImage": "Escolher Imagem",
+    "changeImage": "Alterar Imagem"
+  },
   "workout": {
     "title": "Treinos",
     "subtitle": "Canalize sua energia, domine sua forma...",
@@ -222,7 +226,7 @@
       "namePlaceholder": "Digite o nome do treino",
       "description": "Descrição",
       "descriptionPlaceholder": "Digite a descrição do treino",
-      "image": "Imagem",
+      "image": "Escolha uma imagem que represente seu treino",
       "imagePlaceholder": "Digite a URL da imagem",
       "submit": "Criar Treino",
       "cancel": "Cancelar",

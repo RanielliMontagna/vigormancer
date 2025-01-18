@@ -207,6 +207,10 @@
     "default: ": "Something went wrong",
     "default_message": "Please try again later"
   },
+  "others": {
+    "chooseImage": "Choose an image",
+    "changeImage": "Change image"
+  },
   "workout": {
     "title": "Workouts",
     "subtitle": "Channel your energy, master your form...",
@@ -222,8 +226,7 @@
       "namePlaceholder": "Enter the workout name",
       "description": "Description",
       "descriptionPlaceholder": "Describe the focus or purpose of this workout",
-      "image": "Image",
-      "imagePlaceholder": "Paste an image URL",
+      "image": "Choose an image to represent your workout",
       "submit": "Create Workout",
       "cancel": "Cancel",
       "created": "Workout created successfully!",

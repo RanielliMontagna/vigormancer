@@ -21,9 +21,9 @@ async function migrateDbIfNeeded(db: SQLiteDatabase) {
           name TEXT NOT NULL,
           description TEXT,
           difficulty INTEGER DEFAULT 0,
-          image_path TEXT,
-          created_at TIMESTAMP DEFAULT (DATETIME('now')),
-          updated_at TIMESTAMP DEFAULT (DATETIME('now'))
+          image TEXT,
+          createdAt TIMESTAMP DEFAULT (DATETIME('now')),
+          updatedAt TIMESTAMP DEFAULT (DATETIME('now'))
       );
 
       -- Create exercise table
@@ -36,9 +36,9 @@ async function migrateDbIfNeeded(db: SQLiteDatabase) {
           sets INTEGER,
           distance REAL,
           duration INTEGER,
-          rest_time INTEGER,
-          created_at TIMESTAMP DEFAULT (DATETIME('now')),
-          updated_at TIMESTAMP DEFAULT (DATETIME('now')),
+          restTime INTEGER,
+          createdAt TIMESTAMP DEFAULT (DATETIME('now')),
+          updatedAt TIMESTAMP DEFAULT (DATETIME('now')),
           FOREIGN KEY (workout_id) REFERENCES workouts (id) ON DELETE CASCADE
       );
     `)

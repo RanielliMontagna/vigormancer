@@ -9,7 +9,7 @@ export interface Workout {
   name: string
   description?: string
   difficulty?: number
-  imagePath?: string
+  image?: string
   createdAt: string
   updatedAt: string
 }
