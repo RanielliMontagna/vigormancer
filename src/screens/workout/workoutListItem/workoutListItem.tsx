@@ -1,7 +1,7 @@
 import { H4, Text } from '@/components'
 import { Workout } from '@/db/repositories/workouts'
 
-import { Image, View } from 'react-native'
+import { Dimensions, Image, View } from 'react-native'
 
 import WorkoutPlaceholder from '@/assets/images/workout-placeholder.jpg'
 
@@ -23,10 +23,19 @@ export function WorkoutListItem({ index, name, image }: WorkoutListItemProps) {
         {image ? (
           <Image
             source={{ uri: `data:image/jpeg;base64,${image}` }}
-            className="w-44 h-32 rounded-xl"
+            className="h-32 rounded-xl"
+            style={{
+              width: Dimensions.get('window').width / 3,
+            }}
           />
         ) : (
-          <Image source={WorkoutPlaceholder} className="w-44 h-32 rounded-xl" />
+          <Image
+            source={WorkoutPlaceholder}
+            className="h-32 rounded-xl"
+            style={{
+              width: Dimensions.get('window').width / 3,
+            }}
+          />
         )}
       </View>
     </View>
