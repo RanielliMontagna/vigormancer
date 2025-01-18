@@ -21,6 +21,8 @@ import { LoadingOverlay, OfflineBar } from '@/components'
 import { useAppStore } from '@/store'
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 import { useColorScheme, useNetInfo } from '@/hooks'
+import { QueryClientProvider } from '@tanstack/react-query'
+import { queryClient } from '@/libs/react-query'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -94,17 +96,19 @@ function App() {
   return (
     <GestureHandlerRootView>
       <I18nextProvider i18n={i18n}>
-        <SafeAreaView className="flex-1">
-          <View className="bg-background pb-4">
-            <StatusBar animated style={isDarkColorScheme ? 'light' : 'dark'} />
-          </View>
-          <BottomSheetModalProvider>
-            <Slot />
-            <Toast position="bottom" />
-            {isLoading && <LoadingOverlay />}
-            {!isConnected && <OfflineBar />}
-          </BottomSheetModalProvider>
-        </SafeAreaView>
+        <QueryClientProvider client={queryClient}>
+          <SafeAreaView className="flex-1">
+            <View className="bg-background pb-4">
+              <StatusBar animated style={isDarkColorScheme ? 'light' : 'dark'} />
+            </View>
+            <BottomSheetModalProvider>
+              <Slot />
+              <Toast position="bottom" />
+              {isLoading && <LoadingOverlay />}
+              {!isConnected && <OfflineBar />}
+            </BottomSheetModalProvider>
+          </SafeAreaView>
+        </QueryClientProvider>
         <PortalHost />
       </I18nextProvider>
     </GestureHandlerRootView>

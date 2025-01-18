@@ -50,6 +50,9 @@ importers:
       '@shopify/flash-list':
         specifier: ^1.7.2
         version: 1.7.2(@babel/runtime@7.26.0)(react-native@0.76.6(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.16)(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-query':
+        specifier: ^5.64.1
+        version: 5.64.1(react@18.3.1)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -2139,6 +2142,14 @@ packages:
   '@szmarczak/http-timer@4.0.6':
     resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
     engines: {node: '>=10'}
+
+  '@tanstack/query-core@5.64.1':
+    resolution: {integrity: sha512-978Wx4Wl4UJZbmvU/rkaM9cQtXXrbhK0lsz/UZhYIbyKYA8E4LdomTwyh2GHZ4oU0BKKoDH4YlKk2VscCUgNmg==}
+
+  '@tanstack/react-query@5.64.1':
+    resolution: {integrity: sha512-vW5ggHpIO2Yjj44b4sB+Fd3cdnlMJppXRBJkEHvld6FXh3j5dwWJoQo7mGtKI2RbSFyiyu/PhGAy0+Vv5ev9Eg==}
+    peerDependencies:
+      react: ^18 || ^19
 
   '@testing-library/jest-native@5.4.3':
     resolution: {integrity: sha512-/sSDGaOuE+PJ1Z9Kp4u7PQScSVVXGud59I/qsBFFJvIbcn4P6yYw6cBnBmbPF+X9aRIsTJRDl6gzw5ZkJNm66w==}
@@ -9755,6 +9766,13 @@ snapshots:
   '@szmarczak/http-timer@4.0.6':
     dependencies:
       defer-to-connect: 2.0.1
+
+  '@tanstack/query-core@5.64.1': {}
+
+  '@tanstack/react-query@5.64.1(react@18.3.1)':
+    dependencies:
+      '@tanstack/query-core': 5.64.1
+      react: 18.3.1
 
   '@testing-library/jest-native@5.4.3(react-native@0.76.6(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(@types/react@18.3.16)(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
