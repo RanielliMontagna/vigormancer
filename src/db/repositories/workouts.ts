@@ -1,7 +1,14 @@
+export enum WorkoutDifficulty {
+  BEGINNER = 0,
+  INTERMEDIATE = 1,
+  ADVANCED = 2,
+}
+
 export interface Workout {
   id: string
   name: string
   description?: string
+  difficulty?: number
   imagePath?: string
   createdAt: string
   updatedAt: string

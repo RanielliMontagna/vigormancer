@@ -6,6 +6,7 @@ import { useAppStore } from '@/store'
 import Toast from 'react-native-toast-message'
 import { router } from 'expo-router'
 import { createWorkout } from '@/db'
+import { queryClient } from '@/libs/react-query'
 
 export function useCreateWorkout() {
   const { t } = useTranslation()
@@ -55,6 +56,8 @@ export function useCreateWorkout() {
           text1: t('workout.createWorkout.created'),
           text2: t('workout.createWorkout.createdMessage', { name: values.name }),
         })
+
+        queryClient.invalidateQueries({ queryKey: ['workouts'] })
 
         router.back()
       } else {

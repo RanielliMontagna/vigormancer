@@ -1,34 +1,18 @@
-import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { router } from 'expo-router'
 
 import { fetchWorkouts } from '@/db'
-import { Workout } from '@/db/repositories/workouts'
+import { useQuery } from '@tanstack/react-query'
 
 export function useWorkout() {
   const { t } = useTranslation()
-
-  const [workouts, setWorkouts] = useState<Workout[]>([])
+  const { data } = useQuery({ queryKey: ['workouts'], queryFn: fetchWorkouts })
 
   async function handleAddWorkout() {
     router.push('(private)/create-workout')
   }
 
-  async function handleFetchWorkouts() {
-    // Add workout logic
-    try {
-      const response = await fetchWorkouts()
-      setWorkouts(response)
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  const isWorkoutsEmpty = data?.length === 0
 
-  useEffect(() => {
-    handleFetchWorkouts()
-  }, [])
-
-  const isWorkoutsEmpty = workouts.length === 0
-
-  return { t, workouts, isWorkoutsEmpty, handleAddWorkout }
+  return { t, workouts: data, isWorkoutsEmpty, handleAddWorkout }
 }

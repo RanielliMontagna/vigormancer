@@ -33,6 +33,8 @@ export function CreateWorkout() {
               name="description"
               label={t('workout.createWorkout.description')}
               placeholder={t('workout.createWorkout.descriptionPlaceholder')}
+              multiline
+              numberOfLines={2}
             />
             <TextField
               control={methods.control}

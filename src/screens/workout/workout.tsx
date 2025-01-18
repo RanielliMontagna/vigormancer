@@ -6,8 +6,11 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { useWorkout } from './useWorkout'
 
 import DumbbellExercise from '@/assets/svgs/storyset/dumbbell-exercise.svg'
+import { WorkoutListItem } from './workoutListItem/workoutListItem'
+import { useColorScheme } from '@/hooks'
 
 export function Workout() {
+  const { isDarkColorScheme } = useColorScheme()
   const { t, workouts, isWorkoutsEmpty, handleAddWorkout } = useWorkout()
 
   return (
@@ -27,12 +30,18 @@ export function Workout() {
             <P className="text-muted-foreground text-sm">{t('workout.emptyState.subtitle')}</P>
           </View>
         ) : (
-          <FlatList data={workouts} renderItem={() => <View />} />
+          <FlatList
+            data={workouts}
+            renderItem={({ item, index }) => <WorkoutListItem {...item} index={index} />}
+            ItemSeparatorComponent={() => <View className="h-2 bg-divider" />}
+          />
         )}
       </View>
       <View>
         <Button
-          startIcon={<FontAwesome6 name="plus" size={16} color="white" />}
+          startIcon={
+            <FontAwesome6 name="plus" size={16} color={isDarkColorScheme ? 'black' : 'white'} />
+          }
           onPress={handleAddWorkout}
           size="lg"
         >
