@@ -232,7 +232,13 @@
       "cancel": "Cancelar",
       "created": "Treino criado com sucesso!",
       "createdMessage": "{{name}} foi adicionado à sua lista de treinos.",
-      "error": "Ocorreu um erro ao criar o treino. Por favor, tente novamente."
+      "error": "Ocorreu um erro ao criar o treino. Por favor, tente novamente.",
+      "difficulty": "Dificuldade",
+      "difficultyOptions": {
+        "beginner": "Iniciante",
+        "intermediate": "Intermediário",
+        "advanced": "Avançado"
+      }
     }
   },
   "progression": {

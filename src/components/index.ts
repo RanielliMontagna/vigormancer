@@ -14,9 +14,12 @@ export * from './ui/switch/switch'
 
 // Custom
 export * from './logo/logo'
-export * from './textField/textField'
 export * from './backButton/backButton'
-export * from './rulerPicker/rulerPicker'
 export * from './loadingOverlay/loadingOverlay'
 export * from './offlineBar/offlineBar'
-export * from './imagePicker/imagePicker'
+
+//Form
+export * from './form/imagePicker/imagePicker'
+export * from './form/rulerPicker/rulerPicker'
+export * from './form/segmentedControlField/segmentedControlField'
+export * from './form/textField/textField'

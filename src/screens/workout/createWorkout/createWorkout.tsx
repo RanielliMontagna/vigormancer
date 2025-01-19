@@ -2,7 +2,17 @@ import { ScrollView, View } from 'react-native'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { BackButton, Button, Form, H2, ImagePicker, P, Text, TextField } from '@/components'
+import {
+  BackButton,
+  Button,
+  Form,
+  H2,
+  ImagePicker,
+  P,
+  SegmentedControlField,
+  Text,
+  TextField,
+} from '@/components'
 import { useColorScheme } from '@/hooks'
 
 import { useCreateWorkout } from './useCreateWorkout'
@@ -35,6 +45,17 @@ export function CreateWorkout() {
               placeholder={t('workout.createWorkout.descriptionPlaceholder')}
               multiline
               numberOfLines={2}
+            />
+            <SegmentedControlField
+              control={methods.control}
+              name="difficulty"
+              label={t('workout.createWorkout.difficulty')}
+              options={[
+                t('workout.createWorkout.difficultyOptions.beginner'),
+                t('workout.createWorkout.difficultyOptions.intermediate'),
+                t('workout.createWorkout.difficultyOptions.advanced'),
+              ]}
+              required
             />
             <ImagePicker
               control={methods.control}

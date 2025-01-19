@@ -231,7 +231,13 @@
       "cancel": "Cancel",
       "created": "Workout created successfully!",
       "createdMessage": "{{name}} has been added to your workouts.",
-      "error": "An error occurred while creating the workout."
+      "error": "An error occurred while creating the workout.",
+      "difficulty": "Difficulty",
+      "difficultyOptions": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   },
   "progression": {

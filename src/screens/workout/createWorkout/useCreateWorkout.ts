@@ -11,6 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useAppStore } from '@/store'
 import { createWorkout } from '@/db'
 import { queryClient } from '@/libs/react-query'
+import { WorkoutDifficulty } from '@/db/repositories/workouts'
 
 export function useCreateWorkout() {
   const { t } = useTranslation()
@@ -19,6 +20,7 @@ export function useCreateWorkout() {
   const addWorkoutSchema = z.object({
     name: z.string().min(4, t('validation.minLength', { min: 4 })),
     description: z.string().optional(),
+    difficulty: z.nativeEnum(WorkoutDifficulty),
     image: z.string().optional(),
   })
 
@@ -27,6 +29,7 @@ export function useCreateWorkout() {
   const defaultValues = {
     name: '',
     description: '',
+    difficulty: WorkoutDifficulty.BEGINNER,
     image: '',
   }
 
@@ -34,6 +37,8 @@ export function useCreateWorkout() {
     resolver: zodResolver(addWorkoutSchema),
     defaultValues,
   })
+
+  console.log(methods.watch('difficulty'))
 
   const handleSubmit: SubmitHandler<AddWorkoutSchema> = async (values) => {
     try {
@@ -50,6 +55,7 @@ export function useCreateWorkout() {
       const response = await createWorkout({
         name: values.name,
         description: values.description,
+        difficulty: values.difficulty,
         image,
       })
 

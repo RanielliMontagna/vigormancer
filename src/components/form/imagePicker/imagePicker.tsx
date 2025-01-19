@@ -1,16 +1,16 @@
 import React, { FC } from 'react'
+import { Image, TouchableOpacity, View } from 'react-native'
 import { Control } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
+import colors from 'tailwindcss/colors'
 
 import * as ExpoImagePicker from 'expo-image-picker'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form/form'
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '../../ui/form/form'
+import { Text } from '../../ui/text/text'
 
-import { Text } from '../ui/text/text'
-import { useTranslation } from 'react-i18next'
-import { Image, TouchableOpacity, View } from 'react-native'
 import { useColorScheme } from '@/hooks'
-import colors from 'tailwindcss/colors'
 
 interface ImagePickerProps {
   control: Control<any>
