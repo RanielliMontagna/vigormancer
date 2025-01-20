@@ -1,9 +1,6 @@
-import { TouchableOpacity } from 'react-native'
-
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
-import { useColorScheme } from '@/hooks'
 import { router } from 'expo-router'
-import colors from 'tailwindcss/colors'
+
+import { IconButton } from '../iconButton/iconButton'
 
 interface BackButtonProps {
   /**
@@ -16,8 +13,6 @@ interface BackButtonProps {
 }
 
 export function BackButton({ onPress }: BackButtonProps) {
-  const { isDarkColorScheme } = useColorScheme()
-
   function handlePress() {
     if (!onPress) {
       if (!router.canGoBack()) return
@@ -30,16 +25,11 @@ export function BackButton({ onPress }: BackButtonProps) {
   }
 
   return (
-    <TouchableOpacity
+    <IconButton
       onPress={handlePress}
-      className="border border-border rounded-xl w-12 h-12 justify-center items-center pr-[2px] bg-card"
+      icon="angle-left"
+      size={24}
       testID="back-button-touchable-opacity"
-    >
-      <FontAwesome6
-        name="angle-left"
-        size={24}
-        color={isDarkColorScheme ? colors.white : colors.black}
-      />
-    </TouchableOpacity>
+    />
   )
 }

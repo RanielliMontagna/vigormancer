@@ -14,6 +14,7 @@ export * from './ui/switch/switch'
 
 // Custom
 export * from './logo/logo'
+export * from './iconButton/iconButton'
 export * from './backButton/backButton'
 export * from './loadingOverlay/loadingOverlay'
 export * from './offlineBar/offlineBar'
