@@ -38,8 +38,6 @@ export function useCreateWorkout() {
     defaultValues,
   })
 
-  console.log(methods.watch('difficulty'))
-
   const handleSubmit: SubmitHandler<AddWorkoutSchema> = async (values) => {
     try {
       setIsLoading(true)

@@ -239,7 +239,8 @@
         "intermediate": "Intermediário",
         "advanced": "Avançado"
       }
-    }
+    },
+    "difficulty": { "0": "Iniciante", "1": "Intermediário", "2": "Avançado" }
   },
   "progression": {
     "title": "Progressão",
