@@ -219,6 +219,10 @@
       "title": "Nenhum treino encontrado",
       "subtitle": "Comece adicionando um novo treino."
     },
+    "workoutDetails": {
+      "exercises": "Exercícios",
+      "startWorkout": "Começar Treino"
+    },
     "createWorkout": {
       "title": "Criar novo treino",
       "subtitle": "Defina seu próximo desafio e ultrapasse seus limites.",

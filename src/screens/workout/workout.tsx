@@ -11,7 +11,7 @@ import { useColorScheme } from '@/hooks'
 
 export function Workout() {
   const { isDarkColorScheme } = useColorScheme()
-  const { t, workouts, isWorkoutsEmpty, handleAddWorkout } = useWorkout()
+  const { t, workouts, isWorkoutsEmpty, handleAddWorkout, handleOpenWorkoutDetails } = useWorkout()
 
   return (
     <View className="h-full p-8 gap-4 bg-background" testID="workout">
@@ -32,7 +32,13 @@ export function Workout() {
         ) : (
           <FlatList
             data={workouts}
-            renderItem={({ item, index }) => <WorkoutListItem {...item} index={index} />}
+            renderItem={({ item, index }) => (
+              <WorkoutListItem
+                {...item}
+                handleOpenWorkoutDetails={handleOpenWorkoutDetails}
+                index={index}
+              />
+            )}
             ItemSeparatorComponent={() => <View className="h-2 bg-divider" />}
           />
         )}

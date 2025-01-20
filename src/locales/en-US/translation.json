@@ -219,6 +219,10 @@
       "title": "No workouts yet",
       "subtitle": "Start your journey by adding a new workout."
     },
+    "workoutDetails": {
+      "exercises": "Exercises",
+      "startWorkout": "Start Workout"
+    },
     "createWorkout": {
       "title": "Create new workout",
       "subtitle": "Define your next challenge and push your limits.",

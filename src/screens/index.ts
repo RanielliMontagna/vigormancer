@@ -12,5 +12,8 @@ export { Notifications } from './notifications/notifications'
 export { Progression } from './progression/progression'
 export { Profile } from './profile/profile'
 export { UpdateInformations } from './profile/updateInformations/updateInformations'
+
+// Workout Screens
 export { Workout } from './workout/workout'
 export { CreateWorkout } from './workout/createWorkout/createWorkout'
+export { WorkoutDetails } from './workout/workoutDetails/workoutDetails'

@@ -9,10 +9,14 @@ export function useWorkout() {
   const { data } = useQuery({ queryKey: ['workouts'], queryFn: fetchWorkouts })
 
   async function handleAddWorkout() {
-    router.push('(private)/create-workout')
+    router.push('(private)/workouts/create-workout')
+  }
+
+  async function handleOpenWorkoutDetails(id: string) {
+    router.push(`(private)/workouts/${id}`)
   }
 
   const isWorkoutsEmpty = data?.length === 0
 
-  return { t, workouts: data, isWorkoutsEmpty, handleAddWorkout }
+  return { t, workouts: data, isWorkoutsEmpty, handleAddWorkout, handleOpenWorkoutDetails }
 }

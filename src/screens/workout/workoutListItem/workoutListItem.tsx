@@ -1,7 +1,7 @@
 import { H4, Text } from '@/components'
 import { Workout, WorkoutDifficulty } from '@/db/repositories/workouts'
 
-import { Dimensions, Image, View } from 'react-native'
+import { Dimensions, Image, TouchableOpacity, View } from 'react-native'
 
 import WorkoutPlaceholder from '@/assets/images/workout-placeholder.jpg'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
@@ -14,9 +14,17 @@ import { useTranslation } from 'react-i18next'
 
 interface WorkoutListItemProps extends Workout {
   index: number
+  handleOpenWorkoutDetails: (id: string) => void
 }
 
-export function WorkoutListItem({ index, name, image, difficulty }: WorkoutListItemProps) {
+export function WorkoutListItem({
+  index,
+  id,
+  name,
+  image,
+  difficulty,
+  handleOpenWorkoutDetails,
+}: WorkoutListItemProps) {
   const { isDarkColorScheme } = useColorScheme()
   const { t } = useTranslation()
 
@@ -33,7 +41,9 @@ export function WorkoutListItem({ index, name, image, difficulty }: WorkoutListI
   }, [difficulty])
 
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => handleOpenWorkoutDetails(id)}
+      activeOpacity={0.8}
       className="flex-1 flex-row bg-card rounded-xl border border-border elevation-sm"
       testID={`workout-list-item-${index}`}
     >
@@ -87,6 +97,6 @@ export function WorkoutListItem({ index, name, image, difficulty }: WorkoutListI
           />
         )}
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
