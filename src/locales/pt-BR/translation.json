@@ -221,7 +221,9 @@
     },
     "workoutDetails": {
       "exercises": "Exercícios",
-      "startWorkout": "Começar Treino"
+      "start": "Começar Treino",
+      "delete": "Deletar Treino",
+      "actions": "Ações"
     },
     "createWorkout": {
       "title": "Criar novo treino",

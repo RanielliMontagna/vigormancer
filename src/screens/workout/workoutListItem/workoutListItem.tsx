@@ -1,16 +1,16 @@
-import { H4, Text } from '@/components'
-import { Workout, WorkoutDifficulty } from '@/db/repositories/workouts'
-
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Dimensions, Image, TouchableOpacity, View } from 'react-native'
+import colors from 'tailwindcss/colors'
+
+import { Workout, WorkoutDifficulty } from '@/db/repositories/workouts'
 
 import WorkoutPlaceholder from '@/assets/images/workout-placeholder.jpg'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
+import { H4, Text } from '@/components'
 import { useColorScheme } from '@/hooks'
-import colors from 'tailwindcss/colors'
-import { useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
 
 interface WorkoutListItemProps extends Workout {
   index: number

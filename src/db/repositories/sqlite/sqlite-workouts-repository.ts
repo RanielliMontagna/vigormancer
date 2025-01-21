@@ -10,7 +10,7 @@ export class SqliteWorkoutsRepository implements WorkoutsRepository {
     return workouts
   }
 
-  async getWorkout(id: number) {
+  async getWorkout(id: string) {
     const workout = db.getFirstAsync<Workout>('SELECT * FROM workouts WHERE id = ?', [id])
 
     return workout
@@ -43,7 +43,7 @@ export class SqliteWorkoutsRepository implements WorkoutsRepository {
     return
   }
 
-  async deleteWorkout(id: number) {
+  async deleteWorkout(id: string) {
     await db.runAsync('DELETE FROM workouts WHERE id = ?', [id])
 
     return
