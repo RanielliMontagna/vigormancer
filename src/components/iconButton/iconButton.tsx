@@ -7,7 +7,6 @@ import colors from 'tailwindcss/colors'
 interface IconButtonProps {
   /**
    * @description Function to call when the button is pressed
-   * @example () => console.log('Button pressed')
    * @type () => void
    */
   onPress: () => void

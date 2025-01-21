@@ -6,7 +6,6 @@ interface BackButtonProps {
   /**
    * @description Function to call when the button is pressed
    * @default router.back
-   * @example () => console.log('Button pressed')
    * @type () => void
    */
   onPress?: () => void

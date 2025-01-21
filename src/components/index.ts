@@ -1,4 +1,5 @@
 // UI
+export * from './ui/alertDialog/alertDialog'
 export * from './ui/avatar/avatar'
 export * from './ui/bottomSheet/bottomSheet'
 export * from './ui/button/button'
