@@ -12,6 +12,7 @@ export * from './ui/text/text'
 export * from './ui/tooltip/tooltip'
 export * from './ui/typography/typography'
 export * from './ui/switch/switch'
+export * from './ui/separator/separator'
 
 // Custom
 export * from './logo/logo'

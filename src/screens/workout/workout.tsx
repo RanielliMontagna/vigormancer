@@ -1,6 +1,6 @@
-import { Dimensions, FlatList, View } from 'react-native'
+import { Dimensions, View } from 'react-native'
 
-import { Button, H2, H3, P, Text } from '@/components'
+import { Button, H2, H3, P, Separator, Text } from '@/components'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { useWorkout } from './useWorkout'
@@ -8,10 +8,19 @@ import { useWorkout } from './useWorkout'
 import DumbbellExercise from '@/assets/svgs/storyset/dumbbell-exercise.svg'
 import { WorkoutListItem } from './workoutListItem/workoutListItem'
 import { useColorScheme } from '@/hooks'
+import { FlashList } from '@shopify/flash-list'
 
 export function Workout() {
   const { isDarkColorScheme } = useColorScheme()
-  const { t, workouts, isWorkoutsEmpty, handleAddWorkout, handleOpenWorkoutDetails } = useWorkout()
+  const {
+    t,
+    workouts,
+    isLoading,
+    isWorkoutsEmpty,
+    refetch,
+    handleAddWorkout,
+    handleOpenWorkoutDetails,
+  } = useWorkout()
 
   return (
     <View className="h-full p-8 gap-4 bg-background" testID="workout">
@@ -30,8 +39,11 @@ export function Workout() {
             <P className="text-muted-foreground text-sm">{t('workout.emptyState.subtitle')}</P>
           </View>
         ) : (
-          <FlatList
+          <FlashList
             data={workouts}
+            refreshing={isLoading}
+            onRefresh={refetch}
+            estimatedItemSize={114}
             renderItem={({ item, index }) => (
               <WorkoutListItem
                 {...item}
@@ -39,7 +51,7 @@ export function Workout() {
                 index={index}
               />
             )}
-            ItemSeparatorComponent={() => <View className="h-2 bg-divider" />}
+            ItemSeparatorComponent={() => <Separator className="my-1 bg-transparent" />}
           />
         )}
       </View>

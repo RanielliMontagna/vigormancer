@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query'
 
 export function useWorkout() {
   const { t } = useTranslation()
-  const { data } = useQuery({ queryKey: ['workouts'], queryFn: fetchWorkouts })
+  const { data, isLoading, refetch } = useQuery({ queryKey: ['workouts'], queryFn: fetchWorkouts })
 
   async function handleAddWorkout() {
     router.push('(private)/workouts/create-workout')
@@ -18,5 +18,13 @@ export function useWorkout() {
 
   const isWorkoutsEmpty = data?.length === 0
 
-  return { t, workouts: data, isWorkoutsEmpty, handleAddWorkout, handleOpenWorkoutDetails }
+  return {
+    t,
+    workouts: data,
+    isLoading,
+    isWorkoutsEmpty,
+    refetch,
+    handleAddWorkout,
+    handleOpenWorkoutDetails,
+  }
 }
