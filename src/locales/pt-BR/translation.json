@@ -246,6 +246,12 @@
         "advanced": "Avançado"
       }
     },
+    "deleteWorkout": {
+      "title": "Deletar Treino?",
+      "description": "Esse ação não pode ser desfeita. Tem certeza que deseja deletar o treino {{name}}?",
+      "cancel": "Cancelar",
+      "success": "Treino deletado com sucesso!"
+    },
     "difficulty": { "0": "Iniciante", "1": "Intermediário", "2": "Avançado" }
   },
   "progression": {

@@ -12,12 +12,13 @@ import { useWorkoutDetails } from './useWorkoutDetails'
 import { BackButton, BottomSheet, Button, IconButton, LoadingOverlay, Text } from '@/components'
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
 import { useColorScheme } from '@/hooks'
+import { DeleteWorkoutDialog } from '../deleteWorkout/deleteWorkout'
 
 export function WorkoutDetails() {
   const { isDarkColorScheme } = useColorScheme()
   const { t } = useTranslation()
 
-  const { workout, workoutActionsBottomSheetRef } = useWorkoutDetails()
+  const { workout, workoutActionsBottomSheetRef, handleDeleteWorkout } = useWorkoutDetails()
 
   const difficultyColor = useMemo(() => {
     switch (workout?.difficulty) {
@@ -59,18 +60,7 @@ export function WorkoutDetails() {
                 />
               </TouchableOpacity>
             </View>
-            <Button
-              onPress={() => console.log('Implement delete workout')}
-              startIcon={
-                <FontAwesome6
-                  name="trash"
-                  size={14}
-                  color={isDarkColorScheme ? 'black' : 'white'}
-                />
-              }
-            >
-              <Text>{t('workout.workoutDetails.delete')}</Text>
-            </Button>
+            <DeleteWorkoutDialog workout={workout} handleDeleteWorkout={handleDeleteWorkout} />
           </View>
         </BottomSheet>
       </View>

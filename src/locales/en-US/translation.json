@@ -245,6 +245,12 @@
         "advanced": "Advanced"
       }
     },
+    "deleteWorkout": {
+      "title": "Delete Workout?",
+      "description": "This action cannot be undone. Are you sure you want to delete workout {{name}}?",
+      "cancel": "Cancel",
+      "success": "Workout deleted successfully!"
+    },
     "difficulty": { "0": "Beginner", "1": "Intermediate", "2": "Advanced" }
   },
   "progression": {
