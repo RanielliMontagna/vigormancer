@@ -6,23 +6,19 @@ export enum ExerciseType {
 export interface Exercise {
   id: string
   name: string
-  workoutId: number
   type: ExerciseType
-  repetitions?: number
-  sets?: number
-  distance?: number
-  duration?: number
-  restTime?: number
+  image?: string
   createdAt: string
   updatedAt: string
 }
 
 export type CreateExerciseParams = Omit<Exercise, 'id' | 'createdAt' | 'updatedAt'>
+export type UpdateExerciseParams = Omit<Exercise, 'createdAt' | 'updatedAt'>
 
 export interface ExercisesRepository {
-  createExercise(exercise: CreateExerciseParams): Promise<number>
-  getExercise(id: number): Promise<Exercise | undefined>
+  createExercise(exercise: CreateExerciseParams): Promise<{ id: string }>
+  getExercise(id: string): Promise<Exercise | undefined>
   getExercises(): Promise<Exercise[]>
-  updateExercise(id: number): Promise<void>
-  deleteExercise(id: number): Promise<void>
+  updateExercise(exercise: UpdateExerciseParams): Promise<void>
+  deleteExercise(id: string): Promise<void>
 }
