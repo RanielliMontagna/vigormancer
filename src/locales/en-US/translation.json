@@ -49,8 +49,7 @@
       "codePlaceholder": "Enter the code",
       "submit": "Verify",
       "didntReceivedCode": "Didn't received code?",
-      "resendCode": "Resend Code",
-      "requiredCode": "Please enter the {{length}}-digit code"
+      "resendCode": "Resend Code"
     },
     "resetPassword": {
       "title": "Create new password",
@@ -118,7 +117,9 @@
     "number": "Must contain at least one number",
     "lowercase": "Must contain at least one lowercase letter",
     "uppercase": "Must contain at least one uppercase letter",
-    "passwordMatch": "Passwords do not match"
+    "passwordMatch": "Passwords do not match",
+    "requiredCode": "Please enter the {{length}}-digit code",
+    "url": "Please enter a valid URL"
   },
   "dashboard": {
     "title": "Hi, {{name}}!",
@@ -153,6 +154,10 @@
       "theme": "Theme",
       "logout": "Logout",
       "dark": "Dark Mode"
+    },
+    "footer": {
+      "appVersion": "App Version",
+      "dbVersion": "Database Version"
     }
   },
   "language": {
@@ -202,9 +207,51 @@
     "default: ": "Something went wrong",
     "default_message": "Please try again later"
   },
+  "others": {
+    "chooseImage": "Choose an image",
+    "changeImage": "Change image"
+  },
   "workout": {
     "title": "Workouts",
-    "subtitle": "Channel your energy, master your form..."
+    "subtitle": "Channel your energy, master your form...",
+    "add": "Add Workout",
+    "emptyState": {
+      "title": "No workouts yet",
+      "subtitle": "Start your journey by adding a new workout."
+    },
+    "workoutDetails": {
+      "exercises": "Exercises",
+      "start": "Start Workout",
+      "delete": "Delete Workout",
+      "actions": "Actions"
+    },
+    "createWorkout": {
+      "title": "Create new workout",
+      "subtitle": "Define your next challenge and push your limits.",
+      "name": "Workout Name",
+      "namePlaceholder": "Enter the workout name",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe the focus or purpose of this workout",
+      "image": "Choose an image to represent your workout",
+      "submit": "Create Workout",
+      "cancel": "Cancel",
+      "created": "Workout created successfully!",
+      "createdMessage": "{{name}} has been added to your workouts.",
+      "error": "An error occurred while creating the workout.",
+      "difficulty": "Difficulty",
+      "difficultyOptions": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
+    },
+    "deleteWorkout": {
+      "title": "Delete Workout?",
+      "description": "This action cannot be undone. Are you sure you want to delete workout {{name}}?",
+      "cancel": "Cancel",
+      "success": "Workout deleted successfully!"
+    },
+    "difficulty": { "0": "Beginner", "1": "Intermediate", "2": "Advanced" }
   },
   "progression": {
     "title": "Progression",

@@ -50,9 +50,21 @@ export interface InputProps extends TextInputProps {
 }
 
 const Input = React.forwardRef<React.ElementRef<typeof TextInput>, InputProps>(
-  ({ className, placeholderClassName, startAdornment, endAdornment, size, ...props }, ref) => {
+  (
+    { className, placeholderClassName, startAdornment, endAdornment, size = 'md', ...props },
+    ref,
+  ) => {
+    var minHeight = size === 'md' ? 48 : 56
+    if (props.numberOfLines) minHeight = 48 + 6 * props.numberOfLines
+
     return (
-      <View className={cn(inputVariants({ size }), className)}>
+      <View
+        className={cn(
+          inputVariants({ size }),
+          props.numberOfLines && `h-auto min-h-[${minHeight}px]`,
+          className,
+        )}
+      >
         {startAdornment && (
           <View className={cn(adornmentVariants({ size, startAdornment: true }))}>
             {startAdornment}
@@ -63,6 +75,7 @@ const Input = React.forwardRef<React.ElementRef<typeof TextInput>, InputProps>(
           className={cn(
             'flex-1 h-full default:color-primary placeholder:color-gray-500 web:outline-none',
             props.editable === false && 'opacity-50 web:cursor-not-allowed',
+            props.multiline && 'align-top',
             className,
           )}
           {...props}

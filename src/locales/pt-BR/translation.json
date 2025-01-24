@@ -49,8 +49,7 @@
       "codePlaceholder": "Digite o código",
       "submit": "Verificar",
       "didntReceivedCode": "Não recebeu o código?",
-      "resendCode": "Reenviar Código",
-      "requiredCode": "Por favor, insira o código de {{length}} dígitos"
+      "resendCode": "Reenviar Código"
     },
     "resetPassword": {
       "title": "Criar Nova Senha",
@@ -119,7 +118,8 @@
     "lowercase": "Deve conter pelo menos uma letra minúscula",
     "uppercase": "Deve conter pelo menos uma letra maiúscula",
     "passwordMatch": "As senhas não coincidem",
-    "requiredCode": "Por favor, insira o código de {{length}} dígitos"
+    "requiredCode": "Por favor, insira o código de {{length}} dígitos",
+    "url": "Por favor, insira uma URL válida"
   },
   "dashboard": {
     "title": "Oi, {{name}}!",
@@ -154,6 +154,10 @@
       "theme": "Tema",
       "logout": "Sair",
       "dark": "Modo Escuro"
+    },
+    "footer": {
+      "appVersion": "Versão do App",
+      "dbVersion": "Versão do Banco de Dados"
     }
   },
   "language": {
@@ -203,9 +207,52 @@
     "default": "Algo deu errado",
     "default_message": "Por favor, tente novamente mais tarde."
   },
+  "others": {
+    "chooseImage": "Escolher Imagem",
+    "changeImage": "Alterar Imagem"
+  },
   "workout": {
     "title": "Treinos",
-    "subtitle": "Canalize sua energia, domine sua forma..."
+    "subtitle": "Canalize sua energia, domine sua forma...",
+    "add": "Adicionar Treino",
+    "emptyState": {
+      "title": "Nenhum treino encontrado",
+      "subtitle": "Comece adicionando um novo treino."
+    },
+    "workoutDetails": {
+      "exercises": "Exercícios",
+      "start": "Começar Treino",
+      "delete": "Deletar Treino",
+      "actions": "Ações"
+    },
+    "createWorkout": {
+      "title": "Criar novo treino",
+      "subtitle": "Defina seu próximo desafio e ultrapasse seus limites.",
+      "name": "Nome",
+      "namePlaceholder": "Digite o nome do treino",
+      "description": "Descrição",
+      "descriptionPlaceholder": "Digite a descrição do treino",
+      "image": "Escolha uma imagem que represente seu treino",
+      "imagePlaceholder": "Digite a URL da imagem",
+      "submit": "Criar Treino",
+      "cancel": "Cancelar",
+      "created": "Treino criado com sucesso!",
+      "createdMessage": "{{name}} foi adicionado à sua lista de treinos.",
+      "error": "Ocorreu um erro ao criar o treino. Por favor, tente novamente.",
+      "difficulty": "Dificuldade",
+      "difficultyOptions": {
+        "beginner": "Iniciante",
+        "intermediate": "Intermediário",
+        "advanced": "Avançado"
+      }
+    },
+    "deleteWorkout": {
+      "title": "Deletar Treino?",
+      "description": "Esse ação não pode ser desfeita. Tem certeza que deseja deletar o treino {{name}}?",
+      "cancel": "Cancelar",
+      "success": "Treino deletado com sucesso!"
+    },
+    "difficulty": { "0": "Iniciante", "1": "Intermediário", "2": "Avançado" }
   },
   "progression": {
     "title": "Progressão",

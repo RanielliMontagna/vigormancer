@@ -1,3 +1,5 @@
+import 'react-native-get-random-values'
+
 import { useFonts } from 'expo-font'
 import { useEffect, useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
@@ -15,10 +17,12 @@ import '@/styles/global.css'
 import { initI18n, i18n } from '@/libs/i18n'
 
 import { tokenCache } from '@/libs/cache/cache'
-import { LoadingOverlay } from '@/components'
+import { LoadingOverlay, OfflineBar } from '@/components'
 import { useAppStore } from '@/store'
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
-import { useColorScheme } from '@/hooks'
+import { useColorScheme, useNetInfo } from '@/hooks'
+import { QueryClientProvider } from '@tanstack/react-query'
+import { queryClient } from '@/libs/react-query'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -38,7 +42,10 @@ if (!__DEV__) {
 }
 
 function App() {
-  const { isLoading } = useAppStore()
+  // Hook with isolated instance of network info manager
+  useNetInfo()
+
+  const { isLoading, isConnected } = useAppStore()
   const { isSignedIn, isLoaded } = useAuth()
   const { isDarkColorScheme } = useColorScheme()
 
@@ -89,16 +96,19 @@ function App() {
   return (
     <GestureHandlerRootView>
       <I18nextProvider i18n={i18n}>
-        <View className="bg-background pb-4">
-          <StatusBar animated style={isDarkColorScheme ? 'light' : 'dark'} />
-        </View>
-        <SafeAreaView className="flex-1">
-          <BottomSheetModalProvider>
-            <Slot />
-            <Toast position="bottom" />
-            {isLoading && <LoadingOverlay />}
-          </BottomSheetModalProvider>
-        </SafeAreaView>
+        <QueryClientProvider client={queryClient}>
+          <SafeAreaView className="flex-1">
+            <View className="bg-background pb-4">
+              <StatusBar animated style={isDarkColorScheme ? 'light' : 'dark'} />
+            </View>
+            <BottomSheetModalProvider>
+              <Slot />
+              <Toast position="bottom" />
+              {isLoading && <LoadingOverlay />}
+              {!isConnected && <OfflineBar />}
+            </BottomSheetModalProvider>
+          </SafeAreaView>
+        </QueryClientProvider>
         <PortalHost />
       </I18nextProvider>
     </GestureHandlerRootView>
