@@ -5,7 +5,7 @@ const config: Config = {
   preset: 'jest-expo',
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect', '<rootDir>/jest.setup.ts'],
   transformIgnorePatterns: [
-    'node_modules/(?!(react-native|expo|@expo|expo-.*|@unimodules|unimodules-.*|@react-native|react-navigation|react-native-.*|@rn-primitives)/)',
+    'node_modules/(?!(react-native|expo|@expo|expo-.*|uuid|@react-native-segmented-control|@unimodules|unimodules-.*|@react-native|react-navigation|react-native-.*|@rn-primitives)/)',
   ],
   testPathIgnorePatterns: ['<rootDir>/src/__tests__/mocks'],
   collectCoverageFrom: [

@@ -121,3 +121,20 @@ jest.mock('react-native-gifted-charts', () => ({
   ContributionGraph: 'ContributionGraph',
   StackedBarChart: 'StackedBarChart',
 }))
+
+// Mock expo-image-picker
+jest.mock('expo-image-picker', () => ({
+  launchImageLibraryAsync: jest.fn(),
+  launchCameraAsync: jest.fn(),
+}))
+
+jest.mock('expo-sqlite', () => ({
+  openDatabaseSync: jest.fn(() => ({
+    getFirstAsync: jest.fn(
+      () =>
+        new Promise((resolve) => {
+          resolve({ rows: { _array: [{ user_version: 1 }] } })
+        }),
+    ),
+  })),
+}))
