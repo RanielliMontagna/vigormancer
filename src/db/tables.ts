@@ -15,7 +15,8 @@ export const createTablesSQL = `
     -- Create category table
     CREATE TABLE IF NOT EXISTS categories (
         id TEXT PRIMARY KEY,
-        name TEXT NOT NULL,
+        name TEXT NOT NULL UNIQUE,
+        description TEXT,
         image TEXT,
         createdAt TIMESTAMP DEFAULT (DATETIME('now')),
         updatedAt TIMESTAMP DEFAULT (DATETIME('now'))

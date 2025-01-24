@@ -1,5 +1,7 @@
 import { SQLiteDatabase } from 'expo-sqlite'
+
 import { createTablesSQL } from './tables'
+import { seedDatabase } from './seed'
 
 export const DATABASE_NAME = 'vigormancerdb'
 const DATABASE_VERSION = 1
@@ -25,6 +27,9 @@ async function migrateDbIfNeeded(db: SQLiteDatabase) {
   } else {
     console.log(`Database initialized at version ${DATABASE_VERSION}`)
   }
+
+  // Seed the database only if it was newly initialized
+  await seedDatabase()
 }
 
 export { migrateDbIfNeeded }
