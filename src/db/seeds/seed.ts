@@ -1,6 +1,4 @@
-import { v4 as uuidv4 } from 'uuid'
-
-import { createCategory } from './controllers/categories/create-category'
+import { createCategory } from '../controllers/categories/create-category'
 
 import Abdominals from '@/assets/images/categories/abdominals.png'
 import Back from '@/assets/images/categories/back.png'

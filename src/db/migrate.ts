@@ -1,7 +1,7 @@
 import { SQLiteDatabase } from 'expo-sqlite'
 
 import { createTablesSQL } from './tables'
-import { seedDatabase } from './seed'
+import { seedDatabase } from './seeds/seed'
 
 export const DATABASE_NAME = 'vigormancerdb'
 const DATABASE_VERSION = 1
