@@ -11,14 +11,14 @@ import Triceps from '@/assets/images/categories/triceps.png'
 import { convertImageToBase64 } from '@/utils'
 
 const categories = [
-  { name: 'Abdominals', image: Abdominals },
-  { name: 'Back', image: Back },
-  { name: 'Biceps', image: Biceps },
-  { name: 'Calves', image: Calves },
-  { name: 'Chest', image: Chest },
-  { name: 'Legs', image: Legs },
-  { name: 'Shoulders', image: Shoulders },
-  { name: 'Triceps', image: Triceps },
+  { name: 'abdominals', image: Abdominals },
+  { name: 'back', image: Back },
+  { name: 'biceps', image: Biceps },
+  { name: 'calves', image: Calves },
+  { name: 'chest', image: Chest },
+  { name: 'legs', image: Legs },
+  { name: 'shoulders', image: Shoulders },
+  { name: 'triceps', image: Triceps },
 ]
 
 export async function seedDatabase() {
@@ -33,5 +33,3 @@ export async function seedDatabase() {
     console.error('Erro ao fazer o seed do banco de dados:', error)
   }
 }
-
-seedDatabase().catch(console.error)
