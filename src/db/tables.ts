@@ -36,18 +36,17 @@ export const createTablesSQL = `
 
     -- Create workout_exercise table
     CREATE TABLE IF NOT EXISTS workout_exercise (
+        id TEXT PRIMARY KEY,
         workoutId TEXT NOT NULL,
         exerciseId TEXT NOT NULL,
         sets INTEGER,
         repetitions INTEGER,
-        distance REAL,
-        duration INTEGER,
-        restTime INTEGER,
+        weight INTEGER,
+        rest INTEGER,
         createdAt TIMESTAMP DEFAULT (DATETIME('now')),
         updatedAt TIMESTAMP DEFAULT (DATETIME('now')),
         FOREIGN KEY (workoutId) REFERENCES workouts(id),
         FOREIGN KEY (exerciseId) REFERENCES exercises(id),
-        PRIMARY KEY (workoutId, exerciseId)
     );
     
 `
