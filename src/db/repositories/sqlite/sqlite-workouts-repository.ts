@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { CreateWorkoutParams, UpdateWorkoutParams, Workout, WorkoutsRepository } from '../workouts'
 
 import { db } from '@/db'
+import { Exercise } from '../exercises'
 
 export class SqliteWorkoutsRepository implements WorkoutsRepository {
   async getWorkouts() {
@@ -13,7 +14,12 @@ export class SqliteWorkoutsRepository implements WorkoutsRepository {
   async getWorkout(id: string) {
     const workout = await db.getFirstAsync<Workout>('SELECT * FROM workouts WHERE id = ?', [id])
 
-    return workout
+    const exercises = await db.getAllAsync<Exercise>(
+      'SELECT * FROM workout_exercise WHERE workoutId = ?',
+      [id],
+    )
+
+    return { ...workout, exercises }
   }
 
   async createWorkout(workout: CreateWorkoutParams) {

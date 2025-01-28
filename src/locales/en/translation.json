@@ -223,7 +223,12 @@
       "exercises": "Exercises",
       "start": "Start Workout",
       "delete": "Delete Workout",
-      "actions": "Actions"
+      "actions": "Actions",
+      "addExercise": "Add Exercise",
+      "emptyState": {
+        "title": "No exercises yet",
+        "subtitle": "Add at least one exercise to start your workout."
+      }
     },
     "createWorkout": {
       "title": "Create new workout",
@@ -250,6 +255,23 @@
       "description": "This action cannot be undone. Are you sure you want to delete workout {{name}}?",
       "cancel": "Cancel",
       "success": "Workout deleted successfully!"
+    },
+    "addExercise": {
+      "title": "Add Exercise",
+      "subtitle": "Define the next step in your journey.",
+      "submit": "Add Exercise",
+      "cancel": "Cancel",
+      "exercise": "Exercise",
+      "exercisePlaceholder": "Select an exercise",
+      "sets": "Sets",
+      "setsUnit": "sets",
+      "setsPlaceholder": "Enter the number of sets",
+      "reps": "Repetitions",
+      "repsUnit": "reps",
+      "repsPlaceholder": "Enter the number of repetitions",
+      "weight": "Weight",
+      "weightUnit": "kg",
+      "weightPlaceholder": "Enter the weight"
     },
     "difficulty": { "0": "Beginner", "1": "Intermediate", "2": "Advanced" }
   },

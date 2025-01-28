@@ -223,7 +223,13 @@
       "exercises": "Exercícios",
       "start": "Começar Treino",
       "delete": "Deletar Treino",
-      "actions": "Ações"
+      "addExercise": "Adicionar Exercício",
+      "actions": "Ações",
+      "edit": "Editar",
+      "emptyState": {
+        "title": "Nenhum exercício vinculado",
+        "subtitle": "Adicione pelo menos um exercício para começar o treino."
+      }
     },
     "createWorkout": {
       "title": "Criar novo treino",
@@ -251,6 +257,12 @@
       "description": "Esse ação não pode ser desfeita. Tem certeza que deseja deletar o treino {{name}}?",
       "cancel": "Cancelar",
       "success": "Treino deletado com sucesso!"
+    },
+    "addExercise": {
+      "title": "Adicionar Exercício",
+      "subtitle": "Desafie-se e alcance novos patamares.",
+      "submit": "Adicionar Exercício",
+      "cancel": "Cancelar"
     },
     "difficulty": { "0": "Iniciante", "1": "Intermediário", "2": "Avançado" }
   },

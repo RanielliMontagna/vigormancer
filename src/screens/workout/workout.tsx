@@ -1,14 +1,14 @@
-import { Dimensions, View } from 'react-native'
-
-import { Button, H2, H3, P, Separator, Text } from '@/components'
-
+import { View } from 'react-native'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
+
+import { FlashList } from '@shopify/flash-list'
+import { Button, EmptyState, H2, P, Separator, Text } from '@/components'
+import { useColorScheme } from '@/hooks'
+
 import { useWorkout } from './useWorkout'
+import { WorkoutListItem } from './workoutListItem/workoutListItem'
 
 import DumbbellExercise from '@/assets/svgs/storyset/dumbbell-exercise.svg'
-import { WorkoutListItem } from './workoutListItem/workoutListItem'
-import { useColorScheme } from '@/hooks'
-import { FlashList } from '@shopify/flash-list'
 
 export function Workout() {
   const { isDarkColorScheme } = useColorScheme()
@@ -30,14 +30,11 @@ export function Workout() {
       </View>
       <View className="flex-1">
         {isWorkoutsEmpty ? (
-          <View className="flex-1 justify-center items-center">
-            <DumbbellExercise
-              width={Dimensions.get('window').width * 0.5}
-              height={Dimensions.get('window').width * 0.6}
-            />
-            <H3>{t('workout.emptyState.title')}</H3>
-            <P className="text-muted-foreground text-sm">{t('workout.emptyState.subtitle')}</P>
-          </View>
+          <EmptyState
+            svgImage={DumbbellExercise}
+            title={t('workout.emptyState.title')}
+            subtitle={t('workout.emptyState.subtitle')}
+          />
         ) : (
           <FlashList
             data={workouts}

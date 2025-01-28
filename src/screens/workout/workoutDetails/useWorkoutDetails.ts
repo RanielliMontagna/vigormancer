@@ -42,9 +42,16 @@ export function useWorkoutDetails() {
     }
   }
 
+  function handleGoToAddExercise() {
+    router.push(`(private)/workouts/${id}/add-exercise`)
+  }
+
   return {
     workout: data,
     workoutActionsBottomSheetRef,
+    isExercisesEmpty: data?.exercises.length === 0,
+    exercisesQuantity: data?.exercises.length ?? 0,
     handleDeleteWorkout,
+    handleGoToAddExercise,
   }
 }

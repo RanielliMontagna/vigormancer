@@ -46,7 +46,7 @@ export const createTablesSQL = `
         createdAt TIMESTAMP DEFAULT (DATETIME('now')),
         updatedAt TIMESTAMP DEFAULT (DATETIME('now')),
         FOREIGN KEY (workoutId) REFERENCES workouts(id),
-        FOREIGN KEY (exerciseId) REFERENCES exercises(id),
+        FOREIGN KEY (exerciseId) REFERENCES exercises(id)
     );
     
 `

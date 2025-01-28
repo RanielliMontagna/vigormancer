@@ -17,3 +17,4 @@ export { UpdateInformations } from './profile/updateInformations/updateInformati
 export { Workout } from './workout/workout'
 export { CreateWorkout } from './workout/createWorkout/createWorkout'
 export { WorkoutDetails } from './workout/workoutDetails/workoutDetails'
+export { AddExercise } from './workout/addExercise/addExercise'
