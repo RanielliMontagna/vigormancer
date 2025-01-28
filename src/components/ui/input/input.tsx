@@ -3,20 +3,17 @@ import { TextInput, View, type TextInputProps } from 'react-native'
 import { cn } from '@/utils'
 import { cva } from 'class-variance-authority'
 
-const inputVariants = cva(
-  'flex flex-row rounded-md border border-border bg-gray-100 items-center bg-input',
-  {
-    variants: {
-      size: {
-        md: 'h-12 px-2',
-        lg: 'h-14 px-3',
-      },
-    },
-    defaultVariants: {
-      size: 'md',
+const inputVariants = cva('flex flex-row rounded-md border border-border items-center bg-input', {
+  variants: {
+    size: {
+      md: 'h-12 px-2',
+      lg: 'h-14 px-3',
     },
   },
-)
+  defaultVariants: {
+    size: 'md',
+  },
+})
 
 const adornmentVariants = cva('flex items-center justify-center rounded-md', {
   variants: {
@@ -73,7 +70,7 @@ const Input = React.forwardRef<React.ElementRef<typeof TextInput>, InputProps>(
         <TextInput
           ref={ref}
           className={cn(
-            'flex-1 h-full default:color-primary placeholder:color-gray-500 web:outline-none',
+            'flex-1 h-full default:color-primary placeholder:color-gray-500 web:outline-none text-sm font-lexend-regular font-light',
             props.editable === false && 'opacity-50 web:cursor-not-allowed',
             props.multiline && 'align-top',
             className,
