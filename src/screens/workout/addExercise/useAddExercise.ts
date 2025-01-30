@@ -6,12 +6,30 @@ import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useAppStore } from '@/store'
+import { useQuery } from '@tanstack/react-query'
+import { fetchExercises } from '@/db/controllers/exercises/fetch-exercises'
+import { useMemo } from 'react'
+import { exerciseImageMap } from './exerciseImageMap'
 
 export function useAddExercise() {
   const { t } = useTranslation()
   const { setIsLoading, handleErrors } = useAppStore()
 
-  const addExerciseSchema = z.object({})
+  const { data } = useQuery({ queryKey: ['exercises'], queryFn: fetchExercises })
+
+  const exerciseSchema = z.object({
+    value: z.string().min(1, t('validation.required')),
+    label: z.string().min(1, t('validation.required')),
+    group: z.string().optional(),
+  })
+
+  const addExerciseSchema = z.object({
+    exercise: exerciseSchema.nullable().refine((val) => val !== null, {
+      message: t('validation.required'),
+    }),
+    sets: z.string().min(1, t('validation.required')),
+    reps: z.string().min(1, t('validation.required')),
+  })
 
   type AddExerciseSchema = z.infer<typeof addExerciseSchema>
 
@@ -44,5 +62,25 @@ export function useAddExercise() {
     router.back()
   }
 
-  return { methods, t, handleBack, handleSubmit: methods.handleSubmit(handleSubmit) }
+  const exerciseOptions = useMemo(() => {
+    return data?.map((exercise) => {
+      const image = exerciseImageMap[`${exercise.name}.jpg`]
+      console.log('image', exercise.name, image)
+
+      return {
+        value: exercise.id.toString(),
+        label: t(`${exercise.name}.title`),
+        group: exercise.category.name,
+        image: image,
+      }
+    })
+  }, [data, t])
+
+  return {
+    t,
+    methods,
+    exerciseOptions: exerciseOptions ?? [],
+    handleBack,
+    handleSubmit: methods.handleSubmit(handleSubmit),
+  }
 }

@@ -8,7 +8,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 export function AddExercise() {
   const { isDarkColorScheme } = useColorScheme()
-  const { methods, t, handleSubmit, handleBack } = useAddExercise()
+  const { methods, t, exerciseOptions, handleSubmit, handleBack } = useAddExercise()
 
   return (
     <Form {...methods}>
@@ -26,11 +26,7 @@ export function AddExercise() {
               label={t('workout.addExercise.exercise')}
               placeholder={t('workout.addExercise.exercisePlaceholder')}
               required
-              options={[
-                { value: 'bench-press', label: 'Bench Press' },
-                { value: 'squat', label: 'Squat' },
-                { value: 'deadlift', label: 'Deadlift' },
-              ]}
+              options={exerciseOptions}
             />
             <TextField
               control={methods.control}

@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
 import {
   CreateExerciseParams,
   UpdateExerciseParams,
@@ -25,7 +24,7 @@ export class SqliteExercisesRepository implements ExercisesRepository {
     }))
   }
 
-  async getExercise(id: string) {
+  async getExercise(id: number) {
     const exercise = await db.getFirstAsync<
       Exercise & { categoryName: string; categoryId: string }
     >(
@@ -50,7 +49,7 @@ export class SqliteExercisesRepository implements ExercisesRepository {
   }
 
   async createExercise(exercise: CreateExerciseParams) {
-    const id = uuidv4()
+    const id = exercise.id
 
     const category = await db.getFirstAsync<{ id: string }>(
       'SELECT id FROM categories WHERE id = ?',
@@ -64,7 +63,7 @@ export class SqliteExercisesRepository implements ExercisesRepository {
     await db.runAsync(
       'INSERT INTO exercises (id, categoryId, name, type, image, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?)',
       [
-        id,
+        id || undefined,
         category.id,
         exercise.name,
         exercise.type,
@@ -86,7 +85,7 @@ export class SqliteExercisesRepository implements ExercisesRepository {
     return
   }
 
-  async deleteExercise(id: string) {
+  async deleteExercise(id: number) {
     await db.runAsync('DELETE FROM exercises WHERE id = ?', [id])
 
     return

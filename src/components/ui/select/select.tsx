@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Platform, StyleSheet, View } from 'react-native'
+import { Platform, StyleSheet, Image } from 'react-native'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
 
 import * as SelectPrimitive from '@rn-primitives/select'
@@ -8,6 +8,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { cn } from '@/utils'
 import { useColorScheme } from '@/hooks'
 import colors from 'tailwindcss/colors'
+import { Asset } from 'expo-asset'
 
 type Option = SelectPrimitive.Option
 
@@ -151,7 +152,7 @@ const SelectLabel = React.forwardRef<SelectPrimitive.LabelRef, SelectPrimitive.L
     <SelectPrimitive.Label
       ref={ref}
       className={cn(
-        'py-1.5 native:pb-2 pl-8 native:pl-10 pr-2 text-popover-foreground text-sm native:text-base font-semibold',
+        'py-1.5 pl-2 pr-2 text-popover-foreground text-sm native:text-base font-semibold',
         className,
       )}
       {...props}
@@ -160,30 +161,33 @@ const SelectLabel = React.forwardRef<SelectPrimitive.LabelRef, SelectPrimitive.L
 )
 SelectLabel.displayName = SelectPrimitive.Label.displayName
 
-const SelectItem = React.forwardRef<SelectPrimitive.ItemRef, SelectPrimitive.ItemProps>(
-  ({ className, children, ...props }, ref) => {
-    const { isDarkColorScheme } = useColorScheme()
+type SelectItemProps = SelectPrimitive.ItemProps & { image?: string }
+
+const SelectItem = React.forwardRef<SelectPrimitive.ItemRef, SelectItemProps>(
+  ({ className, children, image, ...props }, ref) => {
+    let imageUri: string | undefined
+
+    if (image) {
+      const asset = Asset.fromModule(image)
+      imageUri = asset.uri
+    }
 
     return (
       <SelectPrimitive.Item
         ref={ref}
         className={cn(
-          'relative web:group flex flex-row w-full web:cursor-default web:select-none items-center rounded-sm py-1.5 native:py-2 pl-8 native:pl-10 pr-2 web:hover:bg-accent/50 active:bg-accent web:outline-none web:focus:bg-accent',
+          'relative mx-1 p-4 bg-zinc-50 rounded-md active:bg-zinc-100 transition flex-row gap-2 items-center',
           props.disabled && 'web:pointer-events-none opacity-50',
           className,
         )}
         {...props}
       >
-        <View className="absolute left-2 native:left-3.5 flex h-3.5 native:pt-px w-3.5 items-center justify-center">
-          <SelectPrimitive.ItemIndicator>
-            <FontAwesome6
-              size={12}
-              name="check"
-              color={isDarkColorScheme ? colors.white : colors.black}
-            />
-          </SelectPrimitive.ItemIndicator>
-        </View>
-        <SelectPrimitive.ItemText className="text-sm text-popover-foreground native:text-base web:group-focus:text-accent-foreground" />
+        {imageUri && <Image source={{ uri: imageUri }} className="w-28 h-28" resizeMode="cover" />}
+        <SelectPrimitive.ItemText
+          className={cn(
+            'text-sm text-popover-foreground native:text-base web:group-focus:text-accent-foreground',
+          )}
+        />
       </SelectPrimitive.Item>
     )
   },

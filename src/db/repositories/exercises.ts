@@ -4,7 +4,7 @@ export enum ExerciseType {
 }
 
 export interface Exercise {
-  id: string
+  id: number
   categoryId: string
   name: string
   type: ExerciseType
@@ -18,13 +18,15 @@ export interface ExerciseWithCategory
   category: { id: string; name: string }
 }
 
-export type CreateExerciseParams = Omit<Exercise, 'id' | 'createdAt' | 'updatedAt'>
+export type CreateExerciseParams = Omit<Exercise, 'id' | 'createdAt' | 'updatedAt'> & {
+  id?: number
+}
 export type UpdateExerciseParams = Omit<Exercise, 'categoryId' | 'createdAt' | 'updatedAt'>
 
 export interface ExercisesRepository {
-  createExercise(exercise: CreateExerciseParams): Promise<{ id: string }>
-  getExercise(id: string): Promise<ExerciseWithCategory | undefined>
+  createExercise(exercise: CreateExerciseParams): Promise<{ id: number }>
+  getExercise(id: number): Promise<ExerciseWithCategory | undefined>
   getExercises(): Promise<ExerciseWithCategory[]>
   updateExercise(exercise: UpdateExerciseParams): Promise<void>
-  deleteExercise(id: string): Promise<void>
+  deleteExercise(id: number): Promise<void>
 }

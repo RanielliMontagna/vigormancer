@@ -8,7 +8,7 @@ import Shoulders from '@/assets/images/categories/shoulders.png'
 import Triceps from '@/assets/images/categories/triceps.png'
 
 import { convertImageToBase64 } from '@/utils'
-import exercises from './exercises.json'
+import exercises from '@/locales/en/exercises.json'
 
 import { createExercise } from '../controllers/exercises/create-exercise'
 import { createCategory } from '../controllers/categories/create-category'
@@ -37,14 +37,13 @@ export async function seedDatabase() {
 
     const categoriesArray = await fetchCategories()
 
-    for (const exercise of exercises) {
+    for (const [key, exercise] of Object.entries(exercises)) {
       console.log(`Inserindo exercício "${exercise.title}"...`)
 
       await createExercise({
-        categoryId: categoriesArray.find(
-          (category) => category.name === exercise.category.toLowerCase(),
-        ).id,
-        name: exercise.title,
+        id: exercise.id,
+        categoryId: categoriesArray.find((category) => category.name === exercise.category).id,
+        name: key,
         image: exercise.img,
         type: ExerciseType.STRENGTH,
       })

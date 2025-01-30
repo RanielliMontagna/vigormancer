@@ -1,7 +1,7 @@
 import { SqliteExercisesRepository } from '@/db/repositories/sqlite/sqlite-exercises-repository'
 
 export interface DeleteExercise {
-  id: string
+  id: number
 }
 
 export function deleteExercise({ id }: DeleteExercise) {
