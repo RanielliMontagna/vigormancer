@@ -23,6 +23,7 @@ import { useColorScheme } from '@/hooks'
 import { DeleteWorkoutDialog } from '../deleteWorkout/deleteWorkout'
 
 import DumbbellExercise from '@/assets/svgs/storyset/dumbbell-exercise.svg'
+import { FlashList } from '@shopify/flash-list'
 
 export function WorkoutDetails() {
   const { isDarkColorScheme } = useColorScheme()

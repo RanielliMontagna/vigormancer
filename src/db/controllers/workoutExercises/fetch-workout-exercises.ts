@@ -1,10 +1,10 @@
 import { SqliteWorkoutExercisesRepository } from '@/db/repositories/sqlite/sqlite-workout-exercises-repository'
 
-interface FetchWorkouts {
+interface FetchWorkoutExercises {
   workoutId: string
 }
 
-export function fetchWorkouts({ workoutId }: FetchWorkouts) {
+export function fetchWorkoutExercises({ workoutId }: FetchWorkoutExercises) {
   const workoutsRepository = new SqliteWorkoutExercisesRepository()
 
   return workoutsRepository.getWorkoutExercises(workoutId)

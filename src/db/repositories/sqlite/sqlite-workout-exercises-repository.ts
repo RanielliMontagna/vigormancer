@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 import {
   CreateWorkoutExerciseParams,
   DeleteWorkoutExerciseParams,
@@ -9,10 +11,12 @@ import { db } from '@/db'
 
 export class SqliteWorkoutExercisesRepository implements WorkoutExercisesRepository {
   async createWorkoutExercise(params: CreateWorkoutExerciseParams): Promise<void> {
+    const id = uuidv4()
+
     await db.runAsync(
       'INSERT INTO workout_exercise (id, workoutId, exerciseId, sets, repetitions, weight, rest, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
       [
-        params.id,
+        id,
         params.workoutId,
         params.exerciseId,
         params.sets,

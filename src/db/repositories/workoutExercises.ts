@@ -1,7 +1,6 @@
 export interface WorkoutExercise {
-  id: string
   workoutId: string
-  exerciseId: string
+  exerciseId: number
   sets: number
   repetitions: number
   weight?: number
@@ -11,8 +10,7 @@ export interface WorkoutExercise {
 }
 
 export type CreateWorkoutExerciseParams = Omit<WorkoutExercise, 'createdAt' | 'updatedAt'>
-export type DeleteWorkoutExerciseParams = Pick<WorkoutExercise, 'id'>
-
+export type DeleteWorkoutExerciseParams = { id: string }
 export interface WorkoutExercisesRepository {
   createWorkoutExercise(params: CreateWorkoutExerciseParams): Promise<void>
   getWorkoutExercises(workoutId: string): Promise<WorkoutExercise[]>

@@ -20,7 +20,7 @@ export function EmptyState({ title, subtitle, svgImage: Image }: EmptyStateProps
         />
       )}
       <H3>{title}</H3>
-      <P className="text-muted-foreground text-sm">{subtitle}</P>
+      <P className="text-muted-foreground text-sm text-center">{subtitle}</P>
     </View>
   )
 }

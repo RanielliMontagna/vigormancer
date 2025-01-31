@@ -261,17 +261,10 @@
       "subtitle": "Define the next step in your journey.",
       "submit": "Add Exercise",
       "cancel": "Cancel",
-      "exercise": "Exercise",
-      "exercisePlaceholder": "Select an exercise",
-      "sets": "Sets",
-      "setsUnit": "sets",
-      "setsPlaceholder": "Enter the number of sets",
-      "reps": "Repetitions",
-      "repsUnit": "reps",
-      "repsPlaceholder": "Enter the number of repetitions",
-      "weight": "Weight",
-      "weightUnit": "kg",
-      "weightPlaceholder": "Enter the weight"
+      "search": "Search for an exercise",
+      "searchPlaceholder": "Filter exercises by name",
+      "success": "Exercise added successfully!",
+      "successMessage": "{{name}} has been added to your workout."
     },
     "difficulty": { "0": "Beginner", "1": "Intermediate", "2": "Advanced" }
   },

@@ -262,7 +262,11 @@
       "title": "Adicionar Exercício",
       "subtitle": "Desafie-se e alcance novos patamares.",
       "submit": "Adicionar Exercício",
-      "cancel": "Cancelar"
+      "cancel": "Cancelar",
+      "search": "Buscar Exercício",
+      "searchPlaceholder": "Filtra exercícios por nome",
+      "success": "Exercício adicionado com sucesso!",
+      "successMessage": "{{name}} foi adicionado ao treino."
     },
     "difficulty": { "0": "Iniciante", "1": "Intermediário", "2": "Avançado" }
   },
