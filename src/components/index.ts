@@ -26,6 +26,7 @@ export * from './offlineBar/offlineBar'
 //Form
 export * from './form/imagePicker/imagePicker'
 export * from './form/rulerPicker/rulerPicker'
+export * from './form/searchField/searchField'
 export * from './form/selectField/selectField'
 export * from './form/segmentedControlField/segmentedControlField'
 export * from './form/textField/textField'
