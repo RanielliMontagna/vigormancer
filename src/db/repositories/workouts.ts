@@ -1,4 +1,4 @@
-import { Exercise } from './exercises'
+import { WorkoutExerciseWithCategory } from './workoutExercises'
 
 export enum WorkoutDifficulty {
   BEGINNER = 0,
@@ -18,7 +18,7 @@ export interface Workout {
 
 export type CreateWorkoutParams = Omit<Workout, 'id' | 'createdAt' | 'updatedAt'>
 export type UpdateWorkoutParams = Omit<Workout, 'createdAt' | 'updatedAt'>
-export type WorkoutWithExercises = Workout & { exercises: Exercise[] }
+export type WorkoutWithExercises = Workout & { exercises: WorkoutExerciseWithCategory[] }
 
 export interface WorkoutsRepository {
   createWorkout(workout: CreateWorkoutParams): Promise<{ id: string }>

@@ -228,6 +228,10 @@
       "emptyState": {
         "title": "No exercises yet",
         "subtitle": "Add at least one exercise to start your workout."
+      },
+      "exerciseCard": {
+        "sets": "{{sets}} sets x ",
+        "reps": "{{reps}} repetitions"
       }
     },
     "createWorkout": {

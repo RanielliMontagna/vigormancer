@@ -6,7 +6,7 @@ export enum ExerciseType {
 export interface Exercise {
   id: number
   categoryId: string
-  name: string
+  exerciseName: string
   type: ExerciseType
   image?: string
   createdAt: string
@@ -15,7 +15,8 @@ export interface Exercise {
 
 export interface ExerciseWithCategory
   extends Omit<Exercise, 'categoryId' | 'createdAt' | 'updatedAt'> {
-  category: { id: string; name: string }
+  categoryName: string
+  categoryId: string
 }
 
 export type CreateExerciseParams = Omit<Exercise, 'id' | 'createdAt' | 'updatedAt'> & {

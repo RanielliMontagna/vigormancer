@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid'
 import {
   CreateWorkoutExerciseParams,
   DeleteWorkoutExerciseParams,
-  WorkoutExercise,
   WorkoutExercisesRepository,
+  WorkoutExerciseWithCategory,
 } from '../workoutExercises'
 
 import { db } from '@/db'
@@ -29,9 +29,22 @@ export class SqliteWorkoutExercisesRepository implements WorkoutExercisesReposit
     )
   }
 
-  async getWorkoutExercises(workoutId: string): Promise<WorkoutExercise[]> {
-    const workoutExercises = await db.getAllAsync<WorkoutExercise>(
-      'SELECT * FROM workout_exercise WHERE workoutId = ?',
+  async getWorkoutExercises(workoutId: string): Promise<WorkoutExerciseWithCategory[]> {
+    const workoutExercises = await db.getAllAsync<WorkoutExerciseWithCategory>(
+      `SELECT
+        we.id,
+        we.sets,
+        we.repetitions,
+        we.weight,
+        we.rest,
+        e.id as exerciseId,
+        e.name as exerciseName,
+        e.categoryId,
+        c.name as categoryName
+      FROM workout_exercise we
+      JOIN exercises e ON we.exerciseId = e.id
+      JOIN categories c ON e.categoryId = c.id
+      WHERE we.workoutId = ?`,
       [workoutId],
     )
 

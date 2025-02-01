@@ -1,4 +1,4 @@
-import { Image, Pressable, View } from 'react-native'
+import { Image, Pressable, RefreshControl, View } from 'react-native'
 
 import { useAddExercise } from './useAddExercise'
 import { BackButton, Form, H2, P, SearchField, Separator, Text } from '@/components'
@@ -7,7 +7,7 @@ import { useColorScheme } from '@/hooks'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { FlashList } from '@shopify/flash-list'
 import { Asset } from 'expo-asset'
-import { exerciseImageMap } from './exerciseImageMap'
+import { exerciseImageMap } from '../../../shared/exerciseImageMap'
 
 export function AddExercise() {
   const { isDarkColorScheme } = useColorScheme()
@@ -33,17 +33,19 @@ export function AddExercise() {
           <FlashList
             data={data}
             refreshing={isLoading}
+            refreshControl={<RefreshControl refreshing={isLoading} onRefresh={refetch} />}
             onRefresh={refetch}
             estimatedItemSize={140}
             renderItem={({ item, index }) => {
               let imageUri: string | undefined
 
               if (item.image) {
-                const asset = Asset.fromModule(exerciseImageMap[`${item.name}.jpg`])
+                const asset = Asset.fromModule(exerciseImageMap[`${item.exerciseName}.jpg`])
                 imageUri = asset.uri
               }
 
-              const equipments = t(`${item.name}.equipment`) !== `${item.name}.equipment`
+              const equipments =
+                t(`${item.exerciseName}.equipment`) !== `${item.exerciseName}.equipment`
 
               return (
                 <Pressable
@@ -52,12 +54,12 @@ export function AddExercise() {
                   className="bg-card p-2 gap-2 rounded-lg flex-row items-center"
                   onPress={() => handleSelectExercise(item)}
                 >
-                  <Image source={{ uri: imageUri }} style={{ width: 100, height: 100 }} />
+                  <Image source={{ uri: imageUri }} className="w-32 h-20 rounded-lg" />
                   <View className="flex-1 gap-2">
                     <View>
-                      <Text>{t(`${item.name}.title`)}</Text>
+                      <Text>{t(`${item.exerciseName}.title`)}</Text>
                       <Text className="text-xs text-muted-foreground flex-wrap flex-shrink">
-                        {t(`${item.name}.description`)}
+                        {t(`${item.exerciseName}.description`)}
                       </Text>
                     </View>
                     <View className="gap-1">
@@ -67,7 +69,7 @@ export function AddExercise() {
                           size={12}
                           color={isDarkColorScheme ? 'white' : 'black'}
                         />
-                        <Text className="text-xs">{t(`categories.${item.category.name}`)}</Text>
+                        <Text className="text-xs">{t(`categories.${item.categoryName}`)}</Text>
                       </View>
                       {equipments && (
                         <View className="flex-row gap-1 items-center">
@@ -77,7 +79,7 @@ export function AddExercise() {
                             color={isDarkColorScheme ? 'white' : 'black'}
                           />
                           <Text className="text-xs" numberOfLines={1} ellipsizeMode="tail">
-                            {t(`${item.name}.equipment`)}
+                            {t(`${item.exerciseName}.equipment`)}
                           </Text>
                         </View>
                       )}

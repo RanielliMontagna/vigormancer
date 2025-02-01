@@ -3,24 +3,32 @@ import {
   UpdateExerciseParams,
   Exercise,
   ExercisesRepository,
+  ExerciseWithCategory,
 } from '../exercises'
 
 import { db } from '@/db'
 
 export class SqliteExercisesRepository implements ExercisesRepository {
   async getExercises() {
-    const exercises = await db.getAllAsync<Exercise & { categoryName: string; categoryId: string }>(
-      `SELECT exercises.*, categories.name as categoryName, categories.id as categoryId
+    const exercises = await db.getAllAsync<ExerciseWithCategory>(
+      `SELECT
+        exercises.id,
+        exercises.name as exerciseName,
+        exercises.type,
+        exercises.image,
+        categories.name as categoryName,
+        categories.id as categoryId
        FROM exercises 
        JOIN categories ON exercises.categoryId = categories.id`,
     )
 
     return exercises.map((exercise) => ({
       id: exercise.id,
-      name: exercise.name,
+      exerciseName: exercise.exerciseName,
       type: exercise.type,
       image: exercise.image,
-      category: { id: exercise.categoryId, name: exercise.categoryName },
+      categoryName: exercise.categoryName,
+      categoryId: exercise.categoryId,
     }))
   }
 
@@ -41,10 +49,11 @@ export class SqliteExercisesRepository implements ExercisesRepository {
 
     return {
       id: exercise.id,
-      name: exercise.name,
+      exerciseName: exercise.exerciseName,
       type: exercise.type,
       image: exercise.image,
-      category: { id: exercise.categoryId, name: exercise.categoryName },
+      categoryName: exercise.categoryName,
+      categoryId: exercise.categoryId,
     }
   }
 
@@ -65,7 +74,7 @@ export class SqliteExercisesRepository implements ExercisesRepository {
       [
         id || undefined,
         category.id,
-        exercise.name,
+        exercise.exerciseName,
         exercise.type,
         exercise.image,
         new Date().toISOString(),
@@ -79,7 +88,7 @@ export class SqliteExercisesRepository implements ExercisesRepository {
   async updateExercise(exercise: UpdateExerciseParams) {
     await db.runAsync(
       'UPDATE exercises SET name = ?, type = ?, image = ?, updatedAt = ? WHERE id = ?',
-      [exercise.name, exercise.type, exercise.image, new Date().toISOString(), exercise.id],
+      [exercise.exerciseName, exercise.type, exercise.image, new Date().toISOString(), exercise.id],
     )
 
     return

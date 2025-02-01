@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { ImageBackground, TouchableOpacity, View, StyleSheet } from 'react-native'
+import { ImageBackground, TouchableOpacity, View, StyleSheet, RefreshControl } from 'react-native'
 import { useTranslation } from 'react-i18next'
 
 import colors from 'tailwindcss/colors'
@@ -16,6 +16,7 @@ import {
   EmptyState,
   IconButton,
   LoadingOverlay,
+  Separator,
   Text,
 } from '@/components'
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
@@ -24,6 +25,7 @@ import { DeleteWorkoutDialog } from '../deleteWorkout/deleteWorkout'
 
 import DumbbellExercise from '@/assets/svgs/storyset/dumbbell-exercise.svg'
 import { FlashList } from '@shopify/flash-list'
+import { ExerciseCard } from './exerciseCard/exerciseCard'
 
 export function WorkoutDetails() {
   const { isDarkColorScheme } = useColorScheme()
@@ -31,9 +33,12 @@ export function WorkoutDetails() {
 
   const {
     workout,
+    isLoading,
+    exercises,
     isExercisesEmpty,
     exercisesQuantity,
     workoutActionsBottomSheetRef,
+    refetch,
     handleDeleteWorkout,
     handleGoToAddExercise,
   } = useWorkoutDetails()
@@ -123,7 +128,7 @@ export function WorkoutDetails() {
           </Text>
         </View>
       </ImageBackground>
-      <View className="flex flex-col flex-1">
+      <View className="flex flex-col flex-1 gap-2">
         <View className="flex flex-row justify-between items-center">
           <Text className="text-sm text-muted-foreground">
             {t('workout.workoutDetails.exercises')}
@@ -138,12 +143,23 @@ export function WorkoutDetails() {
             <Text>{t('workout.workoutDetails.addExercise')}</Text>
           </Button>
         </View>
-        <EmptyState
-          svgImage={DumbbellExercise}
-          title={t('workout.workoutDetails.emptyState.title')}
-          subtitle={t('workout.workoutDetails.emptyState.subtitle')}
-        />
-        {/* TODO list of exercises */}
+        {isExercisesEmpty ? (
+          <EmptyState
+            svgImage={DumbbellExercise}
+            title={t('workout.workoutDetails.emptyState.title')}
+            subtitle={t('workout.workoutDetails.emptyState.subtitle')}
+          />
+        ) : (
+          <FlashList
+            data={exercises}
+            refreshing={isLoading}
+            refreshControl={<RefreshControl refreshing={isLoading} onRefresh={refetch} />}
+            onRefresh={refetch}
+            renderItem={({ item }) => <ExerciseCard {...item} />}
+            ItemSeparatorComponent={() => <Separator className="my-1 bg-transparent" />}
+            contentContainerStyle={{ paddingHorizontal: 8, paddingVertical: 8 }}
+          />
+        )}
       </View>
       <View>
         <Button onPress={() => console.log('Implement start workout')} disabled={isExercisesEmpty}>

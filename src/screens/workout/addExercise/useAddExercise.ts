@@ -12,6 +12,7 @@ import { ExerciseWithCategory } from '@/db/repositories/exercises'
 import { router, useLocalSearchParams } from 'expo-router'
 import { createWorkoutExercise } from '@/db/controllers/workoutExercises/create-workout-exercise'
 import Toast from 'react-native-toast-message'
+import { queryClient } from '@/libs/react-query'
 
 export function useAddExercise() {
   const { t } = useTranslation()
@@ -55,7 +56,7 @@ export function useAddExercise() {
       await createWorkoutExercise({
         exerciseId: exercise.id,
         workoutId,
-        sets: 3,
+        sets: 1,
         repetitions: 8,
         rest: 60,
       })
@@ -63,9 +64,13 @@ export function useAddExercise() {
       Toast.show({
         type: 'success',
         text1: t('workout.addExercise.success'),
-        text2: t('workout.addExercise.successMessage', { name: t(`${exercise.name}.title`) }),
+        text2: t('workout.addExercise.successMessage', {
+          name: t(`${exercise.exerciseName}.title`),
+        }),
         visibilityTime: 2000,
       })
+
+      queryClient.invalidateQueries({ queryKey: ['workoutDetails'] })
 
       router.back()
     } catch (error) {
@@ -79,7 +84,7 @@ export function useAddExercise() {
 
   const filteredData = useMemo(() => {
     if (search) {
-      return data?.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
+      return data?.filter((item) => item.exerciseName.toLowerCase().includes(search.toLowerCase()))
     }
 
     return data

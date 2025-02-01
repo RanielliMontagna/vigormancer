@@ -229,6 +229,10 @@
       "emptyState": {
         "title": "Nenhum exercício vinculado",
         "subtitle": "Adicione pelo menos um exercício para começar o treino."
+      },
+      "exerciseCard": {
+        "sets": "{{sets}} séries x ",
+        "reps": "{{reps}} repetições"
       }
     },
     "createWorkout": {
