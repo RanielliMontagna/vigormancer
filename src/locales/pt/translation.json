@@ -232,7 +232,11 @@
       },
       "exerciseCard": {
         "sets": "{{sets}} séries x ",
-        "reps": "{{reps}} repetições"
+        "reps": "{{reps}} repetições",
+        "removeExercise": "Remover Exercício",
+        "removeExerciseTitle": "Remover Exercício?",
+        "removeExerciseDescription": "Essa ação não pode ser desfeita. Tem certeza que deseja remover o exercício {{name}}?",
+        "cancel": "Cancelar"
       }
     },
     "createWorkout": {

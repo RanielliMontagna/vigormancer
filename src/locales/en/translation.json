@@ -231,7 +231,11 @@
       },
       "exerciseCard": {
         "sets": "{{sets}} sets x ",
-        "reps": "{{reps}} repetitions"
+        "reps": "{{reps}} repetitions",
+        "removeExercise": "Remove Exercise",
+        "removeExerciseTitle": "Remove Exercise?",
+        "removeExerciseDescription": "This action cannot be undone. Are you sure you want to remove {{name}} from your workout?",
+        "cancel": "Cancel"
       }
     },
     "createWorkout": {

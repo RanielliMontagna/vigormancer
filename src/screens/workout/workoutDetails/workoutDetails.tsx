@@ -16,7 +16,6 @@ import {
   EmptyState,
   IconButton,
   LoadingOverlay,
-  Separator,
   Text,
 } from '@/components'
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
@@ -156,7 +155,6 @@ export function WorkoutDetails() {
             refreshControl={<RefreshControl refreshing={isLoading} onRefresh={refetch} />}
             onRefresh={refetch}
             renderItem={({ item }) => <ExerciseCard {...item} />}
-            ItemSeparatorComponent={() => <Separator className="my-1 bg-transparent" />}
             contentContainerStyle={{ paddingHorizontal: 8, paddingVertical: 8 }}
           />
         )}
