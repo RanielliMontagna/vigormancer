@@ -5,7 +5,7 @@ interface DeleteWorkoutExercise {
 }
 
 export function deleteWorkoutExercise({ workoutExerciseId }: DeleteWorkoutExercise) {
-  const workoutsRepository = new SqliteWorkoutExercisesRepository()
+  const workoutExercisesRepository = new SqliteWorkoutExercisesRepository()
 
-  return workoutsRepository.deleteWorkoutExercise({ id: workoutExerciseId })
+  return workoutExercisesRepository.deleteWorkoutExercise({ id: workoutExerciseId })
 }

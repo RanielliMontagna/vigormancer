@@ -5,7 +5,7 @@ interface FetchWorkoutExercises {
 }
 
 export function fetchWorkoutExercises({ workoutId }: FetchWorkoutExercises) {
-  const workoutsRepository = new SqliteWorkoutExercisesRepository()
+  const workoutExercisesRepository = new SqliteWorkoutExercisesRepository()
 
-  return workoutsRepository.getWorkoutExercises(workoutId)
+  return workoutExercisesRepository.getWorkoutExercises(workoutId)
 }

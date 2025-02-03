@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 import {
   CreateWorkoutExerciseParams,
   DeleteWorkoutExerciseParams,
+  EditWorkoutExerciseParams,
   WorkoutExercisesRepository,
   WorkoutExerciseWithCategory,
 } from '../workoutExercises'
@@ -25,6 +26,20 @@ export class SqliteWorkoutExercisesRepository implements WorkoutExercisesReposit
         params.rest,
         new Date().toISOString(),
         new Date().toISOString(),
+      ],
+    )
+  }
+
+  async editWorkoutExercise(params: EditWorkoutExerciseParams): Promise<void> {
+    await db.runAsync(
+      'UPDATE workout_exercise SET sets = ?, repetitions = ?, weight = ?, rest = ?, updatedAt = ? WHERE id = ?',
+      [
+        params.sets,
+        params.repetitions,
+        params.weight,
+        params.rest,
+        new Date().toISOString(),
+        params.id,
       ],
     )
   }

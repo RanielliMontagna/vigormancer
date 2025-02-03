@@ -2,7 +2,7 @@ import { SqliteWorkoutExercisesRepository } from '@/db/repositories/sqlite/sqlit
 import { CreateWorkoutExerciseParams } from '@/db/repositories/workoutExercises'
 
 export function createWorkoutExercise(params: CreateWorkoutExerciseParams) {
-  const workoutsRepository = new SqliteWorkoutExercisesRepository()
+  const workoutExercisesRepository = new SqliteWorkoutExercisesRepository()
 
-  return workoutsRepository.createWorkoutExercise(params)
+  return workoutExercisesRepository.createWorkoutExercise(params)
 }

@@ -17,9 +17,16 @@ export interface WorkoutExerciseWithCategory extends WorkoutExercise {
 }
 
 export type CreateWorkoutExerciseParams = Omit<WorkoutExercise, 'id' | 'createdAt' | 'updatedAt'>
+
+export type EditWorkoutExerciseParams = Omit<
+  WorkoutExercise,
+  'workoutId' | 'exerciseId' | 'createdAt' | 'updatedAt'
+>
+
 export type DeleteWorkoutExerciseParams = { id: string }
 export interface WorkoutExercisesRepository {
   createWorkoutExercise(params: CreateWorkoutExerciseParams): Promise<void>
+  editWorkoutExercise(params: EditWorkoutExerciseParams): Promise<void>
   getWorkoutExercises(workoutId: string): Promise<WorkoutExerciseWithCategory[]>
   deleteWorkoutExercise(params: DeleteWorkoutExerciseParams): Promise<void>
 }
