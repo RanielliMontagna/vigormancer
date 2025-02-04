@@ -10,8 +10,9 @@ import { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reani
 import { useAppStore } from '@/store'
 import { queryClient } from '@/libs/react-query'
 import { deleteWorkoutExercise } from '@/db/controllers/workoutExercises/delete-workout-exercise'
+import { router } from 'expo-router'
 
-export function useExerciseCard({ id, exerciseName }: WorkoutExerciseWithCategory) {
+export function useExerciseCard({ id, workoutId, exerciseName }: WorkoutExerciseWithCategory) {
   const { handleErrors, setIsLoading } = useAppStore()
 
   const { t } = useTranslation()
@@ -44,7 +45,11 @@ export function useExerciseCard({ id, exerciseName }: WorkoutExerciseWithCategor
       }
     })
 
-  function handleEditExercise() {}
+  function handleEditExercise() {
+    translateX.value = withSpring(0)
+
+    router.push(`(private)/workouts/${workoutId}/exercise/${id}/edit-exercise`)
+  }
 
   async function handleRemoveExercise() {
     setIsLoading(true)

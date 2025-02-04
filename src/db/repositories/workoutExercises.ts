@@ -28,5 +28,6 @@ export interface WorkoutExercisesRepository {
   createWorkoutExercise(params: CreateWorkoutExerciseParams): Promise<void>
   editWorkoutExercise(params: EditWorkoutExerciseParams): Promise<void>
   getWorkoutExercises(workoutId: string): Promise<WorkoutExerciseWithCategory[]>
+  getWorkoutExercise(id: string): Promise<WorkoutExerciseWithCategory | undefined>
   deleteWorkoutExercise(params: DeleteWorkoutExerciseParams): Promise<void>
 }

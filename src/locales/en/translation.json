@@ -236,6 +236,18 @@
         "removeExerciseTitle": "Remove Exercise?",
         "removeExerciseDescription": "This action cannot be undone. Are you sure you want to remove {{name}} from your workout?",
         "cancel": "Cancel"
+      },
+      "edit": {
+        "subtitle": "Update the details of this exercise.",
+        "sets": "Sets",
+        "setsPlaceholder": "Enter the number of sets",
+        "reps": "Repetitions",
+        "repsPlaceholder": "Enter the number of repetitions",
+        "rest": "Rest",
+        "restPlaceholder": "Enter the rest time between sets",
+        "weight": "Weight",
+        "weightPlaceholder": "Enter the weight used",
+        "submit": "Update Exercise"
       }
     },
     "createWorkout": {

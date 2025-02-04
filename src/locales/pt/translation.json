@@ -223,9 +223,8 @@
       "exercises": "Exercícios",
       "start": "Começar Treino",
       "delete": "Deletar Treino",
-      "addExercise": "Adicionar Exercício",
       "actions": "Ações",
-      "edit": "Editar",
+      "addExercise": "Adicionar Exercício",
       "emptyState": {
         "title": "Nenhum exercício vinculado",
         "subtitle": "Adicione pelo menos um exercício para começar o treino."
@@ -237,6 +236,18 @@
         "removeExerciseTitle": "Remover Exercício?",
         "removeExerciseDescription": "Essa ação não pode ser desfeita. Tem certeza que deseja remover o exercício {{name}}?",
         "cancel": "Cancelar"
+      },
+      "edit": {
+        "subtitle": "Atualize seu exercício e alcance novos patamares.",
+        "sets": "Séries",
+        "setsPlaceholder": "Insira o número de séries",
+        "reps": "Repetições",
+        "repsPlaceholder": "Insira o número de repetições",
+        "rest": "Descanso",
+        "restPlaceholder": "Insira o tempo de descanso",
+        "weight": "Peso",
+        "weightPlaceholder": "Insira o peso",
+        "submit": "Atualizar Exercício"
       }
     },
     "createWorkout": {

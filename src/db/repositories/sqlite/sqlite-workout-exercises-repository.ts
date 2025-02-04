@@ -66,6 +66,28 @@ export class SqliteWorkoutExercisesRepository implements WorkoutExercisesReposit
     return workoutExercises
   }
 
+  async getWorkoutExercise(id: string): Promise<WorkoutExerciseWithCategory | undefined> {
+    const workoutExercise = await db.getFirstAsync<WorkoutExerciseWithCategory>(
+      `SELECT
+        we.id,
+        we.sets,
+        we.repetitions,
+        we.weight,
+        we.rest,
+        e.id as exerciseId,
+        e.name as exerciseName,
+        e.categoryId,
+        c.name as categoryName
+      FROM workout_exercise we
+      JOIN exercises e ON we.exerciseId = e.id
+      JOIN categories c ON e.categoryId = c.id
+      WHERE we.id = ?`,
+      [id],
+    )
+
+    return workoutExercise
+  }
+
   async deleteWorkoutExercise({ id }: DeleteWorkoutExerciseParams): Promise<void> {
     await db.runAsync('DELETE FROM workout_exercise WHERE id = ?', [id])
   }
