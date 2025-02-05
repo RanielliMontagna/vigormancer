@@ -16,10 +16,10 @@ import { editWorkoutExercise } from '@/db/controllers/workoutExercises/edit-work
 import { getWorkoutExercise } from '@/db/controllers/workoutExercises/get-workout-exercise'
 
 const editWorkoutExerciseSchema = z.object({
-  sets: z.number().int().positive(),
-  reps: z.number().int().positive(),
-  weight: z.number().int().positive().nullable().optional(),
-  rest: z.number().int().positive().optional(),
+  sets: z.coerce.number().int(),
+  reps: z.coerce.number().int(),
+  weight: z.coerce.number().int().optional(),
+  rest: z.coerce.number().int().optional(),
 })
 
 type EditWorkoutExerciseSchema = z.infer<typeof editWorkoutExerciseSchema>

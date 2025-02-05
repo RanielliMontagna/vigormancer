@@ -245,8 +245,13 @@
         "repsPlaceholder": "Enter the number of repetitions",
         "rest": "Rest",
         "restPlaceholder": "Enter the rest time between sets",
+        "restUnit": "seconds",
+        "restMinutes_zero": "Less than a minute rest between sets",
+        "restMinutes_one": "1 minute rest between sets",
+        "restMinutes_other": "About {{minutes}} minutes rest between sets",
         "weight": "Weight",
         "weightPlaceholder": "Enter the weight used",
+        "weightUnit": "kg",
         "submit": "Update Exercise"
       }
     },

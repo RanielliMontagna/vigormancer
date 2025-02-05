@@ -245,8 +245,13 @@
         "repsPlaceholder": "Insira o número de repetições",
         "rest": "Descanso",
         "restPlaceholder": "Insira o tempo de descanso",
+        "restUnit": "segundos",
+        "restMinutes_zero": "Menos de 1 minuto de descanso entre as séries",
+        "restMinutes_one": "Cerca de 1 minuto de descanso entre as séries",
+        "restMinutes_other": "Cerca de {{minutes}} minutos de descanso entre as séries",
         "weight": "Peso",
         "weightPlaceholder": "Insira o peso",
+        "weightUnit": "kg",
         "submit": "Atualizar Exercício"
       }
     },

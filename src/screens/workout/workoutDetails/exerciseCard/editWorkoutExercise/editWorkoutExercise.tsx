@@ -1,12 +1,19 @@
 import { View } from 'react-native'
 import { useTranslation } from 'react-i18next'
 
-import { BackButton, Button, Form, H2, P, Text, TextField } from '@/components'
+import { BackButton, Button, Form, H2, P, QuantityField, Text } from '@/components'
 import { useEditWorkoutExercise } from './useEditWorkoutExercise'
 
 export function EditWorkoutExercise() {
   const { t } = useTranslation()
   const { methods, exercise, handleEditWorkoutExercise } = useEditWorkoutExercise()
+
+  function getMinutesOfRest(restInSeconds: number) {
+    return Math.round(restInSeconds / 60)
+  }
+
+  const restSeconds = methods.watch('rest')
+  const sets = methods.watch('sets')
 
   return (
     <Form {...methods}>
@@ -21,40 +28,46 @@ export function EditWorkoutExercise() {
           </P>
         </View>
         <View className="flex flex-col gap-4 flex-1">
-          <TextField
+          <QuantityField
             control={methods.control}
             name="sets"
             label={t('workout.workoutDetails.edit.sets')}
             placeholder={t('workout.workoutDetails.edit.setsPlaceholder')}
-            type="number"
-            keyboardType="number-pad"
             required
+            min={1}
           />
-          <TextField
+          <QuantityField
             control={methods.control}
             name="reps"
             label={t('workout.workoutDetails.edit.reps')}
             placeholder={t('workout.workoutDetails.edit.repsPlaceholder')}
-            type="number"
-            keyboardType="number-pad"
             required
+            min={1}
           />
-          <TextField
+          <QuantityField
             control={methods.control}
             name="weight"
             label={t('workout.workoutDetails.edit.weight')}
             placeholder={t('workout.workoutDetails.edit.weightPlaceholder')}
-            type="number"
-            keyboardType="number-pad"
+            endAdornment={
+              <Text className="text-xs">{t('workout.workoutDetails.edit.weightUnit')}</Text>
+            }
           />
-          <TextField
-            control={methods.control}
-            name="rest"
-            label={t('workout.workoutDetails.edit.rest')}
-            placeholder={t('workout.workoutDetails.edit.restPlaceholder')}
-            type="number"
-            keyboardType="number-pad"
-          />
+          {Number(sets) > 1 && (
+            <QuantityField
+              control={methods.control}
+              name="rest"
+              label={t('workout.workoutDetails.edit.rest')}
+              placeholder={t('workout.workoutDetails.edit.restPlaceholder')}
+              endAdornment={
+                <Text className="text-xs">{t('workout.workoutDetails.edit.restUnit')}</Text>
+              }
+              helperText={t('workout.workoutDetails.edit.restMinutes', {
+                minutes: getMinutesOfRest(restSeconds ? Number(restSeconds) : 0),
+                count: Math.floor(restSeconds / 60),
+              })}
+            />
+          )}
         </View>
         <Button onPress={methods.handleSubmit(handleEditWorkoutExercise)}>
           <Text>{t('workout.workoutDetails.edit.submit')}</Text>
