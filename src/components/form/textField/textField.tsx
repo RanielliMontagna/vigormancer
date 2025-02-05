@@ -48,7 +48,7 @@ export const TextField: FC<TextFieldProps> = ({
               defaultValue={defaultValue}
               id={name}
               placeholder={placeholder}
-              value={value}
+              value={value ? String(value) : ''}
               onChangeText={onChange}
               {...rest}
             />
