@@ -17,7 +17,7 @@ import { getWorkoutExercise } from '@/db/controllers/workoutExercises/get-workou
 
 const editWorkoutExerciseSchema = z.object({
   sets: z.coerce.number().int(),
-  reps: z.coerce.number().int(),
+  repetitions: z.coerce.number().int(),
   weight: z.coerce.number().int().optional(),
   rest: z.coerce.number().int().optional(),
 })
@@ -33,14 +33,20 @@ export function useEditWorkoutExercise() {
 
   const methods = useForm<EditWorkoutExerciseSchema>({
     resolver: zodResolver(editWorkoutExerciseSchema),
-    defaultValues: { sets: 0, reps: 0, weight: null, rest: 0 },
+    defaultValues: { sets: 0, repetitions: 0, weight: null, rest: 0 },
   })
 
   async function handleEditWorkoutExercise(exercise: EditWorkoutExerciseParams) {
     try {
       setIsLoading(true)
 
-      await editWorkoutExercise(exercise)
+      await editWorkoutExercise({
+        id: id,
+        sets: exercise.sets,
+        repetitions: exercise.repetitions,
+        weight: exercise.weight ?? null,
+        rest: exercise.sets > 1 ? exercise.rest : null,
+      })
 
       queryClient.invalidateQueries({ queryKey: ['workoutDetails'] })
       router.back()
@@ -61,7 +67,7 @@ export function useEditWorkoutExercise() {
 
       methods.reset({
         sets: response?.sets,
-        reps: response?.repetitions,
+        repetitions: response?.repetitions,
         weight: response?.weight,
         rest: response?.rest,
       })

@@ -38,7 +38,7 @@ export function EditWorkoutExercise() {
           />
           <QuantityField
             control={methods.control}
-            name="reps"
+            name="repetitions"
             label={t('workout.workoutDetails.edit.reps')}
             placeholder={t('workout.workoutDetails.edit.repsPlaceholder')}
             required
