@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { ImageBackground, TouchableOpacity, View, StyleSheet } from 'react-native'
+import { ImageBackground, TouchableOpacity, View, StyleSheet, RefreshControl } from 'react-native'
 import { useTranslation } from 'react-i18next'
 
 import colors from 'tailwindcss/colors'
@@ -9,16 +9,38 @@ import WorkoutPlaceholder from '@/assets/images/workout-placeholder.jpg'
 
 import { useWorkoutDetails } from './useWorkoutDetails'
 
-import { BackButton, BottomSheet, Button, IconButton, LoadingOverlay, Text } from '@/components'
+import {
+  BackButton,
+  BottomSheet,
+  Button,
+  EmptyState,
+  IconButton,
+  LoadingOverlay,
+  Text,
+} from '@/components'
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
 import { useColorScheme } from '@/hooks'
 import { DeleteWorkoutDialog } from '../deleteWorkout/deleteWorkout'
+
+import DumbbellExercise from '@/assets/svgs/storyset/dumbbell-exercise.svg'
+import { FlashList } from '@shopify/flash-list'
+import { ExerciseCard } from './exerciseCard/exerciseCard'
 
 export function WorkoutDetails() {
   const { isDarkColorScheme } = useColorScheme()
   const { t } = useTranslation()
 
-  const { workout, workoutActionsBottomSheetRef, handleDeleteWorkout } = useWorkoutDetails()
+  const {
+    workout,
+    isLoading,
+    exercises,
+    isExercisesEmpty,
+    exercisesQuantity,
+    workoutActionsBottomSheetRef,
+    refetch,
+    handleDeleteWorkout,
+    handleGoToAddExercise,
+  } = useWorkoutDetails()
 
   const difficultyColor = useMemo(() => {
     switch (workout?.difficulty) {
@@ -64,7 +86,11 @@ export function WorkoutDetails() {
           </View>
         </BottomSheet>
       </View>
-      <ImageBackground source={imageSource} imageStyle={{ borderRadius: 16 }} className="p-8">
+      <ImageBackground
+        source={imageSource}
+        imageStyle={{ borderRadius: 16 }}
+        className="p-8 border border-border rounded-3xl"
+      >
         <View
           style={{
             ...StyleSheet.absoluteFillObject,
@@ -96,17 +122,45 @@ export function WorkoutDetails() {
         <Text className="text-sm color-white">{workout.description}</Text>
         <View className="flex flex-row items-center gap-2">
           <FontAwesome5 name="running" size={16} color="white" />
-          <Text className="text-sm color-white">0 exercises</Text>
+          <Text className="text-sm color-white">
+            {exercisesQuantity} {t('workout.workoutDetails.exercises')}
+          </Text>
         </View>
       </ImageBackground>
-      <View>
-        <Text className="text-sm text-muted-foreground">
-          {t('workout.workoutDetails.exercises')}
-        </Text>
-        {/* TODO list of exercises */}
+      <View className="flex flex-col flex-1 gap-2">
+        <View className="flex flex-row justify-between items-center">
+          <Text className="text-sm text-muted-foreground">
+            {t('workout.workoutDetails.exercises')}
+          </Text>
+          <Button
+            size="sm"
+            startIcon={
+              <FontAwesome5 name="plus" size={14} color={isDarkColorScheme ? 'black' : 'white'} />
+            }
+            onPress={handleGoToAddExercise}
+          >
+            <Text>{t('workout.workoutDetails.addExercise')}</Text>
+          </Button>
+        </View>
+        {isExercisesEmpty ? (
+          <EmptyState
+            svgImage={DumbbellExercise}
+            title={t('workout.workoutDetails.emptyState.title')}
+            subtitle={t('workout.workoutDetails.emptyState.subtitle')}
+          />
+        ) : (
+          <FlashList
+            data={exercises}
+            refreshing={isLoading}
+            refreshControl={<RefreshControl refreshing={isLoading} onRefresh={refetch} />}
+            onRefresh={refetch}
+            renderItem={({ item }) => <ExerciseCard {...item} />}
+            contentContainerStyle={{ paddingHorizontal: 8, paddingVertical: 8 }}
+          />
+        )}
       </View>
       <View>
-        <Button onPress={() => console.log('Implement start workout')}>
+        <Button onPress={() => console.log('Implement start workout')} disabled={isExercisesEmpty}>
           <Text>{t('workout.workoutDetails.start')}</Text>
         </Button>
       </View>

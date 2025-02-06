@@ -1,0 +1,1146 @@
+{
+  "barbell_bench_press": {
+    "title": "Supino Reto com Barra",
+    "description": "Exercício para peitoral, tríceps e deltoides anteriores",
+    "equipment": "Barra, Banco",
+    "img": "@assets/images/guides/chest/barbell_bench_press.jpg",
+    "category": "chest",
+    "id": 1
+  },
+  "incline_dumbbell_bench_press": {
+    "title": "Supino Inclinado com Halteres",
+    "description": "Exercício para peitoral, tríceps e deltoides anteriores",
+    "equipment": "Halteres, Banco",
+    "img": "@assets/images/guides/chest/incline_dumbbell_bench_press.jpg",
+    "category": "chest",
+    "id": 2
+  },
+  "peck_deck": {
+    "title": "Peck Deck",
+    "description": "Exercício para peitoral e deltoides anteriores",
+    "equipment": "Máquina Peck Deck",
+    "img": "@assets/images/guides/chest/peck_deck.jpg",
+    "category": "chest",
+    "id": 3
+  },
+  "cable_crossover": {
+    "title": "Crossover no Cabo",
+    "description": "Exercício para peitoral e deltoides anteriores",
+    "equipment": "Máquina de Crossover",
+    "img": "@assets/images/guides/chest/cable_crossover.jpg",
+    "category": "chest",
+    "id": 4
+  },
+  "incline_barbell_bench_press": {
+    "title": "Supino Inclinado com Barra",
+    "description": "Exercício para peitoral, tríceps e deltoides anteriores",
+    "equipment": "Barra, Banco",
+    "img": "@assets/images/guides/chest/incline_barbell_bench_press.jpg",
+    "category": "chest",
+    "id": 5
+  },
+  "dumbbell_bench_press": {
+    "title": "Supino Reto com Halteres",
+    "description": "Exercício para peitoral, tríceps e deltoides anteriores",
+    "equipment": "Halteres, Banco",
+    "img": "@assets/images/guides/chest/dumbbell_bench_press.jpg",
+    "category": "chest",
+    "id": 6
+  },
+  "dumbbell_fly": {
+    "title": "Crucifixo com Halteres",
+    "description": "Exercício para peitoral e deltoides anteriores",
+    "equipment": "Halteres, Banco",
+    "img": "@assets/images/guides/chest/dumbbell_fly.jpg",
+    "category": "chest",
+    "id": 7
+  },
+  "incline_dumbbell_fly": {
+    "title": "Crucifixo Inclinado com Halteres",
+    "description": "Exercício para peitoral e deltoides anteriores",
+    "equipment": "Halteres, Banco",
+    "img": "@assets/images/guides/chest/incline_dumbbell_fly.jpg",
+    "category": "chest",
+    "id": 8
+  },
+  "chest_press_machine": {
+    "title": "Máquina de Supino",
+    "description": "Exercício para peitoral, tríceps e ombros",
+    "equipment": "Máquina de Supino",
+    "img": "@assets/images/guides/chest/chest_press_machine.jpg",
+    "category": "chest",
+    "id": 9
+  },
+  "barbell_declined_bench_press": {
+    "title": "Supino Declinado com Barra",
+    "description": "Exercício para peitoral inferior, tríceps e deltoides anteriores",
+    "equipment": "Barra, Banco Declinado, Anilhas",
+    "img": "@assets/images/guides/chest/barbell_declined_bench_press.jpg",
+    "category": "chest",
+    "id": 10
+  },
+  "dumbbell_declined_bench_press": {
+    "title": "Supino Declinado com Halteres",
+    "description": "Exercício para peitoral inferior, tríceps e deltoides anteriores",
+    "equipment": "Halteres, Banco Declinado, Anilhas",
+    "img": "@assets/images/guides/chest/dumbbell_declined_bench_press.jpg",
+    "category": "chest",
+    "id": 11
+  },
+  "push_ups": {
+    "title": "Flexões",
+    "description": "Exercício para peitoral, tríceps, deltoides e bíceps",
+    "equipment": "Corpo",
+    "img": "@assets/images/guides/chest/push_ups.jpg",
+    "category": "chest",
+    "id": 12
+  },
+  "lying_triceps_extension": {
+    "title": "Tríceps Testa deitado",
+    "description": "Exercício para tríceps",
+    "equipment": "Barra EZ, Banco",
+    "img": "@assets/images/guides/triceps/lying_triceps_extension.jpg",
+    "category": "triceps",
+    "id": 13
+  },
+  "triceps_pressdown": {
+    "title": "Extensão de Tríceps na Polia Alta",
+    "description": "Exercício para tríceps",
+    "equipment": "Máquina de Polia, Barra para Tríceps",
+    "img": "@assets/images/guides/triceps/triceps_pressdown.jpg",
+    "category": "triceps",
+    "id": 14
+  },
+  "cable_rope_pushdown": {
+    "title": "Extensão de Tríceps com Corda",
+    "description": "Exercício para tríceps",
+    "equipment": "Máquina de Polia, Corda",
+    "img": "@assets/images/guides/triceps/cable_rope_pushdown.jpg",
+    "category": "triceps",
+    "id": 15
+  },
+  "dumbbell_overhead_triceps_extension": {
+    "title": "Extensão de Tríceps Acima da Cabeça com Halter",
+    "description": "Exercício para tríceps",
+    "equipment": "Halter, Banco",
+    "img": "@assets/images/guides/triceps/dumbbell_overhead_triceps_extension.jpg",
+    "category": "triceps",
+    "id": 16
+  },
+  "close_grip_bench_press": {
+    "title": "Supino Fechado",
+    "description": "Exercício para tríceps, peitoral e deltoides anteriores",
+    "equipment": "Barra EZ, Banco",
+    "img": "@assets/images/guides/triceps/close_grip_bench_press.jpg",
+    "category": "triceps",
+    "id": 17
+  },
+  "kickback": {
+    "title": "Kickback",
+    "description": "Exercício para tríceps",
+    "equipment": "Halter, Banco",
+    "img": "@assets/images/guides/triceps/kickback.jpg",
+    "category": "triceps",
+    "id": 18
+  },
+  "reverse_grip_cable_triceps_extension_with_barbell": {
+    "title": "Extensão de Tríceps com Pegada Invertida",
+    "description": "Exercício para tríceps",
+    "equipment": "Barra Reta, Polia Alta",
+    "img": "@assets/images/guides/triceps/reverse_grip_cable_triceps_extension_with_barbell.jpg",
+    "category": "triceps",
+    "id": 19
+  },
+  "single-arm_cable_triceps_extension": {
+    "title": "Extensão de Tríceps com Cabo Unilateral",
+    "description": "Exercício para tríceps",
+    "equipment": "Pegador, Polia Alta",
+    "img": "@assets/images/guides/triceps/single-arm_cable_triceps_extension.jpg",
+    "category": "triceps",
+    "id": 20
+  },
+  "single-arm_cable_triceps_extension_with_supinated_grip": {
+    "title": "Extensão Unilateral de Tríceps com Pegada Supinada",
+    "description": "Exercício para tríceps",
+    "equipment": "Pegador, Polia Alta",
+    "img": "@assets/images/guides/triceps/single-arm_cable_triceps_extension_with_supinated_grip.jpg",
+    "category": "triceps",
+    "id": 21
+  },
+  "lying_dumbbell_triceps_extension": {
+    "title": "Extensão de Tríceps com Halteres Deitado",
+    "description": "Exercício para tríceps",
+    "equipment": "Halteres, Banco",
+    "img": "@assets/images/guides/triceps/lying_dumbbell_triceps_extension.jpg",
+    "category": "triceps",
+    "id": 22
+  },
+  "seated_barbell_french_press": {
+    "title": "Tríceps Francês Sentado com Barra",
+    "description": "Exercício para tríceps",
+    "equipment": "Barra Reta ou EZ, Banco",
+    "img": "@assets/images/guides/triceps/seated_barbell_french_press.jpg",
+    "category": "triceps",
+    "id": 23
+  },
+  "bench_dips": {
+    "title": "Mergulho no Banco",
+    "description": "Exercício para tríceps e deltoides anteriores",
+    "equipment": "2 Bancos",
+    "img": "@assets/images/guides/triceps/bench_dips.jpg",
+    "category": "triceps",
+    "id": 24
+  },
+  "parallel_dip_bar": {
+    "title": "Mergulho nas Paralelas",
+    "description": "Exercício para tríceps, deltoides anteriores e peitoral inferior",
+    "equipment": "Barras Paralelas",
+    "img": "@assets/images/guides/triceps/parallel_dip_bar.jpg",
+    "category": "triceps",
+    "id": 25
+  },
+  "seated_calf_raise": {
+    "title": "Elevação de Panturrilha Sentado",
+    "description": "Exercício para panturrilhas",
+    "equipment": "Máquina de Panturrilha Sentado",
+    "img": "@assets/images/guides/calves/seated_calf_raise.jpg",
+    "category": "calves",
+    "id": 26
+  },
+  "standing_calf_raise": {
+    "title": "Elevação de Panturrilha em Pé",
+    "description": "Exercício para panturrilhas",
+    "equipment": "Máquina de Panturrilha em Pé",
+    "img": "@assets/images/guides/calves/standing_calf_raise.jpg",
+    "category": "calves",
+    "id": 27
+  },
+  "dumbbell_bent_over_row_(single_arm)": {
+    "title": "Remada Unilateral com Halteres",
+    "description": "Exercício para costas, deltoides posteriores e bíceps",
+    "equipment": "Halter, Banco",
+    "img": "@assets/images/guides/back/dumbbell_bent_over_row_(single_arm).jpg",
+    "category": "back",
+    "id": 28
+  },
+  "wide_grip_pulldown": {
+    "title": "Pulldown com Pegada Aberta",
+    "description": "Exercício para costas e bíceps",
+    "equipment": "Máquina Lat Pulldown, Barra",
+    "img": "@assets/images/guides/back/wide_grip_pulldown.jpg",
+    "category": "back",
+    "id": 29
+  },
+  "seated_cable_row": {
+    "title": "Remada Sentada na Polia",
+    "description": "Exercício para costas, deltoides posteriores e bíceps",
+    "equipment": "Máquina de Polia",
+    "img": "@assets/images/guides/back/seated_cable_row.jpg",
+    "category": "back",
+    "id": 30
+  },
+  "close_grip_pulldown": {
+    "title": "Pulldown com Pegada Fechada",
+    "description": "Exercício para costas e bíceps",
+    "equipment": "Máquina Lat Pulldown, Barra",
+    "img": "@assets/images/guides/back/close_grip_pulldown.jpg",
+    "category": "back",
+    "id": 31
+  },
+  "barbell_row": {
+    "title": "Remada com Barra",
+    "description": "Exercício para costas, deltoides posteriores e bíceps",
+    "equipment": "Barra",
+    "img": "@assets/images/guides/back/barbell_row.jpg",
+    "category": "back",
+    "id": 32
+  },
+  "behind_neck_pulldown": {
+    "title": "Pulldown Atrás da Cabeça",
+    "description": "Exercício para costas e bíceps",
+    "equipment": "Máquina Lat Pulldown, Barra",
+    "img": "@assets/images/guides/back/behind_neck_pulldown.jpg",
+    "category": "back",
+    "id": 33
+  },
+  "reverse_grip_pulldown": {
+    "title": "Pulldown com Pegada Invertida",
+    "description": "Exercício para costas e bíceps",
+    "equipment": "Máquina Lat Pulldown, Barra",
+    "img": "@assets/images/guides/back/reverse_grip_pulldown.jpg",
+    "category": "back",
+    "id": 34
+  },
+  "rope_pulldown": {
+    "title": "Pulldown com Corda",
+    "description": "Exercício para costas e tríceps",
+    "equipment": "Máquina de Polia, Corda",
+    "img": "@assets/images/guides/back/rope_pulldown.jpg",
+    "category": "back",
+    "id": 35
+  },
+  "t-bar_rows": {
+    "title": "Remada T-Bar",
+    "description": "Exercício para costas, ombros e bíceps",
+    "equipment": "Máquina T-Bar, Anilhas",
+    "img": "@assets/images/guides/back/t-bar_rows.jpg",
+    "category": "back",
+    "id": 36
+  },
+  "barbell_bent_over_rows_supinated_grip": {
+    "title": "Remada Curvada com Pegada Supinada",
+    "description": "Exercício para costas e deltoides posteriores",
+    "equipment": "Barra, Anilhas",
+    "img": "@assets/images/guides/back/barbell_bent_over_rows_supinated_grip.jpg",
+    "category": "back",
+    "id": 37
+  },
+  "pull_up": {
+    "title": "Barra Fixa",
+    "description": "Exercício para costas e bíceps",
+    "equipment": "Barra Fixa",
+    "img": "@assets/images/guides/back/pull_up.jpg",
+    "category": "back",
+    "id": 38
+  },
+  "behind_the_neck_pull_up": {
+    "title": "Barra Fixa Atrás da Cabeça",
+    "description": "Exercício para costas e bíceps",
+    "equipment": "Barra Fixa",
+    "img": "@assets/images/guides/back/behind_the_neck_pull_up.jpg",
+    "category": "back",
+    "id": 39
+  },
+  "pull_up_with_a_supinated_grip": {
+    "title": "Barra Fixa com Pegada Supinada",
+    "description": "Exercício para costas e bíceps",
+    "equipment": "Barra Fixa",
+    "img": "@assets/images/guides/back/pull_up_with_a_supinated_grip.jpg",
+    "category": "back",
+    "id": 40
+  },
+  "straight_arm_lat_pulldown": {
+    "title": "Pulldown com Braço Reto",
+    "description": "Exercício para costas e tríceps",
+    "equipment": "Barra Reta, Polia Alta",
+    "img": "@assets/images/guides/back/straight_arm_lat_pulldown.jpg",
+    "category": "back",
+    "id": 41
+  },
+  "dumbbell_bent_over_rows": {
+    "title": "Remada Curvada com Halteres",
+    "description": "Exercício para costas, bíceps e deltoides posteriores",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/back/dumbbell_bent_over_rows.jpg",
+    "category": "back",
+    "id": 42
+  },
+  "dumbbell_pullover": {
+    "title": "Pull Over com Halter",
+    "description": "Exercício para costas, peitoral e tríceps",
+    "equipment": "Halter, Banco",
+    "img": "@assets/images/guides/back/dumbbell_pullover.jpg",
+    "category": "back",
+    "id": 43
+  },
+  "barbell_pullover": {
+    "title": "Pull Over com Barra",
+    "description": "Exercício para costas, peitoral e tríceps",
+    "equipment": "Barra, Banco",
+    "img": "@assets/images/guides/back/barbell_pullover.jpg",
+    "category": "back",
+    "id": 44
+  },
+  "barbell_deadlift": {
+    "title": "Levantamento Terra com Barra",
+    "description": "Exercício principalmente para costas, pernas e corpo todo",
+    "equipment": "Barra, Anilhas",
+    "img": "@assets/images/guides/back/barbell_deadlift.jpg",
+    "category": "back",
+    "id": 45
+  },
+  "barbell_sumo_deadlift": {
+    "title": "Levantamento Terra Sumo com Barra",
+    "description": "Exercício principalmente para costas, pernas e corpo todo",
+    "equipment": "Barra, Anilhas",
+    "img": "@assets/images/guides/back/barbell_sumo_deadlift.jpg",
+    "category": "back",
+    "id": 46
+  },
+  "trap_bar_deadlift": {
+    "title": "Levantamento Terra com Barra Trap",
+    "description": "Exercício principalmente para costas, pernas e corpo todo",
+    "equipment": "Barra Trap, Anilhas",
+    "img": "@assets/images/guides/back/trap_bar_deadlift.jpg",
+    "category": "back",
+    "id": 47
+  },
+  "dumbbell_deadlift": {
+    "title": "Levantamento Terra com Halteres",
+    "description": "Exercício principalmente para costas, pernas e corpo todo",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/back/dumbbell_deadlift.jpg",
+    "category": "back",
+    "id": 48
+  },
+  "barbell_shrug": {
+    "title": "Encolhimento com Barra",
+    "description": "Exercício para costas",
+    "equipment": "Barra",
+    "img": "@assets/images/guides/back/barbell_shrug.jpg",
+    "category": "back",
+    "id": 49
+  },
+  "dumbbell_shrugs": {
+    "title": "Encolhimento com Halteres",
+    "description": "Exercício para músculos trapézio",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/back/dumbbell_shrugs.jpg",
+    "category": "back",
+    "id": 50
+  },
+  "barbell_curl": {
+    "title": "Rosca Direta com Barra",
+    "description": "Exercício para bíceps",
+    "equipment": "Barra EZ",
+    "img": "@assets/images/guides/biceps/barbell_curl.jpg",
+    "category": "biceps",
+    "id": 51
+  },
+  "alternating_dumbbell_curl": {
+    "title": "Rosca Alternada com Halteres",
+    "description": "Exercício para bíceps",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/biceps/alternating_dumbbell_curl.jpg",
+    "category": "biceps",
+    "id": 52
+  },
+  "rope_cable_curl": {
+    "title": "Rosca com Corda na Polia",
+    "description": "Exercício para bíceps",
+    "equipment": "Máquina de Polia, Corda",
+    "img": "@assets/images/guides/biceps/rope_cable_curl.jpg",
+    "category": "biceps",
+    "id": 53
+  },
+  "ez_barbell_curl": {
+    "title": "Rosca Direta com Barra EZ",
+    "description": "Exercício para bíceps",
+    "equipment": "Barra EZ",
+    "img": "@assets/images/guides/biceps/ez_barbell_curl.jpg",
+    "category": "biceps",
+    "id": 54
+  },
+  "ez_barbell_preacher_curl": {
+    "title": "Rosca Scott com Barra EZ",
+    "description": "Exercício para bíceps",
+    "equipment": "Banco Scott, Barra EZ",
+    "img": "@assets/images/guides/biceps/ez_barbell_preacher_curl.jpg",
+    "category": "biceps",
+    "id": 55
+  },
+  "hammer_curl": {
+    "title": "Rosca Martelo",
+    "description": "Exercício para bíceps",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/biceps/hammer_curl.jpg",
+    "category": "biceps",
+    "id": 56
+  },
+  "incline_dumbbell_curl": {
+    "title": "Rosca Inclinado com Halteres",
+    "description": "Exercício para bíceps",
+    "equipment": "Halteres, Banco",
+    "img": "@assets/images/guides/biceps/incline_dumbbell_curl.jpg",
+    "category": "biceps",
+    "id": 57
+  },
+  "dumbbell_concentration_curl": {
+    "title": "Rosca Concentrada",
+    "description": "Exercício para bíceps",
+    "equipment": "Halter, Banco",
+    "img": "@assets/images/guides/biceps/dumbbell_concentration_curl.jpg",
+    "category": "biceps",
+    "id": 58
+  },
+  "single-arm_low_pulley_cable_curl": {
+    "title": "Rosca Unilateral na Polia Baixa",
+    "description": "Exercício para bíceps",
+    "equipment": "Pegador, Polia Baixa",
+    "img": "@assets/images/guides/biceps/single-arm_low_pulley_cable_curl.jpg",
+    "category": "biceps",
+    "id": 59
+  },
+  "straight_bar_low_pulley_cable_curl": {
+    "title": "Rosca Direta com Barra na Polia Baixa",
+    "description": "Exercício para bíceps",
+    "equipment": "Barra Reta, Polia Baixa",
+    "img": "@assets/images/guides/biceps/straight_bar_low_pulley_cable_curl.jpg",
+    "category": "biceps",
+    "id": 60
+  },
+  "standing_high_pulley_cable_curl": {
+    "title": "Rosca na Polia Alta de Pé",
+    "description": "Exercício para bíceps",
+    "equipment": "2 Pegadores, 2 Polias Altas",
+    "img": "@assets/images/guides/biceps/standing_high_pulley_cable_curl.jpg",
+    "category": "biceps",
+    "id": 61
+  },
+  "seated_barbell_wrist_curl": {
+    "title": "Flexão de Punho Sentado com Barra",
+    "description": "Exercício para antebraços",
+    "equipment": "Barra, Anilhas, Banco",
+    "img": "@assets/images/guides/biceps/seated_barbell_wrist_curl.jpg",
+    "category": "biceps",
+    "id": 62
+  },
+  "seated_barbell_wrist_extension": {
+    "title": "Extensão de Punho Sentado com Barra",
+    "description": "Exercício para antebraços",
+    "equipment": "Barra, Anilhas, Banco",
+    "img": "@assets/images/guides/biceps/seated_barbell_wrist_extension.jpg",
+    "category": "biceps",
+    "id": 63
+  },
+  "reverse_barbell_curl": {
+    "title": "Rosca Invertida com Barra",
+    "description": "Exercício para bíceps e antebraços",
+    "equipment": "Barra Reta ou EZ, Anilhas",
+    "img": "@assets/images/guides/biceps/reverse_barbell_curl.jpg",
+    "category": "biceps",
+    "id": 64
+  },
+  "crunch": {
+    "title": "Abdominal Crunch",
+    "description": "Exercício para abdominais",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/crunch.jpg",
+    "category": "abdominals",
+    "id": 65
+  },
+  "oblique_crunch": {
+    "title": "Abdominal Oblíquo",
+    "description": "Exercício para abdominais",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/oblique_crunch.jpg",
+    "category": "abdominals",
+    "id": 66
+  },
+  "crunch_machine": {
+    "title": "Máquina de Crunch",
+    "description": "Exercício para abdominais",
+    "equipment": "Máquina de Crunch",
+    "img": "@assets/images/guides/abdominals/crunch_machine.jpg",
+    "category": "abdominals",
+    "id": 67
+  },
+  "rope_ab_pulldown": {
+    "title": "Crunch com Corda na Polia Alta",
+    "description": "Exercício para abdominais",
+    "equipment": "Máquina de Polia, Corda",
+    "img": "@assets/images/guides/abdominals/rope_ab_pulldown.jpg",
+    "category": "abdominals",
+    "id": 68
+  },
+  "plank": {
+    "title": "Prancha",
+    "description": "Exercício para abdominais",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/plank.jpg",
+    "category": "abdominals",
+    "id": 69
+  },
+  "hanging_leg_raise": {
+    "title": "Elevação de Pernas Suspenso",
+    "description": "Exercício para abdominais",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/hanging_leg_raise.jpg",
+    "category": "abdominals",
+    "id": 70
+  },
+  "bent_knee_reverse_crunch": {
+    "title": "Abdominal Reverso com Joelhos Flexionados",
+    "description": "Exercício para abdominais",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/bent_knee_reverse_crunch.jpg",
+    "category": "abdominals",
+    "id": 71
+  },
+  "long_arm_crunch": {
+    "title": "Crunch com Braços Alongados",
+    "description": "Exercício para abdominais",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/long_arm_crunch.jpg",
+    "category": "abdominals",
+    "id": 72
+  },
+  "plank_get_ups": {
+    "title": "Prancha com Subida",
+    "description": "Exercício para abdominais, tríceps e ombros",
+    "equipment": "Abs",
+    "img": "@assets/images/guides/abdominals/plank_get_ups.jpg",
+    "category": "abdominals",
+    "id": 73
+  },
+  "dumbbell_shoulder_press": {
+    "title": "Desenvolvimento com Halteres",
+    "description": "Exercício para ombros e tríceps",
+    "equipment": "Halteres, Banco",
+    "img": "@assets/images/guides/shoulders/dumbbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 74
+  },
+  "dumbbell_lateral_raise": {
+    "title": "Elevação Lateral com Halteres",
+    "description": "Guia de Execução para Ombros e Trapézio",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/shoulders/dumbbell_lateral_raise.jpg",
+    "category": "shoulders",
+    "id": 75
+  },
+  "dumbbell_front_raise": {
+    "title": "Elevação Frontal com Halteres",
+    "description": "Exercício para ombros",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/shoulders/dumbbell_front_raise.jpg",
+    "category": "shoulders",
+    "id": 76
+  },
+  "high_cable_rear_delt_fly": {
+    "title": "Crucifixo Invertido no Cabo",
+    "description": "Exercício para ombros e costas",
+    "equipment": "Máquina de Polia",
+    "img": "@assets/images/guides/shoulders/high_cable_rear_delt_fly.jpg",
+    "category": "shoulders",
+    "id": 77
+  },
+  "smith_machine_shoulder_press": {
+    "title": "Desenvolvimento no Smith",
+    "description": "Exercício para ombros e tríceps",
+    "equipment": "Máquina Smith",
+    "img": "@assets/images/guides/shoulders/smith_machine_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 78
+  },
+  "barbell_upright_row": {
+    "title": "Remada Alta com Barra",
+    "description": "Exercício para ombros, costas e bíceps",
+    "equipment": "Barra",
+    "img": "@assets/images/guides/shoulders/barbell_upright_row.jpg",
+    "category": "shoulders",
+    "id": 79
+  },
+  "bent-over_lateral_raise": {
+    "title": "Elevação Lateral Inclinada",
+    "description": "Exercício para ombros e trapézio",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/shoulders/bent-over_lateral_raise.jpg",
+    "category": "shoulders",
+    "id": 80
+  },
+  "cable_one-arm_lateral_raise": {
+    "title": "Elevação Lateral Unilateral no Cabo",
+    "description": "Exercício para ombros",
+    "equipment": "Máquina de Polia",
+    "img": "@assets/images/guides/shoulders/cable_one-arm_lateral_raise.jpg",
+    "category": "shoulders",
+    "id": 81
+  },
+  "dumbbell_push_press": {
+    "title": "Desenvolvimento com Halteres Explosivo",
+    "description": "Exercício para ombros e tríceps",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/shoulders/dumbbell_push_press.jpg",
+    "category": "shoulders",
+    "id": 82
+  },
+  "barbell_push_press": {
+    "title": "Desenvolvimento com Barra Explosivo",
+    "description": "Exercício para ombros e tríceps",
+    "equipment": "Barra",
+    "img": "@assets/images/guides/shoulders/barbell_push_press.jpg",
+    "category": "shoulders",
+    "id": 83
+  },
+  "single-arm_cable_front_raise": {
+    "title": "Elevação Frontal Unilateral no Cabo",
+    "description": "Exercício para deltoides anteriores",
+    "equipment": "Pegador, Polia Baixa",
+    "img": "@assets/images/guides/shoulders/single-arm_cable_front_raise.jpg",
+    "category": "shoulders",
+    "id": 84
+  },
+  "barbell_front_raise": {
+    "title": "Elevação Frontal com Barra",
+    "description": "Exercício para deltoides anteriores",
+    "equipment": "Barra, Anilhas",
+    "img": "@assets/images/guides/shoulders/barbell_front_raise.jpg",
+    "category": "shoulders",
+    "id": 85
+  },
+  "seated_barbell_shoulder_press": {
+    "title": "Desenvolvimento Sentado com Barra",
+    "description": "Exercício para ombros e tríceps",
+    "equipment": "Barra, Anilhas, Banco",
+    "img": "@assets/images/guides/shoulders/seated_barbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 86
+  },
+  "seated_behind_the_neck_barbell_shoulder_press": {
+    "title": "Desenvolvimento Sentado Atrás da Cabeça",
+    "description": "Exercício para ombros e tríceps",
+    "equipment": "Barra, Anilhas, Banco",
+    "img": "@assets/images/guides/shoulders/seated_behind_the_neck_barbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 87
+  },
+  "standing_barbell_shoulder_press": {
+    "title": "Desenvolvimento em Pé com Barra",
+    "description": "Exercício para ombros e tríceps",
+    "equipment": "Barra, Anilhas",
+    "img": "@assets/images/guides/shoulders/standing_barbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 88
+  },
+  "standing_behind_the_neck_barbell_shoulder_press": {
+    "title": "Desenvolvimento em Pé Atrás da Cabeça",
+    "description": "Exercício para ombros e tríceps",
+    "equipment": "Barra, Anilhas",
+    "img": "@assets/images/guides/shoulders/standing_behind_the_neck_barbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 89
+  },
+  "alternate_dumbbell_front_raise_neutral_grip": {
+    "title": "Elevação Frontal Alternada com Pegada Neutra",
+    "description": "Exercício para ombros",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/shoulders/alternate_dumbbell_front_raise_neutral_grip.jpg",
+    "category": "shoulders",
+    "id": 90
+  },
+  "one-arm_low-pulley_front_raise_neutral_grip": {
+    "title": "Elevação Frontal no Cabo com Pegada Neutra",
+    "description": "Exercício para ombros",
+    "equipment": "Polia Baixa",
+    "img": "@assets/images/guides/shoulders/one-arm_low-pulley_front_raise_neutral_grip.jpg",
+    "category": "shoulders",
+    "id": 91
+  },
+  "two-handed_dumbbell_front_raise": {
+    "title": "Elevação Frontal com Halteres Dupla",
+    "description": "Exercício para ombros",
+    "equipment": "Halter",
+    "img": "@assets/images/guides/shoulders/two-handed_dumbbell_front_raise.jpg",
+    "category": "shoulders",
+    "id": 92
+  },
+  "squat": {
+    "title": "Agachamento com Barra",
+    "description": "Exercício para pernas e abdominais",
+    "equipment": "Barra",
+    "img": "@assets/images/guides/legs/squat.jpg",
+    "category": "legs",
+    "id": 93
+  },
+  "leg_press": {
+    "title": "Leg Press",
+    "description": "Exercício para pernas",
+    "equipment": "Máquina de Leg Press",
+    "img": "@assets/images/guides/legs/leg_press.jpg",
+    "category": "legs",
+    "id": 94
+  },
+  "leg_extension": {
+    "title": "Extensão de Pernas",
+    "description": "Exercício para quadríceps",
+    "equipment": "Máquina de Extensão de Pernas",
+    "img": "@assets/images/guides/legs/leg_extension.jpg",
+    "category": "legs",
+    "id": 95
+  },
+  "lunge": {
+    "title": "Passada com Halteres",
+    "description": "Exercício para pernas",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/legs/lunge.jpg",
+    "category": "legs",
+    "id": 96
+  },
+  "lying_leg_curl": {
+    "title": "Flexão de Pernas Deitado",
+    "description": "Exercício para isquiotibiais e panturrilhas",
+    "equipment": "Máquina de Flexão de Pernas",
+    "img": "@assets/images/guides/legs/lying_leg_curl.jpg",
+    "category": "legs",
+    "id": 97
+  },
+  "hack_squat": {
+    "title": "Agachamento Hack",
+    "description": "Exercício para coxas e glúteos",
+    "equipment": "Máquina Hack",
+    "img": "@assets/images/guides/legs/hack_squat.jpg",
+    "category": "legs",
+    "id": 98
+  },
+  "seated_leg_curl": {
+    "title": "Flexão de Pernas Sentado",
+    "description": "Exercício para isquiotibiais e panturrilhas",
+    "equipment": "Máquina de Flexão de Pernas Sentado",
+    "img": "@assets/images/guides/legs/seated_leg_curl.jpg",
+    "category": "legs",
+    "id": 99
+  },
+  "single_leg_extension": {
+    "title": "Extensão de Pernas Unilateral",
+    "description": "Exercício para quadríceps",
+    "equipment": "Máquina de Extensão de Pernas",
+    "img": "@assets/images/guides/legs/single_leg_extension.jpg",
+    "category": "legs",
+    "id": 100
+  },
+  "front_squat": {
+    "title": "Agachamento Frontal",
+    "description": "Exercício para pernas e músculos glúteos",
+    "equipment": "Barra",
+    "img": "@assets/images/guides/legs/front_squat.jpg",
+    "category": "legs",
+    "id": 101
+  },
+  "dumbbell_stiff-leg_deadlift": {
+    "title": "Levantamento Terra com Pernas Retas e Halteres",
+    "description": "Exercício para pernas, glúteos e músculos da lombar",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/legs/dumbbell_stiff-leg_deadlift.jpg",
+    "category": "legs",
+    "id": 102
+  },
+  "barbell_stiff-leg_deadlift": {
+    "title": "Levantamento Terra com Pernas Retas e Barra",
+    "description": "Exercício para pernas, glúteos e músculos da lombar",
+    "equipment": "Barra",
+    "img": "@assets/images/guides/legs/barbell_stiff-leg_deadlift.jpg",
+    "category": "legs",
+    "id": 103
+  },
+  "dumbbell_goblet_squat": {
+    "title": "Agachamento Goblet com Halteres",
+    "description": "Exercício para pernas e músculos glúteos",
+    "equipment": "Halteres",
+    "img": "@assets/images/guides/legs/dumbbell_goblet_squat.jpg",
+    "category": "legs",
+    "id": 104
+  },
+  "knee_tuck_jumps": {
+    "title": "Saltos com Flexão de Joelhos",
+    "description": "Exercício para isquiotibiais, quadríceps e abdômen",
+    "equipment": "Quadríceps, panturrilhas",
+    "img": "@assets/images/guides/legs/knee_tuck_jumps.jpg",
+    "category": "legs",
+    "id": 105
+  },
+  "burpees": {
+    "title": "Burpees",
+    "description": "Exercício para peito, tríceps, deltoides, abdômen, glúteos, quadríceps, isquiotibiais e panturrilhas",
+    "equipment": null,
+    "img": "@assets/images/guides/legs/burpees.jpg",
+    "category": "legs",
+    "id": 106
+  },
+  "bodyweight_squat": {
+    "title": "Agachamento com Peso Corporal",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Coxas e músculos glúteos",
+    "img": "@assets/images/guides/legs/bodyweight_squat.jpg",
+    "category": "legs",
+    "id": 107
+  },
+  "1.5_rep_bodyweight_squats": {
+    "title": "Agachamento com Peso Corporal 1.5 Rep",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Coxas e músculos glúteos",
+    "img": "@assets/images/guides/legs/1.5_rep_bodyweight_squats.jpg",
+    "category": "legs",
+    "id": 108
+  },
+  "medicine_ball_squat": {
+    "title": "Agachamento com Bola Medicinal",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Bola Medicinal",
+    "img": "@assets/images/guides/legs/medicine_ball_squat.jpg",
+    "category": "legs",
+    "id": 109
+  },
+  "barbell_bulgarian_split_squat": {
+    "title": "Agachamento Búlgaro com Barra",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Barra",
+    "img": "@assets/images/guides/legs/barbell_bulgarian_split_squat.jpg",
+    "category": "legs",
+    "id": 110
+  },
+  "bodyweight_bulgarian_split_squat": {
+    "title": "Agachamento Búlgaro com Peso Corporal",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Banco",
+    "img": "@assets/images/guides/legs/bodyweight_bulgarian_split_squat.jpg",
+    "category": "legs",
+    "id": 111
+  },
+  "mini-band_air_squat": {
+    "title": "Agachamento com Banda Mini-Band",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Mini-Band",
+    "img": "@assets/images/guides/legs/mini-band_air_squat.jpg",
+    "category": "legs",
+    "id": 112
+  },
+  "jump_squat": {
+    "title": "Agachamento com Salto",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Coxas e músculos glúteos",
+    "img": "@assets/images/guides/legs/jump_squat.jpg",
+    "category": "legs",
+    "id": 113
+  },
+  "wall_sit": {
+    "title": "Sentada na Parede",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Uma parede plana",
+    "img": "@assets/images/guides/legs/wall_sit.jpg",
+    "category": "legs",
+    "id": 114
+  },
+  "medicine_ball_deadlift": {
+    "title": "Levantamento Terra com Bola Medicinal",
+    "description": "Exercício para isquiotibiais, glúteos e músculos do core",
+    "equipment": "Bola Medicinal",
+    "img": "@assets/images/guides/legs/medicine_ball_deadlift.jpg",
+    "category": "legs",
+    "id": 115
+  },
+  "single_leg_bodyweight_deadlift": {
+    "title": "Levantamento Terra Unilateral com Peso Corporal",
+    "description": "Exercício para isquiotibiais, glúteos e músculos do core",
+    "equipment": "Isquiotibiais e músculos glúteos",
+    "img": "@assets/images/guides/legs/single_leg_bodyweight_deadlift.jpg",
+    "category": "legs",
+    "id": 116
+  },
+  "kettlebell_sumo_deadlift": {
+    "title": "Levantamento Terra Sumo com Kettlebell",
+    "description": "Exercício para isquiotibiais, glúteos e músculos do core",
+    "equipment": "Kettlebell",
+    "img": "@assets/images/guides/legs/kettlebell_sumo_deadlift.jpg",
+    "category": "legs",
+    "id": 117
+  },
+  "good_morning_exercise": {
+    "title": "Good Morning",
+    "description": "Exercício para isquiotibiais, glúteos e músculos do core",
+    "equipment": "Barra",
+    "img": "@assets/images/guides/legs/good_morning_exercise.jpg",
+    "category": "legs",
+    "id": 118
+  },
+  "bodyweight_glute_bridge": {
+    "title": "Ponte de Glúteos com Peso Corporal",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Colchonete",
+    "img": "@assets/images/guides/legs/bodyweight_glute_bridge.jpg",
+    "category": "legs",
+    "id": 119
+  },
+  "single_leg_glute_bridge": {
+    "title": "Ponte de Glúteos Unilateral",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Colchonete",
+    "img": "@assets/images/guides/legs/single_leg_glute_bridge.jpg",
+    "category": "legs",
+    "id": 120
+  },
+  "banded_glute_bridge": {
+    "title": "Ponte de Glúteos com Mini-Band",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Colchonete, Mini-Band",
+    "img": "@assets/images/guides/legs/banded_glute_bridge.jpg",
+    "category": "legs",
+    "id": 121
+  },
+  "duck_walk": {
+    "title": "Caminhada de Pato",
+    "description": "Exercício para coxas, músculos glúteos e panturrilhas",
+    "equipment": "Este exercício não é de fortalecimento, mas pode ser utilizado para alongamento e aquecimento no início do treino. Estas são as principais áreas alongadas: Coxas e Músculos Glúteos",
+    "img": "@assets/images/guides/legs/duck_walk.jpg",
+    "category": "legs",
+    "id": 122
+  },
+  "bird_dog": {
+    "title": "Bird Dog",
+    "description": "Exercício para músculos do core e glúteos",
+    "equipment": "Colchonete",
+    "img": "@assets/images/guides/legs/bird_dog.jpg",
+    "category": "legs",
+    "id": 123
+  },
+  "groiners": {
+    "title": "Groiners",
+    "description": "Exercício para coxas, músculos do quadril e core",
+    "equipment": "Colchonete",
+    "img": "@assets/images/guides/legs/groiners.jpg",
+    "category": "legs",
+    "id": 124
+  },
+  "fire_hydrants": {
+    "title": "Fire Hydrants",
+    "description": "Exercício para músculos glúteos e core",
+    "equipment": "Colchonete",
+    "img": "@assets/images/guides/legs/fire_hydrants.jpg",
+    "category": "legs",
+    "id": 125
+  },
+  "smith_machine_hip_thrust": {
+    "title": "Elevação de Quadril na Smith Machine",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Smith Machine, Banco, Almofada ou Toalha para proteção, se necessário",
+    "img": "@assets/images/guides/legs/smith_machine_hip_thrust.jpg",
+    "category": "legs",
+    "id": 126
+  },
+  "barbell_hip_thrust": {
+    "title": "Elevação de Quadril com Barra",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Barra, Banco, Almofada ou Toalha para proteção, se necessário",
+    "img": "@assets/images/guides/legs/barbell_hip_thrust.jpg",
+    "category": "legs",
+    "id": 127
+  },
+  "band_seated_hip_abduction": {
+    "title": "Abdução de Quadril Sentado com Mini-Band",
+    "description": "Exercício para músculos glúteos",
+    "equipment": "Mini-Band, Banco ou Cadeira",
+    "img": "@assets/images/guides/legs/band_seated_hip_abduction.jpg",
+    "category": "legs",
+    "id": 128
+  },
+  "seated_hip_abduction_machine": {
+    "title": "Abdução de Quadril na Máquina",
+    "description": "Exercício para abdutores de quadril e músculos glúteos",
+    "equipment": "Máquina de Abdução de Quadril",
+    "img": "@assets/images/guides/legs/seated_hip_abduction_machine.jpg",
+    "category": "legs",
+    "id": 129
+  },
+  "standing_cable_abduction": {
+    "title": "Abdução em Pé com Cabo",
+    "description": "Exercício para glúteos e músculos do core",
+    "equipment": "Máquina de Cabo com Anexos de Tornozelo",
+    "img": "@assets/images/guides/legs/standing_cable_abduction.jpg",
+    "category": "legs",
+    "id": 130
+  },
+  "bodyweight_frog_pump": {
+    "title": "Frog Pump com Peso Corporal",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Colchonete",
+    "img": "@assets/images/guides/legs/bodyweight_frog_pump.jpg",
+    "category": "legs",
+    "id": 131
+  },
+  "smith_machine_frog_pump": {
+    "title": "Frog Pump na Smith Machine",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Smith Machine, Banco, Almofada ou Toalha para proteção, se necessário",
+    "img": "@assets/images/guides/legs/smith_machine_frog_pump.jpg",
+    "category": "legs",
+    "id": 132
+  },
+  "banded_clams": {
+    "title": "Clams com Mini-Band",
+    "description": "Exercício para músculos glúteos e core",
+    "equipment": "Colchonete, Mini-Band",
+    "img": "@assets/images/guides/legs/banded_clams.jpg",
+    "category": "legs",
+    "id": 133
+  },
+  "side_lying_leg_raise": {
+    "title": "Elevação de Pernas de Lado",
+    "description": "Exercício para músculos glúteos e core",
+    "equipment": "Colchonete",
+    "img": "@assets/images/guides/legs/side_lying_leg_raise.jpg",
+    "category": "legs",
+    "id": 134
+  },
+  "glute_ham_raise": {
+    "title": "Elevação de Glúteos e Isquiotibiais",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Máquina GHD (Glute Ham Developer)",
+    "img": "@assets/images/guides/legs/glute_ham_raise.jpg",
+    "category": "legs",
+    "id": 135
+  },
+  "dumbbell_step_up": {
+    "title": "Step Up com Halteres",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Step, Halteres",
+    "img": "@assets/images/guides/legs/dumbbell_step_up.jpg",
+    "category": "legs",
+    "id": 136
+  },
+  "lateral_mini-band_walk": {
+    "title": "Caminhada Lateral com Mini-Band",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Mini-Band",
+    "img": "@assets/images/guides/legs/lateral_mini-band_walk.jpg",
+    "category": "legs",
+    "id": 137
+  },
+  "standing_knee_raise": {
+    "title": "Elevação de Joelho em Pé",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Coxas e músculos glúteos",
+    "img": "@assets/images/guides/legs/standing_knee_raise.jpg",
+    "category": "legs",
+    "id": 138
+  },
+  "kettlebell_swings": {
+    "title": "Swing com Kettlebell",
+    "description": "Exercício para coxas, glúteos e músculos do core",
+    "equipment": "Kettlebell",
+    "img": "@assets/images/guides/legs/kettlebell_swings.jpg",
+    "category": "legs",
+    "id": 139
+  },
+  "standing_cable_kickback": {
+    "title": "Chute para Trás com Cabo",
+    "description": "Exercício para coxas, glúteos, panturrilhas e músculos do core",
+    "equipment": "Máquina de Cabo, Anexos de Tornozelo",
+    "img": "@assets/images/guides/legs/standing_cable_kickback.jpg",
+    "category": "legs",
+    "id": 140
+  },
+  "donkey_kicks": {
+    "title": "Donkey Kicks",
+    "description": "Exercício para glúteos e músculos do core",
+    "equipment": "Colchonete",
+    "img": "@assets/images/guides/legs/donkey_kicks.jpg",
+    "category": "legs",
+    "id": 141
+  },
+  "side_lying_hip_raise": {
+    "title": "Elevação de Quadril de Lado",
+    "description": "Exercício para glúteos e músculos do core",
+    "equipment": "Colchonete",
+    "img": "@assets/images/guides/legs/side_lying_hip_raise.jpg",
+    "category": "legs",
+    "id": 142
+  },
+  "squat_sit_to_reach": {
+    "title": "Agachamento com Alcance Sentado",
+    "description": "Exercício para quadril, coxas, peito, parte superior das costas e músculos do core",
+    "equipment": "Este exercício não é de fortalecimento, mas pode ser utilizado para alongamento e aquecimento no início do treino. Principais áreas alongadas: Quadril, Coxas, Músculos do Peito",
+    "img": "@assets/images/guides/legs/squat_sit_to_reach.jpg",
+    "category": "legs",
+    "id": 143
+  }
+}

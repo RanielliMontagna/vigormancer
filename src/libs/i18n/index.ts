@@ -4,13 +4,14 @@ import { LocaleConfig } from 'react-native-calendars'
 import * as Localization from 'expo-localization'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-import translationEn from '@/locales/en-US/translation.json'
-import translationPt from '@/locales/pt-BR/translation.json'
+import translationEn from '@/locales/en'
+import translationPt from '@/locales/pt'
+
 import { localesEn, localesPt } from '@/constants/locales'
 
 const resources = {
-  'pt-BR': { translation: translationPt },
-  'en-US': { translation: translationEn },
+  pt: { translation: translationPt },
+  en: { translation: translationEn },
 }
 
 const initI18n = async () => {
@@ -24,7 +25,7 @@ const initI18n = async () => {
   await i18n.use(initReactI18next).init({
     resources,
     lng: savedLanguage,
-    fallbackLng: 'pt-BR',
+    fallbackLng: 'pt',
     interpolation: { escapeValue: false },
   })
 

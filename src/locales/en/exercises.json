@@ -1,0 +1,1146 @@
+{
+  "barbell_bench_press": {
+    "title": "Barbell Bench Press",
+    "description": "Exercise for chest, triceps and front deltoids",
+    "equipment": "Barbell, Bench",
+    "img": "@assets/images/guides/chest/barbell_bench_press.jpg",
+    "category": "chest",
+    "id": 1
+  },
+  "incline_dumbbell_bench_press": {
+    "title": "Incline Dumbbell Bench Press",
+    "description": "Exercise for chest, triceps and front deltoids",
+    "equipment": "Dumbbells, Bench",
+    "img": "@assets/images/guides/chest/incline_dumbbell_bench_press.jpg",
+    "category": "chest",
+    "id": 2
+  },
+  "peck_deck": {
+    "title": "Peck Deck",
+    "description": "Exercise for chest and front deltoids",
+    "equipment": "Peck Deck machine",
+    "img": "@assets/images/guides/chest/peck_deck.jpg",
+    "category": "chest",
+    "id": 3
+  },
+  "cable_crossover": {
+    "title": "Cable Crossover",
+    "description": "Exercise for chest and front deltoids",
+    "equipment": "Cable Crossover machine",
+    "img": "@assets/images/guides/chest/cable_crossover.jpg",
+    "category": "chest",
+    "id": 4
+  },
+  "incline_barbell_bench_press": {
+    "title": "Incline Barbell Bench Press",
+    "description": "Exercise for chest, triceps and front deltoids",
+    "equipment": "Barbell, Bench Press",
+    "img": "@assets/images/guides/chest/incline_barbell_bench_press.jpg",
+    "category": "chest",
+    "id": 5
+  },
+  "dumbbell_bench_press": {
+    "title": "Dumbbell Bench Press",
+    "description": "Exercise for chest, triceps and front deltoids",
+    "equipment": "Dumbbells, Bench",
+    "img": "@assets/images/guides/chest/dumbbell_bench_press.jpg",
+    "category": "chest",
+    "id": 6
+  },
+  "dumbbell_fly": {
+    "title": "Dumbbell Fly",
+    "description": "Exercise for chest and front deltoids",
+    "equipment": "Dumbbells, Bench",
+    "img": "@assets/images/guides/chest/dumbbell_fly.jpg",
+    "category": "chest",
+    "id": 7
+  },
+  "incline_dumbbell_fly": {
+    "title": "Incline Dumbbell Fly",
+    "description": "Exercise for chest and front deltoids",
+    "equipment": "Dumbbells, Bench",
+    "img": "@assets/images/guides/chest/incline_dumbbell_fly.jpg",
+    "category": "chest",
+    "id": 8
+  },
+  "chest_press_machine": {
+    "title": "Chest Press Machine",
+    "description": "Exercise for chest, triceps and shoulders",
+    "equipment": " Chest Press machine ",
+    "img": "@assets/images/guides/chest/chest_press_machine.jpg",
+    "category": "chest",
+    "id": 9
+  },
+  "barbell_declined_bench_press": {
+    "title": "Barbell Declined Bench Press",
+    "description": "Exercise for lower chest, triceps and anterior deltoids",
+    "equipment": "Barbell, declined bench, plates",
+    "img": "@assets/images/guides/chest/barbell_declined_bench_press.jpg",
+    "category": "chest",
+    "id": 10
+  },
+  "dumbbell_declined_bench_press": {
+    "title": "Dumbbell Declined Bench Press",
+    "description": "Exercise for lower chest, triceps and anterior deltoids",
+    "equipment": "Dumbbells, declined bench, plates",
+    "img": "@assets/images/guides/chest/dumbbell_declined_bench_press.jpg",
+    "category": "chest",
+    "id": 11
+  },
+  "push_ups": {
+    "title": "Push Ups",
+    "description": "Exercise for chest, triceps, deltoids and biceps",
+    "equipment": "Chest",
+    "img": "@assets/images/guides/chest/push_ups.jpg",
+    "category": "chest",
+    "id": 12
+  },
+  "lying_triceps_extension": {
+    "title": "Lying Triceps Extension",
+    "description": "Exercise for triceps",
+    "equipment": "EZ Barbell, Bench",
+    "img": "@assets/images/guides/triceps/lying_triceps_extension.jpg",
+    "category": "triceps",
+    "id": 13
+  },
+  "triceps_pressdown": {
+    "title": "Triceps Pressdown",
+    "description": "Exercise for triceps",
+    "equipment": "Cable Machine, Pressdown Bar",
+    "img": "@assets/images/guides/triceps/triceps_pressdown.jpg",
+    "category": "triceps",
+    "id": 14
+  },
+  "cable_rope_pushdown": {
+    "title": "Cable Rope Pushdown",
+    "description": "Exercise for triceps",
+    "equipment": "Cable machine, rope",
+    "img": "@assets/images/guides/triceps/cable_rope_pushdown.jpg",
+    "category": "triceps",
+    "id": 15
+  },
+  "dumbbell_overhead_triceps_extension": {
+    "title": "Dumbbell Overhead Triceps Extension",
+    "description": "Exercise for triceps",
+    "equipment": "Dumbbell, Bench",
+    "img": "@assets/images/guides/triceps/dumbbell_overhead_triceps_extension.jpg",
+    "category": "triceps",
+    "id": 16
+  },
+  "close_grip_bench_press": {
+    "title": "Close Grip Bench Press",
+    "description": "Exercise for triceps, chest and anterior deltoids",
+    "equipment": "EZ Barbell, Bench",
+    "img": "@assets/images/guides/triceps/close_grip_bench_press.jpg",
+    "category": "triceps",
+    "id": 17
+  },
+  "kickback": {
+    "title": "Kickback",
+    "description": "Exercise for triceps",
+    "equipment": "Dumbbell, Bench",
+    "img": "@assets/images/guides/triceps/kickback.jpg",
+    "category": "triceps",
+    "id": 18
+  },
+  "reverse_grip_cable_triceps_extension_with_barbell": {
+    "title": "Reverse Grip Cable Triceps Extension with Barbell",
+    "description": "Exercise for triceps",
+    "equipment": "Straight bar, high pulley cable",
+    "img": "@assets/images/guides/triceps/reverse_grip_cable_triceps_extension_with_barbell.jpg",
+    "category": "triceps",
+    "id": 19
+  },
+  "single-arm_cable_triceps_extension": {
+    "title": "Single-Arm Cable Triceps Extension",
+    "description": "Exercise for triceps",
+    "equipment": "Grip handle, high pulley cable",
+    "img": "@assets/images/guides/triceps/single-arm_cable_triceps_extension.jpg",
+    "category": "triceps",
+    "id": 20
+  },
+  "single-arm_cable_triceps_extension_with_supinated_grip": {
+    "title": "Single-Arm Cable Triceps Extension with Supinated Grip",
+    "description": "Exercise for triceps",
+    "equipment": "Grip handle, high pulley cable",
+    "img": "@assets/images/guides/triceps/single-arm_cable_triceps_extension_with_supinated_grip.jpg",
+    "category": "triceps",
+    "id": 21
+  },
+  "lying_dumbbell_triceps_extension": {
+    "title": "Lying Dumbbell Triceps Extension",
+    "description": "Exercise for triceps",
+    "equipment": "Dumbbells, bench",
+    "img": "@assets/images/guides/triceps/lying_dumbbell_triceps_extension.jpg",
+    "category": "triceps",
+    "id": 22
+  },
+  "seated_barbell_french_press": {
+    "title": "Seated Barbell French Press",
+    "description": "Exercise for triceps",
+    "equipment": "Straight bar or EZ bar, plates, bench",
+    "img": "@assets/images/guides/triceps/seated_barbell_french_press.jpg",
+    "category": "triceps",
+    "id": 23
+  },
+  "bench_dips": {
+    "title": "Bench Dips",
+    "description": "Exercise for triceps and front deltoids",
+    "equipment": "2 benches",
+    "img": "@assets/images/guides/triceps/bench_dips.jpg",
+    "category": "triceps",
+    "id": 24
+  },
+  "parallel_dip_bar": {
+    "title": "Parallel Dip Bar",
+    "description": "Exercise for triceps, front deltoids and lower chest",
+    "equipment": "Parallel bars",
+    "img": "@assets/images/guides/triceps/parallel_dip_bar.jpg",
+    "category": "triceps",
+    "id": 25
+  },
+  "seated_calf_raise": {
+    "title": "Seated Calf Raise",
+    "description": "Exercise for calves",
+    "equipment": "Seated Calf Raise Machine",
+    "img": "@assets/images/guides/calves/seated_calf_raise.jpg",
+    "category": "calves",
+    "id": 26
+  },
+  "standing_calf_raise": {
+    "title": "Standing Calf Raise",
+    "description": "Exercise for calves",
+    "equipment": "Standing Calf Raise machine",
+    "img": "@assets/images/guides/calves/standing_calf_raise.jpg",
+    "category": "calves",
+    "id": 27
+  },
+  "dumbbell_bent_over_row_(single_arm)": {
+    "title": "Dumbbell Bent Over Row (Single Arm)",
+    "description": "Exercise for back, hind deltoids and biceps",
+    "equipment": "Dumbbell, Bench",
+    "img": "@assets/images/guides/back/dumbbell_bent_over_row_(single_arm).jpg",
+    "category": "back",
+    "id": 28
+  },
+  "wide_grip_pulldown": {
+    "title": "Wide Grip Pulldown",
+    "description": "Exercise for back and biceps",
+    "equipment": "Lat Pulldown Machine, Lat Bar",
+    "img": "@assets/images/guides/back/wide_grip_pulldown.jpg",
+    "category": "back",
+    "id": 29
+  },
+  "seated_cable_row": {
+    "title": "Seated Cable Row",
+    "description": "Exercise for back, hind deltoids and biceps",
+    "equipment": "Cable Machine",
+    "img": "@assets/images/guides/back/seated_cable_row.jpg",
+    "category": "back",
+    "id": 30
+  },
+  "close_grip_pulldown": {
+    "title": "Close Grip Pulldown",
+    "description": "Exercise for back and biceps",
+    "equipment": "Lat Pulldown Machine, Lat Bar",
+    "img": "@assets/images/guides/back/close_grip_pulldown.jpg",
+    "category": "back",
+    "id": 31
+  },
+  "barbell_row": {
+    "title": "Barbell Row",
+    "description": "Exercise for back, hind deltoids and biceps",
+    "equipment": "Barbell",
+    "img": "@assets/images/guides/back/barbell_row.jpg",
+    "category": "back",
+    "id": 32
+  },
+  "behind_neck_pulldown": {
+    "title": "Behind Neck Pulldown",
+    "description": "Exercise for back and biceps",
+    "equipment": "Lat Pulldown Machine, Lat Bar",
+    "img": "@assets/images/guides/back/behind_neck_pulldown.jpg",
+    "category": "back",
+    "id": 33
+  },
+  "reverse_grip_pulldown": {
+    "title": "Reverse Grip Pulldown",
+    "description": "Exercise for back and biceps",
+    "equipment": "Lat Pulldown Machine, Lat Bar",
+    "img": "@assets/images/guides/back/reverse_grip_pulldown.jpg",
+    "category": "back",
+    "id": 34
+  },
+  "rope_pulldown": {
+    "title": "Rope Pulldown",
+    "description": "Exercise for back and triceps",
+    "equipment": "Cable Machine, Rope",
+    "img": "@assets/images/guides/back/rope_pulldown.jpg",
+    "category": "back",
+    "id": 35
+  },
+  "t-bar_rows": {
+    "title": "T-Bar Rows",
+    "description": "Exercise for back, shoulders and biceps",
+    "equipment": " T-Bar machine, plates ",
+    "img": "@assets/images/guides/back/t-bar_rows.jpg",
+    "category": "back",
+    "id": 36
+  },
+  "barbell_bent_over_rows_supinated_grip": {
+    "title": "Barbell Bent Over Rows Supinated Grip",
+    "description": "Exercise for back and hind deltoids",
+    "equipment": "Bar, plates",
+    "img": "@assets/images/guides/back/barbell_bent_over_rows_supinated_grip.jpg",
+    "category": "back",
+    "id": 37
+  },
+  "pull_up": {
+    "title": "Pull Up",
+    "description": "Exercise for back and biceps",
+    "equipment": "Pull bar",
+    "img": "@assets/images/guides/back/pull_up.jpg",
+    "category": "back",
+    "id": 38
+  },
+  "behind_the_neck_pull_up": {
+    "title": "Behind the Neck Pull Up",
+    "description": "Exercise for back and biceps",
+    "equipment": "Pull bar",
+    "img": "@assets/images/guides/back/behind_the_neck_pull_up.jpg",
+    "category": "back",
+    "id": 39
+  },
+  "pull_up_with_a_supinated_grip": {
+    "title": "Pull Up with a Supinated Grip",
+    "description": "Exercise for back and biceps",
+    "equipment": "Pull bar",
+    "img": "@assets/images/guides/back/pull_up_with_a_supinated_grip.jpg",
+    "category": "back",
+    "id": 40
+  },
+  "straight_arm_lat_pulldown": {
+    "title": "Straight Arm Lat Pulldown",
+    "description": "Exercise for back and triceps",
+    "equipment": "Straight bar, high pulley cable",
+    "img": "@assets/images/guides/back/straight_arm_lat_pulldown.jpg",
+    "category": "back",
+    "id": 41
+  },
+  "dumbbell_bent_over_rows": {
+    "title": "Dumbbell Bent Over Rows",
+    "description": "Exercise for back, biceps and hind deltoids",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/back/dumbbell_bent_over_rows.jpg",
+    "category": "back",
+    "id": 42
+  },
+  "dumbbell_pullover": {
+    "title": "Dumbbell Pullover",
+    "description": "Exercise for back, chest and triceps",
+    "equipment": "Dumbbell, bench",
+    "img": "@assets/images/guides/back/dumbbell_pullover.jpg",
+    "category": "back",
+    "id": 43
+  },
+  "barbell_pullover": {
+    "title": "Barbell Pullover",
+    "description": "Exercise for back, chest and triceps",
+    "equipment": "Barbell, bench",
+    "img": "@assets/images/guides/back/barbell_pullover.jpg",
+    "category": "back",
+    "id": 44
+  },
+  "barbell_deadlift": {
+    "title": "Barbell Deadlift",
+    "description": "Exercise mainly for back, legs and the whole body",
+    "equipment": "Barbell, plates",
+    "img": "@assets/images/guides/back/barbell_deadlift.jpg",
+    "category": "back",
+    "id": 45
+  },
+  "barbell_sumo_deadlift": {
+    "title": "Barbell Sumo Deadlift",
+    "description": "Exercise mainly for back, legs and the whole body",
+    "equipment": "Barbell, plates",
+    "img": "@assets/images/guides/back/barbell_sumo_deadlift.jpg",
+    "category": "back",
+    "id": 46
+  },
+  "trap_bar_deadlift": {
+    "title": "Trap Bar Deadlift",
+    "description": "Exercise mainly for back, legs and the whole body",
+    "equipment": "Trap barbell, plates",
+    "img": "@assets/images/guides/back/trap_bar_deadlift.jpg",
+    "category": "back",
+    "id": 47
+  },
+  "dumbbell_deadlift": {
+    "title": "Dumbbell Deadlift",
+    "description": "Exercise mainly for back, legs and the whole body",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/back/dumbbell_deadlift.jpg",
+    "category": "back",
+    "id": 48
+  },
+  "barbell_shrug": {
+    "title": "Barbell Shrug",
+    "description": "Exercise for back",
+    "equipment": "Barbell",
+    "img": "@assets/images/guides/back/barbell_shrug.jpg",
+    "category": "back",
+    "id": 49
+  },
+  "dumbbell_shrugs": {
+    "title": "Dumbbell Shrugs",
+    "description": "Exercise for trapezius muscles",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/back/dumbbell_shrugs.jpg",
+    "category": "back",
+    "id": 50
+  },
+  "barbell_curl": {
+    "title": "Barbell Curl",
+    "description": "Exercise for biceps",
+    "equipment": "EZ Barbell",
+    "img": "@assets/images/guides/biceps/barbell_curl.jpg",
+    "category": "biceps",
+    "id": 51
+  },
+  "alternating_dumbbell_curl": {
+    "title": "Alternating Dumbbell Curl",
+    "description": "Exercise for biceps",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/biceps/alternating_dumbbell_curl.jpg",
+    "category": "biceps",
+    "id": 52
+  },
+  "rope_cable_curl": {
+    "title": "Rope Cable Curl",
+    "description": "Exercise for biceps",
+    "equipment": "Cable machine, rope",
+    "img": "@assets/images/guides/biceps/rope_cable_curl.jpg",
+    "category": "biceps",
+    "id": 53
+  },
+  "ez_barbell_curl": {
+    "title": "EZ Barbell Curl",
+    "description": "Exercise for biceps",
+    "equipment": "EZ Barbell",
+    "img": "@assets/images/guides/biceps/ez_barbell_curl.jpg",
+    "category": "biceps",
+    "id": 54
+  },
+  "ez_barbell_preacher_curl": {
+    "title": "EZ Barbell Preacher Curl",
+    "description": "Exercise for biceps",
+    "equipment": "Preacher bench, EZ Barbell",
+    "img": "@assets/images/guides/biceps/ez_barbell_preacher_curl.jpg",
+    "category": "biceps",
+    "id": 55
+  },
+  "hammer_curl": {
+    "title": "Hammer Curl",
+    "description": "Exercise for biceps",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/biceps/hammer_curl.jpg",
+    "category": "biceps",
+    "id": 56
+  },
+  "incline_dumbbell_curl": {
+    "title": "Incline Dumbbell Curl",
+    "description": "Exercise for biceps",
+    "equipment": "Dumbbells, bench",
+    "img": "@assets/images/guides/biceps/incline_dumbbell_curl.jpg",
+    "category": "biceps",
+    "id": 57
+  },
+  "dumbbell_concentration_curl": {
+    "title": "Dumbbell Concentration Curl",
+    "description": "Exercise for biceps",
+    "equipment": "Dumbbell, bench",
+    "img": "@assets/images/guides/biceps/dumbbell_concentration_curl.jpg",
+    "category": "biceps",
+    "id": 58
+  },
+  "single-arm_low_pulley_cable_curl": {
+    "title": "Single-Arm Low Pulley Cable Curl",
+    "description": "Exercise for biceps",
+    "equipment": "Grip handle, low pulley cable",
+    "img": "@assets/images/guides/biceps/single-arm_low_pulley_cable_curl.jpg",
+    "category": "biceps",
+    "id": 59
+  },
+  "straight_bar_low_pulley_cable_curl": {
+    "title": "Straight Bar Low Pulley Cable Curl",
+    "description": "Exercise for biceps",
+    "equipment": "Straight bar, low pulley cable",
+    "img": "@assets/images/guides/biceps/straight_bar_low_pulley_cable_curl.jpg",
+    "category": "biceps",
+    "id": 60
+  },
+  "standing_high_pulley_cable_curl": {
+    "title": "Standing High Pulley Cable Curl",
+    "description": "Exercise for biceps",
+    "equipment": "2 grip handles, 2 low pulley cables",
+    "img": "@assets/images/guides/biceps/standing_high_pulley_cable_curl.jpg",
+    "category": "biceps",
+    "id": 61
+  },
+  "seated_barbell_wrist_curl": {
+    "title": "Seated Barbell Wrist Curl",
+    "description": "Exercise for forearms",
+    "equipment": "Bar, plates, bench",
+    "img": "@assets/images/guides/biceps/seated_barbell_wrist_curl.jpg",
+    "category": "biceps",
+    "id": 62
+  },
+  "seated_barbell_wrist_extension": {
+    "title": "Seated Barbell Wrist Extension",
+    "description": "Exercise for forearms",
+    "equipment": "Bar, plates, bench",
+    "img": "@assets/images/guides/biceps/seated_barbell_wrist_extension.jpg",
+    "category": "biceps",
+    "id": 63
+  },
+  "reverse_barbell_curl": {
+    "title": "Reverse Barbell Curl",
+    "description": "Exercise for biceps and forearms",
+    "equipment": "Straight bar or EZ bar, plates",
+    "img": "@assets/images/guides/biceps/reverse_barbell_curl.jpg",
+    "category": "biceps",
+    "id": 64
+  },
+  "crunch": {
+    "title": "Crunch",
+    "description": "Exercise for abdominals",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/crunch.jpg",
+    "category": "abdominals",
+    "id": 65
+  },
+  "oblique_crunch": {
+    "title": "Oblique Crunch",
+    "description": "Exercise for abdominals",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/oblique_crunch.jpg",
+    "category": "abdominals",
+    "id": 66
+  },
+  "crunch_machine": {
+    "title": "Crunch Machine",
+    "description": "Exercise for abdominals",
+    "equipment": "Crunch machine",
+    "img": "@assets/images/guides/abdominals/crunch_machine.jpg",
+    "category": "abdominals",
+    "id": 67
+  },
+  "rope_ab_pulldown": {
+    "title": "Rope Ab Pulldown",
+    "description": "Exercise for abdominals",
+    "equipment": "Cable machine, rope",
+    "img": "@assets/images/guides/abdominals/rope_ab_pulldown.jpg",
+    "category": "abdominals",
+    "id": 68
+  },
+  "plank": {
+    "title": "Plank",
+    "description": "Exercise for abdominals",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/plank.jpg",
+    "category": "abdominals",
+    "id": 69
+  },
+  "hanging_leg_raise": {
+    "title": "Hanging Leg Raise",
+    "description": "Exercise for abdominals",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/hanging_leg_raise.jpg",
+    "category": "abdominals",
+    "id": 70
+  },
+  "bent_knee_reverse_crunch": {
+    "title": "Bent Knee Reverse Crunch",
+    "description": "Exercise for abdominals",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/bent_knee_reverse_crunch.jpg",
+    "category": "abdominals",
+    "id": 71
+  },
+  "long_arm_crunch": {
+    "title": "Long Arm Crunch",
+    "description": "Exercise for abdominals",
+    "equipment": null,
+    "img": "@assets/images/guides/abdominals/long_arm_crunch.jpg",
+    "category": "abdominals",
+    "id": 72
+  },
+  "plank_get_ups": {
+    "title": "Plank Get Ups",
+    "description": "Exercise for abdominals, triceps and shoulders",
+    "equipment": " Abs ",
+    "img": "@assets/images/guides/abdominals/plank_get_ups.jpg",
+    "category": "abdominals",
+    "id": 73
+  },
+  "dumbbell_shoulder_press": {
+    "title": "Dumbbell Shoulder Press",
+    "description": "Exercise for shoulders and triceps",
+    "equipment": "Dumbbells, bench",
+    "img": "@assets/images/guides/shoulders/dumbbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 74
+  },
+  "dumbbell_lateral_raise": {
+    "title": "Dumbbell Lateral Raise",
+    "description": "Exercise Execution Guide for Strong Shoulders & Trapezius Muscles",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/shoulders/dumbbell_lateral_raise.jpg",
+    "category": "shoulders",
+    "id": 75
+  },
+  "dumbbell_front_raise": {
+    "title": "Dumbbell Front Raise",
+    "description": "Exercise for shoulders",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/shoulders/dumbbell_front_raise.jpg",
+    "category": "shoulders",
+    "id": 76
+  },
+  "high_cable_rear_delt_fly": {
+    "title": "High Cable Rear Delt Fly",
+    "description": "Exercise for shoulders and back",
+    "equipment": "Cable machine",
+    "img": "@assets/images/guides/shoulders/high_cable_rear_delt_fly.jpg",
+    "category": "shoulders",
+    "id": 77
+  },
+  "smith_machine_shoulder_press": {
+    "title": "Smith Machine Shoulder Press",
+    "description": "Exercise for shoulders and triceps",
+    "equipment": "Smith machine",
+    "img": "@assets/images/guides/shoulders/smith_machine_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 78
+  },
+  "barbell_upright_row": {
+    "title": "Barbell Upright Row",
+    "description": "Exercise for shoulders, back and biceps",
+    "equipment": "Barbell",
+    "img": "@assets/images/guides/shoulders/barbell_upright_row.jpg",
+    "category": "shoulders",
+    "id": 79
+  },
+  "bent-over_lateral_raise": {
+    "title": "Bent-Over Lateral Raise",
+    "description": "Exercise for shoulders and trapezius muscles",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/shoulders/bent-over_lateral_raise.jpg",
+    "category": "shoulders",
+    "id": 80
+  },
+  "cable_one-arm_lateral_raise": {
+    "title": "Cable One-Arm Lateral Raise",
+    "description": "Exercise for shoulders",
+    "equipment": "Cable machine",
+    "img": "@assets/images/guides/shoulders/cable_one-arm_lateral_raise.jpg",
+    "category": "shoulders",
+    "id": 81
+  },
+  "dumbbell_push_press": {
+    "title": "Dumbbell Push Press",
+    "description": "Exercise for shoulders and triceps",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/shoulders/dumbbell_push_press.jpg",
+    "category": "shoulders",
+    "id": 82
+  },
+  "barbell_push_press": {
+    "title": "Barbell Push Press",
+    "description": "Exercise for shoulders and triceps",
+    "equipment": "Barbell",
+    "img": "@assets/images/guides/shoulders/barbell_push_press.jpg",
+    "category": "shoulders",
+    "id": 83
+  },
+  "single-arm_cable_front_raise": {
+    "title": "Single-Arm Cable Front Raise",
+    "description": "Exercise for front deltoids",
+    "equipment": "Grip handle, low pulley cable",
+    "img": "@assets/images/guides/shoulders/single-arm_cable_front_raise.jpg",
+    "category": "shoulders",
+    "id": 84
+  },
+  "barbell_front_raise": {
+    "title": "Barbell Front Raise",
+    "description": "Exercise for front deltoids",
+    "equipment": "Bar, plates",
+    "img": "@assets/images/guides/shoulders/barbell_front_raise.jpg",
+    "category": "shoulders",
+    "id": 85
+  },
+  "seated_barbell_shoulder_press": {
+    "title": "Seated Barbell Shoulder Press",
+    "description": "Exercise for shoulders and triceps",
+    "equipment": "Bar, plates, bench",
+    "img": "@assets/images/guides/shoulders/seated_barbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 86
+  },
+  "seated_behind_the_neck_barbell_shoulder_press": {
+    "title": "Seated Behind the Neck Barbell Shoulder Press",
+    "description": "Exercise for shoulders and triceps",
+    "equipment": "Bar, plates, bench",
+    "img": "@assets/images/guides/shoulders/seated_behind_the_neck_barbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 87
+  },
+  "standing_barbell_shoulder_press": {
+    "title": "Standing Barbell Shoulder Press",
+    "description": "Exercise for shoulders and triceps",
+    "equipment": "Bar, plates",
+    "img": "@assets/images/guides/shoulders/standing_barbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 88
+  },
+  "standing_behind_the_neck_barbell_shoulder_press": {
+    "title": "Standing Behind the Neck Barbell Shoulder Press",
+    "description": "Exercise for shoulders and triceps",
+    "equipment": "Bar, plates",
+    "img": "@assets/images/guides/shoulders/standing_behind_the_neck_barbell_shoulder_press.jpg",
+    "category": "shoulders",
+    "id": 89
+  },
+  "alternate_dumbbell_front_raise_neutral_grip": {
+    "title": "Alternate Dumbbell Front Raise Neutral Grip",
+    "description": "Exercise for shoulders",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/shoulders/alternate_dumbbell_front_raise_neutral_grip.jpg",
+    "category": "shoulders",
+    "id": 90
+  },
+  "one-arm_low-pulley_front_raise_neutral_grip": {
+    "title": "One-Arm Low-Pulley Front Raise Neutral Grip",
+    "description": "Exercise for shoulders",
+    "equipment": "Lower pulley",
+    "img": "@assets/images/guides/shoulders/one-arm_low-pulley_front_raise_neutral_grip.jpg",
+    "category": "shoulders",
+    "id": 91
+  },
+  "two-handed_dumbbell_front_raise": {
+    "title": "Two-Handed Dumbbell Front Raise",
+    "description": "Exercise for shoulders",
+    "equipment": "Dumbbell",
+    "img": "@assets/images/guides/shoulders/two-handed_dumbbell_front_raise.jpg",
+    "category": "shoulders",
+    "id": 92
+  },
+  "squat": {
+    "title": "Squat",
+    "description": "Exercise for legs and abdominals",
+    "equipment": "Barbell",
+    "img": "@assets/images/guides/legs/squat.jpg",
+    "category": "legs",
+    "id": 93
+  },
+  "leg_press": {
+    "title": "Leg Press",
+    "description": "Exercise for legs",
+    "equipment": "Leg press machine",
+    "img": "@assets/images/guides/legs/leg_press.jpg",
+    "category": "legs",
+    "id": 94
+  },
+  "leg_extension": {
+    "title": "Leg Extension",
+    "description": "Exercise for quadriceps",
+    "equipment": "Leg Extension machine",
+    "img": "@assets/images/guides/legs/leg_extension.jpg",
+    "category": "legs",
+    "id": 95
+  },
+  "lunge": {
+    "title": "Lunge",
+    "description": "Exercise for legs",
+    "equipment": "Dumbbells",
+    "img": "@assets/images/guides/legs/lunge.jpg",
+    "category": "legs",
+    "id": 96
+  },
+  "lying_leg_curl": {
+    "title": "Lying Leg Curl",
+    "description": "Exercise for hamstrings and calves",
+    "equipment": "Leg curl machine",
+    "img": "@assets/images/guides/legs/lying_leg_curl.jpg",
+    "category": "legs",
+    "id": 97
+  },
+  "hack_squat": {
+    "title": "Hack Squat",
+    "description": "Exercise for thigh and buttock muscles",
+    "equipment": "Hack squat machine",
+    "img": "@assets/images/guides/legs/hack_squat.jpg",
+    "category": "legs",
+    "id": 98
+  },
+  "seated_leg_curl": {
+    "title": "Seated Leg Curl",
+    "description": "Exercise for hamstrings and calves",
+    "equipment": "Seated leg curl machine",
+    "img": "@assets/images/guides/legs/seated_leg_curl.jpg",
+    "category": "legs",
+    "id": 99
+  },
+  "single_leg_extension": {
+    "title": "Single Leg Extension",
+    "description": "Exercise for quadriceps",
+    "equipment": "Leg extension machine",
+    "img": "@assets/images/guides/legs/single_leg_extension.jpg",
+    "category": "legs",
+    "id": 100
+  },
+  "front_squat": {
+    "title": "Front Squat",
+    "description": "Exercise for legs and glute muscles",
+    "equipment": "Barbell",
+    "img": "@assets/images/guides/legs/front_squat.jpg",
+    "category": "legs",
+    "id": 101
+  },
+  "dumbbell_stiff-leg_deadlift": {
+    "title": "Dumbbell Stiff-Leg Deadlift",
+    "description": "Exercise for legs, glutes and lower back muscles",
+    "equipment": "Dumbbell",
+    "img": "@assets/images/guides/legs/dumbbell_stiff-leg_deadlift.jpg",
+    "category": "legs",
+    "id": 102
+  },
+  "barbell_stiff-leg_deadlift": {
+    "title": "Barbell Stiff-Leg Deadlift",
+    "description": "Exercise for legs, glutes and lower back muscles",
+    "equipment": "Barbell",
+    "img": "@assets/images/guides/legs/barbell_stiff-leg_deadlift.jpg",
+    "category": "legs",
+    "id": 103
+  },
+  "dumbbell_goblet_squat": {
+    "title": "Dumbbell Goblet Squat",
+    "description": "Exercise for legs and glutes muscles",
+    "equipment": "Dumbbell",
+    "img": "@assets/images/guides/legs/dumbbell_goblet_squat.jpg",
+    "category": "legs",
+    "id": 104
+  },
+  "knee_tuck_jumps": {
+    "title": "Knee Tuck Jumps",
+    "description": "Exercise for hamstrings, quadriceps and abs",
+    "equipment": "Quadriceps, calves",
+    "img": "@assets/images/guides/legs/knee_tuck_jumps.jpg",
+    "category": "legs",
+    "id": 105
+  },
+  "burpees": {
+    "title": "Burpees",
+    "description": "Exercise for chest, triceps, deltoids, abs, glutes, quadriceps, hamstrings and calves",
+    "equipment": null,
+    "img": "@assets/images/guides/legs/burpees.jpg",
+    "category": "legs",
+    "id": 106
+  },
+  "bodyweight_squat": {
+    "title": "Bodyweight Squat",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Thigh and Glute Muscles",
+    "img": "@assets/images/guides/legs/bodyweight_squat.jpg",
+    "category": "legs",
+    "id": 107
+  },
+  "1.5_rep_bodyweight_squats": {
+    "title": "1.5 Rep Bodyweight Squats",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Thigh and Glute Muscles",
+    "img": "@assets/images/guides/legs/1.5_rep_bodyweight_squats.jpg",
+    "category": "legs",
+    "id": 108
+  },
+  "medicine_ball_squat": {
+    "title": "Medicine Ball Squat",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Medicine Ball",
+    "img": "@assets/images/guides/legs/medicine_ball_squat.jpg",
+    "category": "legs",
+    "id": 109
+  },
+  "barbell_bulgarian_split_squat": {
+    "title": "Barbell Bulgarian Split Squat",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Barbell",
+    "img": "@assets/images/guides/legs/barbell_bulgarian_split_squat.jpg",
+    "category": "legs",
+    "id": 110
+  },
+  "bodyweight_bulgarian_split_squat": {
+    "title": "Bodyweight Bulgarian Split Squat",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Bench",
+    "img": "@assets/images/guides/legs/bodyweight_bulgarian_split_squat.jpg",
+    "category": "legs",
+    "id": 111
+  },
+  "mini-band_air_squat": {
+    "title": "Mini-Band Air Squat",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Mini-Band",
+    "img": "@assets/images/guides/legs/mini-band_air_squat.jpg",
+    "category": "legs",
+    "id": 112
+  },
+  "jump_squat": {
+    "title": "Jump Squat",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Thigh and Glute Muscles",
+    "img": "@assets/images/guides/legs/jump_squat.jpg",
+    "category": "legs",
+    "id": 113
+  },
+  "wall_sit": {
+    "title": "Wall Sit",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "A Flat Wall",
+    "img": "@assets/images/guides/legs/wall_sit.jpg",
+    "category": "legs",
+    "id": 114
+  },
+  "medicine_ball_deadlift": {
+    "title": "Medicine Ball Deadlift",
+    "description": "Exercise for hamstrings, glutes and core muscles",
+    "equipment": "Medicine Ball",
+    "img": "@assets/images/guides/legs/medicine_ball_deadlift.jpg",
+    "category": "legs",
+    "id": 115
+  },
+  "single_leg_bodyweight_deadlift": {
+    "title": "Single Leg Bodyweight Deadlift",
+    "description": "Exercise for hamstrings, glutes and core muscles",
+    "equipment": "Hamstrings and Glute Muscles",
+    "img": "@assets/images/guides/legs/single_leg_bodyweight_deadlift.jpg",
+    "category": "legs",
+    "id": 116
+  },
+  "kettlebell_sumo_deadlift": {
+    "title": "Kettlebell Sumo Deadlift",
+    "description": "Exercise for hamstrings, glutes and core muscles",
+    "equipment": "Kettlebell",
+    "img": "@assets/images/guides/legs/kettlebell_sumo_deadlift.jpg",
+    "category": "legs",
+    "id": 117
+  },
+  "good_morning_exercise": {
+    "title": "Good Morning Exercise",
+    "description": "Exercise for hamstrings, glutes and core muscles",
+    "equipment": "Barbell",
+    "img": "@assets/images/guides/legs/good_morning_exercise.jpg",
+    "category": "legs",
+    "id": 118
+  },
+  "bodyweight_glute_bridge": {
+    "title": "Bodyweight Glute Bridge",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Mat",
+    "img": "@assets/images/guides/legs/bodyweight_glute_bridge.jpg",
+    "category": "legs",
+    "id": 119
+  },
+  "single_leg_glute_bridge": {
+    "title": "Single Leg Glute Bridge",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Mat",
+    "img": "@assets/images/guides/legs/single_leg_glute_bridge.jpg",
+    "category": "legs",
+    "id": 120
+  },
+  "banded_glute_bridge": {
+    "title": "Banded Glute Bridge",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Mat, Mini-Band",
+    "img": "@assets/images/guides/legs/banded_glute_bridge.jpg",
+    "category": "legs",
+    "id": 121
+  },
+  "duck_walk": {
+    "title": "Duck Walk",
+    "description": "Exercise for thigh, glute muscles and calves",
+    "equipment": "This exercise is not a strengthening movement, but one that can be utilized for stretching and warming up at the beginning of your workout. These are the main muscles you’ll be stretching: Thigh and Glute Muscles",
+    "img": "@assets/images/guides/legs/duck_walk.jpg",
+    "category": "legs",
+    "id": 122
+  },
+  "bird_dog": {
+    "title": "Bird Dog",
+    "description": "Exercise for core muscles and glute muscles",
+    "equipment": "Mat",
+    "img": "@assets/images/guides/legs/bird_dog.jpg",
+    "category": "legs",
+    "id": 123
+  },
+  "groiners": {
+    "title": "Groiners",
+    "description": "Exercise for thigh, hip muscles and core muscles",
+    "equipment": "Mat",
+    "img": "@assets/images/guides/legs/groiners.jpg",
+    "category": "legs",
+    "id": 124
+  },
+  "fire_hydrants": {
+    "title": "Fire Hydrants",
+    "description": "Exercise for glute muscles and core muscles",
+    "equipment": "Mat",
+    "img": "@assets/images/guides/legs/fire_hydrants.jpg",
+    "category": "legs",
+    "id": 125
+  },
+  "smith_machine_hip_thrust": {
+    "title": "Smith Machine Hip Thrust",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Smith-Machine, Bench, Squat Pad or Towel if needed for padding",
+    "img": "@assets/images/guides/legs/smith_machine_hip_thrust.jpg",
+    "category": "legs",
+    "id": 126
+  },
+  "barbell_hip_thrust": {
+    "title": "Barbell Hip Thrust",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Barbell, Bench, Squat Pad or Towel if needed for padding",
+    "img": "@assets/images/guides/legs/barbell_hip_thrust.jpg",
+    "category": "legs",
+    "id": 127
+  },
+  "band_seated_hip_abduction": {
+    "title": "Band Seated Hip Abduction",
+    "description": "Exercise for glute muscles",
+    "equipment": "Mini-Band & Bench or Chair",
+    "img": "@assets/images/guides/legs/band_seated_hip_abduction.jpg",
+    "category": "legs",
+    "id": 128
+  },
+  "seated_hip_abduction_machine": {
+    "title": "Seated Hip Abduction Machine",
+    "description": "Exercise for hip abductors and glute muscles",
+    "equipment": "Hip Abduction Machine",
+    "img": "@assets/images/guides/legs/seated_hip_abduction_machine.jpg",
+    "category": "legs",
+    "id": 129
+  },
+  "standing_cable_abduction": {
+    "title": "Standing Cable Abduction",
+    "description": "Exercise for glute and core muscles",
+    "equipment": "Cable Machine with Ankle Attachments",
+    "img": "@assets/images/guides/legs/standing_cable_abduction.jpg",
+    "category": "legs",
+    "id": 130
+  },
+  "bodyweight_frog_pump": {
+    "title": "Bodyweight Frog Pump",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Mat",
+    "img": "@assets/images/guides/legs/bodyweight_frog_pump.jpg",
+    "category": "legs",
+    "id": 131
+  },
+  "smith_machine_frog_pump": {
+    "title": "Smith Machine Frog Pump",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Smith Machine, Bench, Squat Pad or Towel if needed for padding",
+    "img": "@assets/images/guides/legs/smith_machine_frog_pump.jpg",
+    "category": "legs",
+    "id": 132
+  },
+  "banded_clams": {
+    "title": "Banded Clams",
+    "description": "Exercise for glute and core muscles",
+    "equipment": "Mat, Mini-Band",
+    "img": "@assets/images/guides/legs/banded_clams.jpg",
+    "category": "legs",
+    "id": 133
+  },
+  "side_lying_leg_raise": {
+    "title": "Side Lying Leg Raise",
+    "description": "Exercise for glute and core muscles",
+    "equipment": "Mat",
+    "img": "@assets/images/guides/legs/side_lying_leg_raise.jpg",
+    "category": "legs",
+    "id": 134
+  },
+  "glute_ham_raise": {
+    "title": "Glute Ham Raise",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Glute Ham Developer (GHD) Machine",
+    "img": "@assets/images/guides/legs/glute_ham_raise.jpg",
+    "category": "legs",
+    "id": 135
+  },
+  "dumbbell_step_up": {
+    "title": "Dumbbell Step Up",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Step, Dumbbells",
+    "img": "@assets/images/guides/legs/dumbbell_step_up.jpg",
+    "category": "legs",
+    "id": 136
+  },
+  "lateral_mini-band_walk": {
+    "title": "Lateral Mini-Band Walk",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Mini-Band",
+    "img": "@assets/images/guides/legs/lateral_mini-band_walk.jpg",
+    "category": "legs",
+    "id": 137
+  },
+  "standing_knee_raise": {
+    "title": "Standing Knee Raise",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Thigh and Glute Muscles",
+    "img": "@assets/images/guides/legs/standing_knee_raise.jpg",
+    "category": "legs",
+    "id": 138
+  },
+  "kettlebell_swings": {
+    "title": "Kettlebell Swings",
+    "description": "Exercise for thigh, glutes and core muscles",
+    "equipment": "Kettlebell",
+    "img": "@assets/images/guides/legs/kettlebell_swings.jpg",
+    "category": "legs",
+    "id": 139
+  },
+  "standing_cable_kickback": {
+    "title": "Standing Cable Kickback",
+    "description": "Exercise for thigh, glutes, calves and core muscles",
+    "equipment": "Cable Machine, Ankle Attachments",
+    "img": "@assets/images/guides/legs/standing_cable_kickback.jpg",
+    "category": "legs",
+    "id": 140
+  },
+  "donkey_kicks": {
+    "title": "Donkey Kicks",
+    "description": "Exercise for glute and core muscles",
+    "equipment": "Mat",
+    "img": "@assets/images/guides/legs/donkey_kicks.jpg",
+    "category": "legs",
+    "id": 141
+  },
+  "side_lying_hip_raise": {
+    "title": "Side Lying Hip Raise",
+    "description": "Exercise for glutes and core muscles",
+    "equipment": "Mat",
+    "img": "@assets/images/guides/legs/side_lying_hip_raise.jpg",
+    "category": "legs",
+    "id": 142
+  },
+  "squat_sit_to_reach": {
+    "title": "Squat Sit to Reach",
+    "description": "Exercise for hip, thigh, chest, upper back muscles and core muscles",
+    "equipment": "This exercise is not a strengthening movement, but one that can be utilized for stretching and warming up at the beginning of your workout. These are the main muscles you’ll be stretching: Hip, Thigh, Chest Muscles",
+    "img": "@assets/images/guides/legs/squat_sit_to_reach.jpg",
+    "category": "legs",
+    "id": 143
+  }
+}

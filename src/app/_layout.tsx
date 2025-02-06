@@ -23,6 +23,7 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 import { useColorScheme, useNetInfo } from '@/hooks'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/libs/react-query'
+import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -40,6 +41,9 @@ if (!sentryDsn) {
 if (!__DEV__) {
   Sentry.init({ dsn: sentryDsn })
 }
+
+// Configure Reanimated logger
+configureReanimatedLogger({ level: ReanimatedLogLevel.warn, strict: false })
 
 function App() {
   // Hook with isolated instance of network info manager

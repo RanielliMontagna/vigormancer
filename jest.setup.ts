@@ -128,6 +128,7 @@ jest.mock('expo-image-picker', () => ({
   launchCameraAsync: jest.fn(),
 }))
 
+// Mock expo-sqlite
 jest.mock('expo-sqlite', () => ({
   openDatabaseSync: jest.fn(() => ({
     getFirstAsync: jest.fn(
@@ -137,4 +138,9 @@ jest.mock('expo-sqlite', () => ({
         }),
     ),
   })),
+}))
+
+// Mock expo-asset
+jest.mock('expo-asset', () => ({
+  useAssets: jest.fn(),
 }))

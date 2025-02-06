@@ -223,7 +223,37 @@
       "exercises": "Exercises",
       "start": "Start Workout",
       "delete": "Delete Workout",
-      "actions": "Actions"
+      "actions": "Actions",
+      "addExercise": "Add Exercise",
+      "emptyState": {
+        "title": "No exercises yet",
+        "subtitle": "Add at least one exercise to start your workout."
+      },
+      "exerciseCard": {
+        "sets": "{{sets}} sets x ",
+        "reps": "{{reps}} repetitions",
+        "removeExercise": "Remove Exercise",
+        "removeExerciseTitle": "Remove Exercise?",
+        "removeExerciseDescription": "This action cannot be undone. Are you sure you want to remove {{name}} from your workout?",
+        "cancel": "Cancel"
+      },
+      "edit": {
+        "subtitle": "Update the details of this exercise.",
+        "sets": "Sets",
+        "setsPlaceholder": "Enter the number of sets",
+        "reps": "Repetitions",
+        "repsPlaceholder": "Enter the number of repetitions",
+        "rest": "Rest",
+        "restPlaceholder": "Enter the rest time between sets",
+        "restUnit": "seconds",
+        "restMinutes_zero": "Less than a minute rest between sets",
+        "restMinutes_one": "1 minute rest between sets",
+        "restMinutes_other": "About {{minutes}} minutes rest between sets",
+        "weight": "Weight",
+        "weightPlaceholder": "Enter the weight used",
+        "weightUnit": "kg",
+        "submit": "Update Exercise"
+      }
     },
     "createWorkout": {
       "title": "Create new workout",
@@ -250,6 +280,16 @@
       "description": "This action cannot be undone. Are you sure you want to delete workout {{name}}?",
       "cancel": "Cancel",
       "success": "Workout deleted successfully!"
+    },
+    "addExercise": {
+      "title": "Add Exercise",
+      "subtitle": "Define the next step in your journey.",
+      "submit": "Add Exercise",
+      "cancel": "Cancel",
+      "search": "Search for an exercise",
+      "searchPlaceholder": "Filter exercises by name",
+      "success": "Exercise added successfully!",
+      "successMessage": "{{name}} has been added to your workout."
     },
     "difficulty": { "0": "Beginner", "1": "Intermediate", "2": "Advanced" }
   },

@@ -16,8 +16,8 @@ export function useWorkoutDetails() {
 
   const workoutActionsBottomSheetRef = useRef<BottomSheetModal>(null)
 
-  const { data } = useQuery({
-    queryKey: ['workout'],
+  const { data, isLoading, refetch } = useQuery({
+    queryKey: ['workoutDetails'],
     queryFn: () => getWorkout({ id }),
     gcTime: 0,
   })
@@ -42,9 +42,19 @@ export function useWorkoutDetails() {
     }
   }
 
+  function handleGoToAddExercise() {
+    router.push(`(private)/workouts/${id}/add-exercise`)
+  }
+
   return {
     workout: data,
+    isLoading,
     workoutActionsBottomSheetRef,
+    exercises: data?.exercises,
+    isExercisesEmpty: data?.exercises.length === 0,
+    exercisesQuantity: data?.exercises.length ?? 0,
+    refetch,
     handleDeleteWorkout,
+    handleGoToAddExercise,
   }
 }
