@@ -143,4 +143,10 @@ jest.mock('expo-sqlite', () => ({
 // Mock expo-asset
 jest.mock('expo-asset', () => ({
   useAssets: jest.fn(),
+  Asset: {
+    fromModule: jest.fn(() => ({
+      downloadAsync: jest.fn(),
+      localUri: 'localUri',
+    })),
+  },
 }))

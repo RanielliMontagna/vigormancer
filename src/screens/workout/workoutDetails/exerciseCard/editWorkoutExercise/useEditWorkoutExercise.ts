@@ -12,7 +12,7 @@ import {
   EditWorkoutExerciseParams,
   WorkoutExerciseWithCategory,
 } from '@/db/repositories/workoutExercises'
-import { editWorkoutExercise } from '@/db/controllers/workoutExercises/edit-workout-exercise'
+import { updateWorkoutExercise } from '@/db/controllers/workoutExercises/update-workout-exercise'
 import { getWorkoutExercise } from '@/db/controllers/workoutExercises/get-workout-exercise'
 
 const editWorkoutExerciseSchema = z.object({
@@ -40,7 +40,7 @@ export function useEditWorkoutExercise() {
     try {
       setIsLoading(true)
 
-      await editWorkoutExercise({
+      await updateWorkoutExercise({
         id: id,
         sets: exercise.sets,
         repetitions: exercise.repetitions,

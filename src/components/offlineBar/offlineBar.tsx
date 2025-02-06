@@ -6,7 +6,7 @@ const OfflineBar = () => {
   if (process.env.NODE_ENV === 'production') return null
 
   return (
-    <View className="top-0 right-0 left-0 px-8 transform bg-black">
+    <View className="top-0 right-0 left-0 px-8 transform bg-black" testID="offline-bar">
       <Text className="font-lexend-light text-xs text-center text-white">OFFLINE MODE</Text>
     </View>
   )
