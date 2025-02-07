@@ -32,6 +32,7 @@ export function CreateWorkout() {
           </View>
           <View className="gap-4 flex-1">
             <TextField
+              testID="name"
               control={methods.control}
               name="name"
               label={t('workout.createWorkout.name')}
@@ -39,6 +40,7 @@ export function CreateWorkout() {
               required
             />
             <TextField
+              testID="description"
               control={methods.control}
               name="description"
               label={t('workout.createWorkout.description')}
@@ -64,7 +66,7 @@ export function CreateWorkout() {
             />
           </View>
           <View className="gap-2">
-            <Button onPress={handleSubmit} size="lg" className="gap-2">
+            <Button onPress={handleSubmit} size="lg" className="gap-2" testID="submit">
               <FontAwesome6
                 name="circle-check"
                 solid
@@ -73,7 +75,13 @@ export function CreateWorkout() {
               />
               <Text>{t('workout.createWorkout.submit')}</Text>
             </Button>
-            <Button size="lg" variant="outline" className="gap-2" onPress={handleBack}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="gap-2"
+              onPress={handleBack}
+              testID="cancel"
+            >
               <Text>{t('workout.createWorkout.cancel')}</Text>
             </Button>
           </View>

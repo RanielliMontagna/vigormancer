@@ -13,6 +13,8 @@ export function AddExercise() {
   const { isDarkColorScheme } = useColorScheme()
   const { methods, t, data, isLoading, refetch, handleSelectExercise } = useAddExercise()
 
+  console.log(data)
+
   return (
     <Form {...methods}>
       <View className="flex flex-1 p-8 bg-background gap-6" testID="add-exercise">
@@ -23,6 +25,7 @@ export function AddExercise() {
         </View>
         <View>
           <SearchField
+            testID="search"
             name="search"
             control={methods.control}
             label={t('workout.addExercise.search')}
@@ -53,6 +56,7 @@ export function AddExercise() {
                   style={{ height: 140 }}
                   className="bg-card p-2 gap-2 rounded-lg flex-row items-center"
                   onPress={() => handleSelectExercise(item)}
+                  testID={`exercise-${item.id}`}
                 >
                   <Image source={{ uri: imageUri }} className="w-32 h-20 rounded-lg" />
                   <View className="flex-1 gap-2">

@@ -49,6 +49,7 @@ function CardLanguage({ language, t, isCurrent }: CardLanguageProps) {
       )}
       activeOpacity={isCurrent ? 1 : 0.7}
       onPress={handleChangeLanguage}
+      testID={`card-language-${language}`}
     >
       <View className="flex-row items-center gap-2">
         {language === LanguageEnum.Portuguese ? <BrazilFlag /> : <UKFlag />}

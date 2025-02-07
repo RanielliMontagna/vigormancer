@@ -84,10 +84,7 @@ jest.mock('@clerk/clerk-expo', () => ({
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
     t: (key: string) => key,
-    i18n: {
-      changeLanguage: jest.fn(),
-      language: 'en',
-    },
+    i18n: { changeLanguage: jest.fn(), language: 'en' },
   }),
   initReactI18next: { init: jest.fn() },
 }))
