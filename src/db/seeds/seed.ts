@@ -43,7 +43,7 @@ export async function seedDatabase() {
       await createExercise({
         id: exercise.id,
         categoryId: categoriesArray.find((category) => category.name === exercise.category).id,
-        name: key,
+        exerciseName: key,
         image: exercise.img,
         type: ExerciseType.STRENGTH,
       })

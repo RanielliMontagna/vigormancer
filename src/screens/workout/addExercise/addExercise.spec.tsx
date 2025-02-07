@@ -10,6 +10,7 @@ import { ExerciseType, ExerciseWithCategory } from '@/db/repositories/exercises'
 
 jest.mock('@/db/controllers/exercises/fetch-exercises')
 jest.mock('@/db/controllers/workoutExercises/create-workout-exercise')
+
 const mockUseColorScheme = useColorScheme as jest.Mock
 
 describe('AddExercise', () => {

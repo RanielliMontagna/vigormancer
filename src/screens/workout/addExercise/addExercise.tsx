@@ -13,8 +13,6 @@ export function AddExercise() {
   const { isDarkColorScheme } = useColorScheme()
   const { methods, t, data, isLoading, refetch, handleSelectExercise } = useAddExercise()
 
-  console.log(data)
-
   return (
     <Form {...methods}>
       <View className="flex flex-1 p-8 bg-background gap-6" testID="add-exercise">
