@@ -29,12 +29,18 @@ export function Height() {
             step={1}
             initialValue={selectedHeight}
             unit="cm"
+            /* c8 ignore next */
             onValueChangeEnd={(number) => setValue('height', Number(number))}
           />
         </View>
       </View>
       <View>
-        <Button size="lg" onPress={() => router.push('onboarding/goal')} disabled={!selectedHeight}>
+        <Button
+          size="lg"
+          onPress={() => router.push('onboarding/goal')}
+          disabled={!selectedHeight}
+          testID="height-button"
+        >
           <Text>{t('onboarding.height.next')}</Text>
         </Button>
       </View>

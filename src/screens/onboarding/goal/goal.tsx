@@ -68,7 +68,12 @@ export function Goal() {
         </View>
       </View>
       <View>
-        <Button size="lg" onPress={handleSubmitOnboarding} disabled={!selectedGoal}>
+        <Button
+          size="lg"
+          onPress={handleSubmitOnboarding}
+          disabled={!selectedGoal}
+          testID="goal-button"
+        >
           <Text>{t('onboarding.goal.next')}</Text>
         </Button>
       </View>

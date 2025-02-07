@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
+import { router } from 'expo-router'
 
 import { Age } from './age'
 import { useColorScheme } from '@/hooks'
@@ -25,5 +26,22 @@ describe('Age', () => {
       </OnboardingWrapperLayout>,
     )
     expect(getByTestId('age')).toBeDefined()
+  })
+
+  it('should be able to navigate to the next screen', () => {
+    jest.spyOn(router, 'back')
+
+    const { getByTestId } = render(
+      <OnboardingWrapperLayout>
+        <Age />
+      </OnboardingWrapperLayout>,
+    )
+
+    act(() => {
+      const button = getByTestId('age-button')
+      fireEvent.press(button)
+    })
+
+    expect(router.push).toHaveBeenCalledWith('onboarding/weight')
   })
 })

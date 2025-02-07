@@ -21,7 +21,12 @@ export function Welcome() {
           </View>
         </View>
         <Text className="text-center text-muted-foreground">{t('onboarding.welcome.text')}</Text>
-        <Button size="lg" className="mt-4" onPress={() => router.push('onboarding/sex')}>
+        <Button
+          size="lg"
+          className="mt-4"
+          onPress={() => router.push('onboarding/sex')}
+          testID="welcome-button"
+        >
           <Text>{t('onboarding.welcome.button')}</Text>
         </Button>
       </View>

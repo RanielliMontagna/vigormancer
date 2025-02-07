@@ -42,7 +42,7 @@ export function useWorkoutDetails() {
     }
   }
 
-  function handleGoToAddExercise() {
+  async function handleGoToAddExercise() {
     router.push(`(private)/workouts/${id}/add-exercise`)
   }
 
