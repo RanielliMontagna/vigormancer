@@ -37,6 +37,7 @@ export function Workout() {
           />
         ) : (
           <FlashList
+            testID="flash-list"
             data={workouts}
             refreshing={isLoading}
             onRefresh={refetch}

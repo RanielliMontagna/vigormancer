@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
 
 import { Login } from './login'
 import { useColorScheme } from '@/hooks'
@@ -16,5 +16,16 @@ describe('Login', () => {
 
     const { getByTestId } = render(<Login />)
     expect(getByTestId('login')).toBeDefined()
+  })
+
+  it('should be able to click em show password', () => {
+    const { getByTestId } = render(<Login />)
+
+    act(() => {
+      const showPassword = getByTestId('show-password')
+      fireEvent.press(showPassword)
+    })
+
+    expect(getByTestId('show-password')).toBeDefined()
   })
 })

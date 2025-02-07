@@ -41,6 +41,7 @@ export function Login() {
             size="lg"
             endAdornment={
               <TouchableOpacity
+                testID="show-password"
                 onPress={() => methods.setValue('showPassword', !methods.watch('showPassword'))}
               >
                 {methods.watch('showPassword') ? (
