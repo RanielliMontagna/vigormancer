@@ -1,5 +1,8 @@
 import { useColorScheme } from '@/hooks'
 
+import 'react-native-gesture-handler/jestSetup'
+require('@shopify/flash-list/jestSetup')
+
 // Mock for expo-modules-core library
 jest.mock('expo-modules-core', () => ({
   NativeModulesProxy: jest.fn(),
@@ -10,19 +13,30 @@ jest.mock('expo-modules-core', () => ({
 jest.mock('react-native-reanimated', () => require('react-native-reanimated/mock'))
 
 // Mock for vector-icons library
-jest.mock('@expo/vector-icons/FontAwesome5', () => 'FontAwesome5')
-jest.mock('@expo/vector-icons/FontAwesome6', () => 'FontAwesome6')
-jest.mock('@expo/vector-icons/MaterialCommunityIcons', () => 'MaterialCommunityIcons')
+
+jest.mock('@expo/vector-icons', () => {
+  const { View } = require('react-native')
+  return {
+    FontAwesome: View,
+    FontAwesome5: View,
+    FontAwesome6: View,
+    MaterialCommunityIcons: View,
+  }
+})
 
 // Mock for routes
 jest.mock('expo-router', () => ({
   useRouter: jest.fn(),
   useSegments: jest.fn(),
-  router: {
-    push: jest.fn(),
-    replace: jest.fn(),
-    back: jest.fn(),
-  },
+  useLocalSearchParams: jest.fn(() => ({ id: '1' }) as { id: string }),
+  router: { push: jest.fn(), replace: jest.fn(), back: jest.fn() },
+}))
+
+//Mock expo font
+jest.mock('expo-font', () => ({
+  ...jest.requireActual('expo-font'),
+  isLoaded: jest.fn().mockReturnValue(true),
+  loadAsync: jest.fn(),
 }))
 
 // Mock for hooks module
