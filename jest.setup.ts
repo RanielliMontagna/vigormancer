@@ -29,7 +29,7 @@ jest.mock('expo-router', () => ({
   useRouter: jest.fn(),
   useSegments: jest.fn(),
   useLocalSearchParams: jest.fn(() => ({ id: '1' }) as { id: string }),
-  router: { push: jest.fn(), replace: jest.fn(), back: jest.fn() },
+  router: { push: jest.fn(), replace: jest.fn(), back: jest.fn(), canGoBack: jest.fn(() => true) },
 }))
 
 //Mock expo font
@@ -161,3 +161,9 @@ jest.mock('expo-asset', () => ({
     })),
   },
 }))
+
+jest.spyOn(console, 'error').mockImplementation((message) => {
+  if (typeof message === 'string' && message.includes('Warning:')) return null
+
+  return
+})
