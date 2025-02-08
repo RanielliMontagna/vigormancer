@@ -71,16 +71,36 @@ jest.mock('@clerk/clerk-expo', () => ({
     signOut: jest.fn(),
   })),
   useSignUp: jest.fn(() => ({
-    signUp: jest.fn(),
+    signUp: {
+      attemptEmailAddressVerification: jest.fn(
+        () =>
+          new Promise((resolve) => {
+            resolve({ status: 'success', createdSessionId: 'session_id' })
+          }),
+      ),
+    },
     isLoaded: true,
+    setActive: jest.fn(),
   })),
   useSignIn: jest.fn(() => ({
-    signIn: jest.fn(),
+    signIn: {
+      create: jest.fn(
+        () =>
+          new Promise((resolve) => {
+            resolve({ status: 'complete', createdSessionId: 'session_id' })
+          }),
+      ),
+    },
     setActive: jest.fn(),
     isLoaded: true,
   })),
   useOAuth: jest.fn(() => ({
-    startOAuthFlow: jest.fn(),
+    startOAuthFlow: jest.fn(
+      () =>
+        new Promise((resolve) => {
+          resolve({ status: 'success', createdSessionId: 'session_id' })
+        }),
+    ),
   })),
   isClerkAPIResponseError: jest.fn(() => false),
 }))
