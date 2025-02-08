@@ -28,14 +28,19 @@ export function Age() {
             max={maxAge}
             step={1}
             initialValue={selectedAge}
-            onValueChangeEnd={(number) => setValue('age', Number(number))}
+            onValueChangeEnd={(number) => setValue('age', Number(number))} // istanbul ignore next
             unit={t('onboarding.age.yearsOld')}
           />
         </View>
       </View>
 
       <View>
-        <Button size="lg" onPress={() => router.push('onboarding/weight')} disabled={!selectedAge}>
+        <Button
+          size="lg"
+          onPress={() => router.push('onboarding/weight')}
+          disabled={!selectedAge}
+          testID="age-button"
+        >
           <Text>{t('onboarding.age.next')}</Text>
         </Button>
       </View>

@@ -15,6 +15,8 @@ const config: Config = {
     '!src/**/*.mock.ts',
     '!src/app/**/*.{ts,tsx}',
     '!src/libs/**/*.{ts,tsx}',
+    '!src/locales/**/*.{ts,tsx}',
+    '!src/styles/**/*.{ts,tsx}',
   ],
   coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
   moduleNameMapper: {

@@ -39,18 +39,21 @@ export function SignUp() {
         </View>
         <View className="gap-4">
           <TextField
+            testID="username"
             control={methods.control}
             name="username"
             placeholder={t('signup.usernamePlaceholder')}
             size="lg"
           />
           <TextField
+            testID="email"
             control={methods.control}
             name="email"
             placeholder={t('signup.emailPlaceholder')}
             size="lg"
           />
           <TextField
+            testID="password"
             control={methods.control}
             name="password"
             placeholder={t('signup.passwordPlaceholder')}
@@ -59,6 +62,7 @@ export function SignUp() {
             size="lg"
             endAdornment={
               <TouchableOpacity
+                testID="toggle-password"
                 onPress={() => methods.setValue('showPassword', !methods.watch('showPassword'))}
               >
                 {methods.watch('showPassword') ? (
@@ -70,6 +74,7 @@ export function SignUp() {
             }
           />
           <TextField
+            testID="confirm-password"
             control={methods.control}
             name="confirmPassword"
             placeholder={t('signup.confirmPasswordPlaceholder')}
@@ -78,6 +83,7 @@ export function SignUp() {
             size="lg"
             endAdornment={
               <TouchableOpacity
+                testID="toggle-confirm-password"
                 onPress={() =>
                   methods.setValue('showConfirmPassword', !methods.watch('showConfirmPassword'))
                 }
@@ -92,7 +98,12 @@ export function SignUp() {
           />
         </View>
         <View className="gap-2">
-          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(onSignUpPress)}>
+          <Button
+            testID="sign-up-button"
+            size="lg"
+            className="mt-4"
+            onPress={methods.handleSubmit(onSignUpPress)}
+          >
             <Text>{t('signup.submit')}</Text>
           </Button>
           <View className="flex flex-row items-center gap-2">
@@ -103,6 +114,7 @@ export function SignUp() {
             <View className="flex-1 border-t border-border" />
           </View>
           <Button
+            testID="google-signup"
             size="lg"
             variant="outline"
             startIcon={
@@ -120,7 +132,7 @@ export function SignUp() {
         <View className="pb-8 justify-center items-center flex flex-row ">
           <Text>{t('signup.alreadyHaveAccount')} </Text>
           <TouchableOpacity>
-            <Text bold onPress={handleBack}>
+            <Text bold onPress={handleBack} testID="back-to-login">
               {t('signup.login')}
             </Text>
           </TouchableOpacity>

@@ -17,7 +17,7 @@ export function EditWorkoutExercise() {
 
   return (
     <Form {...methods}>
-      <View className="h-full p-8 gap-4 bg-background" testID="workout-details">
+      <View className="h-full p-8 gap-4 bg-background" testID="edit-workout-exercise">
         <View className="flex flex-row justify-between items-center">
           <BackButton />
         </View>
@@ -29,6 +29,7 @@ export function EditWorkoutExercise() {
         </View>
         <View className="flex flex-col gap-4 flex-1">
           <QuantityField
+            testID="sets"
             control={methods.control}
             name="sets"
             label={t('workout.workoutDetails.edit.sets')}
@@ -37,6 +38,7 @@ export function EditWorkoutExercise() {
             min={1}
           />
           <QuantityField
+            testID="repetitions"
             control={methods.control}
             name="repetitions"
             label={t('workout.workoutDetails.edit.reps')}
@@ -45,6 +47,7 @@ export function EditWorkoutExercise() {
             min={1}
           />
           <QuantityField
+            testID="weight"
             control={methods.control}
             name="weight"
             label={t('workout.workoutDetails.edit.weight')}
@@ -55,6 +58,7 @@ export function EditWorkoutExercise() {
           />
           {Number(sets) > 1 && (
             <QuantityField
+              testID="rest"
               control={methods.control}
               name="rest"
               label={t('workout.workoutDetails.edit.rest')}
@@ -69,7 +73,7 @@ export function EditWorkoutExercise() {
             />
           )}
         </View>
-        <Button onPress={methods.handleSubmit(handleEditWorkoutExercise)}>
+        <Button onPress={methods.handleSubmit(handleEditWorkoutExercise)} testID="submit">
           <Text>{t('workout.workoutDetails.edit.submit')}</Text>
         </Button>
       </View>

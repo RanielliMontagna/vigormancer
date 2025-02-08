@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react-native'
+import { router } from 'expo-router'
+import { act, fireEvent, render } from '@testing-library/react-native'
 
 import { Height } from './height'
 import { useColorScheme } from '@/hooks'
@@ -25,5 +26,22 @@ describe('Height', () => {
       </OnboardingWrapperLayout>,
     )
     expect(getByTestId('height')).toBeDefined()
+  })
+
+  it('should be able to navigate to the next screen', () => {
+    jest.spyOn(router, 'back')
+
+    const { getByTestId } = render(
+      <OnboardingWrapperLayout>
+        <Height />
+      </OnboardingWrapperLayout>,
+    )
+
+    act(() => {
+      const button = getByTestId('height-button')
+      fireEvent.press(button)
+    })
+
+    expect(router.push).toHaveBeenCalledWith('onboarding/goal')
   })
 })

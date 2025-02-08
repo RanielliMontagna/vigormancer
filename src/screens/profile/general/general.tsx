@@ -22,12 +22,13 @@ export function General() {
   }
 
   return (
-    <View>
+    <View testID="general">
       <Text className="text-sm text-muted-foreground">{t('profile.general.title')}</Text>
       <View className="bg-card rounded-2xl p-4 mt-2 elevation-sm">
         <TouchableOpacity
           className="flex-row justify-between item-center p-1"
           onPress={handleGoToUpdateInformation}
+          testID="update-information"
         >
           <View className="flex-row items-center gap-2">
             <FontAwesome6
@@ -49,6 +50,7 @@ export function General() {
         <TouchableOpacity
           className="flex-row justify-between item-center p-1"
           onPress={handleGoToChangePassword}
+          testID="change-password"
         >
           <View className="flex-row items-center gap-2">
             <FontAwesome6

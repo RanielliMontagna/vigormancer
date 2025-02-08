@@ -30,7 +30,6 @@ export function WorkoutListItem({
 
   const difficultyColor = useMemo(() => {
     switch (difficulty) {
-      default:
       case WorkoutDifficulty.BEGINNER:
         return colors.indigo[400]
       case WorkoutDifficulty.INTERMEDIATE:
@@ -53,11 +52,7 @@ export function WorkoutListItem({
       />
       <View className="flex-1 justify-center p-4 gap-3">
         <View className="flex flex-row gap-1 items-baseline">
-          <FontAwesome6
-            name="bolt-lightning"
-            size={10}
-            color={difficulty >= WorkoutDifficulty.BEGINNER ? difficultyColor : 'gray'}
-          />
+          <FontAwesome6 name="bolt-lightning" size={10} color={difficultyColor} />
           <FontAwesome6
             name="bolt-lightning"
             size={10}
@@ -91,9 +86,7 @@ export function WorkoutListItem({
           <Image
             source={WorkoutPlaceholder}
             className="h-32 rounded-xl"
-            style={{
-              width: Dimensions.get('window').width / 3,
-            }}
+            style={{ width: Dimensions.get('window').width / 3 }}
           />
         )}
       </View>

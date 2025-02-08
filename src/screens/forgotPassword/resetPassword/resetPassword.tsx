@@ -23,6 +23,7 @@ export function ResetPassword() {
         </View>
         <View className="gap-4">
           <TextField
+            testID="reset-password-password"
             control={methods.control}
             name="password"
             placeholder={t('forgotPassword.resetPassword.passwordPlaceholder')}
@@ -30,6 +31,7 @@ export function ResetPassword() {
             secureTextEntry={!methods.watch('showPassword')}
             endAdornment={
               <TouchableOpacity
+                testID="reset-password-password-end-adornment"
                 onPress={() => methods.setValue('showPassword', !methods.watch('showPassword'))}
               >
                 {methods.watch('showPassword') ? (
@@ -41,6 +43,7 @@ export function ResetPassword() {
             }
           />
           <TextField
+            testID="reset-password-confirm-password"
             control={methods.control}
             name="confirmPassword"
             placeholder={t('forgotPassword.resetPassword.confirmPasswordPlaceholder')}
@@ -48,6 +51,7 @@ export function ResetPassword() {
             secureTextEntry={!methods.watch('showConfirmPassword')}
             endAdornment={
               <TouchableOpacity
+                testID="reset-password-confirm-password-end-adornment"
                 onPress={() =>
                   methods.setValue('showConfirmPassword', !methods.watch('showConfirmPassword'))
                 }

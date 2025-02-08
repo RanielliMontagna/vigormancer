@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
+import { router } from 'expo-router'
 
 import { Welcome } from './welcome'
 import { useColorScheme } from '@/hooks'
@@ -25,5 +26,22 @@ describe('Welcome', () => {
       </OnboardingWrapperLayout>,
     )
     expect(getByTestId('welcome')).toBeDefined()
+  })
+
+  it('should be able to navigate to the next screen', () => {
+    jest.spyOn(router, 'back')
+
+    const { getByTestId } = render(
+      <OnboardingWrapperLayout>
+        <Welcome />
+      </OnboardingWrapperLayout>,
+    )
+
+    act(() => {
+      const button = getByTestId('welcome-button')
+      fireEvent.press(button)
+    })
+
+    expect(router.push).toHaveBeenCalledWith('onboarding/sex')
   })
 })

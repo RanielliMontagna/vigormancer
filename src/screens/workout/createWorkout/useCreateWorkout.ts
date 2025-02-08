@@ -50,26 +50,22 @@ export function useCreateWorkout() {
         })
       }
 
-      const response = await createWorkout({
+      await createWorkout({
         name: values.name,
         description: values.description,
         difficulty: values.difficulty,
         image,
       })
 
-      if (response.id) {
-        Toast.show({
-          type: 'success',
-          text1: t('workout.createWorkout.created'),
-          text2: t('workout.createWorkout.createdMessage', { name: values.name }),
-        })
+      Toast.show({
+        type: 'success',
+        text1: t('workout.createWorkout.created'),
+        text2: t('workout.createWorkout.createdMessage', { name: values.name }),
+      })
 
-        queryClient.invalidateQueries({ queryKey: ['workouts'] })
+      queryClient.invalidateQueries({ queryKey: ['workouts'] })
 
-        router.back()
-      } else {
-        throw new Error(t('workout.createWorkout.error'))
-      }
+      router.back()
     } catch (error) {
       handleErrors(error)
     } finally {

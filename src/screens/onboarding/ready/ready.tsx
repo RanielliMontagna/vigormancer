@@ -34,6 +34,7 @@ export function Ready() {
 
               router.replace('/')
             }}
+            testID="ready-button"
           >
             <Text>{t('onboarding.ready.button')}</Text>
           </Button>

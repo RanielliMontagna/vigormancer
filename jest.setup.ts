@@ -1,5 +1,8 @@
 import { useColorScheme } from '@/hooks'
 
+import 'react-native-gesture-handler/jestSetup'
+require('@shopify/flash-list/jestSetup')
+
 // Mock for expo-modules-core library
 jest.mock('expo-modules-core', () => ({
   NativeModulesProxy: jest.fn(),
@@ -10,19 +13,30 @@ jest.mock('expo-modules-core', () => ({
 jest.mock('react-native-reanimated', () => require('react-native-reanimated/mock'))
 
 // Mock for vector-icons library
-jest.mock('@expo/vector-icons/FontAwesome5', () => 'FontAwesome5')
-jest.mock('@expo/vector-icons/FontAwesome6', () => 'FontAwesome6')
-jest.mock('@expo/vector-icons/MaterialCommunityIcons', () => 'MaterialCommunityIcons')
+
+jest.mock('@expo/vector-icons', () => {
+  const { View } = require('react-native')
+  return {
+    FontAwesome: View,
+    FontAwesome5: View,
+    FontAwesome6: View,
+    MaterialCommunityIcons: View,
+  }
+})
 
 // Mock for routes
 jest.mock('expo-router', () => ({
   useRouter: jest.fn(),
   useSegments: jest.fn(),
-  router: {
-    push: jest.fn(),
-    replace: jest.fn(),
-    back: jest.fn(),
-  },
+  useLocalSearchParams: jest.fn(() => ({ id: '1' }) as { id: string }),
+  router: { push: jest.fn(), replace: jest.fn(), back: jest.fn(), canGoBack: jest.fn(() => true) },
+}))
+
+//Mock expo font
+jest.mock('expo-font', () => ({
+  ...jest.requireActual('expo-font'),
+  isLoaded: jest.fn().mockReturnValue(true),
+  loadAsync: jest.fn(),
 }))
 
 // Mock for hooks module
@@ -33,7 +47,11 @@ jest.mock('@/hooks', () => ({
 const mockUseColorScheme = useColorScheme as jest.Mock
 
 beforeEach(() => {
-  mockUseColorScheme.mockReturnValue({ isDarkColorScheme: false })
+  mockUseColorScheme.mockReturnValue({
+    colorScheme: 'dark',
+    isDarkColorScheme: false,
+    toggleColorScheme: jest.fn(),
+  })
 })
 
 // Mock clerk library
@@ -46,22 +64,43 @@ jest.mock('@clerk/clerk-expo', () => ({
       primaryEmailAddress: {
         emailAddress: 'john.doe@example.com',
       },
+      update: jest.fn(),
     },
   })),
   useAuth: jest.fn(() => ({
     signOut: jest.fn(),
   })),
   useSignUp: jest.fn(() => ({
-    signUp: jest.fn(),
+    signUp: {
+      attemptEmailAddressVerification: jest.fn(
+        () =>
+          new Promise((resolve) => {
+            resolve({ status: 'success', createdSessionId: 'session_id' })
+          }),
+      ),
+    },
     isLoaded: true,
+    setActive: jest.fn(),
   })),
   useSignIn: jest.fn(() => ({
-    signIn: jest.fn(),
+    signIn: {
+      create: jest.fn(
+        () =>
+          new Promise((resolve) => {
+            resolve({ status: 'complete', createdSessionId: 'session_id' })
+          }),
+      ),
+    },
     setActive: jest.fn(),
     isLoaded: true,
   })),
   useOAuth: jest.fn(() => ({
-    startOAuthFlow: jest.fn(),
+    startOAuthFlow: jest.fn(
+      () =>
+        new Promise((resolve) => {
+          resolve({ status: 'success', createdSessionId: 'session_id' })
+        }),
+    ),
   })),
   isClerkAPIResponseError: jest.fn(() => false),
 }))
@@ -70,10 +109,7 @@ jest.mock('@clerk/clerk-expo', () => ({
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
     t: (key: string) => key,
-    i18n: {
-      changeLanguage: jest.fn(),
-      language: 'en',
-    },
+    i18n: { changeLanguage: jest.fn(), language: 'en' },
   }),
   initReactI18next: { init: jest.fn() },
 }))
@@ -143,4 +179,16 @@ jest.mock('expo-sqlite', () => ({
 // Mock expo-asset
 jest.mock('expo-asset', () => ({
   useAssets: jest.fn(),
+  Asset: {
+    fromModule: jest.fn(() => ({
+      downloadAsync: jest.fn(),
+      localUri: 'localUri',
+    })),
+  },
 }))
+
+jest.spyOn(console, 'error').mockImplementation((message) => {
+  if (typeof message === 'string' && message.includes('Warning:')) return null
+
+  return
+})

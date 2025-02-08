@@ -12,7 +12,7 @@ interface EmptyStateProps {
 
 export function EmptyState({ title, subtitle, svgImage: Image }: EmptyStateProps) {
   return (
-    <View className="flex-1 justify-center items-center">
+    <View className="flex-1 justify-center items-center" testID="empty-state">
       {Image && (
         <Image
           width={Dimensions.get('window').width * 0.5}

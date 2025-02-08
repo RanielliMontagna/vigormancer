@@ -44,6 +44,7 @@ export function Sex() {
               className={cn(
                 'border border-stone-400 rounded-xl p-4 flex-row justify-between transition-all',
               )}
+              testID={`sex-${SexEnum[genderEnum].toLowerCase()}`}
               onPress={() => handleSelectSex(genderEnum)}
             >
               <View className="flex flex-row gap-4 h-8 items-center">
@@ -69,7 +70,12 @@ export function Sex() {
         </View>
       </View>
       <View>
-        <Button size="lg" onPress={() => router.push('onboarding/age')} disabled={!selectedSex}>
+        <Button
+          size="lg"
+          onPress={() => router.push('onboarding/age')}
+          disabled={!selectedSex}
+          testID="sex-button"
+        >
           <Text>{t('onboarding.sex.next')}</Text>
         </Button>
       </View>

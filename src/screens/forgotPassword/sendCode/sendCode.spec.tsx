@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
 
 import { useColorScheme } from '@/hooks'
 import { SendCode } from './sendCode'
@@ -15,6 +15,16 @@ describe('ForgotPassword/SendCode', () => {
     mockUseColorScheme.mockReturnValue({ isDarkColorScheme: true })
 
     const { getByTestId } = render(<SendCode />)
+    expect(getByTestId('send-code')).toBeDefined()
+  })
+
+  it('should be able to back to previous step', () => {
+    const { getByTestId } = render(<SendCode />)
+
+    act(() => {
+      fireEvent.press(getByTestId('back-button'))
+    })
+
     expect(getByTestId('send-code')).toBeDefined()
   })
 })

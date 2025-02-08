@@ -21,6 +21,7 @@ const TooltipContent = React.forwardRef<
       >
         <TextClassContext.Provider value="text-sm native:text-base text-popover-foreground">
           <TooltipPrimitive.Content
+            testID="tooltip-content"
             ref={ref}
             sideOffset={sideOffset}
             className={cn(

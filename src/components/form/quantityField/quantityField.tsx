@@ -69,6 +69,7 @@ export const QuantityField: FC<QuantityFieldProps> = ({
             <FormControl>
               <View className="flex flex-row items-center">
                 <TouchableOpacity
+                  testID="decrement-button"
                   className="w-12 h-12 justify-center items-center pr-[2px] border-l border-border rounded-l-xl bg-card"
                   onPressIn={() => startChanging(() => (value > min ? onChange(value - 1) : null))}
                   onPressOut={stopChanging}
@@ -76,6 +77,7 @@ export const QuantityField: FC<QuantityFieldProps> = ({
                   <FontAwesome6 name="minus" color={isDarkColorScheme ? 'white' : 'black'} />
                 </TouchableOpacity>
                 <Input
+                  testID="quantity-field"
                   defaultValue={defaultValue}
                   id={name}
                   placeholder={placeholder}
@@ -92,6 +94,7 @@ export const QuantityField: FC<QuantityFieldProps> = ({
                   {...rest}
                 />
                 <TouchableOpacity
+                  testID="increment-button"
                   className="w-12 h-12 justify-center items-center pl-[2px] border-r border-border rounded-r-xl bg-card"
                   onPressIn={() => startChanging(() => (value < max ? onChange(value + 1) : null))}
                   onPressOut={stopChanging}

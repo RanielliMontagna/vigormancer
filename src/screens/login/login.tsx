@@ -27,12 +27,14 @@ export function Login() {
         </View>
         <View className="gap-4">
           <TextField
+            testID="email"
             control={methods.control}
             name="email"
             placeholder={t('login.emailPlaceholder')}
             size="lg"
           />
           <TextField
+            testID="password"
             control={methods.control}
             name="password"
             placeholder={t('login.passwordPlaceholder')}
@@ -41,6 +43,7 @@ export function Login() {
             size="lg"
             endAdornment={
               <TouchableOpacity
+                testID="show-password"
                 onPress={() => methods.setValue('showPassword', !methods.watch('showPassword'))}
               >
                 {methods.watch('showPassword') ? (
@@ -52,13 +55,18 @@ export function Login() {
             }
           />
           <View className="flex items-end">
-            <TouchableOpacity onPress={handleGoToForgotPassword}>
+            <TouchableOpacity onPress={handleGoToForgotPassword} testID="go-to-forgot-password">
               <Text className="text-sm text-muted-foreground">{t('login.forgotPassword')}</Text>
             </TouchableOpacity>
           </View>
         </View>
         <View className="gap-2">
-          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(onSignInPress)}>
+          <Button
+            size="lg"
+            className="mt-4"
+            onPress={methods.handleSubmit(onSignInPress)}
+            testID="submit"
+          >
             <Text>{t('login.submit')}</Text>
           </Button>
           <View className="flex flex-row items-center gap-2">
@@ -79,16 +87,15 @@ export function Login() {
               />
             }
             onPress={handleGoogleLogin}
+            testID="google-login"
           >
             <Text>{t('login.googleLogin')}</Text>
           </Button>
         </View>
         <View className="pb-8 justify-center items-center flex flex-row gap-1">
           <Text>{t('login.dontHaveAccount')}</Text>
-          <TouchableOpacity>
-            <Text bold onPress={handleGoToSignup}>
-              {t('login.signup')}
-            </Text>
+          <TouchableOpacity testID="go-to-signup" onPress={handleGoToSignup}>
+            <Text bold>{t('login.signup')}</Text>
           </TouchableOpacity>
         </View>
       </View>

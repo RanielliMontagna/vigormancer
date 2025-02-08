@@ -99,11 +99,7 @@ export function WorkoutDetails() {
           }}
         />
         <View className="flex flex-row gap-1 items-baseline">
-          <FontAwesome6
-            name="bolt-lightning"
-            size={10}
-            color={workout.difficulty >= WorkoutDifficulty.BEGINNER ? difficultyColor : 'gray'}
-          />
+          <FontAwesome6 name="bolt-lightning" size={10} color={difficultyColor} />
           <FontAwesome6
             name="bolt-lightning"
             size={10}

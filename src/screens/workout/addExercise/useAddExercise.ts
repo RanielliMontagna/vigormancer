@@ -1,18 +1,18 @@
-import { useTranslation } from 'react-i18next'
+import { useMemo } from 'react'
 import { useForm } from 'react-hook-form'
+import { router, useLocalSearchParams } from 'expo-router'
+import { useTranslation } from 'react-i18next'
+import Toast from 'react-native-toast-message'
 
 import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useQuery } from '@tanstack/react-query'
 
 import { useAppStore } from '@/store'
-import { useQuery } from '@tanstack/react-query'
-import { fetchExercises } from '@/db/controllers/exercises/fetch-exercises'
-import { useMemo } from 'react'
-import { ExerciseWithCategory } from '@/db/repositories/exercises'
-import { router, useLocalSearchParams } from 'expo-router'
-import { createWorkoutExercise } from '@/db/controllers/workoutExercises/create-workout-exercise'
-import Toast from 'react-native-toast-message'
+import { createWorkoutExercise } from '@/db'
 import { queryClient } from '@/libs/react-query'
+import { ExerciseWithCategory } from '@/db/repositories/exercises'
+import { fetchExercises } from '@/db/controllers/exercises/fetch-exercises'
 
 export function useAddExercise() {
   const { t } = useTranslation()

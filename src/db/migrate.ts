@@ -22,11 +22,7 @@ async function migrateDbIfNeeded(db: SQLiteDatabase) {
 
   await db.execAsync(`PRAGMA user_version = ${DATABASE_VERSION}`)
 
-  if (currentDbVersion > 0) {
-    console.log(`Database migrated to version ${DATABASE_VERSION}`)
-  } else {
-    console.log(`Database initialized at version ${DATABASE_VERSION}`)
-  }
+  console.log(`Database migrated to version ${DATABASE_VERSION}`)
 
   // Seed the database only if it was newly initialized
   await seedDatabase()

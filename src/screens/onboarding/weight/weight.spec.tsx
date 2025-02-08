@@ -1,4 +1,6 @@
-import { render } from '@testing-library/react-native'
+import { act } from 'react'
+import { router } from 'expo-router'
+import { fireEvent, render } from '@testing-library/react-native'
 
 import { Weight } from './weight'
 import { useColorScheme } from '@/hooks'
@@ -25,5 +27,22 @@ describe('Weight', () => {
       </OnboardingWrapperLayout>,
     )
     expect(getByTestId('weight')).toBeDefined()
+  })
+
+  it('should be able to navigate to the next screen', () => {
+    jest.spyOn(router, 'back')
+
+    const { getByTestId } = render(
+      <OnboardingWrapperLayout>
+        <Weight />
+      </OnboardingWrapperLayout>,
+    )
+
+    act(() => {
+      const button = getByTestId('weight-button')
+      fireEvent.press(button)
+    })
+
+    expect(router.push).toHaveBeenCalledWith('onboarding/height')
   })
 })

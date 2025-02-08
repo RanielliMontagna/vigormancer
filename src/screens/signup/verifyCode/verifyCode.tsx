@@ -23,6 +23,7 @@ export function VerifyCode() {
         </View>
         <View className="gap-4">
           <TextField
+            testID="verify-code-code"
             control={methods.control}
             name="code"
             placeholder={t('signup.codePlaceholder')}
@@ -32,7 +33,12 @@ export function VerifyCode() {
           />
         </View>
         <View className="gap-2">
-          <Button size="lg" className="mt-4" onPress={methods.handleSubmit(onVerifyPress)}>
+          <Button
+            size="lg"
+            className="mt-4"
+            onPress={methods.handleSubmit(onVerifyPress)}
+            testID="verify-code-submit"
+          >
             <Text>{t('signup.submit')}</Text>
           </Button>
         </View>

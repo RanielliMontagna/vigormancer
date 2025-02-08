@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
+import { router } from 'expo-router'
 
 import { Ready } from './ready'
 import { useColorScheme } from '@/hooks'
@@ -25,5 +26,21 @@ describe('Ready', () => {
       </OnboardingWrapperLayout>,
     )
     expect(getByTestId('ready')).toBeDefined()
+  })
+
+  it('should to finish onboarding', () => {
+    jest.spyOn(router, 'replace')
+
+    const { getByTestId } = render(
+      <OnboardingWrapperLayout>
+        <Ready />
+      </OnboardingWrapperLayout>,
+    )
+
+    act(() => {
+      fireEvent.press(getByTestId('ready-button'))
+    })
+
+    expect(router.replace).toHaveBeenCalled()
   })
 })

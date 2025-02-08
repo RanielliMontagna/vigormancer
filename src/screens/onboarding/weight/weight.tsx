@@ -38,6 +38,7 @@ export function Weight() {
           size="lg"
           onPress={() => router.push('onboarding/height')}
           disabled={!selectedWeight}
+          testID="weight-button"
         >
           <Text>{t('onboarding.weight.next')}</Text>
         </Button>

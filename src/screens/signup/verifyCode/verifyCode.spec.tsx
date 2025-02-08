@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
 
 import { VerifyCode } from './verifyCode'
 import { useColorScheme } from '@/hooks'
@@ -15,6 +15,22 @@ describe('VerifyCode', () => {
     mockUseColorScheme.mockReturnValue({ isDarkColorScheme: true })
 
     const { getByTestId } = render(<VerifyCode />)
+    expect(getByTestId('verify-code')).toBeDefined()
+  })
+
+  it('should be able to submit the form', () => {
+    const { getByTestId } = render(<VerifyCode />)
+
+    act(() => {
+      const codeInput = getByTestId('verify-code-code')
+      fireEvent.changeText(codeInput, '123456')
+    })
+
+    act(() => {
+      const submitButton = getByTestId('verify-code-submit')
+      fireEvent.press(submitButton)
+    })
+
     expect(getByTestId('verify-code')).toBeDefined()
   })
 })

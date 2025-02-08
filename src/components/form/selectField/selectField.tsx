@@ -76,6 +76,7 @@ export const SelectField: FC<SelectFieldProps> = ({
           )}
           <FormControl>
             <Select
+              testID="select"
               defaultValue={defaultValue}
               value={value}
               onValueChange={(option) => onChange(option)}

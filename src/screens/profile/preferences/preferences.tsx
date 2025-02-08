@@ -17,12 +17,13 @@ export function Preferences() {
     usePreferences()
 
   return (
-    <View>
+    <View testID="preferences">
       <Text className="text-sm text-muted-foreground">{t('profile.preferences.title')}</Text>
       <View className="bg-card rounded-2xl p-4 mt-2 elevation-sm">
         <TouchableOpacity
           className="flex-row justify-between item-center p-1"
           onPress={handleGoToLanguageScreen}
+          testID="language"
         >
           <View className="flex-row items-center gap-2">
             <FontAwesome6
@@ -53,7 +54,11 @@ export function Preferences() {
           </View>
           <View className="flex-row items-center gap-2">
             <Text className="text-sm text-muted-foreground ">{t('profile.preferences.dark')}</Text>
-            <Switch checked={colorScheme === 'dark'} onCheckedChange={() => toggleColorScheme()} />
+            <Switch
+              checked={colorScheme === 'dark'}
+              onCheckedChange={() => toggleColorScheme()}
+              testID="theme"
+            />
           </View>
         </TouchableOpacity>
         <View
@@ -62,6 +67,7 @@ export function Preferences() {
         <TouchableOpacity
           className="flex-row justify-between item-center p-1"
           onPress={handleLogout}
+          testID="logout"
         >
           <View className="flex-row items-center gap-2">
             <FontAwesome6 size={18} solid name="sign-out-alt" color={colors.red[500]} />
