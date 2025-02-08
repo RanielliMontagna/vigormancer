@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@testing-library/react-native'
 
 import { UpdateInformations } from './updateInformations'
 import { useColorScheme } from '@/hooks'
@@ -15,6 +15,21 @@ describe('UpdateInformations', () => {
     mockUseColorScheme.mockReturnValue({ isDarkColorScheme: true })
 
     const { getByTestId } = render(<UpdateInformations />)
+    expect(getByTestId('update-informations')).toBeDefined()
+  })
+
+  it('should be able to submit the form', () => {
+    const { getByTestId } = render(<UpdateInformations />)
+
+    act(() => {
+      fireEvent.changeText(getByTestId('username'), 'username')
+      fireEvent.changeText(getByTestId('fullName'), 'fullName')
+      fireEvent.changeText(getByTestId('weight'), '70')
+      fireEvent.changeText(getByTestId('height'), '170')
+
+      fireEvent.press(getByTestId('submit-button'))
+    })
+
     expect(getByTestId('update-informations')).toBeDefined()
   })
 })

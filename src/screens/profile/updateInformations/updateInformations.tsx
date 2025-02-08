@@ -21,6 +21,7 @@ export function UpdateInformations() {
         </View>
         <View className="gap-4 flex-1">
           <TextField
+            testID="username"
             control={methods.control}
             name="username"
             label={t('updateInformations.username')}
@@ -28,12 +29,14 @@ export function UpdateInformations() {
             required
           />
           <TextField
+            testID="fullName"
             control={methods.control}
             name="fullName"
             label={t('updateInformations.fullName')}
             placeholder={t('updateInformations.fullNamePlaceholder')}
           />
           <TextField
+            testID="email"
             control={methods.control}
             name="email"
             label={t('updateInformations.email')}
@@ -43,6 +46,7 @@ export function UpdateInformations() {
             helperText={t('updateInformations.emailHelperText')}
           />
           <TextField
+            testID="weight"
             control={methods.control}
             name="weight"
             label={t('updateInformations.weight')}
@@ -51,6 +55,7 @@ export function UpdateInformations() {
             endAdornment={<Text className="text-sm">kg</Text>}
           />
           <TextField
+            testID="height"
             control={methods.control}
             name="height"
             label={t('updateInformations.height')}
@@ -60,7 +65,7 @@ export function UpdateInformations() {
           />
         </View>
         <View className="gap-2">
-          <Button onPress={handleSubmit} size="lg" className="gap-2">
+          <Button onPress={handleSubmit} size="lg" className="gap-2" testID="submit-button">
             <FontAwesome6
               name="circle-check"
               solid

@@ -4,7 +4,7 @@ import NetInfo from '@react-native-community/netinfo'
 import { useEffect } from 'react'
 
 export function useNetInfo() {
-  const { setIsConnected } = useAppStore()
+  const { isConnected, setIsConnected } = useAppStore()
 
   useEffect(() => {
     const unsubscribe = NetInfo.addEventListener((state) => {
@@ -16,4 +16,6 @@ export function useNetInfo() {
       unsubscribe()
     }
   }, [setIsConnected])
+
+  return { isConnected }
 }

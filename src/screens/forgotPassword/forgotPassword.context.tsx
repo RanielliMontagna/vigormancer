@@ -23,7 +23,6 @@ export function ForgotPasswordProvider({ children }) {
   const [step, setStep] = useState<StepForgotPassword>(StepForgotPassword.SEND_CODE)
 
   function handleBack() {
-    if (!router.canGoBack()) return router.push('/')
     router.back()
   }
 

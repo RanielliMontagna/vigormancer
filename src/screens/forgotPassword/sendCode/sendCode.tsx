@@ -22,6 +22,7 @@ export function SendCode() {
         </View>
         <View className="gap-4">
           <TextField
+            testID="send-code-email"
             control={methods.control}
             name="email"
             placeholder="Enter your email"
@@ -40,7 +41,7 @@ export function SendCode() {
           <View className="pb-8 justify-center items-center flex flex-row gap-1">
             <Text>{t('forgotPassword.sendCode.rememberPassword')}</Text>
             <TouchableOpacity>
-              <Text bold onPress={handleBack}>
+              <Text bold onPress={handleBack} testID="back-button">
                 {t('forgotPassword.sendCode.login')}
               </Text>
             </TouchableOpacity>

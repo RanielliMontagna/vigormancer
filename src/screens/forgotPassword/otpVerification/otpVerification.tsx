@@ -25,6 +25,7 @@ export function OtpVerification() {
         </View>
         <View className="gap-4">
           <TextField
+            testID="otp-verification-code"
             control={methods.control}
             name="otp"
             placeholder={t('forgotPassword.otpVerification.codePlaceholder')}
@@ -47,7 +48,7 @@ export function OtpVerification() {
           <View className="pb-8 justify-center items-center flex flex-row gap-1">
             <Text>{t('forgotPassword.otpVerification.didntReceivedCode')}</Text>
             <TouchableOpacity>
-              <Text bold onPress={handleResendCode}>
+              <Text bold onPress={handleResendCode} testID="resend-code">
                 {t('forgotPassword.otpVerification.resendCode')}
               </Text>
             </TouchableOpacity>

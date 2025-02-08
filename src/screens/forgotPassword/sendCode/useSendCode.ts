@@ -27,7 +27,6 @@ export function useSendCode() {
   })
 
   function handleBack() {
-    if (!router.canGoBack()) return router.push('/')
     router.back()
   }
 

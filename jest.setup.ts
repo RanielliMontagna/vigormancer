@@ -47,7 +47,11 @@ jest.mock('@/hooks', () => ({
 const mockUseColorScheme = useColorScheme as jest.Mock
 
 beforeEach(() => {
-  mockUseColorScheme.mockReturnValue({ isDarkColorScheme: false })
+  mockUseColorScheme.mockReturnValue({
+    colorScheme: 'dark',
+    isDarkColorScheme: false,
+    toggleColorScheme: jest.fn(),
+  })
 })
 
 // Mock clerk library
@@ -60,6 +64,7 @@ jest.mock('@clerk/clerk-expo', () => ({
       primaryEmailAddress: {
         emailAddress: 'john.doe@example.com',
       },
+      update: jest.fn(),
     },
   })),
   useAuth: jest.fn(() => ({

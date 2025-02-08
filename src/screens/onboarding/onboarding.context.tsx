@@ -33,7 +33,6 @@ export function OnboardingProvider({ children }) {
   })
 
   function prevStep() {
-    if (!router.canGoBack()) return
     router.back()
   }
 
