@@ -1,6 +1,19 @@
 export const createTablesSQL = `
     PRAGMA journal_mode = 'wal';
-      
+
+    -- Create user info table
+    CREATE TABLE IF NOT EXISTS user_info (
+        id TEXT PRIMARY KEY,
+        sex TEXT NOT NULL, -- 1: Male, 2: Female
+        age INTEGER NOT NULL,
+        weight FLOAT NOT NULL, -- kg
+        height INTEGER NOT NULL, -- cm
+        goal INTEGER NOT NULL, -- 1: Lose Weight, 2: Build Muscle, 3: Improve Stamina, 4: Improve Health, 5: Stay Active
+        onboarding BOOLEAN DEFAULT 0,
+        createdAt TIMESTAMP DEFAULT (DATETIME('now')),
+        updatedAt TIMESTAMP DEFAULT (DATETIME('now'))
+    );
+
     -- Create workout table
     CREATE TABLE IF NOT EXISTS workouts (
         id TEXT PRIMARY KEY,
