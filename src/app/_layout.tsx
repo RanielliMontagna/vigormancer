@@ -24,6 +24,7 @@ import { useColorScheme, useNetInfo } from '@/hooks'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/libs/react-query'
 import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated'
+import { hasCompleteOnboarding } from '@/db/controllers/user/has-completed-onboarding'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -50,14 +51,12 @@ function App() {
   useNetInfo()
 
   const { isLoading, isConnected } = useAppStore()
-  const { isSignedIn, isLoaded } = useAuth()
+  const { isSignedIn, isLoaded, userId } = useAuth()
   const { isDarkColorScheme } = useColorScheme()
 
   const [isI18nInitialized, setIsI18nInitialized] = useState(false)
-
-  // TODO: Implement onboarding logic
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [onboarding, _] = useState(false)
+  const [isOnboardingInfoFetched, setIsOnboardingInfoFetched] = useState(false)
+  const [onboarding, setOnboarding] = useState(false)
 
   const [fontsLoaded] = useFonts({
     'Lexend-Thin': require('@/assets/fonts/Lexend-Thin.ttf'),
@@ -69,10 +68,10 @@ function App() {
   })
 
   useEffect(() => {
-    if (fontsLoaded && isI18nInitialized) {
+    if (fontsLoaded && isI18nInitialized && isOnboardingInfoFetched) {
       SplashScreen.hideAsync()
     }
-  }, [fontsLoaded, isI18nInitialized])
+  }, [fontsLoaded, isI18nInitialized, isOnboardingInfoFetched])
 
   useEffect(() => {
     const initializeI18n = async () => {
@@ -87,7 +86,20 @@ function App() {
     if (!isLoaded) return
 
     if (isSignedIn) {
-      if (onboarding) {
+      hasCompleteOnboarding(userId).then((completed) => {
+        setOnboarding(Boolean(completed))
+        setIsOnboardingInfoFetched(true)
+      })
+    } else {
+      setIsOnboardingInfoFetched(true)
+    }
+  }, [isLoaded, isSignedIn, userId])
+
+  useEffect(() => {
+    if (!isLoaded) return
+
+    if (isSignedIn) {
+      if (!onboarding) {
         router.replace('(private)/onboarding')
       } else {
         router.replace('(private)')

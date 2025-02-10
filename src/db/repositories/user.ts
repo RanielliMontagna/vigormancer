@@ -38,6 +38,7 @@ export interface UserHeight {
 }
 
 export type CreateUserParams = {
+  clerkId: string
   username: string
   email: string
 }

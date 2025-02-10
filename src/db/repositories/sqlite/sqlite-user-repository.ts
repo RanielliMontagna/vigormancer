@@ -10,7 +10,7 @@ export class SqliteUserRepository implements UserRepository {
 
     await db.runAsync(
       'INSERT INTO users (id, username, email, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?)',
-      [id, user.username, user.email, new Date().toISOString(), new Date().toISOString()],
+      [user.clerkId, user.username, user.email, new Date().toISOString(), new Date().toISOString()],
     )
 
     return { id }

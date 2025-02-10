@@ -4,6 +4,8 @@ export const createTablesSQL = `
     -- Users table
     CREATE TABLE IF NOT EXISTS users (
         id TEXT PRIMARY KEY,
+        username TEXT NOT NULL,
+        email TEXT NOT NULL,
         goal INTEGER,
         birthdate DATE,
         onboarding BOOLEAN DEFAULT 0,

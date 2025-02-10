@@ -8,6 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
 import { useAppStore } from '@/store'
 import Toast from 'react-native-toast-message'
+import { createUser } from '@/db/controllers/user/create-user'
 
 export function useVerifyCode() {
   const { isLoaded, signUp, setActive } = useSignUp()
@@ -41,13 +42,20 @@ export function useVerifyCode() {
       if (signUpAttempt.status === 'complete') {
         await setActive({ session: signUpAttempt.createdSessionId })
 
+        // Create a user in the database
+        await createUser({
+          username: signUpAttempt.username,
+          email: signUpAttempt.emailAddress,
+          clerkId: signUpAttempt.createdUserId,
+        })
+
         Toast.show({
           type: 'success',
           text1: t('signup.verifySuccess'),
           text2: t('signup.verifySuccessMessage'),
         })
 
-        router.replace('/')
+        router.replace('(private)/onboarding')
       } else {
         // If the status is not complete, check why. User may need to
         // complete further steps.
