@@ -10,7 +10,7 @@ import { PortalHost } from '@rn-primitives/portal'
 import { router, Slot, SplashScreen } from 'expo-router'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
-import { ClerkProvider, ClerkLoaded, useAuth } from '@clerk/clerk-expo'
+import { ClerkProvider, ClerkLoaded, useAuth, useUser } from '@clerk/clerk-expo'
 import * as Sentry from '@sentry/react-native'
 
 import '@/styles/global.css'
@@ -25,6 +25,8 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/libs/react-query'
 import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated'
 import { hasCompleteOnboarding } from '@/db/controllers/user/has-completed-onboarding'
+import { getUserById } from '@/db/controllers/user/get-user-by-id'
+import { createUser } from '@/db/controllers/user/create-user'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -51,7 +53,8 @@ function App() {
   useNetInfo()
 
   const { isLoading, isConnected } = useAppStore()
-  const { isSignedIn, isLoaded, userId } = useAuth()
+  const { isSignedIn, isLoaded } = useAuth()
+  const { user } = useUser()
   const { isDarkColorScheme } = useColorScheme()
 
   const [isI18nInitialized, setIsI18nInitialized] = useState(false)
@@ -83,17 +86,30 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (!isLoaded) return
+    const fetchOnboardingInfo = async () => {
+      if (!isLoaded) return
 
-    if (isSignedIn) {
-      hasCompleteOnboarding(userId).then((completed) => {
+      const userInfo = await getUserById(user.id)
+
+      if (!userInfo) {
+        await createUser({
+          clerkId: user.id,
+          email: user.primaryEmailAddress.emailAddress,
+          username: user.username,
+        })
+      }
+
+      if (isSignedIn) {
+        const completed = await hasCompleteOnboarding(user.id)
         setOnboarding(Boolean(completed))
         setIsOnboardingInfoFetched(true)
-      })
-    } else {
-      setIsOnboardingInfoFetched(true)
+      } else {
+        setIsOnboardingInfoFetched(true)
+      }
     }
-  }, [isLoaded, isSignedIn, userId])
+
+    fetchOnboardingInfo()
+  }, [isLoaded, isSignedIn])
 
   useEffect(() => {
     if (!isLoaded) return

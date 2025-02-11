@@ -28,7 +28,7 @@ interface OnboardingContextProps {
 export const OnboardingContext = createContext({} as OnboardingContextProps)
 
 export function OnboardingProvider({ children }) {
-  const { userId } = useAuth()
+  const { userId, signOut } = useAuth()
   const { setIsLoading, handleErrors } = useAppStore()
 
   const methods = useForm<OnboardingSchema>({
@@ -57,6 +57,10 @@ export function OnboardingProvider({ children }) {
       router.replace('onboarding/ready')
     } catch (error) {
       handleErrors(error)
+
+      router.dismissAll()
+      router.replace('(public)')
+      signOut()
     } finally {
       setIsLoading(false)
     }

@@ -58,4 +58,6 @@ export interface UserRepository {
   completeOnboarding(data: OnboardingDataParams): Promise<void>
   updateHeight(userId: string, height: number): Promise<void>
   updateWeight(userId: string, weight: number): Promise<void>
+  getUserById(userId: string): Promise<User>
+  getUserByEmail(email: string): Promise<User>
 }

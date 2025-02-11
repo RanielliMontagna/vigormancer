@@ -71,7 +71,6 @@ export function useLogin() {
         // and redirect the user
         if (signInAttempt.status === 'complete') {
           await setActive({ session: signInAttempt.createdSessionId })
-          router.replace('/')
         } else {
           handleErrors(signInAttempt)
         }

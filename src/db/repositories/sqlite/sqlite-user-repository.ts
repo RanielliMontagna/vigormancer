@@ -48,6 +48,12 @@ export class SqliteUserRepository implements UserRepository {
     userId,
     weight,
   }: OnboardingDataParams): Promise<void> {
+    const user = await db.getFirstAsync<User>('SELECT * FROM users WHERE id = ?', [userId])
+
+    if (!user) {
+      throw new Error('User not found')
+    }
+
     await db.runAsync(
       `UPDATE users
        SET sex = ?, birthdate = ?, goal = ?, onboarding = 1 
@@ -66,5 +72,17 @@ export class SqliteUserRepository implements UserRepository {
       height,
       new Date().toISOString(),
     ])
+  }
+
+  async getUserById(userId: string): Promise<User> {
+    const user = await db.getFirstAsync<User>('SELECT * FROM users WHERE id = ?', [userId])
+
+    return user
+  }
+
+  async getUserByEmail(email: string): Promise<User> {
+    const user = await db.getFirstAsync<User>('SELECT * FROM users WHERE email = ?', [email])
+
+    return user
   }
 }
