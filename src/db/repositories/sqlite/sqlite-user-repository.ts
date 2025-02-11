@@ -17,9 +17,27 @@ export class SqliteUserRepository implements UserRepository {
   }
 
   async hasCompletedOnboarding(userId: string): Promise<boolean> {
-    const user = db.getFirstAsync<User>('SELECT * FROM users WHERE id = ?', [userId])
+    const user = await db.getFirstAsync<User>('SELECT * FROM users WHERE id = ?', [userId])
 
-    return user.then((u) => u.onboarding)
+    if (!user) return false
+
+    return Boolean(user.onboarding)
+  }
+
+  async updateHeight(userId: string, height: number): Promise<void> {
+    await db.runAsync('INSERT INTO user_height (userId, height, recordedAt) VALUES (?, ?, ?)', [
+      userId,
+      height,
+      new Date().toISOString(),
+    ])
+  }
+
+  async updateWeight(userId: string, weight: number): Promise<void> {
+    await db.runAsync('INSERT INTO user_weight (userId, weight, recordedAt) VALUES (?, ?, ?)', [
+      userId,
+      weight,
+      new Date().toISOString(),
+    ])
   }
 
   async completeOnboarding({
@@ -46,22 +64,6 @@ export class SqliteUserRepository implements UserRepository {
     await db.runAsync('INSERT INTO user_height (userId, height, recordedAt) VALUES (?, ?, ?)', [
       userId,
       height,
-      new Date().toISOString(),
-    ])
-  }
-
-  async updateHeight(userId: string, height: number): Promise<void> {
-    await db.runAsync('INSERT INTO user_height (userId, height, recordedAt) VALUES (?, ?, ?)', [
-      userId,
-      height,
-      new Date().toISOString(),
-    ])
-  }
-
-  async updateWeight(userId: string, weight: number): Promise<void> {
-    await db.runAsync('INSERT INTO user_weight (userId, weight, recordedAt) VALUES (?, ?, ?)', [
-      userId,
-      weight,
       new Date().toISOString(),
     ])
   }

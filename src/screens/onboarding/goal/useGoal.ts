@@ -1,7 +1,8 @@
 import { useFormContext } from 'react-hook-form'
 
-import { GoalEnum, OnboardingSchema } from '../onboarding.schema'
+import { OnboardingSchema } from '../onboarding.schema'
 import { useOnboardingContext } from '../onboarding.context'
+import { GoalEnum } from '@/db/repositories/user'
 
 export function useGoal() {
   const { prevStep, handleSubmitOnboarding } = useOnboardingContext()

@@ -6,6 +6,7 @@ export const createTablesSQL = `
         id TEXT PRIMARY KEY,
         username TEXT NOT NULL,
         email TEXT NOT NULL,
+        sex INTEGER, 
         goal INTEGER,
         birthdate DATE,
         onboarding BOOLEAN DEFAULT 0,
