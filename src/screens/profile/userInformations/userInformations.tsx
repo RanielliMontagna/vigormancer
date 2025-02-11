@@ -4,10 +4,16 @@ import { useUser } from '@clerk/clerk-expo'
 
 import { Avatar, AvatarFallback, AvatarImage, H3, P, Text } from '@/components'
 import { getInitials } from '@/utils'
+import { useQuery } from '@tanstack/react-query'
+import { getWeight } from '@/db/controllers/user/get-weight'
+import { getHeight } from '@/db/controllers/user/get-height'
 
 export function UserInformations() {
   const { t } = useTranslation()
   const { user } = useUser()
+
+  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getWeight(user.id) })
+  const heightQuery = useQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
 
   return (
     <View className="flex-col items-center gap-2">
@@ -26,7 +32,7 @@ export function UserInformations() {
       <View className="flex-row gap-8 bg-card p-2 rounded-2xl w-full justify-center items-center elevation-sm">
         <View>
           <View className="flex-row items-center gap-1">
-            <H3>62</H3>
+            <H3>{weightQuery.data}</H3>
             <Text>kg</Text>
           </View>
           <View className="items-center">
@@ -36,7 +42,7 @@ export function UserInformations() {
         <View className="w-[1px] h-10 bg-muted-foreground"></View>
         <View>
           <View className="flex-row items-center gap-1">
-            <H3>173</H3>
+            <H3>{heightQuery.data}</H3>
             <Text>cm</Text>
           </View>
           <View className="items-center">

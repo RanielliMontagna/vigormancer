@@ -60,4 +60,6 @@ export interface UserRepository {
   updateWeight(userId: string, weight: number): Promise<void>
   getUserById(userId: string): Promise<User>
   getUserByEmail(email: string): Promise<User>
+  getUserWeight(userId: string): Promise<number>
+  getUserHeight(userId: string): Promise<number>
 }

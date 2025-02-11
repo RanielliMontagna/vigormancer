@@ -1,6 +1,13 @@
 import { v4 as uuidv4 } from 'uuid'
 
-import { CreateUserParams, OnboardingDataParams, User, UserRepository } from '../user'
+import {
+  CreateUserParams,
+  OnboardingDataParams,
+  User,
+  UserHeight,
+  UserRepository,
+  UserWeight,
+} from '../user'
 
 import { db } from '@/db'
 
@@ -84,5 +91,23 @@ export class SqliteUserRepository implements UserRepository {
     const user = await db.getFirstAsync<User>('SELECT * FROM users WHERE email = ?', [email])
 
     return user
+  }
+
+  async getUserWeight(userId: string) {
+    const lastWeight = await db.getFirstAsync<UserWeight>(
+      'SELECT * FROM user_weight WHERE userId = ? ORDER BY recordedAt DESC LIMIT 1',
+      [userId],
+    )
+
+    return lastWeight?.weight
+  }
+
+  async getUserHeight(userId: string) {
+    const lastHeight = await db.getFirstAsync<UserHeight>(
+      'SELECT * FROM user_height WHERE userId = ? ORDER BY recordedAt DESC LIMIT 1',
+      [userId],
+    )
+
+    return lastHeight?.height
   }
 }

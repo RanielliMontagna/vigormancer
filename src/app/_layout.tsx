@@ -102,14 +102,15 @@ function App() {
       if (isSignedIn) {
         const completed = await hasCompleteOnboarding(user.id)
         setOnboarding(Boolean(completed))
-        setIsOnboardingInfoFetched(true)
+
+        setTimeout(() => setIsOnboardingInfoFetched(true), 0)
       } else {
-        setIsOnboardingInfoFetched(true)
+        setTimeout(() => setIsOnboardingInfoFetched(true), 0)
       }
     }
 
     fetchOnboardingInfo()
-  }, [isLoaded, isSignedIn])
+  }, [isLoaded, isSignedIn, user.id, user.primaryEmailAddress.emailAddress, user.username])
 
   useEffect(() => {
     if (!isLoaded) return
