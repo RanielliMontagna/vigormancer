@@ -10,14 +10,14 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { useColorScheme } from '@/hooks'
 import { Card, CardContent, H2, P, Text } from '@/components'
 
-import { getWeight } from '@/db/controllers/user/get-weight'
+import { getLastestWeight } from '@/db/controllers/user/get-weight'
 
 export function DashboardCards() {
   const { isDarkColorScheme } = useColorScheme()
   const { user } = useUser()
   const { t } = useTranslation()
 
-  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getWeight(user.id) })
+  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLastestWeight(user.id) })
 
   return (
     <View className="gap-4">

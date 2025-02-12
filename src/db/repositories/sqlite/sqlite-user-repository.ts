@@ -5,6 +5,7 @@ import {
   OnboardingDataParams,
   User,
   UserHeight,
+  UserHistoryWeightReturn,
   UserRepository,
   UserWeight,
   UserWeightReturn,
@@ -103,13 +104,26 @@ export class SqliteUserRepository implements UserRepository {
     return user
   }
 
-  async getUserWeight(userId: string): Promise<UserWeightReturn> {
+  async getLatestUserWeight(userId: string): Promise<UserWeightReturn> {
     const { current, heaviest, lightest } = await db.getFirstAsync<UserWeight>(
       'SELECT * FROM user_weight WHERE userId = ? ORDER BY recordedAt DESC LIMIT 1',
       [userId],
     )
 
     return { current, heaviest, lightest }
+  }
+
+  async getHistoryUserWeight(userId: string): Promise<UserHistoryWeightReturn[]> {
+    const weights = await db.getAllAsync<UserWeight>(
+      `SELECT current, recordedAt
+       FROM user_weight
+       WHERE userId = ?
+       ORDER BY recordedAt DESC
+       LIMIT 7`,
+      [userId],
+    )
+
+    return weights.map(({ current, recordedAt }) => ({ weight: current, recordedAt }))
   }
 
   async getUserHeight(userId: string) {

@@ -5,14 +5,14 @@ import { useUser } from '@clerk/clerk-expo'
 import { Avatar, AvatarFallback, AvatarImage, H3, P, Text } from '@/components'
 import { getInitials } from '@/utils'
 import { useQuery } from '@tanstack/react-query'
-import { getWeight } from '@/db/controllers/user/get-weight'
+import { getLastestWeight } from '@/db/controllers/user/get-weight'
 import { getHeight } from '@/db/controllers/user/get-height'
 
 export function UserInformations() {
   const { t } = useTranslation()
   const { user } = useUser()
 
-  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getWeight(user.id) })
+  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLastestWeight(user.id) })
   const heightQuery = useQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
 
   return (
