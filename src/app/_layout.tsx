@@ -24,9 +24,7 @@ import { useColorScheme, useNetInfo } from '@/hooks'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/libs/react-query'
 import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated'
-import { hasCompleteOnboarding } from '@/db/controllers/user/has-completed-onboarding'
-import { getUserById } from '@/db/controllers/user/get-user-by-id'
-import { createUser } from '@/db/controllers/user/create-user'
+import { createUser, getUserById, hasCompleteOnboarding } from '@/db'
 
 SplashScreen.preventAutoHideAsync()
 

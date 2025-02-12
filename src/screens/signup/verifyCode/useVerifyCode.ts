@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { useSignUp } from '@clerk/clerk-expo'
+import Toast from 'react-native-toast-message'
 
 import { router } from 'expo-router'
 import { useForm } from 'react-hook-form'
@@ -7,8 +8,8 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
 import { useAppStore } from '@/store'
-import Toast from 'react-native-toast-message'
-import { createUser } from '@/db/controllers/user/create-user'
+
+import { createUser } from '@/db'
 
 export function useVerifyCode() {
   const { isLoaded, signUp, setActive } = useSignUp()

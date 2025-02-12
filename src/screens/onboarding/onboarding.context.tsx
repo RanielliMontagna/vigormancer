@@ -5,9 +5,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { OnboardingSchema, onboardingSchema } from './onboarding.schema'
 import { router } from 'expo-router'
 import { useAppStore } from '@/store'
-import { completeOnboarding } from '@/db/controllers/user/complete-onboarding'
 import dayjs from 'dayjs'
 import { useAuth } from '@clerk/clerk-expo'
+import { completeOnboarding } from '@/db'
 
 export enum OnboardingSteps {
   WELCOME,

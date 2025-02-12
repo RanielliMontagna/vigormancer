@@ -9,8 +9,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 import { useColorScheme } from '@/hooks'
 import { Card, CardContent, H2, P, Text } from '@/components'
-
-import { getLastestWeight } from '@/db/controllers/user/get-weight'
+import { getLastestWeight } from '@/db'
 
 export function DashboardCards() {
   const { isDarkColorScheme } = useColorScheme()

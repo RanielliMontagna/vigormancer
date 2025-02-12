@@ -6,10 +6,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useProgressionContext } from '../../progression.context'
 import { useQuery } from '@tanstack/react-query'
 import { useUser } from '@clerk/clerk-expo'
-import { getLastestWeight } from '@/db/controllers/user/get-weight'
 import { useAppStore } from '@/store'
-import { updateUserWeight } from '@/db/controllers/user/update-user-weight'
 import { queryClient } from '@/libs/react-query'
+
+import { getLastestWeight, updateUserWeight } from '@/db'
 
 const WeightBottomSheetSchema = z.object({
   weight: z.number(),

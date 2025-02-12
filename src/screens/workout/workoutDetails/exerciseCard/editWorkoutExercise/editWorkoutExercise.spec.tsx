@@ -6,9 +6,6 @@ import { updateWorkoutExercise, getWorkoutExercise } from '@/db'
 import { WorkoutExerciseWithCategory } from '@/db/repositories/workoutExercises'
 import { act } from 'react'
 
-jest.mock('@/db/controllers/workoutExercises/get-workout-exercise')
-jest.mock('@/db/controllers/workoutExercises/update-workout-exercise')
-
 jest.mock('@/db', () => ({
   updateWorkoutExercise: jest.fn(),
   getWorkoutExercise: jest.fn(),

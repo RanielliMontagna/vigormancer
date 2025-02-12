@@ -1,10 +1,10 @@
-import { getHistoryWeight } from '@/db/controllers/user/get-history-weight'
-import { getLastestWeight } from '@/db/controllers/user/get-weight'
-import { useUser } from '@clerk/clerk-expo'
-import { useQuery } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { useMemo } from 'react'
+import { useQuery } from '@tanstack/react-query'
 import { lineDataItem } from 'react-native-gifted-charts'
+import { useUser } from '@clerk/clerk-expo'
+
+import { getHistoryWeight, getLastestWeight } from '@/db'
 
 export function useWeight() {
   const { user } = useUser()

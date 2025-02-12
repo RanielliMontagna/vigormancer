@@ -1,15 +1,9 @@
 import { SQLiteDatabase } from 'expo-sqlite'
 import { createCategory, createExercise, fetchCategories, migrateDbIfNeeded } from '.'
 
-jest.mock('@/db/controllers/categories/create-category', () => ({
+jest.mock('@/db', () => ({
   createCategory: jest.fn(),
-}))
-
-jest.mock('@/db/controllers/categories/fetch-categories', () => ({
   fetchCategories: jest.fn(),
-}))
-
-jest.mock('@/db/controllers/exercises/create-exercise', () => ({
   createExercise: jest.fn(),
 }))
 

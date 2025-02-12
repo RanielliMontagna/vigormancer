@@ -8,8 +8,7 @@ import { createWorkoutExercise, fetchExercises } from '@/db'
 import { useColorScheme } from '@/hooks'
 import { ExerciseType, ExerciseWithCategory } from '@/db/repositories/exercises'
 
-jest.mock('@/db/controllers/exercises/fetch-exercises')
-jest.mock('@/db/controllers/workoutExercises/create-workout-exercise')
+jest.mock('@/db')
 
 const mockUseColorScheme = useColorScheme as jest.Mock
 

@@ -5,8 +5,7 @@ import { useUser } from '@clerk/clerk-expo'
 import { Avatar, AvatarFallback, AvatarImage, H3, P, Text } from '@/components'
 import { getInitials } from '@/utils'
 import { useQuery } from '@tanstack/react-query'
-import { getLastestWeight } from '@/db/controllers/user/get-weight'
-import { getHeight } from '@/db/controllers/user/get-height'
+import { getHeight, getLastestWeight } from '@/db'
 
 export function UserInformations() {
   const { t } = useTranslation()

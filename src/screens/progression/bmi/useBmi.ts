@@ -5,9 +5,8 @@ import colors from 'tailwindcss/colors'
 import { useUser } from '@clerk/clerk-expo'
 import { BmiLevels } from './bmi.types'
 import { useQuery } from '@tanstack/react-query'
-import { getHeight } from '@/db/controllers/user/get-height'
 import { calculateBMI } from '@/utils/calculateBmi/calculateBmi'
-import { getLastestWeight } from '@/db/controllers/user/get-weight'
+import { getHeight, getLastestWeight } from '@/db'
 
 export function useBmi() {
   const { user } = useUser()

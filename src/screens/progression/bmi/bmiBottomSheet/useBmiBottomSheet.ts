@@ -5,13 +5,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useProgressionContext } from '../../progression.context'
 import { useQuery } from '@tanstack/react-query'
-import { getLastestWeight } from '@/db/controllers/user/get-weight'
 import { useUser } from '@clerk/clerk-expo'
-import { getHeight } from '@/db/controllers/user/get-height'
 import { queryClient } from '@/libs/react-query'
 import { useAppStore } from '@/store'
-import { updateUserWeight } from '@/db/controllers/user/update-user-weight'
-import { updateUserHeight } from '@/db/controllers/user/update-user-height'
+import { getHeight, getLastestWeight } from '@/db'
 
 const BmiBottomSheetSchema = z.object({
   height: z.number(),
