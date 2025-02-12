@@ -32,7 +32,7 @@ export function UserInformations() {
       <View className="flex-row gap-8 bg-card p-2 rounded-2xl w-full justify-center items-center elevation-sm">
         <View>
           <View className="flex-row items-center gap-1">
-            <H3>{weightQuery.data}</H3>
+            <H3>{weightQuery.data.current}</H3>
             <Text>kg</Text>
           </View>
           <View className="items-center">

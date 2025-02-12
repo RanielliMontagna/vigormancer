@@ -7,6 +7,7 @@ import {
   UserHeight,
   UserRepository,
   UserWeight,
+  UserWeightReturn,
 } from '../user'
 
 import { db } from '@/db'
@@ -40,11 +41,21 @@ export class SqliteUserRepository implements UserRepository {
   }
 
   async updateWeight(userId: string, weight: number): Promise<void> {
-    await db.runAsync('INSERT INTO user_weight (userId, weight, recordedAt) VALUES (?, ?, ?)', [
-      userId,
-      weight,
-      new Date().toISOString(),
-    ])
+    const lastWeight = await db.getFirstAsync<UserWeight>(
+      'SELECT * FROM user_weight WHERE userId = ? ORDER BY recordedAt DESC LIMIT 1',
+      [userId],
+    )
+
+    await db.runAsync(
+      'INSERT INTO user_weight (userId, current, heaviest, lightest, recordedAt) VALUES (?, ?, ?, ?, ?)',
+      [
+        userId,
+        weight,
+        Math.max(weight, lastWeight?.heaviest || weight),
+        Math.min(weight, lastWeight?.lightest || weight),
+        new Date().toISOString(),
+      ],
+    )
   }
 
   async completeOnboarding({
@@ -68,11 +79,10 @@ export class SqliteUserRepository implements UserRepository {
       [sex, birthdate.toISOString(), goal, userId],
     )
 
-    await db.runAsync('INSERT INTO user_weight (userId, weight, recordedAt) VALUES (?, ?, ?)', [
-      userId,
-      weight,
-      new Date().toISOString(),
-    ])
+    await db.runAsync(
+      'INSERT INTO user_weight (userId, current, heaviest, lightest, recordedAt) VALUES (?, ?, ?, ?, ?)',
+      [userId, weight, weight, weight, new Date().toISOString()],
+    )
 
     await db.runAsync('INSERT INTO user_height (userId, height, recordedAt) VALUES (?, ?, ?)', [
       userId,
@@ -93,13 +103,13 @@ export class SqliteUserRepository implements UserRepository {
     return user
   }
 
-  async getUserWeight(userId: string) {
-    const lastWeight = await db.getFirstAsync<UserWeight>(
+  async getUserWeight(userId: string): Promise<UserWeightReturn> {
+    const { current, heaviest, lightest } = await db.getFirstAsync<UserWeight>(
       'SELECT * FROM user_weight WHERE userId = ? ORDER BY recordedAt DESC LIMIT 1',
       [userId],
     )
 
-    return lastWeight?.weight
+    return { current, heaviest, lightest }
   }
 
   async getUserHeight(userId: string) {

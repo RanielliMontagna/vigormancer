@@ -89,17 +89,17 @@ function App() {
     const fetchOnboardingInfo = async () => {
       if (!isLoaded) return
 
-      const userInfo = await getUserById(user.id)
-
-      if (!userInfo) {
-        await createUser({
-          clerkId: user.id,
-          email: user.primaryEmailAddress.emailAddress,
-          username: user.username,
-        })
-      }
-
       if (isSignedIn) {
+        const userInfo = await getUserById(user.id)
+
+        if (!userInfo) {
+          await createUser({
+            clerkId: user.id,
+            email: user.primaryEmailAddress.emailAddress,
+            username: user.username,
+          })
+        }
+
         const completed = await hasCompleteOnboarding(user.id)
         setOnboarding(Boolean(completed))
 
@@ -110,7 +110,7 @@ function App() {
     }
 
     fetchOnboardingInfo()
-  }, [isLoaded, isSignedIn, user.id, user.primaryEmailAddress.emailAddress, user.username])
+  }, [isLoaded, isSignedIn, user])
 
   useEffect(() => {
     if (!isLoaded) return

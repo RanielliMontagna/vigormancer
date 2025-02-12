@@ -51,7 +51,7 @@ export function DashboardCards() {
             </View>
             <View>
               <View className="flex-row items-end gap-1">
-                <H2 className="mb-[-4px]">{weightQuery.data ?? 0}</H2>
+                <H2 className="mb-[-4px]">{weightQuery.data?.current ?? 0}</H2>
                 <P className="text-sm p-0 m-0">kg</P>
               </View>
               <P className="flex-1 text-sm text-green-500">

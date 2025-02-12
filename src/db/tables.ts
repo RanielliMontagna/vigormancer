@@ -18,7 +18,9 @@ export const createTablesSQL = `
     CREATE TABLE IF NOT EXISTS user_weight (
         id TEXT PRIMARY KEY,
         userId TEXT NOT NULL,
-        weight FLOAT NOT NULL, -- kg
+        current FLOAT NOT NULL, -- kg
+        heaviest FLOAT NOT NULL, -- kg
+        lightest FLOAT NOT NULL, -- kg
         recordedAt TIMESTAMP DEFAULT (DATETIME('now')),
         FOREIGN KEY (userId) REFERENCES users(id)
     );

@@ -26,7 +26,9 @@ export interface User {
 export interface UserWeight {
   id: string
   userId: string
-  weight: number
+  current: number
+  heaviest: number
+  lightest: number
   recordedAt: Date
 }
 
@@ -52,6 +54,8 @@ export interface OnboardingDataParams {
   userId: string
 }
 
+export type UserWeightReturn = Omit<UserWeight, 'id' | 'userId' | 'recordedAt'>
+
 export interface UserRepository {
   createUser(user: CreateUserParams): Promise<{ id: string }>
   hasCompletedOnboarding(userId: string): Promise<boolean>
@@ -60,6 +64,6 @@ export interface UserRepository {
   updateWeight(userId: string, weight: number): Promise<void>
   getUserById(userId: string): Promise<User>
   getUserByEmail(email: string): Promise<User>
-  getUserWeight(userId: string): Promise<number>
+  getUserWeight(userId: string): Promise<UserWeightReturn>
   getUserHeight(userId: string): Promise<number>
 }
