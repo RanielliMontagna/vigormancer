@@ -2,22 +2,33 @@ import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import colors from 'tailwindcss/colors'
 
+import { useUser } from '@clerk/clerk-expo'
 import { BmiLevels } from './bmi.types'
+import { useQuery } from '@tanstack/react-query'
+import { getHeight } from '@/db/controllers/user/get-height'
+import { calculateBMI } from '@/utils/calculateBmi/calculateBmi'
+import { getLastestWeight } from '@/db/controllers/user/get-weight'
 
 export function useBmi() {
+  const { user } = useUser()
   const { t } = useTranslation()
 
-  const bmiLevelValues = useMemo(() => {
-    //TODO: Replace with actual BMI value
-    const bmiLevel = BmiLevels.Underweight as BmiLevels
+  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLastestWeight(user.id) })
+  const heightQuery = useQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
 
+  const { bmi, category } = calculateBMI({
+    weight: weightQuery.data?.current,
+    height: heightQuery.data,
+  })
+
+  const bmiLevelValues = useMemo(() => {
     var bmiColor = {
       color: colors.blue[400] as string,
       gradientCenterColor: colors.blue[500] as string,
       backgroundColor: colors.blue[100] as string,
     }
 
-    switch (bmiLevel) {
+    switch (category) {
       case BmiLevels.Underweight:
         bmiColor = {
           color: colors.orange[400],
@@ -58,11 +69,11 @@ export function useBmi() {
     }
 
     return {
-      title: t(`progression.bmi.levels.${bmiLevel}.title`),
-      description: t(`progression.bmi.levels.${bmiLevel}.description`),
+      title: t(`progression.bmi.levels.${category}.title`),
+      description: t(`progression.bmi.levels.${category}.description`),
       color: bmiColor,
     }
-  }, [t])
+  }, [category, t])
 
   const pieData = [
     { value: 20, color: bmiLevelValues.color.backgroundColor },
@@ -75,7 +86,9 @@ export function useBmi() {
   ]
 
   return {
+    height: heightQuery.data,
     pieData,
+    bmi,
     bmiLevelValues,
   }
 }

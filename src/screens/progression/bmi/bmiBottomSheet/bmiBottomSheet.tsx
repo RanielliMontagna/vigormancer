@@ -66,8 +66,8 @@ export function BmiBottomSheet() {
             <RulerPicker
               max={maxHeight}
               min={minHeight}
-              step={0.1}
-              fractionDigits={1}
+              step={1}
+              fractionDigits={0}
               initialValue={selectedHeight}
               unit="cm"
               onValueChangeEnd={(number) => methods.setValue('height', Number(number))}
