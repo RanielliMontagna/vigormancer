@@ -8,7 +8,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useUser } from '@clerk/clerk-expo'
 import { queryClient } from '@/libs/react-query'
 import { useAppStore } from '@/store'
-import { getHeight, getLastestWeight } from '@/db'
+import { getHeight, getLatestWeight, updateUserHeight, updateUserWeight } from '@/db'
 
 const BmiBottomSheetSchema = z.object({
   height: z.number(),
@@ -22,7 +22,7 @@ export function useBmiBottomSheet() {
   const { handleErrors } = useAppStore()
   const { bmiBottomSheetRef } = useProgressionContext()
 
-  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLastestWeight(user.id) })
+  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
   const heightQuery = useQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
 
   const methods = useForm({

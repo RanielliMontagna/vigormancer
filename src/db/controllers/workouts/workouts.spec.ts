@@ -9,6 +9,7 @@ jest.mock('@/db', () => ({
       .fn()
       .mockResolvedValue({ id: '1', name: 'Workout', description: 'Description', difficulty: 2 }),
   },
+  fetchWorkoutExercises: jest.fn().mockResolvedValue([]),
 }))
 
 describe('@db/controllers/workouts', () => {

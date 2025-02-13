@@ -9,7 +9,7 @@ import { useUser } from '@clerk/clerk-expo'
 import { useAppStore } from '@/store'
 import { queryClient } from '@/libs/react-query'
 
-import { getLastestWeight, updateUserWeight } from '@/db'
+import { getLatestWeight, updateUserWeight } from '@/db'
 
 const WeightBottomSheetSchema = z.object({
   weight: z.number(),
@@ -21,11 +21,11 @@ export function useWeightBottomSheet() {
   const { handleErrors } = useAppStore()
   const { user } = useUser()
   const { weightBottomSheetRef } = useProgressionContext()
-  const { data } = useQuery({ queryKey: ['weight'], queryFn: () => getLastestWeight(user.id) })
+  const { data } = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
 
   const methods = useForm({
     resolver: zodResolver(WeightBottomSheetSchema),
-    defaultValues: { weight: data.current },
+    defaultValues: { weight: data?.current },
   })
 
   const selectedWeight = methods.watch('weight')

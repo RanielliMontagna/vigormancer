@@ -6,13 +6,13 @@ import { useUser } from '@clerk/clerk-expo'
 import { BmiLevels } from './bmi.types'
 import { useQuery } from '@tanstack/react-query'
 import { calculateBMI } from '@/utils/calculateBmi/calculateBmi'
-import { getHeight, getLastestWeight } from '@/db'
+import { getHeight, getLatestWeight } from '@/db'
 
 export function useBmi() {
   const { user } = useUser()
   const { t } = useTranslation()
 
-  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLastestWeight(user.id) })
+  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
   const heightQuery = useQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
 
   const { bmi, category } = calculateBMI({

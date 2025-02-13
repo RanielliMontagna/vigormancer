@@ -5,13 +5,13 @@ import { useUser } from '@clerk/clerk-expo'
 import { Avatar, AvatarFallback, AvatarImage, H3, P, Text } from '@/components'
 import { getInitials } from '@/utils'
 import { useQuery } from '@tanstack/react-query'
-import { getHeight, getLastestWeight } from '@/db'
+import { getHeight, getLatestWeight } from '@/db'
 
 export function UserInformations() {
   const { t } = useTranslation()
   const { user } = useUser()
 
-  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLastestWeight(user.id) })
+  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
   const heightQuery = useQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
 
   return (
@@ -31,7 +31,7 @@ export function UserInformations() {
       <View className="flex-row gap-8 bg-card p-2 rounded-2xl w-full justify-center items-center elevation-sm">
         <View>
           <View className="flex-row items-center gap-1">
-            <H3>{weightQuery.data.current}</H3>
+            <H3>{weightQuery.data?.current}</H3>
             <Text>kg</Text>
           </View>
           <View className="items-center">
