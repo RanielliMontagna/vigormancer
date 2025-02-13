@@ -1,7 +1,6 @@
-import { renderHook } from '@testing-library/react-native'
 import { useWeightBottomSheet } from './useWeightBottomSheet'
 import { getLatestWeight } from '@/db'
-import { Wrapper } from '@/utils/test/test-utils'
+import { renderHookWithProviders } from '@/utils'
 
 jest.mock('@/db', () => ({
   getLatestWeight: jest.fn(),
@@ -31,7 +30,7 @@ describe('useWeightBottomSheet', () => {
   })
 
   it('should be able to call handleCancel', () => {
-    const { result } = renderHook(() => useWeightBottomSheet(), { wrapper: Wrapper })
+    const { result } = renderHookWithProviders(useWeightBottomSheet)
 
     result.current.handleCancel()
 
@@ -39,7 +38,7 @@ describe('useWeightBottomSheet', () => {
   })
 
   it('should be able to call handleSubmit', () => {
-    const { result } = renderHook(() => useWeightBottomSheet(), { wrapper: Wrapper })
+    const { result } = renderHookWithProviders(useWeightBottomSheet)
 
     result.current.handleSubmit({ weight: 70 })
 

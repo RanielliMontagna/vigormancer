@@ -1,5 +1,5 @@
 import { router } from 'expo-router'
-import { act, fireEvent, render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@/utils'
 
 import { Height } from './height'
 import { useColorScheme } from '@/hooks'

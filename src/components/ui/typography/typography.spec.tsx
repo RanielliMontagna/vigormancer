@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react-native'
+import { render } from '@/utils'
 
 import { H1, H2, H3, H4, P, BlockQuote, Code, Lead, Large, Small, Muted, Text } from '@/components'
 

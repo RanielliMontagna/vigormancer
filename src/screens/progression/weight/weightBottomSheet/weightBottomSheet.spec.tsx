@@ -1,8 +1,6 @@
-import { render } from '@testing-library/react-native'
-
 import { WeightBottomSheet } from './weightBottomSheet'
-import { Wrapper } from '@/utils/test/test-utils'
 import { getHeight, getLatestWeight } from '@/db'
+import { renderWithProviders } from '@/utils'
 
 jest.mock('@/db', () => ({
   getLatestWeight: jest.fn(),
@@ -34,7 +32,7 @@ describe('weightBottomSheet', () => {
   })
 
   it('should start with the bottom sheet open', async () => {
-    render(<WeightBottomSheet />, { wrapper: Wrapper })
+    renderWithProviders(<WeightBottomSheet />)
 
     // Aguarda a execução assíncrona do mock
     await Promise.resolve()

@@ -1,7 +1,5 @@
-import { render } from '@testing-library/react-native'
-
+import { renderWithProviders } from '@/utils'
 import { Bmi } from './bmi'
-import { Wrapper } from '@/utils/test/test-utils'
 import { getHeight, getLatestWeight } from '@/db'
 
 jest.mock('@/db', () => ({
@@ -11,7 +9,7 @@ jest.mock('@/db', () => ({
 
 describe('@screen/progession/bmi', () => {
   it('should render successfully', () => {
-    const { getByTestId } = render(<Bmi />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Bmi />)
 
     expect(getByTestId('bmi')).toBeDefined()
   })
@@ -24,7 +22,7 @@ describe('@screen/progession/bmi', () => {
     })
     ;(getHeight as jest.Mock).mockResolvedValueOnce(170)
 
-    const { getByTestId } = render(<Bmi />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Bmi />)
 
     expect(getByTestId('bmi')).toBeDefined()
   })
@@ -37,7 +35,7 @@ describe('@screen/progession/bmi', () => {
     })
     ;(getHeight as jest.Mock).mockResolvedValueOnce(170)
 
-    const { getByTestId } = render(<Bmi />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Bmi />)
 
     expect(getByTestId('bmi')).toBeDefined()
   })
@@ -50,7 +48,7 @@ describe('@screen/progession/bmi', () => {
     })
     ;(getHeight as jest.Mock).mockResolvedValueOnce(170)
 
-    const { getByTestId } = render(<Bmi />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Bmi />)
 
     expect(getByTestId('bmi')).toBeDefined()
   })
@@ -63,7 +61,7 @@ describe('@screen/progession/bmi', () => {
     })
     ;(getHeight as jest.Mock).mockResolvedValueOnce(170)
 
-    const { getByTestId } = render(<Bmi />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Bmi />)
 
     expect(getByTestId('bmi')).toBeDefined()
   })
@@ -76,7 +74,7 @@ describe('@screen/progession/bmi', () => {
     })
     ;(getHeight as jest.Mock).mockResolvedValueOnce(170)
 
-    const { getByTestId } = render(<Bmi />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Bmi />)
 
     expect(getByTestId('bmi')).toBeDefined()
   })
@@ -89,7 +87,7 @@ describe('@screen/progession/bmi', () => {
     })
     ;(getHeight as jest.Mock).mockResolvedValueOnce(170)
 
-    const { getByTestId } = render(<Bmi />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Bmi />)
 
     expect(getByTestId('bmi')).toBeDefined()
   })

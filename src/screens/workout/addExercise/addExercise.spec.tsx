@@ -1,12 +1,11 @@
-import { act, fireEvent, render, waitFor } from '@testing-library/react-native'
-
-import { Wrapper } from '@/utils/test/test-utils'
+import { act, fireEvent, waitFor } from '@/utils'
 
 import { AddExercise } from './addExercise'
 
 import { createWorkoutExercise, fetchExercises } from '@/db'
 import { useColorScheme } from '@/hooks'
 import { ExerciseType, ExerciseWithCategory } from '@/db/repositories/exercises'
+import { renderWithProviders } from '@/utils'
 
 jest.mock('@/db')
 
@@ -43,11 +42,7 @@ describe('AddExercise', () => {
   it('should render correctly', async () => {
     mockUseColorScheme.mockReturnValue({ isDarkColorScheme: false })
 
-    const { getByText } = render(
-      <Wrapper>
-        <AddExercise />
-      </Wrapper>,
-    )
+    const { getByText } = renderWithProviders(<AddExercise />)
 
     expect(getByText('workout.addExercise.title')).toBeDefined()
   })
@@ -55,11 +50,7 @@ describe('AddExercise', () => {
   it('should be able to search for exercises', async () => {
     mockUseColorScheme.mockReturnValue({ isDarkColorScheme: false })
 
-    const { getByTestId } = render(
-      <Wrapper>
-        <AddExercise />
-      </Wrapper>,
-    )
+    const { getByTestId } = renderWithProviders(<AddExercise />)
 
     await act(() => {
       const searchInput = getByTestId('search')
@@ -73,11 +64,7 @@ describe('AddExercise', () => {
   it('should be able to select an exercise', async () => {
     mockUseColorScheme.mockReturnValue({ isDarkColorScheme: true })
 
-    const { getByTestId } = render(
-      <Wrapper>
-        <AddExercise />
-      </Wrapper>,
-    )
+    const { getByTestId } = renderWithProviders(<AddExercise />)
 
     const exercise = getByTestId('exercise-1')
     act(() => {

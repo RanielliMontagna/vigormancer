@@ -1,7 +1,6 @@
-import { renderHook } from '@testing-library/react-native'
+import { renderHookWithProviders } from '@/utils'
 import { useBmiBottomSheet } from './useBmiBottomSheet'
 import { getHeight, getLatestWeight } from '@/db'
-import { Wrapper } from '@/utils/test/test-utils'
 
 jest.mock('@/db', () => ({
   getLatestWeight: jest.fn(),
@@ -34,13 +33,13 @@ describe('useBmiBottomSheet', () => {
   })
 
   it('should return the expected values', () => {
-    const { result } = renderHook(() => useBmiBottomSheet(), { wrapper: Wrapper })
+    const { result } = renderHookWithProviders(useBmiBottomSheet)
 
     expect(result.current).toBeDefined()
   })
 
   it('should be able to call handleCancel', () => {
-    const { result } = renderHook(() => useBmiBottomSheet(), { wrapper: Wrapper })
+    const { result } = renderHookWithProviders(useBmiBottomSheet)
 
     result.current.handleCancel()
 
@@ -48,7 +47,7 @@ describe('useBmiBottomSheet', () => {
   })
 
   it('should be able to call handleSubmit', () => {
-    const { result } = renderHook(() => useBmiBottomSheet(), { wrapper: Wrapper })
+    const { result } = renderHookWithProviders(useBmiBottomSheet)
 
     result.current.handleSubmit({ weight: 70, height: 180 })
 
@@ -56,7 +55,7 @@ describe('useBmiBottomSheet', () => {
   })
 
   it('should be able to call handleSubmit with the same values', () => {
-    const { result } = renderHook(() => useBmiBottomSheet(), { wrapper: Wrapper })
+    const { result } = renderHookWithProviders(useBmiBottomSheet)
 
     result.current.handleSubmit({ weight: 50, height: 170 })
 

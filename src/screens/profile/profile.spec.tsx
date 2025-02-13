@@ -1,9 +1,7 @@
-import { render } from '@testing-library/react-native'
-
 import { Profile } from './profile'
 import { useColorScheme } from '@/hooks'
-import { Wrapper } from '@/utils/test/test-utils'
 import { getLatestWeight } from '@/db'
+import { renderWithProviders } from '@/utils'
 
 const mockUseColorScheme = useColorScheme as jest.Mock
 
@@ -26,14 +24,14 @@ describe('Profile', () => {
   it('should render successfully', () => {
     mockUseColorScheme.mockReturnValue({ colorScheme: 'light', isDarkColorScheme: false })
 
-    const { getByTestId } = render(<Profile />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Profile />)
     expect(getByTestId('profile')).toBeDefined()
   })
 
   it('should render with dark color scheme', () => {
     mockUseColorScheme.mockReturnValue({ colorScheme: 'dark', isDarkColorScheme: true })
 
-    const { getByTestId } = render(<Profile />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Profile />)
     expect(getByTestId('profile')).toBeDefined()
   })
 })

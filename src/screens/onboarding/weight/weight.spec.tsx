@@ -1,6 +1,6 @@
 import { act } from 'react'
 import { router } from 'expo-router'
-import { fireEvent, render } from '@testing-library/react-native'
+import { fireEvent, render } from '@/utils'
 
 import { Weight } from './weight'
 import { useColorScheme } from '@/hooks'

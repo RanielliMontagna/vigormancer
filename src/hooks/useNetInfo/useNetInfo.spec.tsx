@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-native'
+import { renderHook } from '@/utils'
 import { useNetInfo } from './useNetInfo'
 
 jest.mock('@react-native-community/netinfo', () => ({

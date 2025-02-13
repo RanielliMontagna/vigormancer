@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react-native'
+import { render } from '@/utils'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 

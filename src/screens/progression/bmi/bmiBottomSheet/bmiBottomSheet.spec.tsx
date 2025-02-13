@@ -1,7 +1,5 @@
-import { render } from '@testing-library/react-native'
-
+import { renderWithProviders } from '@/utils'
 import { BmiBottomSheet } from './bmiBottomSheet'
-import { Wrapper } from '@/utils/test/test-utils'
 import { getHeight, getLatestWeight } from '@/db'
 
 jest.mock('@/db', () => ({
@@ -34,7 +32,7 @@ describe('bmiBottomSheet', () => {
   })
 
   it('should start with the bottom sheet open', async () => {
-    render(<BmiBottomSheet />, { wrapper: Wrapper })
+    renderWithProviders(<BmiBottomSheet />)
 
     // Aguarda a execução assíncrona do mock
     await Promise.resolve()

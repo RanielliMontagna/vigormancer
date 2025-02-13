@@ -1,8 +1,6 @@
-import { render } from '@testing-library/react-native'
-
+import { renderWithProviders } from '@/utils'
 import { Dashboard } from './dashboard'
 import { useColorScheme } from '@/hooks'
-import { Wrapper } from '@/utils/test/test-utils'
 import { getLatestWeight } from '@/db'
 import { UserWeightReturn } from '@/db/repositories/user'
 
@@ -21,14 +19,14 @@ describe('Dashboard', () => {
   })
 
   it('should render successfully', () => {
-    const { getByTestId } = render(<Dashboard />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Dashboard />)
     expect(getByTestId('dashboard')).toBeDefined()
   })
 
   it('should render with dark color scheme', () => {
     mockUseColorScheme.mockReturnValue({ isDarkColorScheme: true })
 
-    const { getByTestId } = render(<Dashboard />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Dashboard />)
     expect(getByTestId('dashboard')).toBeDefined()
   })
 })
