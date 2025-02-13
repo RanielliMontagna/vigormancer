@@ -20,10 +20,10 @@ export function Bmi() {
   const { handleOpenBmiBottomSheet } = useProgressionContext()
 
   return (
-    <View className="gap-4">
+    <View className="gap-4" testID="bmi">
       <View className="flex-row justify-between items-center">
         <Text className="flex-1">{t('progression.bmi.title')}</Text>
-        <Button className="gap-2" size="sm" onPress={handleOpenBmiBottomSheet}>
+        <Button className="gap-2" size="sm" onPress={handleOpenBmiBottomSheet} testID="editBmi">
           <FontAwesome6 name="edit" size={16} color={isDarkColorScheme ? 'black' : 'white'} />
           <Text>{t('progression.bmi.action')}</Text>
         </Button>
@@ -40,7 +40,7 @@ export function Bmi() {
           centerLabelComponent={() => {
             return (
               <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <H1>{bmi.toFixed(2)}</H1>
+                <H1>{bmi}</H1>
                 <P className="text-muted-foreground">{t('progression.bmi.title')}</P>
               </View>
             )

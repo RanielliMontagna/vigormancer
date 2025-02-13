@@ -30,5 +30,5 @@ export function calculateBMI({ weight: weightKg, height: heightCm }: BmiProps) {
   }
 
   // Return the BMI value and category
-  return { bmi, category }
+  return { bmi: +bmi.toFixed(2), category }
 }

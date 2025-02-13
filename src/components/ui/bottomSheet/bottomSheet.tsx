@@ -35,7 +35,7 @@ const BottomSheetComponent = React.forwardRef<
       }}
       {...rest}
     >
-      <BottomSheetView className="p-6 bg-background">
+      <BottomSheetView className="p-6 bg-background" testID="bottomSheet">
         {children as React.ReactElement}
       </BottomSheetView>
     </BottomSheetModal>
