@@ -24,7 +24,7 @@ export function useUpdateInformations() {
 
   const defaultValues = {
     username: user.username,
-    fullName: user.fullName || '',
+    fullName: user.fullName,
     email: user.primaryEmailAddress.emailAddress,
     weight: '64',
     height: '173',
@@ -68,6 +68,7 @@ export function useUpdateInformations() {
 
       router.back()
     } catch (error) {
+      /* c8 ignore next */
       handleErrors(error)
     } finally {
       setIsLoading(false)

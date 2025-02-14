@@ -29,7 +29,6 @@ export function Height() {
             step={1}
             initialValue={selectedHeight}
             unit="cm"
-            /* c8 ignore next */
             onValueChangeEnd={(number) => setValue('height', Number(number))}
           />
         </View>

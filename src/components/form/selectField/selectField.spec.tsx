@@ -1,8 +1,9 @@
 import { act, fireEvent, render } from '@/utils'
 import { FormProvider, useForm } from 'react-hook-form'
 
-import { SelectField } from './selectField'
+import { SelectField, SelectFieldProps } from './selectField'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { useColorScheme } from '@/hooks'
 
 jest.mock('react-native-safe-area-context', () => {
   return {
@@ -11,8 +12,10 @@ jest.mock('react-native-safe-area-context', () => {
   }
 })
 
+const mockUseColorScheme = useColorScheme as jest.Mock
+
 describe('SelectField', () => {
-  const SelectWithForm = () => {
+  const SelectWithForm = (props: Partial<SelectFieldProps>) => {
     const methods = useForm()
 
     return (
@@ -27,6 +30,7 @@ describe('SelectField', () => {
               { value: '2', label: 'Option 2' },
               { value: '3', label: 'Option 2', group: 'Group 1', image: 'image' },
             ]}
+            {...props}
           />
         </FormProvider>
       </SafeAreaProvider>
@@ -46,5 +50,13 @@ describe('SelectField', () => {
       const select = getByTestId('select')
       fireEvent(select, 'onValueChange', '1')
     })
+  })
+
+  it('should be render with darkColorScheme', () => {
+    mockUseColorScheme.mockReturnValue({ isDarkColorScheme: true })
+
+    const { getByTestId } = render(<SelectWithForm />)
+
+    expect(getByTestId('select')).toBeDefined()
   })
 })

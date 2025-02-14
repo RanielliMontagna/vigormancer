@@ -11,6 +11,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components'
+import { RootProps } from '@rn-primitives/select'
+
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { ScrollView } from 'react-native-gesture-handler'
 import { capitalize } from '@/utils'
@@ -22,7 +24,7 @@ type Option = {
   image?: string
 }
 
-interface SelectFieldProps {
+export interface SelectFieldProps extends RootProps {
   control: Control<any>
   name: string
   label?: string
@@ -42,6 +44,7 @@ export const SelectField: FC<SelectFieldProps> = ({
   required = false,
   helperText,
   options,
+  ...rest
 }) => {
   const insets = useSafeAreaInsets()
   const contentInsets = { top: insets.top, bottom: insets.bottom, left: 28, right: 28 }
@@ -80,6 +83,7 @@ export const SelectField: FC<SelectFieldProps> = ({
               defaultValue={defaultValue}
               value={value}
               onValueChange={(option) => onChange(option)}
+              {...rest}
             >
               <SelectTrigger>
                 <SelectValue
