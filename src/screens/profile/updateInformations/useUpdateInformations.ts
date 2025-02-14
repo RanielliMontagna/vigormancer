@@ -16,8 +16,6 @@ export function useUpdateInformations() {
     username: z.string().min(4, t('validation.minLength', { min: 4 })),
     fullName: z.string().optional(),
     email: z.string().email(t('validation.email')),
-    weight: z.string().min(1, t('validation.required')),
-    height: z.string().min(1, t('validation.required')),
   })
 
   type UpdateInformationsSchema = z.infer<typeof updateInformationsSchema>
@@ -26,8 +24,6 @@ export function useUpdateInformations() {
     username: user.username,
     fullName: user.fullName,
     email: user.primaryEmailAddress.emailAddress,
-    weight: '64',
-    height: '173',
   }
 
   const methods = useForm<UpdateInformationsSchema>({
@@ -46,8 +42,6 @@ export function useUpdateInformations() {
       )
 
       if (isFormChanged) {
-        //TODO: Update user information (on backend)
-
         await user.update({
           username: values.username,
           firstName: values.fullName.split(' ')[0],
@@ -68,7 +62,6 @@ export function useUpdateInformations() {
 
       router.back()
     } catch (error) {
-      /* c8 ignore next */
       handleErrors(error)
     } finally {
       setIsLoading(false)
