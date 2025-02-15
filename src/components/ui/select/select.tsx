@@ -65,45 +65,6 @@ const SelectTrigger = React.forwardRef<
 
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 
-/**
- * Platform: WEB ONLY
- */
-const SelectScrollUpButton = ({ className, ...props }: SelectPrimitive.ScrollUpButtonProps) => {
-  if (Platform.OS !== 'web') {
-    return null
-  }
-  return (
-    <SelectPrimitive.ScrollUpButton
-      className={cn('flex web:cursor-default items-center justify-center py-1', className)}
-      {...props}
-    >
-      <FontAwesome6 size={14} name="chevron-up" className="text-muted-foreground" />
-    </SelectPrimitive.ScrollUpButton>
-  )
-}
-
-/**
- * Platform: WEB ONLY
- */
-const SelectScrollDownButton = ({ className, ...props }: SelectPrimitive.ScrollDownButtonProps) => {
-  const { isDarkColorScheme } = useColorScheme()
-
-  if (Platform.OS !== 'web') return null
-
-  return (
-    <SelectPrimitive.ScrollDownButton
-      className={cn('flex web:cursor-default items-center justify-center py-1', className)}
-      {...props}
-    >
-      <FontAwesome6
-        size={14}
-        name="chevron-down"
-        color={isDarkColorScheme ? colors.gray[400] : colors.gray[500]}
-      />
-    </SelectPrimitive.ScrollDownButton>
-  )
-}
-
 const SelectContent = React.forwardRef<
   SelectPrimitive.ContentRef,
   SelectPrimitive.ContentProps & { portalHost?: string }
@@ -128,7 +89,6 @@ const SelectContent = React.forwardRef<
             position={position}
             {...props}
           >
-            <SelectScrollUpButton />
             <SelectPrimitive.Viewport
               className={cn(
                 'p-1',
@@ -138,7 +98,6 @@ const SelectContent = React.forwardRef<
             >
               {children}
             </SelectPrimitive.Viewport>
-            <SelectScrollDownButton />
           </SelectPrimitive.Content>
         </Animated.View>
       </SelectPrimitive.Overlay>
@@ -212,8 +171,6 @@ export {
   SelectGroup,
   SelectItem,
   SelectLabel,
-  SelectScrollDownButton,
-  SelectScrollUpButton,
   SelectSeparator,
   SelectTrigger,
   SelectValue,

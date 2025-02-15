@@ -1,7 +1,7 @@
-import { render, waitFor } from '@testing-library/react-native'
+import { waitFor } from '@/utils'
 
 import { WorkoutDifficulty, WorkoutWithExercises } from '@/db/repositories/workouts'
-import { Wrapper } from '@/utils/test/test-utils'
+import { renderWithProviders } from '@/utils/test/test-utils'
 import { useColorScheme } from '@/hooks'
 import { getWorkout } from '@/db'
 
@@ -32,7 +32,7 @@ describe('WorkoutDetails', () => {
       mockUseColorScheme.mockReturnValue({ isDarkColorScheme: false })
       ;(getWorkout as jest.Mock).mockImplementationOnce(async () => responseMock)
 
-      const { getByTestId } = render(<WorkoutDetails />, { wrapper: Wrapper })
+      const { getByTestId } = renderWithProviders(<WorkoutDetails />)
 
       await waitFor(() => {
         expect(getByTestId('workout-details')).toBeDefined()
@@ -45,7 +45,7 @@ describe('WorkoutDetails', () => {
 
       mockUseColorScheme.mockReturnValue({ isDarkColorScheme: true })
 
-      const { getByTestId } = render(<WorkoutDetails />, { wrapper: Wrapper })
+      const { getByTestId } = renderWithProviders(<WorkoutDetails />)
 
       await waitFor(() => {
         expect(getByTestId('workout-details')).toBeDefined()
@@ -88,7 +88,7 @@ describe('WorkoutDetails', () => {
         ],
       }))
 
-      const { getByTestId } = render(<WorkoutDetails />, { wrapper: Wrapper })
+      const { getByTestId } = renderWithProviders(<WorkoutDetails />)
 
       await waitFor(() => {
         expect(getByTestId('workout-details')).toBeDefined()
@@ -129,7 +129,7 @@ describe('WorkoutDetails', () => {
         ],
       }))
 
-      const { getByTestId } = render(<WorkoutDetails />, { wrapper: Wrapper })
+      const { getByTestId } = renderWithProviders(<WorkoutDetails />)
 
       await waitFor(() => {
         expect(getByTestId('workout-details')).toBeDefined()

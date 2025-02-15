@@ -1,8 +1,7 @@
-import { act, fireEvent, render } from '@testing-library/react-native'
+import { act, fireEvent, renderWithProviders } from '@/utils'
 
 import { Preferences } from './preferences'
 import { router } from 'expo-router'
-import { Wrapper } from '@/utils/test/test-utils'
 
 let mockCurrentLanguage = 'en-US'
 
@@ -22,7 +21,7 @@ describe('Preferences', () => {
   })
 
   it('should render successfully', () => {
-    const { getByTestId } = render(<Preferences />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Preferences />)
 
     expect(getByTestId('preferences')).toBeDefined()
   })
@@ -30,7 +29,7 @@ describe('Preferences', () => {
   it('should call handleGoToLanguageScreen when language is pressed', () => {
     jest.spyOn(router, 'push')
 
-    const { getByTestId } = render(<Preferences />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Preferences />)
 
     act(() => {
       const language = getByTestId('language')
@@ -41,7 +40,7 @@ describe('Preferences', () => {
   })
 
   it('should call handleLogout when logout is pressed', () => {
-    const { getByTestId } = render(<Preferences />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Preferences />)
 
     act(() => {
       const logout = getByTestId('logout')
@@ -52,7 +51,7 @@ describe('Preferences', () => {
   it('should be able with language pt-BR', () => {
     mockCurrentLanguage = 'pt-BR'
 
-    const { getByTestId } = render(<Preferences />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Preferences />)
 
     act(() => {
       const language = getByTestId('language')
@@ -61,7 +60,7 @@ describe('Preferences', () => {
   })
 
   it('should be able to call toggleColorScheme', () => {
-    const { getByTestId } = render(<Preferences />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Preferences />)
 
     act(() => {
       const theme = getByTestId('theme')

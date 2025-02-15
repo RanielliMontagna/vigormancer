@@ -1,9 +1,5 @@
 import { ExerciseType } from '@/db/repositories/exercises'
-import { createExercise } from './create-exercise'
-import { deleteExercise } from './delete-exercise'
-import { fetchExercises } from './fetch-exercises'
-import { getExercise } from './get-exercise'
-import { updateExercise } from './update-exercise'
+import { createExercise, deleteExercise, fetchExercises, getExercise, updateExercise } from '.'
 
 jest.mock('@/db', () => ({
   db: {

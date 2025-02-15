@@ -1,4 +1,4 @@
-import { fireEvent, render, renderHook } from '@testing-library/react-native'
+import { fireEvent, render, renderHook } from '@/utils'
 import { QuantityField } from './quantityField'
 import { FormProvider, useForm } from 'react-hook-form'
 import { act } from 'react'

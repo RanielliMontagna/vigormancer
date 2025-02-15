@@ -1,8 +1,10 @@
-import { createWorkoutExercise } from './create-workout-exercise'
-import { deleteWorkoutExercise } from './delete-workout-exercise'
-import { fetchWorkoutExercises } from './fetch-workout-exercises'
-import { getWorkoutExercise } from './get-workout-exercise'
-import { updateWorkoutExercise } from './update-workout-exercise'
+import {
+  createWorkoutExercise,
+  deleteWorkoutExercise,
+  fetchWorkoutExercises,
+  getWorkoutExercise,
+  updateWorkoutExercise,
+} from '.'
 
 const mockData = {
   exerciseId: 1,

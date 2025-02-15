@@ -28,7 +28,7 @@ export function Age() {
             max={maxAge}
             step={1}
             initialValue={selectedAge}
-            onValueChangeEnd={(number) => setValue('age', Number(number))} // istanbul ignore next
+            onValueChangeEnd={(number) => setValue('age', Number(number))}
             unit={t('onboarding.age.yearsOld')}
           />
         </View>

@@ -1,8 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 import { CreateWorkoutParams, UpdateWorkoutParams, Workout, WorkoutsRepository } from '../workouts'
-
-import { db } from '@/db'
-import { fetchWorkoutExercises } from '@/db/controllers/workoutExercises/fetch-workout-exercises'
+import { db, fetchWorkoutExercises } from '@/db'
 
 export class SqliteWorkoutsRepository implements WorkoutsRepository {
   async getWorkouts() {

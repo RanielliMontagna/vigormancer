@@ -1,5 +1,5 @@
 import { act } from 'react'
-import { renderHook } from '@testing-library/react-native'
+import { renderHook } from '@/utils'
 
 import { useAppStore } from './appStore'
 

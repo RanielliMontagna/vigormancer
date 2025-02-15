@@ -9,8 +9,8 @@ import { WorkoutExerciseWithCategory } from '@/db/repositories/workoutExercises'
 import { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated'
 import { useAppStore } from '@/store'
 import { queryClient } from '@/libs/react-query'
-import { deleteWorkoutExercise } from '@/db/controllers/workoutExercises/delete-workout-exercise'
 import { router } from 'expo-router'
+import { deleteWorkoutExercise } from '@/db'
 
 export function useExerciseCard({ id, workoutId, exerciseName }: WorkoutExerciseWithCategory) {
   const { handleErrors, setIsLoading } = useAppStore()

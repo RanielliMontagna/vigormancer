@@ -33,6 +33,7 @@ export function DeleteExerciseCard({
         <TouchableOpacity
           activeOpacity={0.8}
           className="justify-center items-center h-full w-20 rounded-r-lg bg-red-500"
+          testID="delete-exercise-button"
         >
           <FontAwesome6 name="trash" size={24} color="white" />
         </TouchableOpacity>
@@ -52,7 +53,7 @@ export function DeleteExerciseCard({
           <AlertDialogCancel>
             <Text>{t('workout.workoutDetails.exerciseCard.cancel')}</Text>
           </AlertDialogCancel>
-          <AlertDialogAction onPress={handleRemoveExercise}>
+          <AlertDialogAction onPress={handleRemoveExercise} testID="confirm-delete-exercise">
             <Text>{t('workout.workoutDetails.exerciseCard.removeExercise')}</Text>
           </AlertDialogAction>
         </AlertDialogFooter>

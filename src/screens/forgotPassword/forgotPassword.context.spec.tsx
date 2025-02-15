@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-native'
+import { renderHook } from '@/utils'
 import {
   ForgotPasswordContext,
   ForgotPasswordProvider,

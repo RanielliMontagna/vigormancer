@@ -1,4 +1,4 @@
-import { act, fireEvent, render } from '@testing-library/react-native'
+import { act, fireEvent, render } from '@/utils'
 
 import { General } from './general'
 import { router } from 'expo-router'

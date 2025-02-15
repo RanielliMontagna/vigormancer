@@ -1,11 +1,9 @@
-import { renderHook } from '@testing-library/react-native'
-import { Wrapper } from '@/utils/test/test-utils'
-
 import { useWorkoutDetails } from './useWorkoutDetails'
 import { WorkoutDifficulty, WorkoutWithExercises } from '@/db/repositories/workouts'
 
 import { deleteWorkout, getWorkout } from '@/db'
 import { router } from 'expo-router'
+import { renderHookWithProviders } from '@/utils'
 
 jest.mock('@/db', () => ({
   getWorkout: jest.fn(),
@@ -32,7 +30,7 @@ describe('useWorkoutDetails', () => {
   it('should call router.push when handleGoToAddExercise is called', async () => {
     jest.spyOn(router, 'push')
 
-    const { result } = renderHook(() => useWorkoutDetails(), { wrapper: Wrapper })
+    const { result } = renderHookWithProviders(useWorkoutDetails)
 
     await result.current.handleGoToAddExercise()
 
@@ -42,7 +40,7 @@ describe('useWorkoutDetails', () => {
   it('should call deleteWorkout and router.back when handleDeleteWorkout is called', async () => {
     jest.spyOn(router, 'back')
 
-    const { result } = renderHook(() => useWorkoutDetails(), { wrapper: Wrapper })
+    const { result } = renderHookWithProviders(useWorkoutDetails)
 
     await result.current.handleDeleteWorkout()
 

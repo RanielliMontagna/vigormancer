@@ -45,24 +45,6 @@ export function UpdateInformations() {
             editable={false}
             helperText={t('updateInformations.emailHelperText')}
           />
-          <TextField
-            testID="weight"
-            control={methods.control}
-            name="weight"
-            label={t('updateInformations.weight')}
-            type="number"
-            required
-            endAdornment={<Text className="text-sm">kg</Text>}
-          />
-          <TextField
-            testID="height"
-            control={methods.control}
-            name="height"
-            label={t('updateInformations.height')}
-            type="number"
-            required
-            endAdornment={<Text className="text-sm">cm</Text>}
-          />
         </View>
         <View className="gap-2">
           <Button onPress={handleSubmit} size="lg" className="gap-2" testID="submit-button">

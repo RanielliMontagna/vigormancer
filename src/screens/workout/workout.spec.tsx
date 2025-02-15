@@ -1,10 +1,9 @@
-import { act, fireEvent, render, waitFor } from '@testing-library/react-native'
+import { act, fireEvent, renderWithProviders, waitFor } from '@/utils'
 
 import { Workout } from './workout'
 import { useColorScheme } from '@/hooks'
 import { useWorkout } from './useWorkout'
 import { WorkoutDifficulty, Workout as WorkoutType } from '@/db/repositories/workouts'
-import { Wrapper } from '@/utils/test/test-utils'
 
 const mockUseColorScheme = useColorScheme as jest.Mock
 
@@ -27,14 +26,14 @@ describe('Workout', () => {
   })
 
   it('should render successfully', () => {
-    const { getByTestId } = render(<Workout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Workout />)
     expect(getByTestId('workout')).toBeDefined()
   })
 
   it('should render with dark color scheme', () => {
     mockUseColorScheme.mockReturnValue({ isDarkColorScheme: true })
 
-    const { getByTestId } = render(<Workout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Workout />)
     expect(getByTestId('workout')).toBeDefined()
   })
 
@@ -71,7 +70,7 @@ describe('Workout', () => {
       ],
     }))
 
-    const { getByTestId } = render(<Workout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Workout />)
 
     expect(getByTestId('flash-list')).toBeDefined()
 
@@ -111,7 +110,7 @@ describe('Workout', () => {
       ],
     }))
 
-    const { getByTestId } = render(<Workout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Workout />)
 
     expect(getByTestId('flash-list')).toBeDefined()
 
@@ -134,7 +133,7 @@ describe('Workout', () => {
       ],
     }))
 
-    const { getByTestId } = render(<Workout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<Workout />)
 
     act(() => {
       const workoutItem = getByTestId('workout-list-item-0')

@@ -6,10 +6,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useProgressionContext } from '../../progression.context'
 import { useQuery } from '@tanstack/react-query'
 import { useUser } from '@clerk/clerk-expo'
-import { getLastestWeight } from '@/db/controllers/user/get-weight'
 import { useAppStore } from '@/store'
-import { updateUserWeight } from '@/db/controllers/user/update-user-weight'
 import { queryClient } from '@/libs/react-query'
+
+import { getLatestWeight, updateUserWeight } from '@/db'
 
 const WeightBottomSheetSchema = z.object({
   weight: z.number(),
@@ -21,11 +21,11 @@ export function useWeightBottomSheet() {
   const { handleErrors } = useAppStore()
   const { user } = useUser()
   const { weightBottomSheetRef } = useProgressionContext()
-  const { data } = useQuery({ queryKey: ['weight'], queryFn: () => getLastestWeight(user.id) })
+  const { data } = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
 
   const methods = useForm({
     resolver: zodResolver(WeightBottomSheetSchema),
-    defaultValues: { weight: data.current },
+    defaultValues: { weight: data?.current },
   })
 
   const selectedWeight = methods.watch('weight')

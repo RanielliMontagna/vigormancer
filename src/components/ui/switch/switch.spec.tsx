@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native'
+import { render } from '@/utils'
 
 import { Switch } from './switch'
 import { useColorScheme } from '@/hooks'
