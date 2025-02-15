@@ -119,11 +119,13 @@ export class SqliteUserRepository implements UserRepository {
        FROM user_weight
        WHERE userId = ?
        ORDER BY recordedAt DESC
-       LIMIT 7`,
+       LIMIT 5`,
       [userId],
     )
 
-    return weights.map(({ current, recordedAt }) => ({ weight: current, recordedAt }))
+    const invertedWeights = weights.reverse()
+
+    return invertedWeights.map(({ current, recordedAt }) => ({ weight: current, recordedAt }))
   }
 
   async getUserHeight(userId: string) {
