@@ -12,7 +12,6 @@ jest.mock('@/db/controllers/categories/fetch-categories', () => ({
 jest.mock('@/db/controllers/exercises/create-exercise', () => ({
   createExercise: jest.fn(),
 }))
-
 describe('db', () => {
   beforeAll(() => {
     jest.clearAllMocks()

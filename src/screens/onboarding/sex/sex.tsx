@@ -6,11 +6,12 @@ import colors from 'tailwindcss/colors'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { OnboardingSchema, SexEnum } from '../onboarding.schema'
+import { OnboardingSchema } from '../onboarding.schema'
 
 import { BackButton, Button, H2, P, Text } from '@/components'
 import { cn } from '@/utils'
 import { useColorScheme } from '@/hooks'
+import { SexEnum } from '@/db/repositories/user'
 
 export function Sex() {
   const { t } = useTranslation()

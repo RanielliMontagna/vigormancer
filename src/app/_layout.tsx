@@ -10,7 +10,7 @@ import { PortalHost } from '@rn-primitives/portal'
 import { router, Slot, SplashScreen } from 'expo-router'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
-import { ClerkProvider, ClerkLoaded, useAuth } from '@clerk/clerk-expo'
+import { ClerkProvider, ClerkLoaded, useAuth, useUser } from '@clerk/clerk-expo'
 import * as Sentry from '@sentry/react-native'
 
 import '@/styles/global.css'
@@ -24,6 +24,7 @@ import { useColorScheme, useNetInfo } from '@/hooks'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/libs/react-query'
 import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated'
+import { createUser, getUserById, hasCompleteOnboarding } from '@/db'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -51,13 +52,12 @@ function App() {
 
   const { isLoading, isConnected } = useAppStore()
   const { isSignedIn, isLoaded } = useAuth()
+  const { user } = useUser()
   const { isDarkColorScheme } = useColorScheme()
 
   const [isI18nInitialized, setIsI18nInitialized] = useState(false)
-
-  // TODO: Implement onboarding logic
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [onboarding, _] = useState(false)
+  const [isOnboardingInfoFetched, setIsOnboardingInfoFetched] = useState(false)
+  const [onboarding, setOnboarding] = useState(false)
 
   const [fontsLoaded] = useFonts({
     'Lexend-Thin': require('@/assets/fonts/Lexend-Thin.ttf'),
@@ -69,10 +69,10 @@ function App() {
   })
 
   useEffect(() => {
-    if (fontsLoaded && isI18nInitialized) {
+    if (fontsLoaded && isI18nInitialized && isOnboardingInfoFetched) {
       SplashScreen.hideAsync()
     }
-  }, [fontsLoaded, isI18nInitialized])
+  }, [fontsLoaded, isI18nInitialized, isOnboardingInfoFetched])
 
   useEffect(() => {
     const initializeI18n = async () => {
@@ -84,10 +84,37 @@ function App() {
   }, [])
 
   useEffect(() => {
+    const fetchOnboardingInfo = async () => {
+      if (!isLoaded) return
+
+      if (isSignedIn) {
+        const userInfo = await getUserById(user.id)
+
+        if (!userInfo) {
+          await createUser({
+            clerkId: user.id,
+            email: user.primaryEmailAddress.emailAddress,
+            username: user.username,
+          })
+        }
+
+        const completed = await hasCompleteOnboarding(user.id)
+        setOnboarding(Boolean(completed))
+
+        setTimeout(() => setIsOnboardingInfoFetched(true), 0)
+      } else {
+        setTimeout(() => setIsOnboardingInfoFetched(true), 0)
+      }
+    }
+
+    fetchOnboardingInfo()
+  }, [isLoaded, isSignedIn, user])
+
+  useEffect(() => {
     if (!isLoaded) return
 
     if (isSignedIn) {
-      if (onboarding) {
+      if (!onboarding) {
         router.replace('(private)/onboarding')
       } else {
         router.replace('(private)')

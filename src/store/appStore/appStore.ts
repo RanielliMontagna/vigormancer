@@ -33,13 +33,15 @@ export const useAppStore = create<AppStore>((set) => ({
       return
     }
 
-    // Default error message for all other errors
+    if (error.message) {
+      Toast.show({ type: 'error', text1: error.message })
+      return
+    }
+
     Toast.show({
       type: 'error',
       text1: t('errors.default'),
       text2: t('errors.default_message'),
     })
-
-    console.error(error)
   },
 }))

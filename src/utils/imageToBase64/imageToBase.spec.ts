@@ -11,8 +11,6 @@ describe('imageToBase64', () => {
     const image = require('../../../assets/image.png')
     const base64 = await convertImageToBase64(image)
 
-    console.log(base64)
-
     expect(base64).toMatch('')
   })
 })

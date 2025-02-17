@@ -16,14 +16,14 @@ export function Bmi() {
   const { t } = useTranslation()
   const { isDarkColorScheme } = useColorScheme()
 
-  const { pieData, bmiLevelValues } = useBmi()
+  const { bmi, height, pieData, bmiLevelValues } = useBmi()
   const { handleOpenBmiBottomSheet } = useProgressionContext()
 
   return (
-    <View className="gap-4">
+    <View className="gap-4" testID="bmi">
       <View className="flex-row justify-between items-center">
         <Text className="flex-1">{t('progression.bmi.title')}</Text>
-        <Button className="gap-2" size="sm" onPress={handleOpenBmiBottomSheet}>
+        <Button className="gap-2" size="sm" onPress={handleOpenBmiBottomSheet} testID="editBmi">
           <FontAwesome6 name="edit" size={16} color={isDarkColorScheme ? 'black' : 'white'} />
           <Text>{t('progression.bmi.action')}</Text>
         </Button>
@@ -40,7 +40,7 @@ export function Bmi() {
           centerLabelComponent={() => {
             return (
               <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <H1>21</H1>
+                <H1>{bmi}</H1>
                 <P className="text-muted-foreground">{t('progression.bmi.title')}</P>
               </View>
             )
@@ -53,7 +53,7 @@ export function Bmi() {
           <View className="flex-row justify-between items-center">
             <P className="text-sm text-muted-foreground">{t('progression.bmi.height')}</P>
             <View className="flex-row gap-1 items-baseline">
-              <H4>180</H4>
+              <H4>{height}</H4>
               <P className="text-sm text-muted-foreground">cm</P>
             </View>
           </View>

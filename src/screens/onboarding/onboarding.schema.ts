@@ -1,17 +1,6 @@
 import z from 'zod'
 
-export enum SexEnum {
-  Male = 1,
-  Female = 2,
-}
-
-export enum GoalEnum {
-  LoseWeight = 1,
-  BuildMuscle = 2,
-  ImproveStamina = 3,
-  ImproveHealth = 4,
-  StayActive = 5,
-}
+import { GoalEnum, SexEnum } from '@/db/repositories/user'
 
 export const onboardingSchema = z.object({
   sex: z.nativeEnum(SexEnum),

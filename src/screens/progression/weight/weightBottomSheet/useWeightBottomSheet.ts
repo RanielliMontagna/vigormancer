@@ -4,6 +4,12 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useProgressionContext } from '../../progression.context'
+import { useQuery } from '@tanstack/react-query'
+import { useUser } from '@clerk/clerk-expo'
+import { useAppStore } from '@/store'
+import { queryClient } from '@/libs/react-query'
+
+import { getLatestWeight, updateUserWeight } from '@/db'
 
 const WeightBottomSheetSchema = z.object({
   weight: z.number(),
@@ -12,18 +18,28 @@ const WeightBottomSheetSchema = z.object({
 type WeightBottomSheetValues = z.infer<typeof WeightBottomSheetSchema>
 
 export function useWeightBottomSheet() {
+  const { handleErrors } = useAppStore()
+  const { user } = useUser()
   const { weightBottomSheetRef } = useProgressionContext()
+  const { data } = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
 
   const methods = useForm({
     resolver: zodResolver(WeightBottomSheetSchema),
-    defaultValues: { weight: 70 },
+    defaultValues: { weight: data?.current },
   })
 
   const selectedWeight = methods.watch('weight')
 
-  function handleSubmit(values: WeightBottomSheetValues) {
-    //TODO: Implement weight route to backend
-    console.log('Weight', values)
+  async function handleSubmit(values: WeightBottomSheetValues) {
+    try {
+      await updateUserWeight({ userId: user.id, weight: values.weight })
+      queryClient.invalidateQueries({ queryKey: ['weight'] })
+      queryClient.invalidateQueries({ queryKey: ['historyWeight'] })
+
+      weightBottomSheetRef.current?.close()
+    } catch (err) {
+      handleErrors(err)
+    }
   }
 
   function handleCancel() {

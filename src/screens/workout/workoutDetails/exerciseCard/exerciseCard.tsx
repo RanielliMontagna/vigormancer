@@ -27,12 +27,13 @@ export function ExerciseCard({ exerciseName, sets, repetitions, ...rest }: Exerc
 
   return (
     <GestureHandlerRootView>
-      <View className="mb-2">
+      <View className="mb-2" testID="exercise-card">
         <View className="absolute right-0 top-0 bottom-0 flex-row items-center">
           <TouchableOpacity
             activeOpacity={0.8}
             className="justify-center items-center h-full w-20 bg-indigo-500"
             onPress={handleEditExercise}
+            testID="edit-exercise-button"
           >
             <FontAwesome name="edit" size={24} color="white" />
           </TouchableOpacity>

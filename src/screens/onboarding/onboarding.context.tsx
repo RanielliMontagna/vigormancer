@@ -5,6 +5,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { OnboardingSchema, onboardingSchema } from './onboarding.schema'
 import { router } from 'expo-router'
 import { useAppStore } from '@/store'
+import dayjs from 'dayjs'
+import { useAuth } from '@clerk/clerk-expo'
+import { completeOnboarding } from '@/db'
 
 export enum OnboardingSteps {
   WELCOME,
@@ -25,6 +28,7 @@ interface OnboardingContextProps {
 export const OnboardingContext = createContext({} as OnboardingContextProps)
 
 export function OnboardingProvider({ children }) {
+  const { userId, signOut } = useAuth()
   const { setIsLoading, handleErrors } = useAppStore()
 
   const methods = useForm<OnboardingSchema>({
@@ -36,24 +40,40 @@ export function OnboardingProvider({ children }) {
     router.back()
   }
 
-  async function handleSubmitOnboarding() {
+  async function handleSubmitOnboarding({ age, goal, height, sex, weight }: OnboardingSchema) {
     try {
       setIsLoading(true)
 
-      //TODO: Handle onboarding submission
-      await Promise.resolve()
+      await completeOnboarding({
+        userId,
+        birthdate: dayjs().subtract(age, 'year').toDate(),
+        height,
+        weight,
+        sex,
+        goal,
+      })
 
       methods.reset()
       router.replace('onboarding/ready')
     } catch (error) {
       handleErrors(error)
+
+      router.dismissAll()
+      router.replace('(public)')
+      signOut()
     } finally {
       setIsLoading(false)
     }
   }
 
   return (
-    <OnboardingContext.Provider value={{ methods, prevStep, handleSubmitOnboarding }}>
+    <OnboardingContext.Provider
+      value={{
+        methods,
+        prevStep,
+        handleSubmitOnboarding: methods.handleSubmit(handleSubmitOnboarding),
+      }}
+    >
       {children}
     </OnboardingContext.Provider>
   )

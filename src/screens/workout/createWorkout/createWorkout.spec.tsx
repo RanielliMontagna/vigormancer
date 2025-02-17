@@ -1,10 +1,8 @@
-import { act, fireEvent, render, waitFor } from '@testing-library/react-native'
-
 import { useColorScheme } from '@/hooks'
-import { Wrapper } from '@/utils/test/test-utils'
 
 import { CreateWorkout } from './createWorkout'
 import { createWorkout } from '@/db'
+import { act, fireEvent, renderWithProviders, waitFor } from '@/utils'
 
 const mockUseColorScheme = useColorScheme as jest.Mock
 
@@ -18,19 +16,19 @@ describe('CreateWorkout', () => {
   })
 
   it('should render successfully', () => {
-    const { getByTestId } = render(<CreateWorkout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<CreateWorkout />)
     expect(getByTestId('create-workout')).toBeDefined()
   })
 
   it('should render with dark color scheme', () => {
     mockUseColorScheme.mockReturnValue({ isDarkColorScheme: true })
 
-    const { getByTestId } = render(<CreateWorkout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<CreateWorkout />)
     expect(getByTestId('create-workout')).toBeDefined()
   })
 
   it('should call handleBack when back button is pressed', async () => {
-    const { getByTestId } = render(<CreateWorkout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<CreateWorkout />)
 
     await act(async () => {
       fireEvent.press(getByTestId('cancel'))
@@ -44,7 +42,7 @@ describe('CreateWorkout', () => {
       return { id: '1' }
     })
 
-    const { getByTestId } = render(<CreateWorkout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<CreateWorkout />)
 
     await act(async () => {
       fireEvent.changeText(getByTestId('name'), 'Workout 1')
@@ -62,7 +60,7 @@ describe('CreateWorkout', () => {
       throw new Error()
     })
 
-    const { getByTestId } = render(<CreateWorkout />, { wrapper: Wrapper })
+    const { getByTestId } = renderWithProviders(<CreateWorkout />)
 
     await act(async () => {
       fireEvent.changeText(getByTestId('name'), 'Workout 1')

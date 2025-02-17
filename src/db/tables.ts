@@ -1,6 +1,39 @@
 export const createTablesSQL = `
     PRAGMA journal_mode = 'wal';
-      
+
+    -- Users table
+    CREATE TABLE IF NOT EXISTS users (
+        id TEXT PRIMARY KEY,
+        username TEXT NOT NULL,
+        email TEXT NOT NULL,
+        sex INTEGER, 
+        goal INTEGER,
+        birthdate DATE,
+        onboarding BOOLEAN DEFAULT 0,
+        createdAt TIMESTAMP DEFAULT (DATETIME('now')),
+        updatedAt TIMESTAMP DEFAULT (DATETIME('now'))
+    );
+
+    -- Weight history table
+    CREATE TABLE IF NOT EXISTS user_weight (
+        id TEXT PRIMARY KEY,
+        userId TEXT NOT NULL,
+        current FLOAT NOT NULL, -- kg
+        heaviest FLOAT NOT NULL, -- kg
+        lightest FLOAT NOT NULL, -- kg
+        recordedAt TIMESTAMP DEFAULT (DATETIME('now')),
+        FOREIGN KEY (userId) REFERENCES users(id)
+    );
+
+    -- Height history table
+    CREATE TABLE IF NOT EXISTS user_height (
+        id TEXT PRIMARY KEY,
+        userId TEXT NOT NULL,
+        height INTEGER NOT NULL, -- cm
+        recordedAt TIMESTAMP DEFAULT (DATETIME('now')),
+        FOREIGN KEY (userId) REFERENCES users(id)
+    );
+
     -- Create workout table
     CREATE TABLE IF NOT EXISTS workouts (
         id TEXT PRIMARY KEY,

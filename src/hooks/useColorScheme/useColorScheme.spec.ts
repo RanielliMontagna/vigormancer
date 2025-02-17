@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-native'
+import { renderHook } from '@/utils'
 import { useColorScheme as useNativewindColorScheme } from 'nativewind'
 
 import { useColorScheme } from './useColorScheme'

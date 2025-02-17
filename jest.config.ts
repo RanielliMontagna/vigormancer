@@ -22,6 +22,7 @@ const config: Config = {
   moduleNameMapper: {
     '\\.(png|jpg|jpeg|svg)$': '<rootDir>/src/__mocks__/fileMock.js',
   },
+  forceExit: true,
 }
 
 export default config

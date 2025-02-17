@@ -14,26 +14,6 @@ const AlertDialogTrigger = AlertDialogPrimitive.Trigger
 
 const AlertDialogPortal = AlertDialogPrimitive.Portal
 
-const AlertDialogOverlayWeb = React.forwardRef<
-  AlertDialogPrimitive.OverlayRef,
-  AlertDialogPrimitive.OverlayProps
->(({ className, ...props }, ref) => {
-  const { open } = AlertDialogPrimitive.useRootContext()
-  return (
-    <AlertDialogPrimitive.Overlay
-      className={cn(
-        'z-50 bg-black/80 flex justify-center items-center p-2 absolute top-0 right-0 bottom-0 left-0',
-        open ? 'web:animate-in web:fade-in-0' : 'web:animate-out web:fade-out-0',
-        className,
-      )}
-      {...props}
-      ref={ref}
-    />
-  )
-})
-
-AlertDialogOverlayWeb.displayName = 'AlertDialogOverlayWeb'
-
 const AlertDialogOverlayNative = React.forwardRef<
   AlertDialogPrimitive.OverlayRef,
   AlertDialogPrimitive.OverlayProps
@@ -55,10 +35,7 @@ const AlertDialogOverlayNative = React.forwardRef<
 
 AlertDialogOverlayNative.displayName = 'AlertDialogOverlayNative'
 
-const AlertDialogOverlay = Platform.select({
-  web: AlertDialogOverlayWeb,
-  default: AlertDialogOverlayNative,
-})
+const AlertDialogOverlay = Platform.select({ default: AlertDialogOverlayNative })
 
 const AlertDialogContent = React.forwardRef<
   AlertDialogPrimitive.ContentRef,

@@ -1,7 +1,7 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet'
 import { createContext, useCallback, useContext, useRef } from 'react'
 
-interface ProgressionContextProps {
+export interface ProgressionContextProps {
   bmiBottomSheetRef: React.RefObject<BottomSheetModal>
   handleOpenBmiBottomSheet: () => void
 

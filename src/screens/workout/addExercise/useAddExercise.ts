@@ -9,10 +9,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useQuery } from '@tanstack/react-query'
 
 import { useAppStore } from '@/store'
-import { createWorkoutExercise } from '@/db'
+import { createWorkoutExercise, fetchExercises } from '@/db'
 import { queryClient } from '@/libs/react-query'
 import { ExerciseWithCategory } from '@/db/repositories/exercises'
-import { fetchExercises } from '@/db/controllers/exercises/fetch-exercises'
 
 export function useAddExercise() {
   const { t } = useTranslation()

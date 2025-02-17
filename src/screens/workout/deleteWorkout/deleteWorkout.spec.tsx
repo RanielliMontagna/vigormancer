@@ -1,6 +1,4 @@
-import { render } from '@testing-library/react-native'
-
-import { Wrapper } from '@/utils/test/test-utils'
+import { renderWithProviders } from '@/utils/test/test-utils'
 
 import { DeleteWorkoutDialog } from './deleteWorkout'
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
@@ -25,10 +23,8 @@ describe('DeleteWorkoutDialog', () => {
 
     const handleDeleteWorkout = jest.fn()
 
-    const { getByText } = render(
-      <Wrapper>
-        <DeleteWorkoutDialog workout={workout} handleDeleteWorkout={handleDeleteWorkout} />
-      </Wrapper>,
+    const { getByText } = renderWithProviders(
+      <DeleteWorkoutDialog workout={workout} handleDeleteWorkout={handleDeleteWorkout} />,
     )
 
     expect(getByText('workout.workoutDetails.delete')).toBeDefined()
@@ -50,10 +46,8 @@ describe('DeleteWorkoutDialog', () => {
 
     const handleDeleteWorkout = jest.fn()
 
-    const { getByText } = render(
-      <Wrapper>
-        <DeleteWorkoutDialog workout={workout} handleDeleteWorkout={handleDeleteWorkout} />
-      </Wrapper>,
+    const { getByText } = renderWithProviders(
+      <DeleteWorkoutDialog workout={workout} handleDeleteWorkout={handleDeleteWorkout} />,
     )
 
     expect(getByText('workout.workoutDetails.delete')).toBeDefined()

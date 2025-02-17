@@ -1,4 +1,4 @@
-import { act, fireEvent, render, waitFor } from '@testing-library/react-native'
+import { act, fireEvent, render, waitFor } from '@/utils'
 
 import { ForgotPassword } from './forgotPassword'
 import { useColorScheme } from '@/hooks'

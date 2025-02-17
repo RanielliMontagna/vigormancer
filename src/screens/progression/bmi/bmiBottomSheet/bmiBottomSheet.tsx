@@ -66,8 +66,8 @@ export function BmiBottomSheet() {
             <RulerPicker
               max={maxHeight}
               min={minHeight}
-              step={0.1}
-              fractionDigits={1}
+              step={1}
+              fractionDigits={0}
               initialValue={selectedHeight}
               unit="cm"
               onValueChangeEnd={(number) => methods.setValue('height', Number(number))}
@@ -76,10 +76,21 @@ export function BmiBottomSheet() {
           </View>
 
           <View className="flex-row gap-4 mt-4">
-            <Button className="flex-1" size="lg" variant="outline" onPress={handleCancel}>
+            <Button
+              className="flex-1"
+              size="lg"
+              variant="outline"
+              onPress={handleCancel}
+              testID="cancelBmi"
+            >
               <Text>{t('progression.bmi.edit.cancel')}</Text>
             </Button>
-            <Button className="flex-1" size="lg" onPress={methods.handleSubmit(handleSubmit)}>
+            <Button
+              className="flex-1"
+              size="lg"
+              onPress={methods.handleSubmit(handleSubmit)}
+              testID="saveBmi"
+            >
               <Text>{t('progression.bmi.edit.action')}</Text>
             </Button>
           </View>

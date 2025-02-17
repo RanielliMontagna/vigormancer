@@ -1,9 +1,5 @@
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
-import { createWorkout } from './create-workout'
-import { deleteWorkout } from './delete-workout'
-import { fetchWorkouts } from './fetch-workouts'
-import { getWorkout } from './get-workout'
-import { updateWorkout } from './update-workout'
+import { createWorkout, deleteWorkout, fetchWorkouts, getWorkout, updateWorkout } from '.'
 
 jest.mock('@/db', () => ({
   db: {
@@ -13,6 +9,7 @@ jest.mock('@/db', () => ({
       .fn()
       .mockResolvedValue({ id: '1', name: 'Workout', description: 'Description', difficulty: 2 }),
   },
+  fetchWorkoutExercises: jest.fn().mockResolvedValue([]),
 }))
 
 describe('@db/controllers/workouts', () => {

@@ -1,8 +1,4 @@
-import { createCategory } from './create-category'
-import { deleteCategory } from './delete-category'
-import { fetchCategories } from './fetch-categories'
-import { getCategory } from './get-category'
-import { updateCategory } from './update-category'
+import { createCategory, deleteCategory, fetchCategories, getCategory, updateCategory } from '.'
 
 jest.mock('@/db', () => ({
   db: {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react-native'
+import { render } from '@/utils'
 
 import { LoadingOverlay } from '@/components'
 import { useColorScheme } from '@/hooks'

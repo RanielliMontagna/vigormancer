@@ -12,8 +12,7 @@ import {
   EditWorkoutExerciseParams,
   WorkoutExerciseWithCategory,
 } from '@/db/repositories/workoutExercises'
-import { updateWorkoutExercise } from '@/db/controllers/workoutExercises/update-workout-exercise'
-import { getWorkoutExercise } from '@/db/controllers/workoutExercises/get-workout-exercise'
+import { getWorkoutExercise, updateWorkoutExercise } from '@/db'
 
 const editWorkoutExerciseSchema = z.object({
   sets: z.coerce.number().int(),

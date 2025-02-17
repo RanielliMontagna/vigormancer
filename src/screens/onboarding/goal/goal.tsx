@@ -1,15 +1,15 @@
 import { TFunction } from 'i18next'
 import { TouchableOpacity, View } from 'react-native'
+import { useTranslation } from 'react-i18next'
 import colors from 'tailwindcss/colors'
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { GoalEnum } from '../onboarding.schema'
 import { useGoal } from './useGoal'
 
 import { BackButton, Button, H2, P, Text } from '@/components'
 import { cn } from '@/utils'
-import { useTranslation } from 'react-i18next'
+import { GoalEnum } from '@/db/repositories/user'
 
 interface GoalCheckboxProps {
   goal: GoalEnum
