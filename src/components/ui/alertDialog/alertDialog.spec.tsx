@@ -20,14 +20,14 @@ jest.mock('expo-font', () => ({
 }))
 
 describe('@components/ui/alertDialog', () => {
-  it('should be able to render alert dialog', () => {
-    const { getByTestId, findByRole } = renderWithProviders(
+  it('should be able to render alert dialog', async () => {
+    const { getByTestId } = renderWithProviders(
       <AlertDialog>
         <AlertDialogOverlay />
         <AlertDialogTrigger testID="open-alert-dialog">Open me</AlertDialogTrigger>
         <AlertDialogHeader>
           <AlertDialogTitle>Test</AlertDialogTitle>
-          <AlertDialogDescription>Description</AlertDialogDescription>
+          <AlertDialogDescription testID="description">Description</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogContent>Test here</AlertDialogContent>
         <AlertDialogFooter>
@@ -37,11 +37,11 @@ describe('@components/ui/alertDialog', () => {
       </AlertDialog>,
     )
 
-    act(() => {
+    await act(() => {
       const alertDialogTrigger = getByTestId('open-alert-dialog')
       fireEvent.press(alertDialogTrigger)
     })
 
-    expect(findByRole('button')).toBeDefined()
+    expect(await getByTestId('description')).toBeDefined()
   })
 })
