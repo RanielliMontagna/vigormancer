@@ -7,9 +7,8 @@ export interface UserStreak {
 }
 
 export interface UserStreakRepository {
-  createStreak(userId: string): Promise<{ id: string }>
+  createStreak(userId: string): Promise<UserStreak>
   getStreak(userId: string): Promise<UserStreak>
-  incrementStreak(userId: string): Promise<void>
+  incrementStreak(userId: string, date: string): Promise<{ currentStreak: number }>
   resetStreak(userId: string): Promise<void>
-  updateLastWorkoutDate(userId: string, date: string): Promise<void>
 }
