@@ -9,9 +9,11 @@ import {
   UserRepository,
   UserWeight,
   UserWeightReturn,
+  WeightDifferenceLastWeek,
 } from '../user'
 
 import { db } from '@/db'
+import dayjs from 'dayjs'
 
 export class SqliteUserRepository implements UserRepository {
   async createUser(user: CreateUserParams): Promise<{ id: string }> {
@@ -135,5 +137,42 @@ export class SqliteUserRepository implements UserRepository {
     )
 
     return lastHeight?.height
+  }
+
+  async getWeightDifferenceLastWeek(userId: string): Promise<WeightDifferenceLastWeek> {
+    const oneWeekAgo = dayjs().subtract(1, 'week').toISOString()
+
+    const lastRecordedWeight = await db.getFirstAsync<UserWeight>(
+      `SELECT current, recordedAt
+       FROM user_weight
+       WHERE userId = ?
+       AND recordedAt > ?
+       ORDER BY recordedAt DESC
+       LIMIT 1`,
+      [userId, oneWeekAgo],
+    )
+
+    const firstRecordedWeight = await db.getFirstAsync<UserWeight>(
+      `SELECT current, recordedAt
+       FROM user_weight
+       WHERE userId = ?
+       AND recordedAt > ?
+       ORDER BY recordedAt ASC
+       LIMIT 1`,
+      [userId, oneWeekAgo],
+    )
+
+    if (!lastRecordedWeight || !firstRecordedWeight) {
+      return { weight: 0, weightDifference: 0, percentage: 0 }
+    }
+
+    const weightDifference = lastRecordedWeight.current - firstRecordedWeight.current
+    const percentage = (weightDifference / firstRecordedWeight.current) * 100
+
+    return {
+      weight: lastRecordedWeight.current,
+      weightDifference: +weightDifference.toFixed(2),
+      percentage,
+    }
   }
 }

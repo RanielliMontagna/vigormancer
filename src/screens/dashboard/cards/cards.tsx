@@ -10,6 +10,8 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { useColorScheme } from '@/hooks'
 import { Card, CardContent, H2, P, Text } from '@/components'
 import { getLatestWeight, getUserStreak } from '@/db'
+import { getWeightDifferenceLastWeek } from '@/db/controllers/user/get-weight-difference-last-week'
+import { cn } from '@/utils'
 
 export function DashboardCards() {
   const { isDarkColorScheme } = useColorScheme()
@@ -21,6 +23,13 @@ export function DashboardCards() {
     queryFn: () => getLatestWeight(user.id),
     gcTime: 0,
   })
+
+  const weightDifferenceLastWeekQuery = useQuery({
+    queryKey: ['weightDifferenceLastWeek'],
+    queryFn: () => getWeightDifferenceLastWeek(user.id),
+    gcTime: 0,
+  })
+
   const streakQuery = useQuery({
     queryKey: ['streak'],
     queryFn: () => getUserStreak(user.id),
@@ -28,6 +37,7 @@ export function DashboardCards() {
   })
 
   const streakCount = streakQuery.data?.currentStreak ?? 0
+  const difference = weightDifferenceLastWeekQuery.data
 
   return (
     <View className="gap-4">
@@ -66,8 +76,13 @@ export function DashboardCards() {
                 <H2 className="mb-[-4px]">{weightQuery.data?.current ?? 0}</H2>
                 <P className="text-sm p-0 m-0">kg</P>
               </View>
-              <P className="flex-1 text-sm text-green-500">
-                -1,2 kg {t('dashboard.since_last_week')}
+              <P
+                className={cn(
+                  'flex-1 text-sm',
+                  difference?.weightDifference < 0 && 'text-green-500',
+                )}
+              >
+                {difference?.weightDifference} kg {t('dashboard.since_last_week')}
               </P>
             </View>
           </View>

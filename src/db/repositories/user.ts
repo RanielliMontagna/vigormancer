@@ -55,9 +55,16 @@ export interface OnboardingDataParams {
 }
 
 export type UserWeightReturn = Omit<UserWeight, 'id' | 'userId' | 'recordedAt'>
+
 export type UserHistoryWeightReturn = {
   weight: number
   recordedAt: Date
+}
+
+export interface WeightDifferenceLastWeek {
+  weight: number
+  weightDifference: number
+  percentage: number
 }
 
 export interface UserRepository {
@@ -71,4 +78,5 @@ export interface UserRepository {
   getLatestUserWeight(userId: string): Promise<UserWeightReturn>
   getHistoryUserWeight(userId: string): Promise<UserHistoryWeightReturn[]>
   getUserHeight(userId: string): Promise<number>
+  getWeightDifferenceLastWeek(userId: string): Promise<WeightDifferenceLastWeek>
 }
