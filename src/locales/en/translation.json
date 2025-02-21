@@ -215,6 +215,9 @@
     "title": "Workouts",
     "subtitle": "Channel your energy, master your form...",
     "add": "Add Workout",
+    "exercise_zero": "No exercises yet",
+    "exercise_one": "{{count}} exercise",
+    "exercise_other": "{{count}} exercises",
     "emptyState": {
       "title": "No workouts yet",
       "subtitle": "Start your journey by adding a new workout."

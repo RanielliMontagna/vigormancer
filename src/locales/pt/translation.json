@@ -215,6 +215,9 @@
     "title": "Treinos",
     "subtitle": "Canalize sua energia, domine sua forma...",
     "add": "Adicionar Treino",
+    "exercise_zero": "Nenhum exercício",
+    "exercise_one": "{{count}} exercício",
+    "exercise_other": "{{count}} exercícios",
     "emptyState": {
       "title": "Nenhum treino encontrado",
       "subtitle": "Comece adicionando um novo treino."

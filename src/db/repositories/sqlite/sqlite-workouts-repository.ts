@@ -1,10 +1,20 @@
 import { v4 as uuidv4 } from 'uuid'
-import { CreateWorkoutParams, UpdateWorkoutParams, Workout, WorkoutsRepository } from '../workouts'
+import {
+  CreateWorkoutParams,
+  UpdateWorkoutParams,
+  Workout,
+  WorkoutsRepository,
+  WorkoutWithExercisesCount,
+} from '../workouts'
 import { db, fetchWorkoutExercises } from '@/db'
 
 export class SqliteWorkoutsRepository implements WorkoutsRepository {
   async getWorkouts() {
-    const workouts = await db.getAllAsync<Workout>('SELECT * FROM workouts')
+    const workouts = await db.getAllAsync<WorkoutWithExercisesCount>(`
+      SELECT w.*, COUNT(we.workoutId) as exercisesCount
+      FROM workouts w
+      LEFT JOIN workout_exercise we ON w.id = we.workoutId
+      GROUP BY w.id`)
 
     return workouts
   }

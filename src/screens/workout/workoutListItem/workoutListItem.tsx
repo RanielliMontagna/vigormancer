@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Dimensions, Image, TouchableOpacity, View } from 'react-native'
 import colors from 'tailwindcss/colors'
 
-import { Workout, WorkoutDifficulty } from '@/db/repositories/workouts'
+import { WorkoutDifficulty, WorkoutWithExercisesCount } from '@/db/repositories/workouts'
 
 import WorkoutPlaceholder from '@/assets/images/workout-placeholder.jpg'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
@@ -12,7 +12,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { H4, Text } from '@/components'
 import { useColorScheme } from '@/hooks'
 
-interface WorkoutListItemProps extends Workout {
+interface WorkoutListItemProps extends WorkoutWithExercisesCount {
   index: number
   handleOpenWorkoutDetails: (id: string) => void
 }
@@ -23,6 +23,7 @@ export function WorkoutListItem({
   name,
   image,
   difficulty,
+  exercisesCount,
   handleOpenWorkoutDetails,
 }: WorkoutListItemProps) {
   const { isDarkColorScheme } = useColorScheme()
@@ -65,11 +66,11 @@ export function WorkoutListItem({
           />
           <Text className="text-xs">{t(`workout.difficulty.${difficulty}`)}</Text>
         </View>
-        <View>
+        <View className="gap-1">
           <H4>{name}</H4>
           <View className="flex flex-row items-center gap-2">
             <FontAwesome5 name="running" size={16} color={isDarkColorScheme ? 'white' : 'black'} />
-            <Text className="text-sm">0 exercises</Text>
+            <Text className="text-xs">{t('workout.exercise', { count: exercisesCount })}</Text>
           </View>
         </View>
       </View>

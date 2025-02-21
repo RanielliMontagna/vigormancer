@@ -151,6 +151,7 @@ export function WorkoutDetails() {
             refreshControl={<RefreshControl refreshing={isLoading} onRefresh={refetch} />}
             onRefresh={refetch}
             renderItem={({ item }) => <ExerciseCard {...item} />}
+            estimatedItemSize={112}
             contentContainerStyle={{ paddingHorizontal: 8, paddingVertical: 8 }}
           />
         )}
