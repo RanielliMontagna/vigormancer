@@ -40,6 +40,7 @@ export function WorkoutDetails() {
     refetch,
     handleDeleteWorkout,
     handleGoToAddExercise,
+    handleStartSessionWorkout,
   } = useWorkoutDetails()
 
   const difficultyColor = useMemo(() => {
@@ -157,7 +158,11 @@ export function WorkoutDetails() {
         )}
       </View>
       <View>
-        <Button onPress={() => console.log('Implement start workout')} disabled={isExercisesEmpty}>
+        <Button
+          testID="start-workout"
+          onPress={handleStartSessionWorkout}
+          disabled={isExercisesEmpty}
+        >
           <Text>{t('workout.workoutDetails.start')}</Text>
         </Button>
       </View>

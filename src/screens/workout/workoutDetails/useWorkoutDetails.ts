@@ -46,6 +46,10 @@ export function useWorkoutDetails() {
     router.push(`(private)/workouts/${id}/add-exercise`)
   }
 
+  async function handleStartSessionWorkout() {
+    router.push(`(private)/workouts/${id}/session`)
+  }
+
   return {
     workout: data,
     isLoading,
@@ -56,5 +60,6 @@ export function useWorkoutDetails() {
     refetch,
     handleDeleteWorkout,
     handleGoToAddExercise,
+    handleStartSessionWorkout,
   }
 }
