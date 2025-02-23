@@ -222,6 +222,12 @@
       "title": "No workouts yet",
       "subtitle": "Start your journey by adding a new workout."
     },
+    "session": {
+      "ready": "Ready to start?",
+      "readyMessage": "Let's go! Channel your energy and master your form.",
+      "countdown": "Starting automatically in",
+      "start": "I'm ready"
+    },
     "workoutDetails": {
       "exercises": "Exercises",
       "start": "Start Workout",

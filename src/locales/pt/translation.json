@@ -222,6 +222,12 @@
       "title": "Nenhum treino encontrado",
       "subtitle": "Comece adicionando um novo treino."
     },
+    "session": {
+      "ready": "Pronto para o treino?",
+      "readyMessage": "Vamos começar! Prepare-se para dominar sua forma e liberar seu poder.",
+      "countdown": "Começando automaticamente em",
+      "start": "Estou pronto"
+    },
     "workoutDetails": {
       "exercises": "Exercícios",
       "start": "Começar Treino",

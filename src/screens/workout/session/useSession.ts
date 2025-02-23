@@ -2,11 +2,19 @@ import { getWorkout } from '@/db'
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
 import { useQuery } from '@tanstack/react-query'
 import { useLocalSearchParams } from 'expo-router'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import colors from 'tailwindcss/colors'
 
 export function useSession() {
   const { id: workoutId } = useLocalSearchParams<{ id: string }>()
+
+  const readyToGoCountdown = 15
+  const [countdownInSeconds, setCountdownInSeconds] = useState(readyToGoCountdown)
+
+  const fillCountdown = useMemo(
+    () => ((readyToGoCountdown - countdownInSeconds) / readyToGoCountdown) * 100,
+    [countdownInSeconds],
+  )
 
   const { data } = useQuery({
     queryKey: ['workoutDetails'],
@@ -26,5 +34,19 @@ export function useSession() {
     }
   }, [data?.difficulty])
 
-  return { data, difficultyColor }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCountdownInSeconds((prev) => prev - 1)
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [countdownInSeconds])
+
+  useEffect(() => {
+    if (countdownInSeconds === 0) {
+      // Start the workout
+    }
+  }, [countdownInSeconds])
+
+  return { countdownInSeconds, fillCountdown, data, difficultyColor }
 }
