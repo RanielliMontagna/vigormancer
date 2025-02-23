@@ -61,10 +61,11 @@ type ButtonProps = React.ComponentPropsWithoutRef<typeof Pressable> &
   VariantProps<typeof buttonVariants> & {
     children: React.ReactNode
     startIcon?: React.ReactNode
+    endIcon?: React.ReactNode
   }
 
 const Button = React.forwardRef<React.ElementRef<typeof Pressable>, ButtonProps>(
-  ({ className, variant, size, startIcon, children, ...props }, ref) => {
+  ({ className, variant, size, startIcon, endIcon, children, ...props }, ref) => {
     return (
       <TextClassContext.Provider
         value={buttonTextVariants({ variant, size, className: 'web:pointer-events-none' })}
@@ -80,6 +81,7 @@ const Button = React.forwardRef<React.ElementRef<typeof Pressable>, ButtonProps>
         >
           {startIcon && <View className="mr-2">{startIcon}</View>}
           {children}
+          {endIcon && <View className="ml-2">{endIcon}</View>}
         </Pressable>
       </TextClassContext.Provider>
     )
