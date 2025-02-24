@@ -6,7 +6,7 @@ import colors from 'tailwindcss/colors'
 import WorkoutPlaceholder from '@/assets/images/workout-placeholder.jpg'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
-import { BackButton, Button, Text } from '@/components'
+import { Button, Text } from '@/components'
 import { useColorScheme } from '@/hooks'
 
 import { useReady } from './useReady'
@@ -15,7 +15,7 @@ import { useSessionContext } from '../session.context'
 export function Ready() {
   const { t } = useTranslation()
   const { isDarkColorScheme } = useColorScheme()
-  const { workout } = useSessionContext()
+  const { workout, nextStep } = useSessionContext()
 
   const { countdownInSeconds, difficultyColor, fillCountdown } = useReady()
 
@@ -25,7 +25,6 @@ export function Ready() {
 
   return (
     <>
-      <BackButton />
       <ImageBackground
         source={imageSource}
         imageStyle={{ borderRadius: 16 }}
@@ -85,7 +84,7 @@ export function Ready() {
         <Button
           className="w-full"
           size="lg"
-          onPress={() => console.log('start')}
+          onPress={nextStep}
           endIcon={
             <FontAwesome6
               name="chevron-right"

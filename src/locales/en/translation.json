@@ -226,7 +226,13 @@
       "ready": "Ready to start?",
       "readyMessage": "Let's go! Channel your energy and master your form.",
       "countdown": "Starting automatically in",
-      "start": "I'm ready"
+      "start": "I'm ready",
+      "exit": {
+        "title": "Are you sure you want to exit?",
+        "description": "Your progress will not be saved. Are you sure you want to exit this workout?",
+        "cancel": "Back to workout",
+        "exit": "Exit"
+      }
     },
     "workoutDetails": {
       "exercises": "Exercises",

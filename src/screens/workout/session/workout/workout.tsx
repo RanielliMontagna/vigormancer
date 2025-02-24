@@ -1,9 +1,9 @@
-import { BackButton } from '@/components'
+import { Exit } from '../exit/exit'
 
 export function Workout() {
   return (
     <>
-      <BackButton />
+      <Exit />
     </>
   )
 }

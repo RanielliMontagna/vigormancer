@@ -226,7 +226,13 @@
       "ready": "Pronto para o treino?",
       "readyMessage": "Vamos começar! Prepare-se para dominar sua forma e liberar seu poder.",
       "countdown": "Começando automaticamente em",
-      "start": "Estou pronto"
+      "start": "Estou pronto",
+      "exit": {
+        "title": "Você tem certeza que deseja sair?",
+        "description": "Seu progresso não será salvo. Tem certeza que deseja sair deste treino?",
+        "cancel": "Voltar ao treino",
+        "exit": "Sair"
+      }
     },
     "workoutDetails": {
       "exercises": "Exercícios",
