@@ -1,4 +1,3 @@
-import { useRouter } from 'expo-router'
 import { useTranslation } from 'react-i18next'
 
 import {
@@ -13,13 +12,15 @@ import {
   BackButton,
   Text,
 } from '@/components'
+import { useExit } from './useExit'
 
 export function Exit() {
   const { t } = useTranslation()
-  const { back } = useRouter()
+
+  const { isDialogVisible, handleCancel, handleExit } = useExit()
 
   return (
-    <AlertDialog>
+    <AlertDialog open={isDialogVisible}>
       <AlertDialogTrigger asChild>
         <BackButton />
       </AlertDialogTrigger>
@@ -27,10 +28,10 @@ export function Exit() {
         <AlertDialogTitle>{t('workout.session.exit.title')}</AlertDialogTitle>
         <AlertDialogDescription>{t('workout.session.exit.description')}</AlertDialogDescription>
         <AlertDialogFooter>
-          <AlertDialogCancel>
+          <AlertDialogCancel onPress={handleCancel}>
             <Text>{t('workout.session.exit.cancel')}</Text>
           </AlertDialogCancel>
-          <AlertDialogAction onPress={back}>
+          <AlertDialogAction onPress={handleExit}>
             <Text>{t('workout.session.exit.exit')}</Text>
           </AlertDialogAction>
         </AlertDialogFooter>
