@@ -250,7 +250,10 @@
         "removeExercise": "Remove Exercise",
         "removeExerciseTitle": "Remove Exercise?",
         "removeExerciseDescription": "This action cannot be undone. Are you sure you want to remove {{name}} from your workout?",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "previous": "Previous",
+        "skip": "Skip",
+        "done": "Done"
       },
       "edit": {
         "subtitle": "Update the details of this exercise.",

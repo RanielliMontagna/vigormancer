@@ -250,7 +250,10 @@
         "removeExercise": "Remover Exercício",
         "removeExerciseTitle": "Remover Exercício?",
         "removeExerciseDescription": "Essa ação não pode ser desfeita. Tem certeza que deseja remover o exercício {{name}}?",
-        "cancel": "Cancelar"
+        "cancel": "Cancelar",
+        "previous": "Anterior",
+        "skip": "Pular",
+        "done": "Feito"
       },
       "edit": {
         "subtitle": "Atualize seu exercício e alcance novos patamares.",
