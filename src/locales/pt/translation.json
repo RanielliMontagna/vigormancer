@@ -252,6 +252,10 @@
         "removeExerciseDescription": "Essa ação não pode ser desfeita. Tem certeza que deseja remover o exercício {{name}}?",
         "cancel": "Cancelar",
         "previous": "Anterior",
+        "addRestTime": "+{{seconds}}s",
+        "countdown": "Próxima série em",
+        "startNow": "Começar agora",
+        "next": "Próximo",
         "skip": "Pular",
         "done": "Feito"
       },

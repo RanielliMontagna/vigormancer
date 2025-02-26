@@ -252,6 +252,10 @@
         "removeExerciseDescription": "This action cannot be undone. Are you sure you want to remove {{name}} from your workout?",
         "cancel": "Cancel",
         "previous": "Previous",
+        "addRestTime": "+{{seconds}}s",
+        "countdown": "Next set in",
+        "startNow": "Start Now",
+        "next": "Next",
         "skip": "Skip",
         "done": "Done"
       },
