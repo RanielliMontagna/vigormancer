@@ -11,6 +11,7 @@ import { Button, Text } from '@/components'
 import { useColorScheme } from '@/hooks'
 import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import colors from 'tailwindcss/colors'
+import { cn } from '@/utils'
 
 export function Workout() {
   const { t } = useTranslation()
@@ -83,7 +84,7 @@ export function Workout() {
             onPress={handleSkipRestTime}
             variant="secondary"
             className="flex-1"
-            startIcon={<FontAwesome6 name="play" />}
+            startIcon={<FontAwesome6 name="play" color={isDarkColorScheme ? 'white' : 'black'} />}
           >
             <Text>{t('workout.workoutDetails.exerciseCard.startNow')}</Text>
           </Button>
@@ -122,22 +123,29 @@ export function Workout() {
           <Text>{t('workout.workoutDetails.exerciseCard.done')}</Text>
         </Button>
       </View>
-      <View className="flex-row justify-between gap-4">
+      <View className="flex-row justify-between items-center gap-4">
         <Button
           onPress={handleGoToPreviousExercise}
           variant="secondary"
           className="flex-1"
           disabled={currentExerciseIndex === 0}
-          startIcon={<FontAwesome6 name="arrow-left" />}
+          startIcon={
+            <FontAwesome6 name="arrow-left" color={isDarkColorScheme ? 'white' : 'black'} />
+          }
         >
           <Text>{t('workout.workoutDetails.exerciseCard.previous')}</Text>
         </Button>
-        <View id="divider" className="w-0.5 h-10 bg-gray-200" />
+        <View
+          id="divider"
+          className={cn('w-0.5 h-10', isDarkColorScheme ? 'bg-zinc-800' : 'bg-gray-200')}
+        />
         <Button
           onPress={handleSkipCurrentExercise}
           variant="secondary"
           className="flex-1"
-          startIcon={<FontAwesome6 name="arrow-right" />}
+          startIcon={
+            <FontAwesome6 name="arrow-right" color={isDarkColorScheme ? 'white' : 'black'} />
+          }
         >
           <Text>{t('workout.workoutDetails.exerciseCard.skip')}</Text>
         </Button>
