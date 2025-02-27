@@ -9,6 +9,9 @@ export enum SessionSteps {
 export interface SessionContextProps {
   step: SessionSteps
   workout: WorkoutWithExercises
+  workoutTimeInSeconds: number
+  difficultyColor: string
   nextStep: () => void
   previousStep: () => void
+  addWorkoutTime: (seconds: number) => void
 }

@@ -1,10 +1,8 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSessionContext } from '../session.context'
-import { WorkoutDifficulty } from '@/db/repositories/workouts'
-import colors from 'tailwindcss/colors'
 
 export function useWorkout() {
-  const { workout, nextStep } = useSessionContext()
+  const { workout, difficultyColor, addWorkoutTime, nextStep } = useSessionContext()
 
   const secondsBetweenExercises = 30
   const additionalRestTime = 10
@@ -13,8 +11,13 @@ export function useWorkout() {
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0)
   const [restTime, setRestTime] = useState(0)
 
+  const workoutStartTimeRef = useRef(Date.now())
+
   function handleGoToNextExercise() {
     if (currentExerciseIndex === workout.exercises.length - 1) {
+      const elapsedSeconds = Math.floor((Date.now() - workoutStartTimeRef.current) / 1000)
+      addWorkoutTime(elapsedSeconds)
+
       nextStep()
       return
     }
@@ -45,18 +48,6 @@ export function useWorkout() {
   function handleSkipCurrentExercise() {
     handleGoToNextExercise()
   }
-
-  const difficultyColor = useMemo(() => {
-    switch (workout?.difficulty) {
-      default:
-      case WorkoutDifficulty.BEGINNER:
-        return colors.indigo[400]
-      case WorkoutDifficulty.INTERMEDIATE:
-        return colors.indigo[600]
-      case WorkoutDifficulty.ADVANCED:
-        return colors.indigo[800]
-    }
-  }, [workout])
 
   const fillCountdown = useMemo(
     () => ((secondsToRest - restTime) / secondsToRest) * 100,

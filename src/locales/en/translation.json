@@ -232,6 +232,14 @@
         "description": "Your progress will not be saved. Are you sure you want to exit this workout?",
         "cancel": "Back to workout",
         "exit": "Exit"
+      },
+      "finish": {
+        "exercises": "Exercises",
+        "time": "Time",
+        "congratulations": "Congratulations!",
+        "congratulationsMessage": "You've completed the workout. Keep up the good work!",
+        "summary": "Workout Summary",
+        "save": "Save Workout"
       }
     },
     "workoutDetails": {

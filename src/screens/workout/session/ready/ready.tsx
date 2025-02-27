@@ -15,9 +15,9 @@ import { useSessionContext } from '../session.context'
 export function Ready() {
   const { t } = useTranslation()
   const { isDarkColorScheme } = useColorScheme()
-  const { workout, nextStep } = useSessionContext()
+  const { workout, difficultyColor, nextStep } = useSessionContext()
 
-  const { countdownInSeconds, difficultyColor, fillCountdown } = useReady()
+  const { countdownInSeconds, fillCountdown } = useReady()
 
   const imageSource = workout.image
     ? { uri: `data:image/jpeg;base64,${workout.image}` }

@@ -232,6 +232,14 @@
         "description": "Seu progresso não será salvo. Tem certeza que deseja sair deste treino?",
         "cancel": "Voltar ao treino",
         "exit": "Sair"
+      },
+      "finish": {
+        "exercises": "Exercícios",
+        "time": "Tempo",
+        "congratulations": "Parabéns!",
+        "congratulationsMessage": "Você completou o treino. Continue assim!",
+        "summary": "Resumo do Treino",
+        "save": "Salvar Treino"
       }
     },
     "workoutDetails": {

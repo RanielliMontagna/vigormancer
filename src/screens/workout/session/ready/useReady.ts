@@ -1,11 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import colors from 'tailwindcss/colors'
-
-import { WorkoutDifficulty } from '@/db/repositories/workouts'
 import { useSessionContext } from '../session.context'
 
 export function useReady() {
-  const { workout, nextStep } = useSessionContext()
+  const { nextStep } = useSessionContext()
 
   const readyToGoCountdown = 15
   const [countdownInSeconds, setCountdownInSeconds] = useState(readyToGoCountdown)
@@ -14,18 +11,6 @@ export function useReady() {
     () => ((readyToGoCountdown - countdownInSeconds) / readyToGoCountdown) * 100,
     [countdownInSeconds],
   )
-
-  const difficultyColor = useMemo(() => {
-    switch (workout?.difficulty) {
-      default:
-      case WorkoutDifficulty.BEGINNER:
-        return colors.indigo[400]
-      case WorkoutDifficulty.INTERMEDIATE:
-        return colors.indigo[600]
-      case WorkoutDifficulty.ADVANCED:
-        return colors.indigo[800]
-    }
-  }, [workout])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,9 +26,5 @@ export function useReady() {
     }
   }, [countdownInSeconds, nextStep])
 
-  return {
-    countdownInSeconds,
-    difficultyColor,
-    fillCountdown,
-  }
+  return { countdownInSeconds, fillCountdown }
 }
