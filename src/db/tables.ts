@@ -106,8 +106,6 @@ export const createTablesSQL = `
         workoutId TEXT NOT NULL,
         startedAt TIMESTAMP DEFAULT (DATETIME('now')),
         finishedAt TIMESTAMP,
-        duration INTEGER, -- segundos
-        completed BOOLEAN DEFAULT 0,
         FOREIGN KEY (userId) REFERENCES users(id),
         FOREIGN KEY (workoutId) REFERENCES workouts(id)
     );
@@ -119,8 +117,6 @@ export const createTablesSQL = `
         sets INTEGER NOT NULL,
         repetitions INTEGER NOT NULL,
         weight FLOAT, -- kg
-        rest INTEGER, -- segundos
-        completed BOOLEAN DEFAULT 0,
         FOREIGN KEY (sessionId) REFERENCES user_workout_sessions(id),
         FOREIGN KEY (exerciseId) REFERENCES exercises(id)
     );
