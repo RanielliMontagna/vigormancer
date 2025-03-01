@@ -28,8 +28,12 @@ export class SqliteSessionWorkoutRepository implements SessionWorkoutRepository 
   }
 
   async quantityFinishedSessions(userId: string): Promise<number> {
-    const quantityFinishedSessions = await db.getFirstAsync<number>(
-      `SELECT COUNT(*) FROM user_workout_sessions WHERE userId = ? AND finishedAt IS NOT NULL`,
+    const { quantityFinishedSessions } = await db.getFirstAsync<{
+      quantityFinishedSessions: number
+    }>(
+      `SELECT COUNT(*) as quantityFinishedSessions
+       FROM user_workout_sessions
+       WHERE userId = ? AND finishedAt IS NOT NULL`,
       [userId],
     )
 

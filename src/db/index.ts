@@ -6,6 +6,7 @@ export * from './migrate'
 
 // Controllers
 export * from './controllers/user'
+export * from './controllers/session'
 export * from './controllers/workouts'
 export * from './controllers/exercises'
 export * from './controllers/categories'
