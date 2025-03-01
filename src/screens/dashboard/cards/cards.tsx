@@ -22,18 +22,21 @@ export function DashboardCards() {
     queryKey: ['weight'],
     queryFn: () => getLatestWeight(user.id),
     gcTime: 0,
+    staleTime: 0,
   })
 
   const weightDifferenceLastWeekQuery = useQuery({
     queryKey: ['weightDifferenceLastWeek'],
     queryFn: () => getWeightDifferenceLastWeek(user.id),
     gcTime: 0,
+    staleTime: 0,
   })
 
   const streakQuery = useQuery({
     queryKey: ['streak'],
     queryFn: () => getUserStreak(user.id),
     gcTime: 0,
+    staleTime: 0,
   })
 
   const streakCount = streakQuery.data?.currentStreak ?? 0

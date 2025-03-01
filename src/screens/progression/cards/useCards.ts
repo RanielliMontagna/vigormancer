@@ -9,6 +9,7 @@ export function useCards() {
     queryKey: ['streak'],
     queryFn: () => getUserStreak(user.id),
     gcTime: 0,
+    staleTime: 0,
   })
 
   const workoutsFinishedQuery = useQuery({

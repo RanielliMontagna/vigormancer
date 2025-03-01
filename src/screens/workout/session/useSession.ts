@@ -20,6 +20,7 @@ export function useSession() {
     queryKey: ['workoutDetails'],
     queryFn: () => getWorkout({ id: workoutId }),
     gcTime: 0,
+    staleTime: 0,
   })
 
   const difficultyColor = useMemo(() => {

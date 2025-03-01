@@ -20,6 +20,7 @@ export function useWorkoutDetails() {
     queryKey: ['workoutDetails'],
     queryFn: () => getWorkout({ id }),
     gcTime: 0,
+    staleTime: 0,
   })
 
   async function handleDeleteWorkout() {

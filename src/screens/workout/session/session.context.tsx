@@ -16,6 +16,7 @@ export function SessionProvider({ children }) {
     queryKey: ['workoutDetails'],
     queryFn: () => getWorkout({ id: workoutId }),
     gcTime: 0,
+    staleTime: 0,
   })
 
   const [step, setStep] = useState(SessionSteps.READY)
