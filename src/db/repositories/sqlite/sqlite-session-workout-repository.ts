@@ -48,4 +48,9 @@ export class SqliteSessionWorkoutRepository implements SessionWorkoutRepository 
       ],
     )
   }
+
+  async deleteSessionWorkout(sessionId: string): Promise<void> {
+    await db.runAsync(`DELETE FROM user_workout_exercises WHERE sessionId = ?`, [sessionId])
+    await db.runAsync(`DELETE FROM user_workout_sessions WHERE id = ?`, [sessionId])
+  }
 }

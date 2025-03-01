@@ -24,4 +24,5 @@ export interface SessionWorkoutRepository {
   finishSessionWorkout(sessionWorkout: FinishSessionWorkout): Promise<void>
   quantityFinishedSessions(userId: string): Promise<number>
   addExerciseToSession(exercise: AddExerciseToSession): Promise<void>
+  deleteSessionWorkout(sessionId: string): Promise<void>
 }
