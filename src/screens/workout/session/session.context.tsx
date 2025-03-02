@@ -1,8 +1,6 @@
 import { createContext, useContext, useMemo, useState } from 'react'
 import colors from 'tailwindcss/colors'
 import { router, useLocalSearchParams } from 'expo-router'
-import { useQuery } from '@tanstack/react-query'
-
 import {
   addExerciseToSession,
   createSessionWorkout,
@@ -17,6 +15,7 @@ import { useUser } from '@clerk/clerk-expo'
 import Toast from 'react-native-toast-message'
 import { useTranslation } from 'react-i18next'
 import { WorkoutExerciseWithCategory } from '@/db/repositories/workoutExercises'
+import { useCustomQuery } from '@/hooks'
 
 export const SessionContext = createContext({} as SessionContextProps)
 
@@ -26,11 +25,9 @@ export function SessionProvider({ children }) {
   const { handleErrors } = useAppStore()
   const { id: workoutId } = useLocalSearchParams<{ id: string }>()
 
-  const workoutDetails = useQuery({
+  const workoutDetails = useCustomQuery({
     queryKey: ['workoutDetails'],
     queryFn: () => getWorkout({ id: workoutId }),
-    gcTime: 0,
-    staleTime: 0,
   })
 
   const [step, setStep] = useState(SessionSteps.READY)

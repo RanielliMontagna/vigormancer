@@ -4,10 +4,10 @@ import Toast from 'react-native-toast-message'
 import { useTranslation } from 'react-i18next'
 
 import { BottomSheetModal } from '@gorhom/bottom-sheet'
-import { useQuery } from '@tanstack/react-query'
 import { deleteWorkout, getWorkout } from '@/db'
 import { useAppStore } from '@/store'
 import { queryClient } from '@/libs/react-query'
+import { useCustomQuery } from '@/hooks'
 
 export function useWorkoutDetails() {
   const { setIsLoading, handleErrors } = useAppStore()
@@ -16,11 +16,9 @@ export function useWorkoutDetails() {
 
   const workoutActionsBottomSheetRef = useRef<BottomSheetModal>(null)
 
-  const { data, isLoading, refetch } = useQuery({
+  const { data, isLoading, refetch } = useCustomQuery({
     queryKey: ['workoutDetails'],
     queryFn: () => getWorkout({ id }),
-    gcTime: 0,
-    staleTime: 0,
   })
 
   async function handleDeleteWorkout() {

@@ -4,11 +4,11 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useProgressionContext } from '../../progression.context'
-import { useQuery } from '@tanstack/react-query'
 import { useUser } from '@clerk/clerk-expo'
 import { queryClient } from '@/libs/react-query'
 import { useAppStore } from '@/store'
 import { getHeight, getLatestWeight, updateUserHeight, updateUserWeight } from '@/db'
+import { useCustomQuery } from '@/hooks'
 
 const BmiBottomSheetSchema = z.object({
   height: z.number(),
@@ -22,8 +22,11 @@ export function useBmiBottomSheet() {
   const { handleErrors } = useAppStore()
   const { bmiBottomSheetRef } = useProgressionContext()
 
-  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
-  const heightQuery = useQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
+  const weightQuery = useCustomQuery({
+    queryKey: ['weight'],
+    queryFn: () => getLatestWeight(user.id),
+  })
+  const heightQuery = useCustomQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
 
   const methods = useForm({
     resolver: zodResolver(BmiBottomSheetSchema),

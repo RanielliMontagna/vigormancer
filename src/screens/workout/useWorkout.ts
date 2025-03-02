@@ -2,11 +2,14 @@ import { useTranslation } from 'react-i18next'
 import { router } from 'expo-router'
 
 import { fetchWorkouts } from '@/db'
-import { useQuery } from '@tanstack/react-query'
+import { useCustomQuery } from '@/hooks'
 
 export function useWorkout() {
   const { t } = useTranslation()
-  const { data, isLoading, refetch } = useQuery({ queryKey: ['workouts'], queryFn: fetchWorkouts })
+  const { data, isLoading, refetch } = useCustomQuery({
+    queryKey: ['workouts'],
+    queryFn: fetchWorkouts,
+  })
 
   async function handleAddWorkout() {
     router.push('(private)/workouts/create-workout')

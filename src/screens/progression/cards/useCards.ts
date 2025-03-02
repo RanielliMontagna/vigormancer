@@ -1,22 +1,19 @@
-import { useQuery } from '@tanstack/react-query'
 import { useUser } from '@clerk/clerk-expo'
 import { getUserStreak, quantityFinishedSessionWorkout } from '@/db'
+
+import { useCustomQuery } from '@/hooks'
 
 export function useCards() {
   const { user } = useUser()
 
-  const streakQuery = useQuery({
+  const streakQuery = useCustomQuery({
     queryKey: ['streak'],
     queryFn: () => getUserStreak(user.id),
-    gcTime: 0,
-    staleTime: 0,
   })
 
-  const workoutsFinishedQuery = useQuery({
+  const workoutsFinishedQuery = useCustomQuery({
     queryKey: ['workoutsFinished'],
     queryFn: () => quantityFinishedSessionWorkout(user.id),
-    gcTime: 0,
-    staleTime: 0,
   })
 
   const streakCount = streakQuery.data?.currentStreak ?? 0

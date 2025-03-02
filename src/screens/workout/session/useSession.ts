@@ -1,6 +1,6 @@
 import { getWorkout } from '@/db'
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
-import { useQuery } from '@tanstack/react-query'
+import { useCustomQuery } from '@/hooks'
 import { useLocalSearchParams } from 'expo-router'
 import { useEffect, useMemo, useState } from 'react'
 import colors from 'tailwindcss/colors'
@@ -16,11 +16,9 @@ export function useSession() {
     [countdownInSeconds],
   )
 
-  const { data } = useQuery({
+  const { data } = useCustomQuery({
     queryKey: ['workoutDetails'],
     queryFn: () => getWorkout({ id: workoutId }),
-    gcTime: 0,
-    staleTime: 0,
   })
 
   const difficultyColor = useMemo(() => {

@@ -2,12 +2,11 @@ import { View } from 'react-native'
 import colors from 'tailwindcss/colors'
 import { useUser } from '@clerk/clerk-expo'
 import { useTranslation } from 'react-i18next'
-import { useQuery } from '@tanstack/react-query'
 
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
-import { useColorScheme } from '@/hooks'
+import { useColorScheme, useCustomQuery } from '@/hooks'
 import { Card, CardContent, H2, P, Text } from '@/components'
 import { getLatestWeight, getUserStreak } from '@/db'
 import { getWeightDifferenceLastWeek } from '@/db/controllers/user/get-weight-difference-last-week'
@@ -18,25 +17,19 @@ export function DashboardCards() {
   const { user } = useUser()
   const { t } = useTranslation()
 
-  const weightQuery = useQuery({
+  const weightQuery = useCustomQuery({
     queryKey: ['weight'],
     queryFn: () => getLatestWeight(user.id),
-    gcTime: 0,
-    staleTime: 0,
   })
 
-  const weightDifferenceLastWeekQuery = useQuery({
+  const weightDifferenceLastWeekQuery = useCustomQuery({
     queryKey: ['weightDifferenceLastWeek'],
     queryFn: () => getWeightDifferenceLastWeek(user.id),
-    gcTime: 0,
-    staleTime: 0,
   })
 
-  const streakQuery = useQuery({
+  const streakQuery = useCustomQuery({
     queryKey: ['streak'],
     queryFn: () => getUserStreak(user.id),
-    gcTime: 0,
-    staleTime: 0,
   })
 
   const streakCount = streakQuery.data?.currentStreak ?? 0

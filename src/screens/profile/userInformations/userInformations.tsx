@@ -4,15 +4,18 @@ import { useUser } from '@clerk/clerk-expo'
 
 import { Avatar, AvatarFallback, AvatarImage, H3, P, Text } from '@/components'
 import { getInitials } from '@/utils'
-import { useQuery } from '@tanstack/react-query'
 import { getHeight, getLatestWeight } from '@/db'
+import { useCustomQuery } from '@/hooks'
 
 export function UserInformations() {
   const { t } = useTranslation()
   const { user } = useUser()
 
-  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
-  const heightQuery = useQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
+  const weightQuery = useCustomQuery({
+    queryKey: ['weight'],
+    queryFn: () => getLatestWeight(user.id),
+  })
+  const heightQuery = useCustomQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
 
   return (
     <View className="flex-col items-center gap-2">
