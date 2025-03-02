@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 import {
   AddExerciseToSession,
   CreateSessionWorkout,
@@ -8,16 +10,15 @@ import {
 import { db } from '@/db'
 
 export class SqliteSessionWorkoutRepository implements SessionWorkoutRepository {
-  async createSessionWorkout(sessionWorkout: CreateSessionWorkout): Promise<void> {
+  async createSessionWorkout(sessionWorkout: CreateSessionWorkout): Promise<{ id: string }> {
+    const id = uuidv4()
+
     await db.runAsync(
       `INSERT INTO user_workout_sessions (id, userId, workoutId, startedAt) VALUES (?, ?, ?, ?)`,
-      [
-        sessionWorkout.id,
-        sessionWorkout.userId,
-        sessionWorkout.workoutId,
-        sessionWorkout.startedAt.toISOString(),
-      ],
+      [id, sessionWorkout.userId, sessionWorkout.workoutId, sessionWorkout.startedAt.toISOString()],
     )
+
+    return { id }
   }
 
   async finishSessionWorkout(sessionWorkout: FinishSessionWorkout): Promise<void> {

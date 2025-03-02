@@ -239,7 +239,9 @@
         "congratulations": "Parabéns!",
         "congratulationsMessage": "Você completou o treino. Continue assim!",
         "summary": "Resumo do Treino",
-        "save": "Salvar Treino"
+        "save": "Salvar Treino",
+        "success": "Treino finalizado com sucesso!",
+        "successMessage": "Sua força cresce a cada repetição."
       }
     },
     "workoutDetails": {

@@ -1,3 +1,4 @@
+import { WorkoutExerciseWithCategory } from '@/db/repositories/workoutExercises'
 import { WorkoutWithExercises } from '@/db/repositories/workouts'
 
 export enum SessionSteps {
@@ -14,4 +15,8 @@ export interface SessionContextProps {
   nextStep: () => void
   previousStep: () => void
   addWorkoutTime: (seconds: number) => void
+  handleWorkoutStart: () => Promise<void>
+  handleWorkoutFinish: () => Promise<void>
+  handleCancelWorkout: () => Promise<void>
+  handleAddExerciseToSession: (exercise: WorkoutExerciseWithCategory) => Promise<void>
 }

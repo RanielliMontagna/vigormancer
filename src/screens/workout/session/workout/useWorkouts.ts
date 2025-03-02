@@ -1,8 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSessionContext } from '../session.context'
+import { useAppStore } from '@/store'
 
 export function useWorkout() {
-  const { workout, difficultyColor, addWorkoutTime, nextStep } = useSessionContext()
+  const { handleErrors } = useAppStore()
+  const { workout, difficultyColor, addWorkoutTime, nextStep, handleAddExerciseToSession } =
+    useSessionContext()
 
   const secondsBetweenExercises = 30
   const additionalRestTime = 10
@@ -41,8 +44,15 @@ export function useWorkout() {
     setRestTime(0)
   }
 
-  function handleDoneCurrentExercise() {
-    handleGoToNextExercise()
+  async function handleDoneCurrentExercise() {
+    try {
+      const exercise = workout.exercises[currentExerciseIndex]
+      await handleAddExerciseToSession(exercise)
+
+      handleGoToNextExercise()
+    } catch (error) {
+      handleErrors(error)
+    }
   }
 
   function handleSkipCurrentExercise() {

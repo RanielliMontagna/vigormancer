@@ -239,7 +239,9 @@
         "congratulations": "Congratulations!",
         "congratulationsMessage": "You've completed the workout. Keep up the good work!",
         "summary": "Workout Summary",
-        "save": "Save Workout"
+        "save": "Save Workout",
+        "success": "Workout finished successfully!",
+        "successMessage": "Your strength grows with each rep."
       }
     },
     "workoutDetails": {

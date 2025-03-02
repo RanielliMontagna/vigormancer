@@ -1,7 +1,5 @@
 export interface CreateSessionWorkout {
-  id: string
   userId: string
-  sessionId: string
   workoutId: string
   startedAt: Date
 }
@@ -20,7 +18,7 @@ export interface AddExerciseToSession {
 }
 
 export interface SessionWorkoutRepository {
-  createSessionWorkout(sessionWorkout: CreateSessionWorkout): Promise<void>
+  createSessionWorkout(sessionWorkout: CreateSessionWorkout): Promise<{ id: string }>
   finishSessionWorkout(sessionWorkout: FinishSessionWorkout): Promise<void>
   quantityFinishedSessions(userId: string): Promise<number>
   addExerciseToSession(exercise: AddExerciseToSession): Promise<void>

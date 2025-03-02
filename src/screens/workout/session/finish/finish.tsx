@@ -9,7 +9,8 @@ import dayjs from 'dayjs'
 
 export function Finish() {
   const { t } = useTranslation()
-  const { workout, difficultyColor, workoutTimeInSeconds } = useSessionContext()
+  const { workout, difficultyColor, workoutTimeInSeconds, handleWorkoutFinish } =
+    useSessionContext()
 
   return (
     <>
@@ -62,7 +63,7 @@ export function Finish() {
           ))}
         </ScrollView>
       </View>
-      <Button>
+      <Button onPress={handleWorkoutFinish}>
         <Text>{t('workout.session.finish.save')}</Text>
       </Button>
     </>

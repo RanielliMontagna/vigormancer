@@ -15,6 +15,8 @@ export function useCards() {
   const workoutsFinishedQuery = useQuery({
     queryKey: ['workoutsFinished'],
     queryFn: () => quantityFinishedSessionWorkout(user.id),
+    gcTime: 0,
+    staleTime: 0,
   })
 
   const streakCount = streakQuery.data?.currentStreak ?? 0

@@ -15,7 +15,7 @@ import { useSessionContext } from '../session.context'
 export function Ready() {
   const { t } = useTranslation()
   const { isDarkColorScheme } = useColorScheme()
-  const { workout, difficultyColor, nextStep } = useSessionContext()
+  const { workout, difficultyColor, handleWorkoutStart } = useSessionContext()
 
   const { countdownInSeconds, fillCountdown } = useReady()
 
@@ -84,7 +84,7 @@ export function Ready() {
         <Button
           className="w-full"
           size="lg"
-          onPress={nextStep}
+          onPress={handleWorkoutStart}
           endIcon={
             <FontAwesome6
               name="chevron-right"
