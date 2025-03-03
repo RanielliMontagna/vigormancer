@@ -9,12 +9,27 @@ export interface FinishSessionWorkout {
   finishedAt: Date
 }
 
-export interface AddExerciseToSession {
-  sessionId: string
-  exerciseId: string
+export interface SessionExercise {
+  exerciseId: number
+  exerciseName: string
   sets: number
   repetitions: number
   weight: number
+}
+
+export interface AddExerciseToSession extends SessionExercise {
+  sessionId: string
+}
+
+export interface WeeklySession {
+  id: string
+  workoutId: string
+  workoutName: string
+  difficulty: number
+  image: string
+  startedAt: Date
+  finishedAt: Date
+  exercises: SessionExercise[]
 }
 
 export interface SessionWorkoutRepository {
@@ -23,4 +38,5 @@ export interface SessionWorkoutRepository {
   quantityFinishedSessions(userId: string): Promise<number>
   addExerciseToSession(exercise: AddExerciseToSession): Promise<void>
   deleteSessionWorkout(sessionId: string): Promise<void>
+  getLastSessions(userId: string): Promise<WeeklySession[]>
 }

@@ -113,7 +113,8 @@ export const createTablesSQL = `
     CREATE TABLE IF NOT EXISTS user_workout_exercises (
         id TEXT PRIMARY KEY,
         sessionId TEXT NOT NULL,
-        exerciseId TEXT NOT NULL,
+        exerciseId INTEGER NOT NULL,
+        exerciseName TEXT NOT NULL,
         sets INTEGER NOT NULL,
         repetitions INTEGER NOT NULL,
         weight FLOAT, -- kg
