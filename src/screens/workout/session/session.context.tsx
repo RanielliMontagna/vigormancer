@@ -82,7 +82,8 @@ export function SessionProvider({ children }) {
     try {
       await addExerciseToSession({
         sessionId: actualSessionId,
-        exerciseId: exercise.id,
+        exerciseId: Number(exercise.exerciseId),
+        exerciseName: exercise.exerciseName,
         repetitions: exercise.repetitions,
         sets: exercise.sets,
         weight: exercise.weight,

@@ -130,7 +130,10 @@
     "since_last_week": "desde a semana passada",
     "streakMessage_zero": "O fogo está para ser aceso! Continue!",
     "streakMessage_one": "Você está no caminho certo! Continue!",
-    "streakMessage_other": "Você está pegando fogo! Continue!"
+    "streakMessage_other": "Você está pegando fogo! Continue!",
+    "summary": {
+      "title": "Últimos treinos concluídos"
+    }
   },
   "notifications": {
     "title": "Notificações",

@@ -130,7 +130,10 @@
     "since_last_week": "since last week",
     "streakMessage_zero": "The fire wait for you. Let's go!",
     "streakMessage_one": "The first step is the hardest. Keep going!",
-    "streakMessage_other": "You're on fire! Keep going!"
+    "streakMessage_other": "You're on fire! Keep going!",
+    "summary": {
+      "title": "Last finished workouts"
+    }
   },
   "notifications": {
     "title": "Notifications",
