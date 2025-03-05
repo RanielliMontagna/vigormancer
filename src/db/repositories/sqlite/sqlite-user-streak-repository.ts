@@ -29,7 +29,10 @@ export class SqliteUserStreakRepository implements UserStreakRepository {
   async incrementStreak(userId: string, date: string): Promise<{ currentStreak: number }> {
     const userStreak = await this.getStreak(userId)
 
-    if (userStreak.lastWorkoutDate === date) return { currentStreak: userStreak.currentStreak }
+    const lastWorkoutDate = dayjs(userStreak.lastWorkoutDate).format('YYYY-MM-DD')
+    const dateFormatted = dayjs(date).format('YYYY-MM-DD')
+
+    if (lastWorkoutDate === dateFormatted) return { currentStreak: userStreak.currentStreak }
 
     const currentStreak = userStreak.currentStreak + 1
 
@@ -46,7 +49,7 @@ export class SqliteUserStreakRepository implements UserStreakRepository {
     }
 
     await db.runAsync('UPDATE user_streaks SET lastWorkoutDate = ? WHERE userId = ?', [
-      dayjs(date).format('YYYY-MM-DD'),
+      dateFormatted,
       userId,
     ])
 

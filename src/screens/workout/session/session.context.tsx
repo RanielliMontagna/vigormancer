@@ -7,6 +7,7 @@ import {
   deleteSessionWorkout,
   finishSessionWorkout,
   getWorkout,
+  incrementUserStreak,
 } from '@/db'
 import { SessionSteps, type SessionContextProps } from './session.types'
 import { WorkoutDifficulty } from '@/db/repositories/workouts'
@@ -16,6 +17,7 @@ import Toast from 'react-native-toast-message'
 import { useTranslation } from 'react-i18next'
 import { WorkoutExerciseWithCategory } from '@/db/repositories/workoutExercises'
 import { useCustomQuery } from '@/hooks'
+import { queryClient } from '@/libs/react-query'
 
 export const SessionContext = createContext({} as SessionContextProps)
 
@@ -71,6 +73,10 @@ export function SessionProvider({ children }) {
         text2: t('workout.session.finish.successMessage'),
         type: 'success',
       })
+
+      incrementUserStreak({ userId: user.id, date: new Date().toISOString() })
+
+      await queryClient.invalidateQueries()
 
       router.dismissAll()
     } catch (error) {
