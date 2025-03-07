@@ -4,16 +4,19 @@ import colors from 'tailwindcss/colors'
 
 import { useUser } from '@clerk/clerk-expo'
 import { BmiLevels } from './bmi.types'
-import { useQuery } from '@tanstack/react-query'
 import { calculateBMI } from '@/utils/calculateBmi/calculateBmi'
 import { getHeight, getLatestWeight } from '@/db'
+import { useCustomQuery } from '@/hooks'
 
 export function useBmi() {
   const { user } = useUser()
   const { t } = useTranslation()
 
-  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
-  const heightQuery = useQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
+  const weightQuery = useCustomQuery({
+    queryKey: ['weight'],
+    queryFn: () => getLatestWeight(user.id),
+  })
+  const heightQuery = useCustomQuery({ queryKey: ['height'], queryFn: () => getHeight(user.id) })
 
   const { bmi, category } = calculateBMI({
     weight: weightQuery.data?.current,

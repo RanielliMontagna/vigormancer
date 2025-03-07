@@ -19,11 +19,12 @@ export interface Workout {
 export type CreateWorkoutParams = Omit<Workout, 'id' | 'createdAt' | 'updatedAt'>
 export type UpdateWorkoutParams = Omit<Workout, 'createdAt' | 'updatedAt'>
 export type WorkoutWithExercises = Workout & { exercises: WorkoutExerciseWithCategory[] }
+export type WorkoutWithExercisesCount = Workout & { exercisesCount: number }
 
 export interface WorkoutsRepository {
   createWorkout(workout: CreateWorkoutParams): Promise<{ id: string }>
   getWorkout(id: string): Promise<WorkoutWithExercises | undefined>
-  getWorkouts(): Promise<Workout[]>
+  getWorkouts(): Promise<WorkoutWithExercisesCount[]>
   updateWorkout(workout: UpdateWorkoutParams): Promise<void>
   deleteWorkout(id: string): Promise<void>
 }

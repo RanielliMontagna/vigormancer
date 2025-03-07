@@ -86,7 +86,7 @@ export function Weight() {
               fontSize: 12,
               color: isDarkColorScheme ? 'white' : 'black',
             }}
-            stepValue={5}
+            stepValue={2}
             height={Dimensions.get('window').height / 5}
           />
         )}

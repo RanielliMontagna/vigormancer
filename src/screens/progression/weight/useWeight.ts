@@ -1,16 +1,19 @@
 import dayjs from 'dayjs'
 import { useMemo } from 'react'
-import { useQuery } from '@tanstack/react-query'
 import { lineDataItem } from 'react-native-gifted-charts'
 import { useUser } from '@clerk/clerk-expo'
 
 import { getHistoryWeight, getLatestWeight } from '@/db'
+import { useCustomQuery } from '@/hooks'
 
 export function useWeight() {
   const { user } = useUser()
 
-  const weightQuery = useQuery({ queryKey: ['weight'], queryFn: () => getLatestWeight(user.id) })
-  const historyWeightQuery = useQuery({
+  const weightQuery = useCustomQuery({
+    queryKey: ['weight'],
+    queryFn: () => getLatestWeight(user.id),
+  })
+  const historyWeightQuery = useCustomQuery({
     queryKey: ['historyWeight'],
     queryFn: () => getHistoryWeight(user.id),
   })

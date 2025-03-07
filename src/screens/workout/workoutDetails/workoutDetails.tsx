@@ -40,6 +40,7 @@ export function WorkoutDetails() {
     refetch,
     handleDeleteWorkout,
     handleGoToAddExercise,
+    handleStartSessionWorkout,
   } = useWorkoutDetails()
 
   const difficultyColor = useMemo(() => {
@@ -151,12 +152,17 @@ export function WorkoutDetails() {
             refreshControl={<RefreshControl refreshing={isLoading} onRefresh={refetch} />}
             onRefresh={refetch}
             renderItem={({ item }) => <ExerciseCard {...item} />}
+            estimatedItemSize={112}
             contentContainerStyle={{ paddingHorizontal: 8, paddingVertical: 8 }}
           />
         )}
       </View>
       <View>
-        <Button onPress={() => console.log('Implement start workout')} disabled={isExercisesEmpty}>
+        <Button
+          testID="start-workout"
+          onPress={handleStartSessionWorkout}
+          disabled={isExercisesEmpty}
+        >
           <Text>{t('workout.workoutDetails.start')}</Text>
         </Button>
       </View>

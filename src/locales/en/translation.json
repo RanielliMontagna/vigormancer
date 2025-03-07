@@ -130,7 +130,10 @@
     "since_last_week": "since last week",
     "streakMessage_zero": "The fire wait for you. Let's go!",
     "streakMessage_one": "The first step is the hardest. Keep going!",
-    "streakMessage_other": "You're on fire! Keep going!"
+    "streakMessage_other": "You're on fire! Keep going!",
+    "summary": {
+      "title": "Last finished workouts"
+    }
   },
   "notifications": {
     "title": "Notifications",
@@ -215,9 +218,34 @@
     "title": "Workouts",
     "subtitle": "Channel your energy, master your form...",
     "add": "Add Workout",
+    "exercise_zero": "No exercises yet",
+    "exercise_one": "{{count}} exercise",
+    "exercise_other": "{{count}} exercises",
     "emptyState": {
       "title": "No workouts yet",
       "subtitle": "Start your journey by adding a new workout."
+    },
+    "session": {
+      "ready": "Ready to start?",
+      "readyMessage": "Let's go! Channel your energy and master your form.",
+      "countdown": "Starting automatically in",
+      "start": "I'm ready",
+      "exit": {
+        "title": "Are you sure you want to exit?",
+        "description": "Your progress will not be saved. Are you sure you want to exit this workout?",
+        "cancel": "Back to workout",
+        "exit": "Exit"
+      },
+      "finish": {
+        "exercises": "Exercises",
+        "time": "Time",
+        "congratulations": "Congratulations!",
+        "congratulationsMessage": "You've completed the workout. Keep up the good work!",
+        "summary": "Workout Summary",
+        "save": "Save Workout",
+        "success": "Workout finished successfully!",
+        "successMessage": "Your strength grows with each rep."
+      }
     },
     "workoutDetails": {
       "exercises": "Exercises",
@@ -235,7 +263,14 @@
         "removeExercise": "Remove Exercise",
         "removeExerciseTitle": "Remove Exercise?",
         "removeExerciseDescription": "This action cannot be undone. Are you sure you want to remove {{name}} from your workout?",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "previous": "Previous",
+        "addRestTime": "+{{seconds}}s",
+        "countdown": "Next set in",
+        "startNow": "Start Now",
+        "next": "Next",
+        "skip": "Skip",
+        "done": "Done"
       },
       "edit": {
         "subtitle": "Update the details of this exercise.",

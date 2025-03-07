@@ -6,19 +6,19 @@ import Toast from 'react-native-toast-message'
 
 import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useQuery } from '@tanstack/react-query'
 
 import { useAppStore } from '@/store'
 import { createWorkoutExercise, fetchExercises } from '@/db'
 import { queryClient } from '@/libs/react-query'
 import { ExerciseWithCategory } from '@/db/repositories/exercises'
+import { useCustomQuery } from '@/hooks'
 
 export function useAddExercise() {
   const { t } = useTranslation()
   const { setIsLoading, handleErrors } = useAppStore()
   const { id: workoutId } = useLocalSearchParams<{ id: string }>()
 
-  const { data, isLoading, refetch } = useQuery({
+  const { data, isLoading, refetch } = useCustomQuery({
     queryKey: ['exercises'],
     queryFn: fetchExercises,
   })

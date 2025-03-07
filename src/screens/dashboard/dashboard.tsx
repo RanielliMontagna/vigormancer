@@ -10,6 +10,7 @@ import { capitalize, getInitials } from '@/utils'
 import { DashboardCards } from './cards/cards'
 import { router } from 'expo-router'
 import { useColorScheme } from '@/hooks'
+import { DashboardSummary } from './summary/summary'
 
 export function Dashboard() {
   const { user } = useUser()
@@ -48,6 +49,7 @@ export function Dashboard() {
         </View>
       </View>
       <DashboardCards />
+      <DashboardSummary />
     </View>
   )
 }

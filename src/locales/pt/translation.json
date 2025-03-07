@@ -130,7 +130,10 @@
     "since_last_week": "desde a semana passada",
     "streakMessage_zero": "O fogo está para ser aceso! Continue!",
     "streakMessage_one": "Você está no caminho certo! Continue!",
-    "streakMessage_other": "Você está pegando fogo! Continue!"
+    "streakMessage_other": "Você está pegando fogo! Continue!",
+    "summary": {
+      "title": "Últimos treinos concluídos"
+    }
   },
   "notifications": {
     "title": "Notificações",
@@ -215,9 +218,34 @@
     "title": "Treinos",
     "subtitle": "Canalize sua energia, domine sua forma...",
     "add": "Adicionar Treino",
+    "exercise_zero": "Nenhum exercício",
+    "exercise_one": "{{count}} exercício",
+    "exercise_other": "{{count}} exercícios",
     "emptyState": {
       "title": "Nenhum treino encontrado",
       "subtitle": "Comece adicionando um novo treino."
+    },
+    "session": {
+      "ready": "Pronto para o treino?",
+      "readyMessage": "Vamos começar! Prepare-se para dominar sua forma e liberar seu poder.",
+      "countdown": "Começando automaticamente em",
+      "start": "Estou pronto",
+      "exit": {
+        "title": "Você tem certeza que deseja sair?",
+        "description": "Seu progresso não será salvo. Tem certeza que deseja sair deste treino?",
+        "cancel": "Voltar ao treino",
+        "exit": "Sair"
+      },
+      "finish": {
+        "exercises": "Exercícios",
+        "time": "Tempo",
+        "congratulations": "Parabéns!",
+        "congratulationsMessage": "Você completou o treino. Continue assim!",
+        "summary": "Resumo do Treino",
+        "save": "Salvar Treino",
+        "success": "Treino finalizado com sucesso!",
+        "successMessage": "Sua força cresce a cada repetição."
+      }
     },
     "workoutDetails": {
       "exercises": "Exercícios",
@@ -235,7 +263,14 @@
         "removeExercise": "Remover Exercício",
         "removeExerciseTitle": "Remover Exercício?",
         "removeExerciseDescription": "Essa ação não pode ser desfeita. Tem certeza que deseja remover o exercício {{name}}?",
-        "cancel": "Cancelar"
+        "cancel": "Cancelar",
+        "previous": "Anterior",
+        "addRestTime": "+{{seconds}}s",
+        "countdown": "Próxima série em",
+        "startNow": "Começar agora",
+        "next": "Próximo",
+        "skip": "Pular",
+        "done": "Feito"
       },
       "edit": {
         "subtitle": "Atualize seu exercício e alcance novos patamares.",
