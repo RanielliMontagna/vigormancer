@@ -10,5 +10,5 @@ export interface UserStreakRepository {
   createStreak(userId: string): Promise<UserStreak>
   getStreak(userId: string): Promise<UserStreak>
   incrementStreak(userId: string, date: string): Promise<{ currentStreak: number }>
-  resetStreak(userId: string): Promise<void>
+  resetStreak(userId: string): Promise<{ streakReset: boolean }>
 }

@@ -56,7 +56,17 @@ export class SqliteUserStreakRepository implements UserStreakRepository {
     return { currentStreak }
   }
 
-  async resetStreak(userId: string): Promise<void> {
-    await db.runAsync('UPDATE user_streaks SET currentStreak = 0 WHERE userId = ?', [userId])
+  async resetStreak(userId: string): Promise<{ streakReset: boolean }> {
+    const userStreak = await this.getStreak(userId)
+
+    const qtdDaysSinceLastWorkout = dayjs().diff(dayjs(userStreak.lastWorkoutDate), 'day')
+
+    if (qtdDaysSinceLastWorkout > 1) {
+      await db.runAsync('UPDATE user_streaks SET currentStreak = 0 WHERE userId = ?', [userId])
+
+      return { streakReset: true }
+    }
+
+    return { streakReset: false }
   }
 }

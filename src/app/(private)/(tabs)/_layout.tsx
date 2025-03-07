@@ -1,14 +1,33 @@
+import { useCallback, useEffect } from 'react'
 import { View } from 'react-native'
 import { Tabs } from 'expo-router'
 
+import { useUser } from '@clerk/clerk-expo'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
+import { resetUserStreak } from '@/db'
 import { useColorScheme } from '@/hooks'
+
 import colors from 'tailwindcss/colors'
+import { queryClient } from '@/libs/react-query'
 
 export default function PrivateRoutesLayout() {
   const { isDarkColorScheme } = useColorScheme()
+
+  const { user } = useUser()
+
+  const handleResetStreak = useCallback(async () => {
+    const { streakReset } = await resetUserStreak({ userId: user.id })
+
+    if (streakReset) {
+      queryClient.invalidateQueries({ queryKey: ['streak'] })
+    }
+  }, [user.id])
+
+  useEffect(() => {
+    handleResetStreak()
+  }, [handleResetStreak])
 
   return (
     <View className="flex-1 bg-background">
